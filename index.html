@@ -330,36 +330,37 @@
     <div class="text-center mb-16">
       <p class="text-yellow-700 text-xs tracking-[4px] uppercase">OUR EXPERTS</p>
       <h2 class="section-title text-4xl md:text-5xl font-black gold mt-4">فريق العمل القيادي</h2>
+      <p class="text-xs text-white/40 mt-2">انقر على أي قسم لعرض الهيكل التنظيمي الكامل بشكل مكبر</p>
     </div>
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       
-      <div class="team-card p-6 rounded-xl text-center flex flex-col items-center">
+      <div class="team-card p-6 rounded-xl text-center flex flex-col items-center zoom-clickable" onclick="openLightbox('1000024274.png', 'الهيكل التنظيمي - قسم الإنتاج الإبداعي')">
         <div class="w-24 h-24 rounded-full border border-yellow-700/30 flex items-center justify-center bg-black/50 text-3xl mb-4 gold">🎬</div>
         <h3 class="text-lg font-bold text-white">قسم الإنتاج الإبداعي</h3>
         <p class="text-xs gold font-medium mt-1 uppercase tracking-wider">Production & VFX</p>
         <p class="text-white/40 text-[11px] leading-relaxed mt-3 font-light">الإخراج السينمائي، إدارة التصوير، هندسة الصوت، المونتاج الاحترافي وصناعة الـ VFX والموشن جرافيك.</p>
       </div>
 
-      <div class="team-card p-6 rounded-xl text-center flex flex-col items-center">
+      <div class="team-card p-6 rounded-xl text-center flex flex-col items-center zoom-clickable" onclick="openLightbox('1000024274.png', 'الهيكل التنظيمي - إدارة الفنون والبراندينغ')">
         <div class="w-24 h-24 rounded-full border border-yellow-700/30 flex items-center justify-center bg-black/50 text-3xl mb-4 gold">⭐</div>
         <h3 class="text-lg font-bold text-white">إدارة الفنون والبراندينغ</h3>
         <p class="text-xs gold font-medium mt-1 uppercase tracking-wider">Artistic Direction</p>
         <p class="text-white/40 text-[11px] leading-relaxed mt-3 font-light">إدارة شؤون الفنانين والمشاهير، العلاقات العامة، وتطوير الهويات البصرية والبراندينغ الفخم.</p>
       </div>
 
-      <div class="team-card p-6 rounded-xl text-center flex flex-col items-center">
+      <div class="team-card p-6 rounded-xl text-center flex flex-col items-center zoom-clickable" onclick="openLightbox('1000024274.png', 'الهيكل التنظيمي - التسويق والإعلام الرقمي')">
         <div class="w-24 h-24 rounded-full border border-yellow-700/30 flex items-center justify-center bg-black/50 text-3xl mb-4 gold">📢</div>
         <h3 class="text-lg font-bold text-white">التسويق والإعلام الرقمي</h3>
         <p class="text-xs gold font-medium mt-1 uppercase tracking-wider">Digital Marketing</p>
-        <p class="text-white/40 text-[11px] leading-relaxed mt-3 font-light">إدارة منصات السوشيال ميديا (Community Management)، صناعة المحتوى المرئي، وإطلاق الحملات الإعلانية الممولة.</p>
+        <p class="text-white/40 text-[11px] leading-relaxed mt-3 font-light">إدارة منصات السوشيال ميديا، صناعة المحتوى المرئي، وإطلاق الحملات الإعلانية الممولة بكفاءة.</p>
       </div>
 
-      <div class="team-card p-6 rounded-xl text-center flex flex-col items-center">
+      <div class="team-card p-6 rounded-xl text-center flex flex-col items-center zoom-clickable" onclick="openLightbox('1000024274.png', 'الهيكل التنظيمي - تنظيم الفعاليات والعروض')">
         <div class="w-24 h-24 rounded-full border border-yellow-700/30 flex items-center justify-center bg-black/50 text-3xl mb-4 gold">📅</div>
         <h3 class="text-lg font-bold text-white">تنظيم الفعاليات والعروض</h3>
         <p class="text-xs gold font-medium mt-1 uppercase tracking-wider">Events & Showcases</p>
-        <p class="text-white/40 text-[11px] leading-relaxed mt-3 font-light">تنظيم وإدارة الحفلات والمؤتمرات، تغطية الأحداث والمناسبات الكبرى، وإدارة التجهيزات والخدمات اللوجستية.</p>
+        <p class="text-white/40 text-[11px] leading-relaxed mt-3 font-light">تنظيم وإدارة الحفلات والمؤتمرات، تغطية الأحداث والمناسبات الكبرى، وإدارة التجهيزات اللوجستية.</p>
       </div>
 
     </div>
@@ -424,3 +425,52 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    function filterPortfolio(category) {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active', 'text-black', 'bg-[#c9983d]');
+        btn.classList.add('text-white/60');
+      });
+      
+      const activeBtn = document.getElementById('btn-' + category);
+      activeBtn.classList.add('active');
+      activeBtn.classList.remove('text-white/60');
+
+      document.querySelectorAll('.work-item').forEach(item => {
+        if (category === 'all') {
+          item.style.display = 'block';
+        } else {
+          if (item.classList.contains(category)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      });
+    }
+
+    function openLightbox(src, caption) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      
+      lightboxImg.src = src;
+      lightboxCaption.innerText = caption;
+      lightbox.classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.add('hidden');
+    }
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeLightbox();
+      }
+    });
+  </script>
+
+</body>
+</html>
