@@ -1,101 +1,196 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Star Management | الرئيسية</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap">
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Star Management</title>  <meta name="description" content="Golden Star Management - Audiovisual Production & Business Management" />  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">  <script src="https://cdn.tailwindcss.com"></script>  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #050505;
+      overflow-x: hidden;
+    }
 
-    <header>
-        <div class="logo-container">
-            <img src="logo.jpg" alt="Golden Star Logo" class="logo">
-            <div class="logo-text">
-                <span class="main-title">GOLDEN STAR</span>
-                <span class="sub-title">AIC. BOUCHAMA PRODUCTION</span>
-            </div>
-        </div>
-        
-        <nav id="nav-menu">
-            <a href="index.html" class="active">الرئيسية</a>
-            <a href="services.html">خدماتنا</a>
-            <a href="portfolio.html">أعمالنا</a>
-            <a href="contact.html">تواصل معنا</a>
-            <a href="contact.html" class="nav-cta-mobile">ابدأ مشروعك</a>
-        </nav>
-        
-        <a href="contact.html" class="cta-header-btn">ابدأ مشروعك</a>
-        
-        <button class="menu-toggle" id="menu-btn" aria-label="قائمة التنقل">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
+    .gold-glow {
+      box-shadow: 0 0 40px rgba(212,175,55,0.3);
+    }
 
-    <section class="hero" style="background: radial-gradient(circle at 50% 40%, rgba(7, 7, 8, 0.5) 0%, #050506 85%), url('hero.jpg') center/cover no-repeat;">
-        <div class="hero-content">
-            <div class="badge">PREMIUM AUDIOVISUAL PRODUCTION</div>
-            <h1>GOLDEN STAR <span class="gold-text">MANAGEMENT</span></h1>
-            <p class="tagline">إنتاج سمعي بصري وإدارة أعمال</p>
-            <p class="description">نصنع النجومية.. ندير النجاح. مزيج متكامل يجمع بين قوة الإنتاج السمعي البصري الاحترافي وفخامة اللمسات السينمائية الساحرة لإدارة هويتك وأعمالك بأعلى دقة مرئية.</p>
-            <div class="hero-actions">
-                <a href="portfolio.html" class="btn-primary">استعراض أعمالنا</a>
-                <a href="services.html" class="btn-secondary">اكتشف خدماتنا</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="quick-about">
-        <div class="container">
-            <div class="section-title">
-                <span>OUR VISION</span>
-                <h2>رؤيتنا الإبداعية</h2>
-            </div>
-            <p class="about-text">نحن ندمج الشغف الفني بالخبرة التقنية والإدارية العالية لتقديم تجارب مرئية وسينمائية فريدة من نوعها. بالتعاون المشترك بين <strong>AIC. BOUCHAMA PRODUCTION AUDIOVISUELLE</strong> و <strong>GOLDEN STAR MANAGEMENT</strong>، نعمل كمنظومة متكاملة تهدف لتطوير المحتوى البصري الفاخر ورعاية المواهب بأعلى معايير الدقة والاحترافية.</p>
-        </div>
-    </section>
-
-    <div class="stats-bar">
-        <div class="stat-item">
-            <h4 class="gold-text">+250</h4>
-            <p>مشروع مكتمل</p>
-        </div>
-        <div class="stat-item">
-            <h4 class="gold-text">+50</h4>
-            <p>فنان تحت الإدارة</p>
-        </div>
-        <div class="stat-item">
-            <h4 class="gold-text">+10</h4>
-            <p>سنوات خبرة</p>
-        </div>
-        <div class="stat-item">
-            <h4 class="gold-text">15</h4>
-            <p>دولة مستهدفة</p>
-        </div>
+    .hero-bg {
+      background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+        url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+  </style></head>
+<body class="text-white">  <!-- NAVBAR -->  <header class="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-lg border-b border-yellow-500/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><div class="flex items-center gap-3">
+    <div class="w-12 h-12 rounded-2xl border border-yellow-500 text-yellow-500 flex items-center justify-center font-black text-xl">
+      GS
     </div>
 
-    <footer>
-        <p>© 2026 GOLDEN STAR MANAGEMENT & AIC. BOUCHAMA PRODUCTION. جميع الحقوق محفوظة.</p>
-        <div class="social-links">
-            <a href="https://www.tiktok.com/@goldenstar.management" target="_blank" class="tiktok-btn">
-                🎵 تابعنا على تيك توك @goldenstar.management
-            </a>
+    <div>
+      <h1 class="text-yellow-500 font-black text-xl leading-none">
+        GOLDEN STAR
+      </h1>
+
+      <p class="text-white/60 text-xs tracking-[3px]">
+        MANAGEMENT
+      </p>
+    </div>
+  </div>
+
+  <nav class="hidden md:flex items-center gap-8 text-white/80">
+    <a href="#home" class="hover:text-yellow-500 transition">الرئيسية</a>
+    <a href="#services" class="hover:text-yellow-500 transition">الخدمات</a>
+    <a href="#portfolio" class="hover:text-yellow-500 transition">أعمالنا</a>
+    <a href="#contact" class="hover:text-yellow-500 transition">تواصل معنا</a>
+  </nav>
+
+  <a href="#contact">
+    <button class="bg-yellow-500 text-black px-5 py-2 rounded-xl font-bold hover:scale-105 transition gold-glow">
+      تواصل
+    </button>
+  </a>
+</div>
+
+  </header>  <!-- HERO -->  <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-6">
+    <div>
+      <div class="mb-8 flex justify-center">
+        <div class="w-28 h-28 rounded-full border border-yellow-500 text-yellow-500 flex items-center justify-center text-5xl font-black gold-glow">
+          GS
         </div>
-        <div class="signature">By Sam Yonko</div>
-    </footer>
+      </div><h1 class="text-5xl md:text-7xl font-black text-yellow-500 tracking-wide">
+    GOLDEN STAR
+  </h1>
 
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const navMenu = document.getElementById('nav-menu');
+  <p class="mt-4 text-2xl md:text-3xl text-white/80">
+    MANAGEMENT
+  </p>
 
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active');
-            navMenu.classList.toggle('open');
-        });
-    </script>
+  <p class="mt-8 text-lg md:text-2xl text-white/70 max-w-3xl mx-auto leading-loose">
+    شركة متخصصة في الإنتاج السمعي البصري وإدارة الأعمال والتسويق الرقمي باحترافية عالمية.
+  </p>
 
-</body>
+  <div class="mt-10 flex flex-col md:flex-row justify-center gap-4">
+    <a href="#portfolio">
+      <button class="bg-yellow-500 text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition gold-glow">
+        اكتشف أعمالنا
+      </button>
+    </a>
+
+    <a href="#contact">
+      <button class="border border-yellow-500 text-yellow-500 px-8 py-4 rounded-2xl font-bold hover:bg-yellow-500 hover:text-black transition">
+        تواصل معنا
+      </button>
+    </a>
+  </div>
+</div>
+
+  </section>  <!-- SERVICES -->  <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-black text-yellow-500">
+        خدماتنا
+      </h2><p class="mt-4 text-white/60 text-lg">
+    حلول إعلامية وإبداعية متكاملة
+  </p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+  <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 hover:border-yellow-500 transition">
+    <div class="text-yellow-500 text-4xl mb-6">🎬</div>
+    <h3 class="text-2xl font-bold mb-4">الإنتاج السمعي البصري</h3>
+    <p class="text-white/60 leading-loose">
+      تصوير وإنتاج احترافي للأفلام والإعلانات والمحتوى الرقمي.
+    </p>
+  </div>
+
+  <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 hover:border-yellow-500 transition">
+    <div class="text-yellow-500 text-4xl mb-6">💼</div>
+    <h3 class="text-2xl font-bold mb-4">إدارة الأعمال</h3>
+    <p class="text-white/60 leading-loose">
+      إدارة المواهب والعقود التجارية والحملات الإعلانية.
+    </p>
+  </div>
+
+  <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 hover:border-yellow-500 transition">
+    <div class="text-yellow-500 text-4xl mb-6">📸</div>
+    <h3 class="text-2xl font-bold mb-4">التصوير السينمائي</h3>
+    <p class="text-white/60 leading-loose">
+      جلسات تصوير احترافية بإخراج وإضاءة سينمائية.
+    </p>
+  </div>
+
+  <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 hover:border-yellow-500 transition">
+    <div class="text-yellow-500 text-4xl mb-6">✨</div>
+    <h3 class="text-2xl font-bold mb-4">المونتاج والموشن</h3>
+    <p class="text-white/60 leading-loose">
+      مونتاج حديث ومؤثرات بصرية احترافية.
+    </p>
+  </div>
+
+</div>
+
+  </section>  <!-- PORTFOLIO -->  <section id="portfolio" class="py-24 bg-[#080808] px-6">
+    <div class="max-w-7xl mx-auto"><div class="text-center mb-16">
+    <h2 class="text-4xl md:text-5xl font-black text-yellow-500">
+      أعمالنا
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <div class="aspect-video rounded-3xl bg-gradient-to-br from-yellow-500/20 to-black border border-yellow-500/20 flex items-center justify-center text-yellow-500 text-6xl">
+      ▶
+    </div>
+
+    <div class="aspect-video rounded-3xl bg-gradient-to-br from-yellow-500/20 to-black border border-yellow-500/20 flex items-center justify-center text-yellow-500 text-6xl">
+      ▶
+    </div>
+
+    <div class="aspect-video rounded-3xl bg-gradient-to-br from-yellow-500/20 to-black border border-yellow-500/20 flex items-center justify-center text-yellow-500 text-6xl">
+      ▶
+    </div>
+
+  </div>
+</div>
+
+  </section>  <!-- ABOUT -->  <section class="py-24 px-6 max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-black text-yellow-500 mb-8">
+      من نحن
+    </h2><p class="text-white/70 text-lg md:text-xl leading-loose max-w-4xl mx-auto">
+  Golden Star Management شركة متخصصة في الإنتاج السمعي البصري وإدارة الأعمال، نقدم حلولاً إبداعية حديثة تشمل التصوير السينمائي، الإعلانات، إدارة المواهب، والتسويق الرقمي باحترافية عالية.
+</p>
+
+  </section>  <!-- CONTACT -->  <section id="contact" class="py-24 bg-[#080808] border-t border-yellow-500/10 px-6">
+    <div class="max-w-4xl mx-auto text-center"><h2 class="text-4xl md:text-5xl font-black text-yellow-500 mb-10">
+    تواصل معنا
+  </h2>
+
+  <div class="space-y-6 text-xl text-white/80">
+    <p>📞 +213796369640</p>
+    <p>✉ goldenstarmanagement.prod@gmail.com</p>
+  </div>
+
+  <div class="mt-10 flex flex-col md:flex-row justify-center gap-4">
+
+    <a href="https://wa.me/213796369640" target="_blank">
+      <button class="bg-green-500 text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition">
+        WhatsApp
+      </button>
+    </a>
+
+    <a href="https://www.tiktok.com/@goldenstar.management" target="_blank">
+      <button class="bg-yellow-500 text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition gold-glow">
+        TikTok
+      </button>
+    </a>
+
+  </div>
+</div>
+
+  </section>  <!-- FOOTER -->  <footer class="py-10 border-t border-yellow-500/10 text-center text-white/50 text-sm bg-black">
+    © 2026 GOLDEN STAR MANAGEMENT — جميع الحقوق محفوظة.
+  </footer></body>
 </html>
