@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Star Management & Production</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #AA7C11;
+            --black: #0A0A0A;
+            --dark-gray: #141414;
+            --text-gray: #B3B3B3;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--black);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            color: var(--gold);
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            font-size: 12px;
+            display: block;
+            color: var(--text-gray);
+            font-weight: normal;
+        }
+        .btn-header {
+            background: linear-gradient(45deg, var(--dark-gold), var(--gold));
+            color: var(--black);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .btn-header:hover {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+        .hero {
+            padding: 180px 5% 100px 5%;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, var(--black) 70%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .hero h1 {
+            font-size: 42px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .hero h1 span {
+            color: var(--gold);
+        }
+        .hero p {
+            color: var(--text-gray);
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            line-height: 1.8;
+        }
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, var(--dark-gold), var(--gold));
+            color: var(--black);
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-secondary {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        .services {
+            padding: 80px 5%;
+        }
+        .section-title {
+            text-align: center;
+            color: var(--gold);
+            font-size: 32px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 20px;
+            border-bottom: 2px solid var(--gold);
+            margin: 0 auto;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background-color: var(--dark-gray);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.1);
+        }
+        .service-icon {
+            font-size: 40px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .about {
+            background-color: var(--dark-gray);
+            padding: 80px 5%;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about h2 {
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-size: 32px;
+        }
+        .about p {
+            color: var(--text-gray);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .features-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .feature-item {
+            color: #ffffff;
+            font-size: 15px;
+        }
+        .feature-item span {
+            color: var(--gold);
+            margin-left: 8px;
+        }
+        .contact {
+            padding: 80px 5%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form {
+            background-color: var(--dark-gray);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            background-color: var(--black);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            color: #ffffff;
+            padding: 12px;
+            border-radius: 4px;
+            outline: none;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--gold);
+        }
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(45deg, var(--dark-gold), var(--gold));
+            color: var(--black);
+            border: none;
+            padding: 14px;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        footer {
+            background-color: var(--black);
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 15px; }
+            .hero-btns { flex-direction: column; gap: 15px; }
+            .features-list { flex-direction: column; gap: 15px; align-items: center; }
+            .contact-form { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            GOLDEN STAR
+            <span>AIC. BOUCHAMA PRODUCTION</span>
+        </div>
+        <a href="#contact" class="btn-header">ابدأ مشروعك</a>
+    </header>
+
+    <section class="hero">
+        <h1>نصنع الأبعاد الإبداعية للإنتاج<br><span>السمعي البصري وإدارة المشاريع</span></h1>
+        <p>مؤسستنا الرائدة تدمج ما بين الشغف الفني وأعلى المعايير الاحترافية لتقديم خدمات تصوير سينمائي، إنتاج وثائقي، وحلول تسويقية متكاملة تضمن تميز حضوركم الرقمي.</p>
+        <div class="hero-btns">
+            <a href="#services" class="btn-primary">اكتشف خدماتنا</a>
+            <a href="#contact" class="btn-secondary">احجز استشارة الآن</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2 class="section-title">خدماتنا الاحترافية</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎬</div>
+                <h3>الإنتاج السينمائي والوثائقي</h3>
+                <p>صناعة الأفلام والبرامج الوثائقية بأحدث التقنيات البصرية السينمائية من الفكرة حتى العرض.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📷</div>
+                <h3>التصوير الفوتوغرافي</h3>
+                <p>جلسات تصوير احترافية للمنتجات، الفعاليات، والأعمال التجارية بتوجيه وإضاءة خبيرة.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎛️</div>
+                <h3>المونتاج والهندسة الصوتية</h3>
+                <p>تعديل مرئي دقيق، تصحيح ألوان سينمائي، وهندسة صوتية تمنح مشروعك الحيوية والاحترافية.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📢</div>
+                <h3>التغطيات الإعلانية</h3>
+                <p>صناعة الإعلانات الرقمية المبتكرة وإدارة الحملات البصرية لضمان أعلى نسب انتشار لعلامتك.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-content">
+            <h2>التزامنا بالتميز يحدد هويتنا</h2>
+            <p>نعمل في AIC. BOUCHAMA PRODUCTION AUDIOVISUELLE بالتعاون الوثيق مع GOLDEN STAR MANAGEMENT ككيان متكامل يهدف لتطوير الإبداع الفني والتقني، وحماية حقوق الملكية الفكرية، مع الحفاظ الكامل على سرية وموثوقية مشاريع عملائنا.</p>
+            <div class="features-list">
+                <div class="feature-item"><span>✓</span> جودة إنتاجية عالية المعايير</div>
+                <div class="feature-item"><span>✓</span> إدارة مشاريع متكاملة</div>
+                <div class="feature-item"><span>✓</span> احترام تام لسرية البيانات</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">تواصل معنا</h2>
+        <form class="contact-form" action="https://formspree.io/f/Goldenstarmanagement.prod@gmail.com" method="POST">
+            <div class="form-group">
+                <label>الاسم الكامل / الشركة</label>
+                <input type="text" name="name" required placeholder="أدخل اسمك هنا">
+            </div>
+            <div class="form-group">
+                <label>البريد الإلكتروني</label>
+                <input type="email" name="email" required placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label>تفاصيل المشروع أو الاستشارة</label>
+                <textarea name="message" rows="5" required placeholder="اشرح لنا لمحة عن مشروعك القادم..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">إرسال الطلب الآن</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 Golden Star Management & AIC. Bouchama Production</p>
+    </footer>
+
+</body>
+</html>
