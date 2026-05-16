@@ -1,53 +1,276 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Golden Star Management</title>  <meta name="description" content="Golden Star Management - Audiovisual Production & Business Management" />  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Golden Star Management</title>
+
+  <meta
+    name="description"
+    content="Golden Star Management - Audiovisual Production & Business Management"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">  <script src="https://cdn.tailwindcss.com"></script>  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: #050505;
-      overflow-x: hidden;
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+
+    *{
+      scroll-behavior:smooth;
     }
 
-    .gold-glow {
-      box-shadow: 0 0 40px rgba(212,175,55,0.3);
+    body{
+      font-family:'Cairo',sans-serif;
+      background:#050505;
+      overflow-x:hidden;
     }
 
-    .hero-bg {
+    .hero-bg{
       background:
-        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
-        url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1600&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
+      linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),
+      url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1600&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
     }
-  </style></head>
-<body class="text-white">  <!-- NAVBAR -->  <header class="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-lg border-b border-yellow-500/10">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><div class="flex items-center gap-3">
-    <div class="w-12 h-12 rounded-2xl border border-yellow-500 text-yellow-500 flex items-center justify-center font-black text-xl">
-      GS
+
+    .gold-glow{
+      box-shadow:0 0 40px rgba(212,175,55,.25);
+    }
+
+    .card-hover{
+      transition:.5s;
+    }
+
+    .card-hover:hover{
+      transform:translateY(-10px);
+      border-color:#eab308;
+    }
+
+    .portfolio-card img{
+      transition:1s;
+    }
+
+    .portfolio-card:hover img{
+      transform:scale(1.1);
+    }
+
+  </style>
+</head>
+
+<body class="text-white">
+
+<!-- NAVBAR -->
+
+<header class="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-xl border-b border-yellow-500/10">
+
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <div class="flex items-center gap-3">
+
+      <div class="w-12 h-12 rounded-2xl border border-yellow-500 flex items-center justify-center text-yellow-500 font-black text-xl">
+        GS
+      </div>
+
+      <div>
+        <h1 class="text-yellow-500 font-black text-xl leading-none">
+          GOLDEN STAR
+        </h1>
+
+        <p class="text-white/60 text-xs tracking-[3px]">
+          MANAGEMENT
+        </p>
+      </div>
+
     </div>
 
-    <div>
-      <h1 class="text-yellow-500 font-black text-xl leading-none">
-        GOLDEN STAR
-      </h1>
+    <nav class="hidden md:flex items-center gap-8 text-white/80">
 
-      <p class="text-white/60 text-xs tracking-[3px]">
-        MANAGEMENT
-      </p>
-    </div>
+      <a href="#home" class="hover:text-yellow-500 transition">
+        الرئيسية
+      </a>
+
+      <a href="#services" class="hover:text-yellow-500 transition">
+        الخدمات
+      </a>
+
+      <a href="#portfolio" class="hover:text-yellow-500 transition">
+        أعمالنا
+      </a>
+
+      <a href="#about" class="hover:text-yellow-500 transition">
+        من نحن
+      </a>
+
+      <a href="#contact" class="hover:text-yellow-500 transition">
+        تواصل معنا
+      </a>
+
+    </nav>
+
+    <a href="#contact">
+      <button class="bg-yellow-500 text-black px-5 py-2 rounded-xl font-bold hover:scale-105 transition gold-glow">
+        تواصل
+      </button>
+    </a>
+
   </div>
 
-  <nav class="hidden md:flex items-center gap-8 text-white/80">
-    <a href="#home" class="hover:text-yellow-500 transition">الرئيسية</a>
-    <a href="#services" class="hover:text-yellow-500 transition">الخدمات</a>
-    <!-- PORTFOLIO -->
+</header>
+
+<!-- HERO -->
+
+<section
+  id="home"
+  class="hero-bg h-screen flex items-center justify-center text-center px-6"
+>
+
+  <div>
+
+    <div class="mb-8 flex justify-center">
+
+      <div class="w-32 h-32 rounded-full border border-yellow-500 flex items-center justify-center text-yellow-500 text-5xl font-black gold-glow">
+        GS
+      </div>
+
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-black text-yellow-500 tracking-wide">
+      GOLDEN STAR
+    </h1>
+
+    <p class="mt-4 text-2xl md:text-3xl text-white/80">
+      MANAGEMENT
+    </p>
+
+    <p class="mt-8 text-lg md:text-2xl text-white/70 max-w-3xl mx-auto leading-loose">
+
+      شركة متخصصة في الإنتاج السمعي البصري وإدارة الأعمال والتسويق الرقمي باحترافية عالمية.
+
+    </p>
+
+    <div class="mt-10 flex flex-col md:flex-row justify-center gap-4">
+
+      <a href="#portfolio">
+        <button class="bg-yellow-500 text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition gold-glow">
+          اكتشف أعمالنا
+        </button>
+      </a>
+
+      <a href="#contact">
+        <button class="border border-yellow-500 text-yellow-500 px-8 py-4 rounded-2xl font-bold hover:bg-yellow-500 hover:text-black transition">
+          تواصل معنا
+        </button>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services" class="py-24 px-6 max-w-7xl mx-auto">
+
+  <div class="text-center mb-16">
+
+    <h2 class="text-4xl md:text-5xl font-black text-yellow-500">
+      خدماتنا
+    </h2>
+
+    <p class="mt-4 text-white/60 text-lg">
+      حلول إعلامية وإبداعية متكاملة
+    </p>
+
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+    <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 card-hover">
+
+      <div class="text-yellow-500 text-4xl mb-6">
+        🎬
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4">
+        الإنتاج السمعي البصري
+      </h3>
+
+      <p class="text-white/60 leading-loose">
+        تصوير وإنتاج احترافي للأفلام والإعلانات والمحتوى الرقمي.
+      </p>
+
+    </div>
+
+    <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 card-hover">
+
+      <div class="text-yellow-500 text-4xl mb-6">
+        💼
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4">
+        إدارة الأعمال
+      </h3>
+
+      <p class="text-white/60 leading-loose">
+        إدارة المواهب والعقود التجارية والحملات الإعلانية.
+      </p>
+
+    </div>
+
+    <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 card-hover">
+
+      <div class="text-yellow-500 text-4xl mb-6">
+        📸
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4">
+        التصوير السينمائي
+      </h3>
+
+      <p class="text-white/60 leading-loose">
+        جلسات تصوير احترافية بإخراج وإضاءة سينمائية.
+      </p>
+
+    </div>
+
+    <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 card-hover">
+
+      <div class="text-yellow-500 text-4xl mb-6">
+        ✨
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4">
+        المونتاج والموشن
+      </h3>
+
+      <p class="text-white/60 leading-loose">
+        مونتاج حديث ومؤثرات بصرية احترافية.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
 <section id="portfolio" class="py-24 bg-[#080808] px-6">
+
   <div class="max-w-7xl mx-auto">
 
     <div class="text-center mb-16">
+
       <h2 class="text-4xl md:text-5xl font-black text-yellow-500">
         أعمالنا
       </h2>
@@ -55,21 +278,22 @@
       <p class="mt-4 text-white/60 text-lg">
         بعض من أعمالنا الاحترافية
       </p>
+
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- PROJECT -->
-      <div class="group relative overflow-hidden rounded-3xl border border-yellow-500/20">
+      <div class="portfolio-card group relative overflow-hidden rounded-3xl border border-yellow-500/20">
 
         <img
-          src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop"
-          class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-700"
+          src="images/project1.jpg"
+          class="w-full h-[320px] object-cover"
         />
 
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
         <div class="absolute bottom-0 p-6">
+
           <h3 class="text-2xl font-bold text-white">
             Commercial Production
           </h3>
@@ -78,23 +302,21 @@
             إنتاج إعلاني احترافي
           </p>
 
-          <button class="mt-4 bg-yellow-500 text-black px-5 py-2 rounded-xl font-bold hover:scale-105 transition">
-            مشاهدة
-          </button>
         </div>
+
       </div>
 
-      <!-- PROJECT -->
-      <div class="group relative overflow-hidden rounded-3xl border border-yellow-500/20">
+      <div class="portfolio-card group relative overflow-hidden rounded-3xl border border-yellow-500/20">
 
         <img
-          src="images/project1.jpg"
-          class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-700"
+          src="images/project2.jpg"
+          class="w-full h-[320px] object-cover"
         />
 
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
         <div class="absolute bottom-0 p-6">
+
           <h3 class="text-2xl font-bold text-white">
             Music Video
           </h3>
@@ -103,23 +325,21 @@
             تصوير فيديو كليب
           </p>
 
-          <button class="mt-4 bg-yellow-500 text-black px-5 py-2 rounded-xl font-bold hover:scale-105 transition">
-            مشاهدة
-          </button>
         </div>
+
       </div>
 
-      <!-- PROJECT -->
-      <div class="group relative overflow-hidden rounded-3xl border border-yellow-500/20">
+      <div class="portfolio-card group relative overflow-hidden rounded-3xl border border-yellow-500/20">
 
         <img
-          src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop"
-          class="w-full h-[320px] object-cover group-hover:scale-110 transition duration-700"
+          src="images/project3.jpg"
+          class="w-full h-[320px] object-cover"
         />
 
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
         <div class="absolute bottom-0 p-6">
+
           <h3 class="text-2xl font-bold text-white">
             Cinematic Photography
           </h3>
@@ -128,162 +348,133 @@
             تصوير سينمائي احترافي
           </p>
 
-          <button class="mt-4 bg-yellow-500 text-black px-5 py-2 rounded-xl font-bold hover:scale-105 transition">
-            مشاهدة
-          </button>
         </div>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
-    <a href="#contact" class="hover:text-yellow-500 transition">تواصل معنا</a>
-  </nav>
 
-  <a href="#contact">
-    <button class="bg-yellow-500 text-black px-5 py-2 rounded-xl font-bold hover:scale-105 transition gold-glow">
-      تواصل
-    </button>
-  </a>
-</div>
+<!-- ABOUT -->
 
-  </header>  <!-- HERO -->  <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-6">
-    <div>
-      <div class="mb-8 flex justify-center">
-        <div class="w-28 h-28 rounded-full border border-yellow-500 text-yellow-500 flex items-center justify-center text-5xl font-black gold-glow">
-          GS
-        </div>
-      </div><h1 class="text-5xl md:text-7xl font-black text-yellow-500 tracking-wide">
-    GOLDEN STAR
-  </h1>
+<section id="about" class="py-24 px-6 max-w-6xl mx-auto text-center">
 
-  <p class="mt-4 text-2xl md:text-3xl text-white/80">
-    MANAGEMENT
-  </p>
-
-  <p class="mt-8 text-lg md:text-2xl text-white/70 max-w-3xl mx-auto leading-loose">
-    شركة متخصصة في الإنتاج السمعي البصري وإدارة الأعمال والتسويق الرقمي باحترافية عالمية.
-  </p>
-
-  <div class="mt-10 flex flex-col md:flex-row justify-center gap-4">
-    <a href="#portfolio">
-      <button class="bg-yellow-500 text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition gold-glow">
-        اكتشف أعمالنا
-      </button>
-    </a>
-
-    <a href="#contact">
-      <button class="border border-yellow-500 text-yellow-500 px-8 py-4 rounded-2xl font-bold hover:bg-yellow-500 hover:text-black transition">
-        تواصل معنا
-      </button>
-    </a>
-  </div>
-</div>
-
-  </section>  <!-- SERVICES -->  <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-black text-yellow-500">
-        خدماتنا
-      </h2><p class="mt-4 text-white/60 text-lg">
-    حلول إعلامية وإبداعية متكاملة
-  </p>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-  <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 hover:border-yellow-500 transition">
-    <div class="text-yellow-500 text-4xl mb-6">🎬</div>
-    <h3 class="text-2xl font-bold mb-4">الإنتاج السمعي البصري</h3>
-    <p class="text-white/60 leading-loose">
-      تصوير وإنتاج احترافي للأفلام والإعلانات والمحتوى الرقمي.
-    </p>
-  </div>
-
-  <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 hover:border-yellow-500 transition">
-    <div class="text-yellow-500 text-4xl mb-6">💼</div>
-    <h3 class="text-2xl font-bold mb-4">إدارة الأعمال</h3>
-    <p class="text-white/60 leading-loose">
-      إدارة المواهب والعقود التجارية والحملات الإعلانية.
-    </p>
-  </div>
-
-  <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 hover:border-yellow-500 transition">
-    <div class="text-yellow-500 text-4xl mb-6">📸</div>
-    <h3 class="text-2xl font-bold mb-4">التصوير السينمائي</h3>
-    <p class="text-white/60 leading-loose">
-      جلسات تصوير احترافية بإخراج وإضاءة سينمائية.
-    </p>
-  </div>
-
-  <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 hover:border-yellow-500 transition">
-    <div class="text-yellow-500 text-4xl mb-6">✨</div>
-    <h3 class="text-2xl font-bold mb-4">المونتاج والموشن</h3>
-    <p class="text-white/60 leading-loose">
-      مونتاج حديث ومؤثرات بصرية احترافية.
-    </p>
-  </div>
-
-</div>
-
-  </section>  <!-- PORTFOLIO -->  <section id="portfolio" class="py-24 bg-[#080808] px-6">
-    <div class="max-w-7xl mx-auto"><div class="text-center mb-16">
-    <h2 class="text-4xl md:text-5xl font-black text-yellow-500">
-      أعمالنا
-    </h2>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-    <div class="aspect-video rounded-3xl bg-gradient-to-br from-yellow-500/20 to-black border border-yellow-500/20 flex items-center justify-center text-yellow-500 text-6xl">
-      ▶
-    </div>
-
-    <div class="aspect-video rounded-3xl bg-gradient-to-br from-yellow-500/20 to-black border border-yellow-500/20 flex items-center justify-center text-yellow-500 text-6xl">
-      ▶
-    </div>
-
-    <div class="aspect-video rounded-3xl bg-gradient-to-br from-yellow-500/20 to-black border border-yellow-500/20 flex items-center justify-center text-yellow-500 text-6xl">
-      ▶
-    </div>
-
-  </div>
-</div>
-
-  </section>  <!-- ABOUT -->  <section class="py-24 px-6 max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl md:text-5xl font-black text-yellow-500 mb-8">
-      من نحن
-    </h2><p class="text-white/70 text-lg md:text-xl leading-loose max-w-4xl mx-auto">
-  Golden Star Management شركة متخصصة في الإنتاج السمعي البصري وإدارة الأعمال، نقدم حلولاً إبداعية حديثة تشمل التصوير السينمائي، الإعلانات، إدارة المواهب، والتسويق الرقمي باحترافية عالية.
-</p>
-
-  </section>  <!-- CONTACT -->  <section id="contact" class="py-24 bg-[#080808] border-t border-yellow-500/10 px-6">
-    <div class="max-w-4xl mx-auto text-center"><h2 class="text-4xl md:text-5xl font-black text-yellow-500 mb-10">
-    تواصل معنا
+  <h2 class="text-4xl md:text-5xl font-black text-yellow-500 mb-8">
+    من نحن
   </h2>
 
-  <div class="space-y-6 text-xl text-white/80">
-    <p>📞 +213796369640</p>
-    <p>✉ goldenstarmanagement.prod@gmail.com</p>
+  <p class="text-white/70 text-lg md:text-xl leading-loose max-w-4xl mx-auto">
+
+    Golden Star Management شركة متخصصة في الإنتاج السمعي البصري وإدارة الأعمال، نقدم حلولاً إبداعية حديثة تشمل التصوير السينمائي، الإعلانات، إدارة المواهب، والتسويق الرقمي باحترافية عالية.
+
+  </p>
+
+</section>
+
+<!-- CONTACT -->
+
+<section
+  id="contact"
+  class="py-24 bg-[#080808] border-t border-yellow-500/10 px-6"
+>
+
+  <div class="max-w-4xl mx-auto text-center">
+
+    <h2 class="text-4xl md:text-5xl font-black text-yellow-500 mb-10">
+      تواصل معنا
+    </h2>
+
+    <div class="space-y-6 text-xl text-white/80">
+
+      <p>
+        📞 +213796369640
+      </p>
+
+      <p>
+        ✉ goldenstarmanagement.prod@gmail.com
+      </p>
+
+      <p>
+        📍 Algeria
+      </p>
+
+    </div>
+
+    <form class="mt-10 space-y-4 max-w-xl mx-auto">
+
+      <input
+        type="text"
+        placeholder="الاسم"
+        class="w-full bg-black border border-yellow-500/20 rounded-2xl p-4"
+      />
+
+      <input
+        type="email"
+        placeholder="البريد الإلكتروني"
+        class="w-full bg-black border border-yellow-500/20 rounded-2xl p-4"
+      />
+
+      <textarea
+        placeholder="رسالتك"
+        rows="5"
+        class="w-full bg-black border border-yellow-500/20 rounded-2xl p-4"
+      ></textarea>
+
+      <button
+        class="bg-yellow-500 text-black px-8 py-4 rounded-2xl font-bold w-full hover:scale-[1.02] transition"
+      >
+        إرسال
+      </button>
+
+    </form>
+
+    <div class="mt-10 flex flex-col md:flex-row justify-center gap-4">
+
+      <a href="https://wa.me/213796369640" target="_blank">
+
+        <button class="bg-green-500 text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition">
+          WhatsApp
+        </button>
+
+      </a>
+
+      <a
+        href="https://www.tiktok.com/@goldenstar.management"
+        target="_blank"
+      >
+
+        <button class="bg-yellow-500 text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition gold-glow">
+          TikTok
+        </button>
+
+      </a>
+
+    </div>
+
   </div>
 
-  <div class="mt-10 flex flex-col md:flex-row justify-center gap-4">
+</section>
 
-    <a href="https://wa.me/213796369640" target="_blank">
-      <button class="bg-green-500 text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition">
-        WhatsApp
-      </button>
-    </a>
+<!-- WHATSAPP FLOAT -->
 
-    <a href="https://www.tiktok.com/@goldenstar.management" target="_blank">
-      <button class="bg-yellow-500 text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition gold-glow">
-        TikTok
-      </button>
-    </a>
+<a
+  href="https://wa.me/213796369640"
+  target="_blank"
+  class="fixed bottom-6 left-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 hover:scale-110 transition"
+>
+  💬
+</a>
 
-  </div>
-</div>
+<!-- FOOTER -->
 
-  </section>  <!-- FOOTER -->  <footer class="py-10 border-t border-yellow-500/10 text-center text-white/50 text-sm bg-black">
-    © 2026 GOLDEN STAR MANAGEMENT — جميع الحقوق محفوظة.
-  </footer></body>
+<footer class="py-10 border-t border-yellow-500/10 text-center text-white/50 text-sm bg-black">
+
+  © 2026 GOLDEN STAR MANAGEMENT — جميع الحقوق محفوظة.
+
+</footer>
+
+</body>
 </html>
