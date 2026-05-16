@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Star Management | Audiovisual Production</title>
+    <style>
+        /* التعريفات الأساسية */
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #AA7C11;
+            --light-gold: #F3E5AB;
+            --black: #000000;
+            --card-bg: #111111;
+            --text-gray: #B3B3B3;
+            --border: rgba(212, 175, 55, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--black);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* شريط التنقل العلوي */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: var(--gold);
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-header {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 8px 18px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            transition: 0.3s;
