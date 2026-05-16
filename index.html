@@ -8,7 +8,7 @@
 
   <meta name="description" content="Golden Star Management - Audiovisual Production & Business Management" />
   <meta property="og:title" content="Golden Star Management" />
-  <meta property="og:image" content="images/project1.jpg" />
+  <meta property="og:image" content="1000020983.png" />
   <meta name="author" content="Sam Yonko" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
       overflow-x:hidden;
     }
 
-    /* تغيير كود الخلفية لقراءة صورتك المرفوعة hero.jpg مباشرة */
+    /* كود الخلفية لقراءة صورتك المرفوعة hero.jpg مباشرة */
     .hero-bg {
       background: linear-gradient(circle at 50% 40%, rgba(5, 5, 6, 0.45) 0%, #050506 90%), url('hero.jpg');
       background-size: cover;
@@ -58,7 +58,7 @@
     }
 
     .portfolio-card:hover img{
-      transform:scale(1.1);
+      transform:scale(1.05);
     }
   </style>
 </head>
@@ -139,27 +139,43 @@
     </p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    <div class="bg-[#0c0c0e]/80 border border-white/[0.04] rounded-2xl p-8 card-hover">
-      <div class="text-yellow-500 text-4xl mb-6">🎬</div>
-      <h3 class="text-xl font-bold mb-3">الإنتاج السمعي البصري</h3>
-      <p class="text-white/50 text-xs leading-relaxed">تصوير وإنتاج إعلاني وسينمائي متكامل بأحدث التقنيات البصرية لإخراج محتوى رقمي ملهم.</p>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    
+    <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 card-hover">
+        <div class="text-yellow-500 text-4xl mb-6">🎬</div>
+        <h3 class="text-2xl font-bold mb-4">الإنتاج السمعي البصري</h3>
+        <p class="text-white/60 leading-loose text-sm">تصوير وإنتاج إعلاني وسينمائي متكامل بأحدث التقنيات البصرية لإخراج محتوى رقمي ملهم.</p>
+      </div>
+      <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 card-hover">
+        <div class="text-yellow-500 text-4xl mb-6">💼</div>
+        <h3 class="text-2xl font-bold mb-4">إدارة الأعمال الفنية</h3>
+        <p class="text-white/60 leading-loose text-sm">إدارة المواهب، العقود التجارية، الشراكات والحملات الإعلانية الكبرى بذكاء واحترافية.</p>
+      </div>
+      <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 card-hover">
+        <div class="text-yellow-500 text-4xl mb-6">📸</div>
+        <h3 class="text-2xl font-bold mb-4">التصوير السينمائي</h3>
+        <p class="text-white/60 leading-loose text-sm">جلسات تصوير احترافية بعدسات متطورة وإخراج إضاءة درامي يعكس الفخامة والقوة.</p>
+      </div>
+      <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 card-hover">
+        <div class="text-yellow-500 text-4xl mb-6">✨</div>
+        <h3 class="text-2xl font-bold mb-4">المونتاج والموشن</h3>
+        <p class="text-white/60 leading-loose text-sm">مونتاج حديث، تعديل ألوان سينمائي متقدم ومؤثرات بصرية تمنح مشروعك هيبة مرئية مميزة.</p>
+      </div>
     </div>
-    <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 card-hover">
-      <div class="text-yellow-500 text-4xl mb-6">💼</div>
-      <h3 class="text-2xl font-bold mb-4">إدارة الأعمال الفنية</h3>
-      <p class="text-white/60 leading-loose text-sm">إدارة المواهب، العقود التجارية، الشراكات والحملات الإعلانية الكبرى بذكاء واحترافية.</p>
+
+    <div class="lg:col-span-5 flex flex-col items-center">
+      <div class="relative group overflow-hidden rounded-3xl border-2 border-yellow-500/30 gold-glow transition-all duration-500 hover:border-yellow-500 max-w-[380px]">
+        <img src="1000020983.png" alt="Premium Subscription Services" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+      </div>
+      <a href="#contact" class="mt-6 w-full max-w-[380px]">
+        <button class="w-full bg-gradient-to-r from-yellow-600 to-yellow-400 text-black py-4 rounded-2xl font-black hover:scale-[1.03] transition shadow-lg shadow-yellow-500/20 text-sm uppercase tracking-wider">
+          طلب اشتراك بريميوم
+        </button>
+      </a>
     </div>
-    <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 card-hover">
-      <div class="text-yellow-500 text-4xl mb-6">📸</div>
-      <h3 class="text-2xl font-bold mb-4">التصوير السينمائي</h3>
-      <p class="text-white/60 leading-loose text-sm">جلسات تصوير احترافية بعدسات متطورة وإخراج إضاءة درامي يعكس الفخامة والقوة.</p>
-    </div>
-    <div class="bg-[#0c0c0c] border border-yellow-500/20 rounded-3xl p-8 card-hover">
-      <div class="text-yellow-500 text-4xl mb-6">✨</div>
-      <h3 class="text-2xl font-bold mb-4">المونتاج والموشن</h3>
-      <p class="text-white/60 leading-loose text-sm">مونتاج حديث، تعديل ألوان سينمائي متقدم ومؤثرات بصرية تمنح مشروعك هيبة مرئية مميزة.</p>
-    </div>
+
   </div>
 </section>
 
@@ -167,34 +183,43 @@
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-black text-yellow-500">أعمالنا الإبداعية</h2>
-      <p class="mt-3 text-white/50 text-sm">مقتطفات من الإنتاجات الفنية والسينمائية الفاخرة التي نفخر بإنجازها.</p>
+      <p class="mt-3 text-white/50 text-sm">مقتطفات من الإنتاجات الفنية والسينمائية الفاخرة التي نفخر بإنجازها وإدارتها.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="portfolio-card group relative overflow-hidden rounded-2xl border border-white/[0.03]">
-        <img src="images/project1.jpg" alt="Commercial Production" class="w-full h-[320px] object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#050506] via-[#050506]/30 to-transparent"></div>
-        <div class="absolute bottom-0 p-6 w-full">
-          <h3 class="text-xl font-bold text-white group-hover:text-yellow-500 transition-colors">Commercial Production</h3>
-          <p class="text-white/50 text-xs mt-1">إنتاج إعلاني سينمائي فاخر</p>
+      
+      <div class="portfolio-card group relative overflow-hidden rounded-2xl border border-yellow-500/10 bg-[#0d0d0f]">
+        <div class="overflow-hidden h-[320px]">
+          <img src="1000023869.png" alt="Melabelle Meuble Logo Design" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6 bg-[#0c0c0e] border-t border-white/[0.02]">
+          <h3 class="text-xl font-bold text-yellow-500 group-hover:text-white transition-colors duration-300">Logo Design | Melabelle Meuble</h3>
+          <p class="text-white/50 text-xs mt-2 leading-relaxed">
+            تصميم وبناء الهوية البصرية المتكاملة والشعار الرسمي لبراند الأثاث الراقي "Melabelle"، مع تقديم إخراج رقمي فاخر يدمج طابع البساطة العصرية بالفخامة السينمائية.
+          </p>
         </div>
       </div>
-      <div class="portfolio-card group relative overflow-hidden rounded-2xl border border-white/[0.03]">
-        <img src="images/project2.jpg" alt="Music Video Production" class="w-full h-[320px] object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#050506] via-[#050506]/30 to-transparent"></div>
-        <div class="absolute bottom-0 p-6 w-full">
-          <h3 class="text-xl font-bold text-white group-hover:text-yellow-500 transition-colors">Music Video Production</h3>
-          <p class="text-white/50 text-xs mt-1">إخراج وتصوير فيديو كليب وإدارة الأداء البصري</p>
+
+      <div class="portfolio-card group relative overflow-hidden rounded-2xl border border-white/[0.03] bg-[#0d0d0f]">
+        <div class="overflow-hidden h-[320px]">
+          <img src="images/project1.jpg" alt="Commercial Production" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6 bg-[#0c0c0e] border-t border-white/[0.02]">
+          <h3 class="text-xl font-bold text-white group-hover:text-yellow-500 transition-colors duration-300">Commercial Production</h3>
+          <p class="text-white/50 text-xs mt-2 leading-relaxed">إنتاج إعلاني وتصوير ترويجي متكامل للشركات والمؤسسات لتعزيز هويتها السوقية.</p>
         </div>
       </div>
-      <div class="portfolio-card group relative overflow-hidden rounded-2xl border border-white/[0.03]">
-        <img src="images/project3.jpg" alt="Cinematic Photography" class="w-full h-[320px] object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#050506] via-[#050506]/30 to-transparent"></div>
-        <div class="absolute bottom-0 p-6 w-full">
-          <h3 class="text-xl font-bold text-white group-hover:text-yellow-500 transition-colors">Cinematic Photography</h3>
-          <p class="text-white/50 text-xs mt-1">جلسات تصوير فوتوغرافي فنية احترافية</p>
+
+      <div class="portfolio-card group relative overflow-hidden rounded-2xl border border-white/[0.03] bg-[#0d0d0f]">
+        <div class="overflow-hidden h-[320px]">
+          <img src="images/project2.jpg" alt="Music Video Production" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6 bg-[#0c0c0e] border-t border-white/[0.02]">
+          <h3 class="text-xl font-bold text-white group-hover:text-yellow-500 transition-colors duration-300">Music Video Production</h3>
+          <p class="text-white/50 text-xs mt-2 leading-relaxed">إخراج وتصوير كليبات موسيقية احترافية تركز على عمق الإضاءة الدرامية والحركة.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
