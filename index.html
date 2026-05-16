@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2=family=Cairo:wght@300;400;600;700;800;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -21,6 +21,12 @@
       scroll-behavior: smooth;
     }
 
+    /* تأثير الانتقال السلس عند التبديل بين الأبيض والأسود */
+    body, section, header, footer, .service-card, .team-card, .sponsor-card, input, select, textarea {
+      transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* المظهر الداكن الافتراضي (الأسود والذهبي) */
     body {
       font-family: 'Cairo', 'Montserrat', sans-serif;
       background: #030303;
@@ -48,7 +54,6 @@
     .service-card, .team-card, .sponsor-card {
       background: #0b0b0b;
       border: 1px solid rgba(201, 152, 61, .15);
-      transition: .4s;
       cursor: pointer;
     }
 
@@ -109,6 +114,74 @@
       display: block;
       transition: 0.3s;
     }
+
+    /* -------------------------------------------
+       أكواد المظهر الفاتح (الأبيض والأسود/الذهبي) 
+    ------------------------------------------- */
+    body.light-theme {
+      background: #fcfcfc;
+      color: #1a1a1a;
+    }
+    
+    body.light-theme header {
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    body.light-theme .hero {
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(252, 252, 252, 0.98)), url('hero.jpg');
+    }
+
+    body.light-theme h1, body.light-theme h2, body.light-theme .nav-link {
+      color: #111111;
+    }
+    body.light-theme .nav-link:hover, body.light-theme .nav-link.active, body.light-theme .gold {
+      color: #b58128;
+    }
+
+    body.light-theme #sponsors, body.light-theme #portfolio {
+      background: #f7f7f7;
+    }
+
+    body.light-theme #services, body.light-theme #team, body.light-theme footer {
+      background: #ffffff;
+    }
+
+    body.light-theme .service-card, body.light-theme .team-card, body.light-theme .sponsor-card {
+      background: #fdfdfd;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    body.light-theme .service-card:hover, body.light-theme .team-card:hover, body.light-theme .sponsor-card:hover {
+      border-color: #b58128;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    body.light-theme .service-card h3, body.light-theme .team-card h3 {
+      color: #111111;
+    }
+
+    body.light-theme .work-card {
+      background: #fcfcfc;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    body.light-theme .work-card h3 {
+      color: #222222;
+    }
+
+    body.light-theme #order-section > div {
+      background: #fbfbfb;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    body.light-theme input, body.light-theme select, body.light-theme textarea {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: #222222;
+    }
+
+    body.light-theme .text-white\/50, body.light-theme .text-white\/40, body.light-theme .text-white\/60 {
+      color: #555555;
+    }
   </style>
 </head>
 
@@ -130,9 +203,13 @@
         <a href="#order-section" class="nav-link gold font-bold" data-key="nav-order">طلب خدمة</a>
       </nav>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
+        <button onclick="toggleTheme()" id="theme-btn" class="bg-neutral-950 border border-yellow-700/30 text-yellow-500 w-9 h-9 flex items-center justify-center rounded-full text-sm focus:outline-none hover:border-yellow-500 transition-all">
+          ☀️
+        </button>
+
         <div class="relative inline-block text-left">
-          <select id="lang-switcher" onchange="changeLanguage(this.value)" class="bg-neutral-900 border border-yellow-700/30 text-yellow-500 text-xs rounded px-3 py-1.5 font-bold focus:outline-none focus:border-yellow-500 cursor-pointer">
+          <select id="lang-switcher" onchange="changeLanguage(this.value)" class="bg-neutral-950 border border-yellow-700/30 text-yellow-500 text-xs rounded-full px-3 py-2 font-bold focus:outline-none focus:border-yellow-500 cursor-pointer">
             <option value="ar">العربية (AR)</option>
             <option value="en">English (EN)</option>
             <option value="fr">Français (FR)</option>
@@ -483,7 +560,24 @@
   </footer>
 
   <script>
-    // قاموس اللغات الثلاث (العربية، الإنجليزية، الفرنسية)
+    // نظام إدارة المظهر (Dark / Light Theme)
+    function toggleTheme() {
+      const body = document.body;
+      const themeBtn = document.getElementById('theme-btn');
+      
+      body.classList.toggle('light-theme');
+      
+      if (body.classList.contains('light-theme')) {
+        themeBtn.innerText = '🌙'; // عرض أيقونة القمر عند التحول للوضع الفاتح
+        themeBtn.classList.remove('bg-neutral-950');
+        themeBtn.classList.add('bg-white');
+      } else {
+        themeBtn.innerText = '☀️'; // عرض أيقونة الشمس عند العودة للوضع الداكن
+        themeBtn.classList.remove('bg-white');
+        themeBtn.classList.add('bg-neutral-950');
+      }
+    }
+
     const translations = {
       ar: {
         "nav-home": "الرئيسية", "nav-sponsors": "الممولون", "nav-services": "خدماتنا", "nav-portfolio": "أعمالنا", "nav-team": "فريق العمل", "nav-order": "طلب خدمة",
@@ -543,7 +637,7 @@
       },
       fr: {
         "nav-home": "Accueil", "nav-sponsors": "Sponsors", "nav-services": "Services", "nav-portfolio": "Portfolio", "nav-team": "Équipe", "nav-order": "Commander",
-        "btn-order-now": "Commander un Service", "hero-sub": "Production Audiovisuelle & Gestion d'Affaires", "hero-tag": "Nous forgeons la célébrité.. Nous gérons le succès", "btn-explore": "Découvrir nos Services",
+        "btn-order-now": "Commander un Service", "hero-sub": "Production Audiovisuelle & Gestion d'Affaires", "hero-tag": "Nous forgeons la célérité.. Nous gérons le succès", "btn-explore": "Découvrir nos Services",
         "sponsors-title": "Sponsors & Partenaires de Réussite", "services-heading": "Nos Services Professionnels", "services-sub": "Cliquez sur un service pour le demander immédiatement par e-mail",
         "s1-title": "Production Audiovisuelle", "s1-desc": "Photographie et réalisation cinématographique avec les technologies les plus avancées pour un contenu inspirant.",
         "s2-title": "Gestion Artistique", "s2-desc": "Gestion des identités de célébrités, contrats commerciaux, partenariats et grandes campagnes publicitaires.",
@@ -577,7 +671,6 @@
       currentLang = lang;
       const htmlTag = document.documentElement;
       
-      // ضبط الاتجاه واللغة في الرأس تلقائياً
       if (lang === 'ar') {
         htmlTag.setAttribute('dir', 'rtl');
         htmlTag.setAttribute('lang', 'ar');
@@ -586,11 +679,9 @@
         htmlTag.setAttribute('lang', lang);
       }
 
-      // ترجمة جميع العناصر الحاملة للـ data-key
       document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         if (translations[lang] && translations[lang][key]) {
-          // التعامل مع النصوص داخل الوسوم مع الحفاظ على الأيقونات إن وجدت
           if (element.children.length === 0 || element.tagName === 'SPAN' || element.tagName === 'BUTTON') {
             element.innerText = translations[lang][key];
           } else {
@@ -599,7 +690,6 @@
         }
       });
 
-      // ضبط الحقول المنسدلة للخدمات حسب اللغة المختار
       const selectElement = document.getElementById('chosen-service');
       const options = selectElement.options;
       for (let i = 0; i < options.length; i++) {
@@ -651,7 +741,6 @@
       }
     }
 
-    // إرسال النماذج بلغات متعددة
     const successPopup = document.getElementById("success-popup");
     const popupMsg = document.getElementById("popup-message");
 
