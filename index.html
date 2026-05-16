@@ -71,6 +71,7 @@
       background: #0b0b0b;
       border: 1px solid rgba(201, 152, 61, .15);
       transition: .4s;
+      cursor: pointer;
     }
 
     .service-card:hover, .team-card:hover, .sponsor-card:hover {
@@ -158,6 +159,20 @@
     .zoom-clickable {
       cursor: zoom-in;
     }
+
+    /* تأثير وميض خفيف ينبه العميل أن الكارت قابل للضغط للاستفادة من الخدمة */
+    .order-hint {
+      font-size: 10px;
+      color: #c9983d;
+      opacity: 0.7;
+      margin-top: 10px;
+      display: block;
+      transition: 0.3s;
+    }
+    .service-card:hover .order-hint {
+      opacity: 1;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 
@@ -176,13 +191,13 @@
         <a href="#services" class="nav-link">خدماتنا</a>
         <a href="#portfolio" class="nav-link">أعمالنا</a>
         <a href="#team" class="nav-link">فريق العمل</a>
-        <a href="#contact" class="nav-link">تواصل معنا</a>
+        <a href="#order-section" class="nav-link gold font-bold">طلب خدمة</a>
       </nav>
 
       <div class="flex items-center gap-5">
-        <a href="#contact">
-          <button class="border border-yellow-700 text-yellow-600 px-5 py-2 rounded text-sm hover:bg-yellow-700 hover:text-black transition">
-            تواصل معنا
+        <a href="#order-section">
+          <button class="border border-yellow-700 text-yellow-600 px-5 py-2 rounded text-sm hover:bg-yellow-700 hover:text-black transition font-bold">
+            اطلب خدمة الآن
           </button>
         </a>
       </div>
@@ -211,9 +226,9 @@
         نصنع النجومية.. ندير النجاح
       </p>
 
-      <a href="#portfolio">
+      <a href="#services">
         <button class="mt-10 border border-yellow-700 text-yellow-600 px-10 py-3 rounded hover:bg-yellow-700 hover:text-black transition glow font-bold">
-          اكتشف المزيد
+          اكتشف خدماتنا
         </button>
       </a>
     </div>
@@ -227,27 +242,21 @@
       </div>
       
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center justify-items-center opacity-70 hover:opacity-100 transition-opacity duration-300">
-        
         <div class="sponsor-card px-6 py-4 rounded-xl flex items-center justify-center h-20 w-full max-w-[180px]">
           <span class="text-xs font-semibold text-white/40 tracking-wider">SPONSOR 01</span>
         </div>
-
         <div class="sponsor-card px-6 py-4 rounded-xl flex items-center justify-center h-20 w-full max-w-[180px]">
           <span class="text-xs font-semibold text-white/40 tracking-wider">SPONSOR 02</span>
         </div>
-
         <div class="sponsor-card px-6 py-4 rounded-xl flex items-center justify-center h-20 w-full max-w-[180px]">
           <span class="text-xs font-semibold text-white/40 tracking-wider">SPONSOR 03</span>
         </div>
-
         <div class="sponsor-card px-6 py-4 rounded-xl flex items-center justify-center h-20 w-full max-w-[180px]">
           <span class="text-xs font-semibold text-white/40 tracking-wider">SPONSOR 04</span>
         </div>
-
         <div class="sponsor-card px-6 py-4 rounded-xl flex items-center justify-center h-20 w-full max-w-[180px] col-span-2 md:col-span-4 lg:col-span-1 mx-auto">
           <span class="text-xs font-semibold text-white/40 tracking-wider">SPONSOR 05</span>
         </div>
-
       </div>
     </div>
   </section>
@@ -256,37 +265,44 @@
     <div class="text-center">
       <p class="text-yellow-700 text-xs tracking-[4px] uppercase">WHAT WE DO</p>
       <h2 class="section-title text-4xl md:text-5xl font-black gold mt-4">خدماتنا الاحترافية</h2>
+      <p class="text-xs text-white/40 mt-3">اضغط على أي خدمة لطلبها فوراً عبر البريد الإلكتروني</p>
     </div>
 
     <div class="max-w-7xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
-      <div class="service-card p-8 text-center rounded-xl">
+      
+      <div class="service-card p-8 text-center rounded-xl" onclick="selectServiceAndScroll('الإنتاج السمعي البصري')">
         <div class="text-4xl gold mb-6">🎥</div>
         <h3 class="text-lg font-bold mb-3 text-white">الإنتاج السمعي البصري</h3>
         <p class="text-white/50 text-xs leading-relaxed font-light">تصوير وإخراج سينمائي متكامل بأحدث التقنيات البصرية لإخراج محتوى رقمي ملهم.</p>
+        <span class="order-hint">اضغط للطلب الآن ←</span>
       </div>
 
-      <div class="service-card p-8 text-center rounded-xl">
+      <div class="service-card p-8 text-center rounded-xl" onclick="selectServiceAndScroll('إدارة الأعمال الفنية')">
         <div class="text-4xl gold mb-6">💼</div>
         <h3 class="text-lg font-bold mb-3 text-white">إدارة الأعمال الفنية</h3>
         <p class="text-white/50 text-xs leading-relaxed font-light">إدارة هويات المشاهير، العقود التجارية، الشراكات والحملات الإعلانية الكبرى باحترافية.</p>
+        <span class="order-hint">اضغط للطلب الآن ←</span>
       </div>
 
-      <div class="service-card p-8 text-center rounded-xl">
+      <div class="service-card p-8 text-center rounded-xl" onclick="selectServiceAndScroll('جلسات التصوير الاحترافية')">
         <div class="text-4xl gold mb-6">📸</div>
         <h3 class="text-lg font-bold mb-3 text-white">جلسات التصوير</h3>
         <p class="text-white/50 text-xs leading-relaxed font-light">جلسات تصوير فوتوغرافي احترافية بعدسات متطورة وإخراج إضاءة درامي يعكس الفخامة.</p>
+        <span class="order-hint">اضغط للطلب الآن ←</span>
       </div>
 
-      <div class="service-card p-8 text-center rounded-xl">
+      <div class="service-card p-8 text-center rounded-xl" onclick="selectServiceAndScroll('المونتاج والموشن جرافيك')">
         <div class="text-4xl gold mb-6">✨</div>
         <h3 class="text-lg font-bold mb-3 text-white">المونتاج والموشن</h3>
         <p class="text-white/50 text-xs leading-relaxed font-light">صناعة الإعلانات، تعديل الألوان السينمائي المتقدم، والمؤثرات البصرية المهيبة.</p>
+        <span class="order-hint">اضغط للطلب الآن ←</span>
       </div>
 
-      <div class="service-card p-8 text-center rounded-xl">
+      <div class="service-card p-8 text-center rounded-xl" onclick="selectServiceAndScroll('الاستراتيجيات الرقمية والتسويق')">
         <div class="text-4xl gold mb-6">👑</div>
         <h3 class="text-lg font-bold mb-3 text-white">الاستراتيجيات الرقمية</h3>
         <p class="text-white/50 text-xs leading-relaxed font-light">منظومة رقمية متكاملة وحلول تسويقية مخصصة لرفع القيمة السوقية لأعمالك.</p>
+        <span class="order-hint">اضغط للطلب الآن ←</span>
       </div>
     </div>
   </section>
@@ -304,7 +320,6 @@
     </div>
 
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-      
       <div class="work-item videos work-card border border-white/5 rounded-lg bg-[#0b0b0b]">
         <div class="h-56 bg-black flex items-center justify-center overflow-hidden relative video-placeholder">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
@@ -356,7 +371,6 @@
           <h3 class="text-base font-bold mt-1 text-white/90">Le Crêpes & Glaces</h3>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -368,7 +382,6 @@
     </div>
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-      
       <div class="team-card p-6 rounded-xl text-center flex flex-col items-center">
         <div class="w-24 h-24 rounded-full border border-yellow-700/30 flex items-center justify-center bg-black/50 text-3xl mb-4 gold">🎬</div>
         <h3 class="text-lg font-bold text-white">قسم الإنتاج الإبداعي</h3>
@@ -396,59 +409,99 @@
         <p class="text-xs gold font-medium mt-1 uppercase tracking-wider">Events & Showcases</p>
         <p class="text-white/40 text-[11px] leading-relaxed mt-3 font-light">تنظيم وإدارة الحفلات والمؤتمرات، تغطية الأحداث والمناسبات الكبرى، وإدارة التجهيزات اللوجستية.</p>
       </div>
-
     </div>
 
-    <div class="max-w-4xl mx-auto border border-yellow-700/20 bg-black/40 p-8 rounded-2xl glow">
-      <div class="text-center mb-6">
-        <div class="text-3xl mb-2">📊</div>
-        <h3 class="text-xl font-bold text-white mb-2">انضم إلينا وارفع سيرتك الذاتية</h3>
-        <p class="text-xs text-white/50 max-w-lg mx-auto leading-relaxed">
-          اطلع على المخطط الشامل المعتمد لـ Golden Star Management، أو قم بتحميل وإرسال الـ CV وملفاتك الإبداعية مباشرة من هنا لتصل لقطاع التوظيف فوراً.
-        </p>
-        <button onclick="openLightbox('1000024274.png', 'الهيكل التنظيمي الكامل والمعتمد لفريق العمل - Golden Star Management')" 
-                class="mt-4 bg-black border border-yellow-700/40 text-yellow-500 hover:bg-yellow-600 hover:text-black px-6 py-2 rounded-full text-xs font-bold transition-all duration-300">
-          عرض مخطط الهيكل التنظيمي
-        </button>
-      </div>
-
-      <div class="w-full h-[1px] bg-white/10 my-6"></div>
-
-      <form id="cv-form" action="https://formspree.io/f/xlgzqvyr" method="POST" enctype="multipart/form-data" class="max-w-xl mx-auto space-y-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-[11px] text-white/50 mb-1">الاسم الكامل:</label>
-            <input type="text" name="name" required class="w-full bg-[#0b0b0b] border border-white/10 rounded px-4 py-2 text-xs text-white focus:outline-none focus:border-yellow-600">
-          </div>
-          <div>
-            <label class="block text-[11px] text-white/50 mb-1">البريد الإلكتروني:</label>
-            <input type="email" name="email" required class="w-full bg-[#0b0b0b] border border-white/10 rounded px-4 py-2 text-xs text-white focus:outline-none focus:border-yellow-600" dir="ltr">
-          </div>
+    <div id="order-section" class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      
+      <div class="border border-yellow-700/30 bg-black/60 p-8 rounded-2xl glow">
+        <div class="text-center mb-6">
+          <div class="text-3xl mb-2">💼</div>
+          <h3 class="text-xl font-bold text-white mb-1">بوابة طلب الخدمات التجارية</h3>
+          <p class="text-xs text-white/50 leading-relaxed">حدد الخدمة المطلوبة وسيتواصل معك موظفو المبيعات لتجهيز خطة العمل والأسعار.</p>
         </div>
+        
+        <form id="service-order-form" action="https://formspree.io/f/xlgzqvyr" method="POST" class="space-y-4">
+          <div>
+            <label class="block text-[11px] text-white/50 mb-1">الخدمة المراد طلبها:</label>
+            <select id="chosen-service" name="requested_service" required class="w-full bg-[#0b0b0b] border border-yellow-700/30 rounded px-4 py-2.5 text-xs text-yellow-500 font-bold focus:outline-none focus:border-yellow-600">
+              <option value="" disabled selected>-- اختر الخدمة أو اضغط عليها من الأعلى --</option>
+              <option value="الإنتاج السمعي البصري">الإنتاج السمعي البصري</option>
+              <option value="إدارة الأعمال الفنية">إدارة الأعمال الفنية</option>
+              <option value="جلسات التصوير الاحترافية">جلسات التصوير الاحترافية</option>
+              <option value="المونتاج والموشن جرافيك">المونتاج والموشن جرافيك</option>
+              <option value="الاستراتيجيات الرقمية والتسويق">الاستراتيجيات الرقمية والتسويق</option>
+            </select>
+          </div>
 
-        <div>
-          <label class="block text-[11px] text-white/50 mb-1">تحميل السيرة الذاتية (CV / Portfolio):</label>
-          <div class="relative w-full bg-[#0b0b0b] border border-dashed border-yellow-700/30 rounded p-4 text-center hover:border-yellow-600 transition-colors cursor-pointer">
-            <input type="file" id="cv-file" name="attachment" accept=".pdf,.doc,.docx" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onchange="updateFileName()">
-            <div id="file-label" class="text-xs text-white/40">
-              <span class="gold font-bold">اضغط هنا</span> لاختيار ملف الـ CV (PDF, Word)
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] text-white/50 mb-1">اسم الشركة / العميل:</label>
+              <input type="text" name="client_name" required class="w-full bg-[#0b0b0b] border border-white/10 rounded px-4 py-2 text-xs text-white focus:outline-none focus:border-yellow-600">
+            </div>
+            <div>
+              <label class="block text-[11px] text-white/50 mb-1">رقم الهاتف (واتساب):</label>
+              <input type="tel" name="client_phone" required class="w-full bg-[#0b0b0b] border border-white/10 rounded px-4 py-2 text-xs text-white focus:outline-none focus:border-yellow-600" dir="ltr">
             </div>
           </div>
+
+          <div>
+            <label class="block text-[11px] text-white/50 mb-1">تفاصيل ومواصفات المشروع المطلوبة:</label>
+            <textarea name="project_details" rows="3" placeholder="اشرح لنا فكرة مشروعك، المدة الزمنية، أو أي تفاصيل إضافية..." required class="w-full bg-[#0b0b0b] border border-white/10 rounded px-4 py-2 text-xs text-white focus:outline-none focus:border-yellow-600"></textarea>
+          </div>
+
+          <button type="submit" id="order-submit-btn" class="w-full bg-[#c9983d] text-black py-3 rounded text-xs font-black shadow-xl hover:bg-yellow-600 transition-all duration-300">
+            👑 إرسال طلب الخدمة فوراً للمبيعات
+          </button>
+        </form>
+      </div>
+
+      <div class="border border-white/10 bg-black/40 p-8 rounded-2xl">
+        <div class="text-center mb-6">
+          <div class="text-3xl mb-2">📊</div>
+          <h3 class="text-xl font-bold text-white mb-1">انضم إلينا وارفع سيرتك الذاتية</h3>
+          <p class="text-xs text-white/50 leading-relaxed">اطلع على المخطط الشامل لفريق العمل، أو ارسل ملفك الإبداعي والـ CV للانضمام للمنظومة.</p>
+          <button onclick="openLightbox('1000024274.png', 'الهيكل التنظيمي الكامل والمعتمد لفريق العمل - Golden Star Management')" 
+                  class="mt-3 bg-black border border-yellow-700/40 text-yellow-500 hover:bg-yellow-600 hover:text-black px-4 py-1.5 rounded-full text-[11px] font-bold transition-all duration-300">
+            عرض مخطط الهيكل التنظيمي
+          </button>
         </div>
 
-        <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-amber-600 to-yellow-500 text-black py-3 rounded text-xs font-black shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all duration-300">
-          🚀 تحميل وإرسال السيرة الذاتية الآن
-        </button>
-      </form>
-    </div>
+        <form id="cv-form" action="https://formspree.io/f/xlgzqvyr" method="POST" enctype="multipart/form-data" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] text-white/50 mb-1">الاسم الكامل:</label>
+              <input type="text" name="name" required class="w-full bg-[#0b0b0b] border border-white/10 rounded px-4 py-2 text-xs text-white focus:outline-none focus:border-yellow-600">
+            </div>
+            <div>
+              <label class="block text-[11px] text-white/50 mb-1">البريد الإلكتروني:</label>
+              <input type="email" name="email" required class="w-full bg-[#0b0b0b] border border-white/10 rounded px-4 py-2 text-xs text-white focus:outline-none focus:border-yellow-600" dir="ltr">
+            </div>
+          </div>
 
+          <div>
+            <label class="block text-[11px] text-white/50 mb-1">تحميل السيرة الذاتية (CV / Portfolio):</label>
+            <div class="relative w-full bg-[#0b0b0b] border border-dashed border-yellow-700/30 rounded p-4 text-center hover:border-yellow-600 transition-colors cursor-pointer">
+              <input type="file" id="cv-file" name="attachment" accept=".pdf,.doc,.docx" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onchange="updateFileName()">
+              <div id="file-label" class="text-xs text-white/40">
+                <span class="gold font-bold">اضغط هنا</span> لاختيار ملف الـ CV (PDF, Word)
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-neutral-800 to-neutral-900 border border-white/10 text-white py-3 rounded text-xs font-black hover:bg-white hover:text-black transition-all duration-300">
+            🚀 تحميل وإرسال السيرة الذاتية الآن
+          </button>
+        </form>
+      </div>
+
+    </div>
   </section>
 
   <div id="success-popup" class="fixed inset-0 bg-black/80 z-[110] hidden flex items-center justify-center p-4 backdrop-blur-sm">
     <div class="bg-[#0b0b0b] border border-yellow-600 p-8 rounded-xl max-w-sm text-center shadow-2xl space-y-4">
       <div class="text-4xl">✨</div>
       <h4 class="text-lg font-bold text-white">تم الإرسال بنجاح!</h4>
-      <p class="text-xs text-white/60 leading-relaxed">شكراً لاهتمامك بالانضمام إلى Golden Star Management. تم استلام ملفاتك بنجاح وسيتواصل معك قسم إدارة الموارد البشرية قريباً.</p>
+      <p id="popup-message" class="text-xs text-white/60 leading-relaxed">تم استلام طلبك بنجاح وسيتواصل معك فريق العمل المختص في أقرب وقت ممكن.</p>
       <button onclick="closePopup()" class="bg-[#c9983d] text-black text-xs font-bold px-6 py-2 rounded-full hover:bg-yellow-600 transition">إغلاق</button>
     </div>
   </div>
@@ -515,6 +568,15 @@
   </footer>
 
   <script>
+    // سكربت ذكي يقوم باختيار الخدمة تلقائياً داخل الحقل المنسدل وينزل بالعميل فوراً للنموذج
+    function selectServiceAndScroll(serviceName) {
+      const selectElement = document.getElementById('chosen-service');
+      selectElement.value = serviceName;
+      
+      // التوجيه السلس إلى سكشن الطلب
+      document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
     function filterPortfolio(category) {
       document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('active', 'text-black', 'bg-[#c9983d]');
@@ -567,40 +629,50 @@
       }
     }
 
-    const form = document.getElementById("cv-form");
+    // معالجة إرسال كلا النموذجين بطريقة الأجاكس دون مغادرة الموقع
     const successPopup = document.getElementById("success-popup");
-    const submitBtn = document.getElementById("submit-btn");
+    const popupMsg = document.getElementById("popup-message");
 
-    form.addEventListener("submit", async function(event) {
-      event.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.innerText = "جاري رفع وإرسال الملف... ⏳";
+    function setupFormSubmit(formId, submitBtnId, successText) {
+      const form = document.getElementById(formId);
+      const submitBtn = document.getElementById(submitBtnId);
 
-      const formData = new FormData(form);
+      form.addEventListener("submit", async function(event) {
+        event.preventDefault();
+        const originalText = submitBtn.innerText;
+        submitBtn.disabled = true;
+        submitBtn.innerText = "جاري الإرسال الآن... ⏳";
 
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            popupMsg.innerText = successText;
+            successPopup.classList.remove("hidden");
+            form.reset();
+            if(formId === 'cv-form') {
+              document.getElementById('file-label').innerHTML = `<span class="gold font-bold">اضغط هنا</span> لاختيار ملف الـ CV (PDF, Word)`;
+            }
+          } else {
+            alert("عذراً، حدث خطأ أثناء إرسال البيانات. يرجى المحاولة مرة أخرى.");
           }
-        });
-
-        if (response.ok) {
-          successPopup.classList.remove("hidden");
-          form.reset();
-          document.getElementById('file-label').innerHTML = `<span class="gold font-bold">اضغط هنا</span> لاختيار ملف الـ CV (PDF, Word)`;
-        } else {
-          alert("عذراً، حدث خطأ أثناء إرسال الملف. يرجى المحاولة مرة أخرى.");
+        } catch (error) {
+          alert("عذراً، حدثت مشكلة في الاتصال بالخادم.");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalText;
         }
-      } catch (error) {
-        alert("عذراً، حدثت مشكلة في الاتصال بالسيرفر.");
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerText = "📩 تحميل وإرسال السيرة الذاتية الآن";
-      }
-    });
+      });
+    }
+
+    setupFormSubmit("service-order-form", "order-submit-btn", "شكراً لثقتكم! تم استلام طلب الخدمة بنجاح، وسيقوم مسؤول الحسابات بالتواصل معكم عبر الهاتف أو البريد الإلكتروني خلال ساعات وجيزة لترتيب موعد العمل.");
+    setupFormSubmit("cv-form", "submit-btn", "شكراً لاهتمامك بالانضمام إلى Golden Star Management. تم استلام ملفاتك وسيرتك الذاتية بنجاح وسيتواصل معك قسم إدارة الموارد البشرية قريباً.");
 
     function closePopup() {
       successPopup.classList.add("hidden");
