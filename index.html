@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2=family=Cairo:wght@300;400;600;700;800;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -21,12 +21,12 @@
       scroll-behavior: smooth;
     }
 
-    /* تأثير الانتقال السلس عند التبديل بين الأبيض والأسود */
+    /* انتقال سلس ومريح للعين عند التبديل بين الأبيض والأسود */
     body, section, header, footer, .service-card, .team-card, .sponsor-card, input, select, textarea {
       transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
     }
 
-    /* المظهر الداكن الافتراضي (الأسود والذهبي) */
+    /* المظهر الداكن الافتراضي (الأسود والذهبي الفخم) */
     body {
       font-family: 'Cairo', 'Montserrat', sans-serif;
       background: #030303;
@@ -116,7 +116,7 @@
     }
 
     /* -------------------------------------------
-       أكواد المظهر الفاتح (الأبيض والأسود/الذهبي) 
+       قواعد نمط المظهر الفاتح (Sambre et blanc)
     ------------------------------------------- */
     body.light-theme {
       background: #fcfcfc;
@@ -560,7 +560,7 @@
   </footer>
 
   <script>
-    // نظام إدارة المظهر (Dark / Light Theme)
+    // نظام التحكم بالمظهر الفخم (Dark / Light Theme Swapping)
     function toggleTheme() {
       const body = document.body;
       const themeBtn = document.getElementById('theme-btn');
@@ -568,16 +568,17 @@
       body.classList.toggle('light-theme');
       
       if (body.classList.contains('light-theme')) {
-        themeBtn.innerText = '🌙'; // عرض أيقونة القمر عند التحول للوضع الفاتح
+        themeBtn.innerText = '🌙'; 
         themeBtn.classList.remove('bg-neutral-950');
         themeBtn.classList.add('bg-white');
       } else {
-        themeBtn.innerText = '☀️'; // عرض أيقونة الشمس عند العودة للوضع الداكن
+        themeBtn.innerText = '☀️'; 
         themeBtn.classList.remove('bg-white');
         themeBtn.classList.add('bg-neutral-950');
       }
     }
 
+    // منظومة الترجمة الثلاثية (AR - EN - FR)
     const translations = {
       ar: {
         "nav-home": "الرئيسية", "nav-sponsors": "الممولون", "nav-services": "خدماتنا", "nav-portfolio": "أعمالنا", "nav-team": "فريق العمل", "nav-order": "طلب خدمة",
