@@ -28,7 +28,6 @@
       color: white;
     }
 
-    /* تعديل مسار الخلفية لتقرأ hero.jpg المرفوع في المستودع بدلاً من bg.jpg */
     .hero {
       height: 100vh;
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.92)), url('hero.jpg');
@@ -114,7 +113,7 @@
     }
 
     .work-card:hover img {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     .video-placeholder::after {
@@ -150,14 +149,19 @@
       box-shadow: 0 0 20px rgba(201, 152, 61, .2);
     }
 
-    /* أزرار الفلترة */
     .tab-btn {
       transition: all 0.3s ease;
     }
+
     .tab-btn.active {
       background-color: #c9983d;
       color: black;
       border-color: #c9983d;
+    }
+
+    /* تأثير مؤشر اليد عند تمرير الماوس فوق الصور القابلة للتكبير */
+    .zoom-clickable {
+      cursor: zoom-in;
     }
   </style>
 </head>
@@ -299,7 +303,7 @@
       </div>
 
       <div class="work-item logos work-card border border-white/5 rounded-lg bg-[#0b0b0b]">
-        <div class="h-56 bg-[#050505] flex items-center justify-center p-6 overflow-hidden">
+        <div class="h-56 bg-[#050505] flex items-center justify-center p-6 overflow-hidden zoom-clickable" onclick="openLightbox('melabelle.png', 'Melabelle Meuble')">
           <img src="melabelle.png" alt="Melabelle Meuble" class="max-w-full max-h-full object-contain" />
         </div>
         <div class="p-5 border-t border-white/[0.02]">
@@ -309,7 +313,7 @@
       </div>
 
       <div class="work-item logos work-card border border-white/5 rounded-lg bg-[#0b0b0b]">
-        <div class="h-56 bg-[#050505] flex items-center justify-center p-6 overflow-hidden">
+        <div class="h-56 bg-[#050505] flex items-center justify-center p-6 overflow-hidden zoom-clickable" onclick="openLightbox('bijoux.png', 'bijoux.di.lusso')">
           <img src="bijoux.png" alt="bijoux.di.lusso" class="max-w-full max-h-full object-contain" />
         </div>
         <div class="p-5 border-t border-white/[0.02]">
@@ -319,7 +323,7 @@
       </div>
 
       <div class="work-item logos work-card border border-white/5 rounded-lg bg-[#0b0b0b]">
-        <div class="h-56 bg-[#050505] flex items-center justify-center p-6 overflow-hidden">
+        <div class="h-56 bg-[#050505] flex items-center justify-center p-6 overflow-hidden zoom-clickable" onclick="openLightbox('le-r.png', 'Le Crêpes & Glaces')">
           <img src="le-r.png" alt="Le Crêpes & Glaces" class="max-w-full max-h-full object-contain" />
         </div>
         <div class="p-5 border-t border-white/[0.02]">
@@ -330,6 +334,16 @@
 
     </div>
   </section>
+
+  <div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] hidden flex flex-col items-center justify-center p-4 backdrop-blur-sm transition-all duration-300">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white/70 hover:text-[#c9983d] text-4xl font-light transition-colors duration-200">&times;</button>
+    
+    <div class="max-w-4xl max-h-[80vh] flex items-center justify-center p-2 rounded-xl border border-white/10 bg-black/50 shadow-2xl">
+      <img id="lightbox-img" src="" class="max-w-full max-h-[75vh] object-contain rounded" alt="Enlarged view">
+    </div>
+    
+    <p id="lightbox-caption" class="mt-4 text-sm gold font-bold tracking-wide"></p>
+  </div>
 
   <footer id="contact" class="bg-[#070707] pt-20 pb-10 px-6 border-t border-white/[0.02]">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 pb-16 border-b border-white/[0.05]">
@@ -385,18 +399,15 @@
 
   <script>
     function filterPortfolio(category) {
-      // إزالة فئة النشاط من كافة الأزرار
       document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('active', 'text-black', 'bg-[#c9983d]');
         btn.classList.add('text-white/60');
       });
       
-      // إضافة النشاط للزر المضغوط
       const activeBtn = document.getElementById('btn-' + category);
       activeBtn.classList.add('active');
       activeBtn.classList.remove('text-white/60');
 
-      // إخفاء وإظهار العناصر بحسب القسم المحدد
       document.querySelectorAll('.work-item').forEach(item => {
         if (category === 'all') {
           item.style.display = 'block';
@@ -409,6 +420,31 @@
         }
       });
     }
+
+    // دوال جافا سكريبت الجديدة لفتح وإغلاق تكبير الصور بصيغة مريحة وسلسة
+    function openLightbox(src, caption) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      
+      lightboxImg.src = src;
+      lightboxCaption.innerText = caption;
+      
+      // إظهار النافذة بسلاسة
+      lightbox.classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.add('hidden');
+    }
+
+    // إغلاق النافذة عند الضغط على أي مكان فارغ خلف الصورة المفتوحة
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeLightbox();
+      }
+    });
   </script>
 
 </body>
