@@ -271,15 +271,15 @@
       
       <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
         <button onclick="filterPortfolio('all')" id="tab-all" class="portfolio-tab active border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold text-white hover:border-yellow-500 transition">جميع الأعمال</button>
-        <button onclick="filterPortfolio('production')" id="tab-production" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold text-white hover:border-yellow-500 transition">الإنتاج السمعي البصري</button>
         <button onclick="filterPortfolio('branding')" id="tab-branding" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold text-white hover:border-yellow-500 transition">البراندينغ</button>
+        <button onclick="filterPortfolio('production')" id="tab-production" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold text-white hover:border-yellow-500 transition">الإنتاج السمعي البصري</button>
         <button onclick="filterPortfolio('photo')" id="tab-photo" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold text-white hover:border-yellow-500 transition">التصوير الاحترافي</button>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <div onclick="openWorkModal('Melabelle Project', 'مشروع هوية بصرية وإنتاج إعلاني متكامل لعلامة Melabelle التجارية الفاخرة.', 'melabelle.png')" class="portfolio-card portfolio-item production rounded-2xl overflow-hidden fade-up cursor-pointer group">
+      <div onclick="openWorkModal('Melabelle Project', 'مشروع تصميم هوية بصرية فاخرة وإنتاج إعلاني متكامل لبراند Melabelle الاستثنائي.', 'melabelle.png')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer group">
         <div class="overflow-hidden relative">
           <img src="melabelle.png" class="h-72 w-full object-cover group-hover:scale-110 transition duration-500">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
@@ -288,33 +288,33 @@
         </div>
         <div class="p-6">
           <h3 class="font-black text-xl mb-2 gold">Melabelle Project</h3>
-          <p class="text-white/50 text-sm">Luxury cinematic advertising & branding.</p>
+          <p class="text-white/50 text-sm">Luxury Identity & Brand Strategy.</p>
         </div>
       </div>
 
-      <div onclick="openWorkModal('Bijoux Brand Branding', 'جلسة تصوير احترافية وبناء الهوية الرقمية لبراند مجوهرات فاخر بلمسات ذهبية.', 'Bijoux.png')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer group">
+      <div onclick="openWorkModal('Bijoux Branding', 'صناعة الهوية الرقمية والجمالية لعلامة تجارية متخصصة في المجوهرات والقطع الفاخرة.', 'bijoux.png')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer group">
         <div class="overflow-hidden relative">
-          <img src="Bijoux.png" class="h-72 w-full object-cover group-hover:scale-110 transition duration-500">
+          <img src="bijoux.png" class="h-72 w-full object-cover group-hover:scale-110 transition duration-500">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
             <span class="bg-[#c9983d] text-black px-5 py-2 rounded-full font-black text-sm">عرض العمل 👁️</span>
           </div>
         </div>
         <div class="p-6">
           <h3 class="font-black text-xl mb-2 gold">Bijoux Branding</h3>
-          <p class="text-white/50 text-sm">Complete luxury branding showcase.</p>
+          <p class="text-white/50 text-sm">Premium jewelry identity showcase.</p>
         </div>
       </div>
 
-      <div onclick="openWorkModal('Professional Showcase', 'جلسات إنتاج سينمائي وتصوير فوتوغرافي مخصصة لإبراز المنتجات التجارية الراقية.', '1000024276.png')" class="portfolio-card portfolio-item photo rounded-2xl overflow-hidden fade-up cursor-pointer group">
+      <div onclick="openWorkModal('Le-R Project', 'تطوير وتحديث الخطوط البصرية والتسويقية للعلامة التجارية الراقية Le-R.', 'le-r.png')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer group">
         <div class="overflow-hidden relative">
-          <img src="1000024276.png" class="h-72 w-full object-cover group-hover:scale-110 transition duration-500">
+          <img src="le-r.png" class="h-72 w-full object-cover group-hover:scale-110 transition duration-500">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
             <span class="bg-[#c9983d] text-black px-5 py-2 rounded-full font-black text-sm">عرض العمل 👁️</span>
           </div>
         </div>
         <div class="p-6">
-          <h3 class="font-black text-xl mb-2 gold">Commercial Showcase</h3>
-          <p class="text-white/50 text-sm">High-end product photography & aesthetics.</p>
+          <h3 class="font-black text-xl mb-2 gold">Le-R Project</h3>
+          <p class="text-white/50 text-sm">Modern corporate branding aesthetics.</p>
         </div>
       </div>
 
@@ -323,11 +323,11 @@
 </section>
 
 <section id="team-structure" class="py-16 bg-[#050505] text-center">
-  <div class="max-w-4xl mx-auto px-6 fade-up">
-    <h2 class="text-3xl font-black gold mb-6">الهيكل التنظيمي لفريق العمل</h2>
-    <div class="bg-[#0b0b0b] border border-yellow-700/20 p-4 rounded-3xl overflow-hidden">
-      <img src="hero.jpg" alt="الهيكل التنظيمي المعتمد" class="max-w-full h-auto mx-auto rounded-2xl shadow-xl border border-white/5">
-      <p class="text-yellow-600 font-bold mt-4 text-sm">الهيكل التنظيمي الكامل والمعتمد لفريق عمل Golden Star Management</p>
+  <div class="max-w-5xl mx-auto px-6 fade-up">
+    <h2 class="text-3xl font-black gold mb-6">الهيكل التنظيمي للشركة</h2>
+    <div class="bg-[#0b0b0b] border border-yellow-700/20 p-4 rounded-3xl overflow-hidden shadow-2xl">
+      <img src="1000024276.png" alt="الهيكل التنظيمي لشركة Golden Star Management" class="max-w-full h-auto mx-auto rounded-2xl border border-white/5">
+      <p class="text-yellow-600 font-bold mt-4 text-sm">المخطط الإداري والتنظيمي المعتمد لفريق عمل Golden Star Management</p>
     </div>
   </div>
 </section>
