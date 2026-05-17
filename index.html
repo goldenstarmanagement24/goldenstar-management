@@ -164,9 +164,6 @@
       border-color: #c9983d;
     }
 
-    /* ======================================================== */
-    /* قواعد وضوابط الثيم الفاتح الكامل */
-    /* ======================================================== */
     .light-theme {
       background: #fcfcfc;
       color: #1a1a1a;
@@ -317,7 +314,6 @@
       color: #1f2937 !important;
     }
     
-    /* مظهر مخصص لـ Checkboxes الخدمات */
     .service-checkbox-label {
       background: rgba(0,0,0,0.4);
       border: 1px solid rgba(201, 152, 61, 0.15);
@@ -355,17 +351,17 @@
   </div>
 
   <div class="relative rounded-xl overflow-hidden mb-3 bg-black aspect-video">
-    <img src="logo.jpg" alt="Golden Star Announcement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+    <img src="1000024759.png" alt="Golden Star Announcement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
       <span data-i18n="ad_click_hint" class="bg-black/70 border border-yellow-600/50 text-[#c9983d] text-[10px] font-bold px-3 py-1.5 rounded-full backdrop-blur-sm">انقر للتكبير 🔍</span>
     </div>
   </div>
 
-  <h4 data-i18n="ad_title" class="text-xs font-black gold mb-1 pointer-events-none">فرصة توظيف: مدير تسويق رقمي</h4>
-  <p data-i18n="ad_desc" class="text-[11px] text-white/60 leading-relaxed mb-3 pointer-events-none line-clamp-2">انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمحترفين مع خصومات خاصة لخدمات البراندينج لأول 5 شركات هذا الشهر.</p>
+  <h4 data-i18n="ad_title" class="text-xs font-black gold mb-1 pointer-events-none">عرض خاص: خصم 50% على الباقة</h4>
+  <p data-i18n="ad_desc" class="text-[11px] text-white/60 leading-relaxed mb-3 pointer-events-none line-clamp-2">استفد الآن من تخفيضات حصرية تصل إلى 50% على خدمات البراندينغ وصناعة الهوية البصرية المتكاملة لشركتك.</p>
 
   <button onclick="handleAdBtnClick(event)" data-i18n="ad_btn" class="ad-interactive-btn w-full text-center bg-white/5 border border-yellow-700/30 hover:border-[#c9983d] hover:bg-[#c9983d] hover:text-black text-white text-[11px] font-bold py-2 rounded-lg transition duration-300">
-    قدم طلبك الآن ←
+    احصل على العرض الآن ←
   </button>
 </div>
 
@@ -376,18 +372,18 @@
     </button>
 
     <div class="relative w-full aspect-video bg-black">
-      <img src="logo.jpg" class="w-full h-full object-cover">
+      <img src="1000024759.png" class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
     </div>
 
     <div class="p-8">
       <span data-i18n="ad_badge" class="bg-[#c9983d] text-black text-xs font-black px-3 py-1 rounded uppercase tracking-wider inline-block mb-3">OFFER / NEWS</span>
-      <h3 id="expanded-ad-title" data-i18n="ad_title" class="text-2xl font-black gold mb-3">فرصة توظيف: مدير تسويق رقمي</h3>
-      <p id="expanded-ad-desc" data-i18n="ad_desc" class="text-white/70 leading-relaxed text-sm mb-6">انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمحترفين مع خصومات خاصة لخدمات البراندينج لأول 5 شركات هذا الشهر.</p>
+      <h3 id="expanded-ad-title" data-i18n="ad_title" class="text-2xl font-black gold mb-3">عرض خاص: خصم 50% على الباقة</h3>
+      <p id="expanded-ad-desc" data-i18n="ad_desc" class="text-white/70 leading-relaxed text-sm mb-6">استفد الآن من تخفيضات حصرية تصل إلى 50% على خدمات البراندينغ وصناعة الهوية البصرية المتكاملة لشركتك.</p>
       
       <div class="flex justify-end gap-3">
         <button onclick="closeExpandedAd()" data-i18n="modal_close" class="border border-white/10 hover:border-white/30 px-6 py-3 rounded-xl text-xs font-bold transition">إغلاق</button>
-        <button onclick="redirectToAdAction()" data-i18n="ad_btn" class="bg-[#c9983d] hover:bg-yellow-500 text-black px-6 py-3 rounded-xl text-xs font-black transition">قدم طلبك الآن ←</button>
+        <button onclick="redirectToAdAction()" data-i18n="ad_btn" class="bg-[#c9983d] hover:bg-yellow-500 text-black px-6 py-3 rounded-xl text-xs font-black transition">احصل على العرض الآن ←</button>
       </div>
     </div>
   </div>
@@ -897,10 +893,12 @@ const dictionary = {
     cv_upload_box: 'رفع السيرة الذاتية', btn_send_cv: '🚀 إرسال السيرة الذاتية',
     contact_title: 'تواصل معنا', contact_subtitle: 'جاهزون لتحويل فكرتك إلى مشروع استثنائي.',
     btn_send_project: 'إرسال الطلب',
-    ad_badge: 'عرض / أخبار',
-    ad_title: 'فرصة توظيف: مدير تسويق رقمي',
-    ad_desc: 'انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمحترفين مع خصومات خاصة لخدمات البراندينج لأول 5 شركات هذا الشهر.',
-    ad_btn: 'قدم طلبك الآن ←',
+    
+    // تم تحديث نصوص الإعلان لتطابق محتوى عرض الـ 50% بالكامل
+    ad_badge: 'عرض حصري / وعروض',
+    ad_title: 'عرض خاص: خصم 50% على الباقة',
+    ad_desc: 'استفد الآن من تخفيضات حصرية تصل إلى 50% على خدمات البراندينغ وصناعة الهوية البصرية المتكاملة لشركتك.',
+    ad_btn: 'احصل على العرض الآن ←',
     ad_click_hint: 'انقر للتكبير 🔍',
     
     select_services_title: "اختر الخدمات المطلوبة (يمكنك تحديد أكثر من خدمة) :",
@@ -1022,10 +1020,12 @@ const dictionary = {
     cv_upload_box: 'Upload Resume / CV', btn_send_cv: '🚀 Submit Application',
     contact_title: 'Contact Us', contact_subtitle: 'We are ready to transform your vision into an extraordinary reality.',
     btn_send_project: 'Send Inquiry',
-    ad_badge: 'OFFER / NEWS',
-    ad_title: 'Hiring Now: Digital Marketing Manager',
-    ad_desc: 'Join our elite team today! We are looking for talented experts, plus special branding packages discounts for the first 5 clients this month.',
-    ad_btn: 'Apply Now ←',
+    
+    // الترجمة الإنجليزية الجديدة للإعلان
+    ad_badge: 'SPECIAL OFFER',
+    ad_title: 'Special Offer: 50% Off Package',
+    ad_desc: 'Get a comprehensive branding and visual identity package for your business today with an exclusive 50% discount.',
+    ad_btn: 'Claim Offer Now ←',
     ad_click_hint: 'Click to zoom 🔍',
 
     select_services_title: "Select Required Services (Multiple choices allowed) :",
@@ -1146,10 +1146,12 @@ const dictionary = {
     cv_upload_box: 'Télécharger le CV', btn_send_cv: '🚀 Soumettre la Candidature',
     contact_title: 'Contactez-nous', contact_subtitle: 'Nous sommes prêts à transformer votre vision en une réalité extraordinaire.',
     btn_send_project: 'Envoyer la Demande',
-    ad_badge: 'OFFRE / INFOS',
-    ad_title: 'Recrutement: Manager Marketing Digital',
-    ad_desc: 'Rejoignez notre équipe d\'élite dès aujourd\'hui! Nous recrutons des pros, avec des réductions exclusives sur le branding pour les 5 premières marques ce mois-ci.',
-    ad_btn: 'Postulez Maintenant ←',
+    
+    // الترجمة الفرنسية الجديدة للإعلان
+    ad_badge: 'OFFRE SPÉCIALE',
+    ad_title: 'Offre Spéciale: -50% sur le Pack',
+    ad_desc: 'Profitez dès aujourd\'hui d\'une réduction exclusive de 50% sur nos packs complets de branding et d\'identité visuelle.',
+    ad_btn: 'Profitez de l\'offre ←',
     ad_click_hint: 'Agrandir 🔍',
 
     select_services_title: "Sélectionnez les services requis (Choix multiples autorisés) :",
@@ -1211,7 +1213,7 @@ const dictionary = {
     cat_talents_events: "Gestion des Talents et Événements",
     srv_influ_manage: "Gestion des Influenceurs",
     srv_artist_manage: "Management d'Artistes",
-    srv_contracts: "Gestion des Contrats et Partenariats",
+    srv_contracts: "Conception des Contrats et Partenariats",
     srv_personal_market: "Marketing Personnel / Personal Branding",
     srv_event_conf: "📅 Organisation de Conférences",
     srv_event_exhib: "Organisation de Salons et Foires",
@@ -1411,9 +1413,16 @@ function handleAdBtnClick(event) {
 
 function redirectToAdAction() {
   closeExpandedAd();
-  const target = document.getElementById('casting-section');
+  // تعديل التوجيه هنا ليقوم بأخذ العميل مباشرة إلى قسم "تواصل معنا" لطلب العرض
+  const target = document.getElementById('contact');
   if (target) {
     target.scrollIntoView({ behavior: 'smooth' });
+    const detailsField = document.getElementById('project-details');
+    if(detailsField) {
+      if(currentLang === 'ar') { detailsField.value = "مرحباً جولدن ستار، أريد الاستفادة من العرض الخاص بخصم 50% على باقة البراندينغ وصناعة الهوية البصرية."; }
+      else if(currentLang === 'fr') { detailsField.value = "Bonjour Golden Star, je souhaite profiter de l'offre spéciale de -50% sur le pack branding et identité visuelle."; }
+      else { detailsField.value = "Hello Golden Star, I want to claim the special offer of 50% off the branding and visual identity package."; }
+    }
   }
 }
 </script>
