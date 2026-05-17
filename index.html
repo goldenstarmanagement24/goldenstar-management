@@ -44,24 +44,18 @@
       color:#c9983d;
     }
 
+    /* تعديل قسم الـ Hero ليعرض صورة hero.jpg كخلفية ممتدة واحترافية */
     .hero{
       position:relative;
       height:100vh;
+      background: url('hero.jpg') center center / cover no-repeat;
       overflow:hidden;
-    }
-
-    .hero video{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
     }
 
     .hero-overlay{
       position:absolute;
       inset:0;
-      background:linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.95));
+      background:linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(3,3,3,0.98));
     }
 
     .glow{
@@ -192,10 +186,6 @@
 </header>
 
 <section id="home" class="hero flex items-center justify-center text-center">
-  <video autoplay muted loop playsinline>
-    <source src="https://cdn.coverr.co/videos/coverr-filming-with-a-camera-1564849087172?download=1080p" type="video/mp4">
-  </video>
-
   <div class="hero-overlay"></div>
 
   <div class="relative z-10 px-6 fade-up">
@@ -381,7 +371,7 @@
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12 fade-up">
       <h2 data-i18n="contact_title" class="text-4xl md:text-5xl font-black gold mb-4">تواصل معنا</h2>
-      <p data-i18n="contact_subtitle" class="text-white/50">جاهزون لتحويل فكرتك إلى مشروع استثنائي.</p>
+      <p data-i18n="contact_subtitle" class="text-white/50 Gold">جاهزون لتحويل فكرتك إلى مشروع استثنائي.</p>
     </div>
 
     <form class="bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-8 space-y-4 fade-up">
@@ -408,14 +398,13 @@
 </footer>
 
 <script>
-// قاموس الترجمة الكامل لجميع أقسام الموقع
 const dictionary = {
   ar: {
     nav_home: 'الرئيسية', nav_services: 'الخدمات', nav_portfolio: 'الأعمال', nav_contact: 'التواصل',
     hero_desc: 'شركة متخصصة في الإنتاج السمعي البصري، إدارة الأعمال، صناعة الهوية البصرية والتسويق الرقمي الفاخر.',
     btn_discover: 'اكتشف خدماتنا', btn_contact: 'تواصل معنا',
     services_title: 'خدماتنا الاحترافية', services_subtitle: 'حلول متكاملة في الإنتاج السمعي البصري، التسويق، إدارة العلامات التجارية وصناعة المحتوى الفاخر.',
-    s1_title: 'الالإنتاج السمعي البصري', s1_desc: 'تصوير سينمائي، إخراج، إعلانات، فيديوهات تجارية، كليبات وأفلام قصيرة بجودة عالمية.',
+    s1_title: 'الإنتاج السمعي البصري', s1_desc: 'تصوير سينمائي، إخراج، إعلانات، فيديوهات تجارية، كليبات وأفلام قصيرة بجودة عالمية.',
     s2_title: 'التصوير الاحترافي', s2_desc: 'جلسات تصوير احترافية للأفراد، الشركات، المنتجات والمشاهير بأسلوب فاخر.',
     s3_title: 'المونتاج والموشن', s3_desc: 'مونتاج سينمائي، مؤثرات بصرية، موشن جرافيك وتصحيح ألوان احترافي.',
     s4_title: 'إدارة العلامات التجارية', s4_desc: 'بناء هوية بصرية متكاملة، استراتيجيات تسويق وإدارة البراندات الاحترافية.',
@@ -484,7 +473,6 @@ const dictionary = {
   }
 };
 
-// ملفات الصور المربوطة بالمشاريع
 const projectImages = { p1: 'melabelle.png', p2: 'bijoux.png', p3: 'le-r.png' };
 let currentModalKey = "";
 let currentLang = "ar";
@@ -494,7 +482,6 @@ function changeLanguage(lang){
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
-  // تحديث النصوص العادية التي تحمل الـ attribute data-i18n
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
     if (dictionary[lang][key]) {
@@ -502,7 +489,6 @@ function changeLanguage(lang){
     }
   });
 
-  // تحديث الـ Placeholders داخل حقول الإدخال والفورمات
   const placeholders = dictionary[lang].placeholders;
   for (const id in placeholders) {
     const inputElement = document.getElementById(id);
@@ -511,7 +497,6 @@ function changeLanguage(lang){
     }
   }
   
-  // تحديث محتوى النافذة المنبثقة إذا كانت مفتوحة أثناء التغيير
   if(document.getElementById('work-modal').style.display === 'flex' && currentModalKey !== "") {
     document.getElementById('modal-title').innerText = dictionary[lang][currentModalKey + '_title'];
     document.getElementById('modal-desc').innerText = dictionary[lang][currentModalKey + '_desc'];
@@ -520,7 +505,7 @@ function changeLanguage(lang){
 
 window.addEventListener('load',()=>{
   document.getElementById('loader').style.display='none';
-  changeLanguage('ar'); // تعيين العربية كلغة افتراضية عند التحميل
+  changeLanguage('ar');
 });
 
 function toggleTheme(){
@@ -566,7 +551,6 @@ function filterPortfolio(category){
 function openWorkModal(projectKey) {
   currentModalKey = projectKey;
   
-  // قراءة النصوص التفاعلية بناءً على اللغة النشطة الحالية والـ Key
   document.getElementById('modal-title').innerText = dictionary[currentLang][projectKey + '_title'];
   document.getElementById('modal-desc').innerText = dictionary[currentLang][projectKey + '_desc'];
   document.getElementById('modal-img').src = projectImages[projectKey];
