@@ -710,21 +710,21 @@
       <p data-i18n="contact_subtitle" class="text-white/50">جاهزون لتحويل فكرتك إلى مشروع استثنائي.</p>
     </div>
 
-    <form action="https://formspree.io/f/xlgzqvyr" method="POST" class="bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-8 lg:p-12 space-y-6 fade-up">
+    <form action="https://formspree.io/f/xlgzqvyr" method="POST" class="bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-4 md:p-12 space-y-6 shadow-2xl">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <input type="text" name="Client_Name" id="contact_name" placeholder="الاسم الكامل" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
         <input type="email" name="Client_Email" id="contact_email" placeholder="البريد الإلكتروني" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
         <input type="tel" name="Client_Phone" id="contact_phone" placeholder="رقم الهاتف" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
       </div>
 
-      <div class="border border-white/5 rounded-2xl p-6 bg-black/20 space-y-6">
+      <div class="border border-white/5 rounded-2xl p-4 md:p-6 bg-black/20 space-y-6">
         <h3 data-i18n="select_services_title" class="text-sm font-black gold tracking-wider border-b border-white/5 pb-2">اختر الخدمات المطلوبة (يمكنك تحديد أكثر من خدمة) :</h3>
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">🎬 <span data-i18n="cat_audiovisual">خدمات الإنتاج السمعي البصري</span></h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Professional Video Shooting" class="accent-[#c9983d]"> <span data-i18n="srv_vid_shoot">📹 تصوير الفيديو الاحترافي</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Commercials Ads" class="accent-[#c9983d]"> <span data-i18n="srv_ads">تصوير الإعلانات التجارية</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Music Videos" class="accent-[#c9983d]"> <span data-i18n="srv_clips">تصوير الكليبات الفنية</span></label>
@@ -737,7 +737,7 @@
 
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">🎥 <span data-i18n="cat_production">إنتاج الأفلام والبرامج</span></h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="TV Shows" class="accent-[#c9983d]"> <span data-i18n="srv_tv">إنتاج البرامج التلفزيونية</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Documentaries" class="accent-[#c9983d]"> <span data-i18n="srv_docs">إنتاج الوثائقيات</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Visual Podcast" class="accent-[#c9983d]"> <span data-i18n="srv_podcast">إنتاج البودكاست المرئي</span></label>
@@ -748,9 +748,9 @@
 
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">✂️ <span data-i18n="cat_postproduction">المونتاج وما بعد الإنتاج</span></h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Professional Video Editing" class="accent-[#c9983d]"> <span data-i18n="srv_editing">مونتاج احترافي</span></label>
-              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Color Grading" class="accent-[#c9983d]"> <span data-i18n="srv_color">تصحيح الألوان (Color Grading)</span></label>
+              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Color Grading" class="accent-[#c9983d]"> <span data-i18n="srv_color">تصحيح الألوان</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="VFX Visual Effects" class="accent-[#c9983d]"> <span data-i18n="srv_vfx">مؤثرات بصرية VFX</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Motion Graphics Design" class="accent-[#c9983d]"> <span data-i18n="srv_motion">Motion Graphics</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Intro / Outro Design" class="accent-[#c9983d]"> <span data-i18n="srv_intro_outro">تصميم Intro / Outro</span></label>
@@ -760,11 +760,11 @@
 
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">🎙️ <span data-i18n="cat_audio_photo">الخدمات الصوتية والفوتوغرافيا</span></h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Voice Over Recording" class="accent-[#c9983d]"> <span data-i18n="srv_vo">تسجيل Voice Over</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Dubbing & Commentary" class="accent-[#c9983d]"> <span data-i18n="srv_dubbing">دبلجة وتعليق صوتي</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Audio Engineering" class="accent-[#c9983d]"> <span data-i18n="srv_audio_eng">هندسة صوتية</span></label>
-              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Audio Ads & Music Production" class="accent-[#c9983d]"> <span data-i18n="srv_music_prod">إنتاج موسيقى وإعلانات صوتية</span></label>
+              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Audio Ads & Music Production" class="accent-[#c9983d]"> <span data-i18n="srv_music_prod">إنتاج موسيقى وإعلانات</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Products Photography" class="accent-[#c9983d]"> <span data-i18n="srv_photo_products">📸 تصوير منتجات</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Fashion Photography" class="accent-[#c9983d]"> <span data-i18n="srv_photo_fashion">تصوير أزياء</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Real Estate Photography" class="accent-[#c9983d]"> <span data-i18n="srv_photo_estate">تصوير عقاري</span></label>
@@ -775,12 +775,12 @@
 
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">🎨 <span data-i18n="cat_design_web">خدمات التصميم وتطوير المواقع</span></h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Logo Design" class="accent-[#c9983d]"> <span data-i18n="srv_logo">🖌️ تصميم الشعارات</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Full Brand Identity" class="accent-[#c9983d]"> <span data-i18n="srv_brand_identity">الهوية البصرية الكاملة</span></label>
-              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Posters & Ads Design" class="accent-[#c9983d]"> <span data-i18n="srv_posters">تصميم البوسترات والإعلانات</span></label>
+              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Posters & Ads Design" class="accent-[#c9983d]"> <span data-i18n="srv_posters">تصميم البوسترات</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Social Media Graphics" class="accent-[#c9983d]"> <span data-i18n="srv_sm_graphics">تصميم السوشيال ميديا</span></label>
-              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Brochures & Catalogues Design" class="accent-[#c9983d]"> <span data-i18n="srv_brochures">تصميم البروشورات والكتيبات</span></label>
+              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Brochures & Catalogues Design" class="accent-[#c9983d]"> <span data-i18n="srv_brochures">تصميم البروشورات</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Corporate Websites Development" class="accent-[#c9983d]"> <span data-i18n="srv_web_corp">💻 مواقع شركات احترافية</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="E-Commerce Stores" class="accent-[#c9983d]"> <span data-i18n="srv_ecommerce">متاجر إلكترونية</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Landing Pages Design" class="accent-[#c9983d]"> <span data-i18n="srv_landing">صفحات Landing Page</span></label>
@@ -790,9 +790,9 @@
 
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">📱 <span data-i18n="cat_marketing">إدارة المحتوى والتسويق الرقمي</span></h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Content Creation" class="accent-[#c9983d]"> <span data-i18n="srv_content_creation">صناعة المحتوى</span></label>
-              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Social Media Management" class="accent-[#c9983d]"> <span data-i18n="srv_sm_manage">إدارة صفحات التواصل الاجتماعي</span></label>
+              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Social Media Management" class="accent-[#c9983d]"> <span data-i18n="srv_sm_manage">إدارة صفحات التواصل</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Copywriting" class="accent-[#c9983d]"> <span data-i18n="srv_copywriting">كتابة المحتوى التسويقي</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Paid Ads Campaigns" class="accent-[#c9983d]"> <span data-i18n="srv_ads_campaigns">الحملات الإعلانية الرقمية</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Digital Marketing Strategy" class="accent-[#c9983d]"> <span data-i18n="srv_digi_market">التسويق الرقمي</span></label>
@@ -803,7 +803,7 @@
 
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">📈 <span data-i18n="cat_business">خدمات إدارة الأعمال والاستشارات</span></h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Management Consulting" class="accent-[#c9983d]"> <span data-i18n="srv_consulting">🧠 الاستشارات الإدارية</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Project Development" class="accent-[#c9983d]"> <span data-i18n="srv_proj_dev">تطوير المشاريع</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Strategic Planning" class="accent-[#c9983d]"> <span data-i18n="srv_strat_plan">التخطيط الاستراتيجي</span></label>
@@ -814,7 +814,7 @@
 
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">🤝 <span data-i18n="cat_talents_events">إدارة المواهب والفعاليات والخدمات الإضافية</span></h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Influencers Management" class="accent-[#c9983d]"> <span data-i18n="srv_influ_manage">إدارة المؤثرين</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Artists Management" class="accent-[#c9983d]"> <span data-i18n="srv_artist_manage">إدارة الفنانين</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Contracts & Partnerships" class="accent-[#c9983d]"> <span data-i18n="srv_contracts">تنظيم العقود والشراكات</span></label>
@@ -827,8 +827,8 @@
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Multi-Cam Live Streaming" class="accent-[#c9983d]"> <span data-i18n="srv_live_stream">بث مباشر Multi-Cam</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Gear Rental" class="accent-[#c9983d]"> <span data-i18n="srv_rental">تأجير معدات تصوير</span></label>
               <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Professional Photo Studio" class="accent-[#c9983d]"> <span data-i18n="srv_studio">استوديو تصوير احترافي</span></label>
-              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Media & Production Training" class="accent-[#c9983d]"> <span data-i18n="srv_training">تدريب في الإعلام والإنتاج</span></label>
-              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Full Media Projects Management" class="accent-[#c9983d]"> <span data-i18n="srv_full_media_mng">إدارة مشاريع إعلامية كاملة</span></label>
+              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Media & Production Training" class="accent-[#c9983d]"> <span data-i18n="srv_training">تدريب في الإعلام</span></label>
+              <label class="service-checkbox-label flex items-center gap-2 p-3 rounded-xl cursor-pointer select-none"><input type="checkbox" name="Services[]" value="Full Media Projects Management" class="accent-[#c9983d]"> <span data-i18n="srv_full_media_mng">إدارة مشاريع إعلامية</span></label>
             </div>
           </div>
 
@@ -903,7 +903,6 @@ const dictionary = {
     ad_btn: 'قدم طلبك الآن ←',
     ad_click_hint: 'انقر للتكبير 🔍',
     
-    // ترجمة نصوص خانات الاختيار للقسم المضاف حديثاً (عربي)
     select_services_title: "اختر الخدمات المطلوبة (يمكنك تحديد أكثر من خدمة) :",
     cat_audiovisual: "خدمات الإنتاج السمعي البصري",
     srv_vid_shoot: "📹 تصوير الفيديو الاحترافي",
@@ -911,7 +910,7 @@ const dictionary = {
     srv_clips: "تصوير الكليبات الفنية",
     srv_corporate: "تصوير الشركات والمؤسسات",
     srv_events: "تصوير الفعاليات والمؤتمرات",
-    srv_weddings: "تصوير الأعراس والمناسبات الخاصة",
+    srv_weddings: "تصوير الأعراس والمناسبات",
     srv_sm_content: "تصوير محتوى السوشيال ميديا",
     cat_production: "إنتاج الأفلام والبرامج",
     srv_tv: "إنتاج البرامج التلفزيونية",
@@ -921,7 +920,7 @@ const dictionary = {
     srv_digital_prod: "إنتاج المحتوى الرقمي",
     cat_postproduction: "المونتاج وما بعد الإنتاج",
     srv_editing: "مونتاج احترافي",
-    srv_color: "تصحيح الألوان (Color Grading)",
+    srv_color: "تصحيح الألوان",
     srv_vfx: "مؤثرات بصرية VFX",
     srv_motion: "Motion Graphics",
     srv_intro_outro: "تصميم Intro / Outro",
@@ -1029,7 +1028,6 @@ const dictionary = {
     ad_btn: 'Apply Now ←',
     ad_click_hint: 'Click to zoom 🔍',
 
-    // English Checklist Translation
     select_services_title: "Select Required Services (Multiple choices allowed) :",
     cat_audiovisual: "Audiovisual Production Services",
     srv_vid_shoot: "📹 Professional Video Shooting",
@@ -1154,7 +1152,6 @@ const dictionary = {
     ad_btn: 'Postulez Maintenant ←',
     ad_click_hint: 'Agrandir 🔍',
 
-    // French Checklist Translation
     select_services_title: "Sélectionnez les services requis (Choix multiples autorisés) :",
     cat_audiovisual: "Services de Production Audiovisuelle",
     srv_vid_shoot: "📹 Tournage Vidéo Professionnel",
@@ -1188,7 +1185,7 @@ const dictionary = {
     srv_photo_sessions: "Séances Photo Professionnelles",
     srv_photo_ads: "Photographie Publicitaire",
     cat_design_web: "Design Créatif et Développement Web",
-    srv_logo: "🖌️ Conception de Logos",
+    srv_logo: "IGN Conception de Logos",
     srv_brand_identity: "Identité Visuelle Complète de Marque",
     srv_posters: "Design d'Affiches et Publicités",
     srv_sm_graphics: "Graphisme pour Réseaux Sociaux",
@@ -1209,7 +1206,7 @@ const dictionary = {
     srv_consulting: "🧠 Conseils en Management",
     srv_proj_dev: "Développement de Projets",
     srv_strat_plan: "Planification Stratégique",
-    srv_ops_manage: "Gestion des Opérations",
+    srv_ops_manage: "Gestion des Operations",
     srv_team_org: "Organisation des Équipes de Travail",
     cat_talents_events: "Gestion des Talents et Événements",
     srv_influ_manage: "Gestion des Influenceurs",
