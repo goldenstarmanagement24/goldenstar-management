@@ -164,9 +164,7 @@
       border-color: #c9983d;
     }
 
-    /* ======================================================== */
-    /* قواعد وضوابط الثيم الفاتح الكامل */
-    /* ======================================================== */
+    /* الثيم الفاتح الكامل */
     .light-theme {
       background: #fcfcfc;
       color: #1a1a1a;
@@ -317,7 +315,6 @@
       color: #1f2937 !important;
     }
     
-    /* مظهر مخصص لـ Checkboxes الخدمات */
     .service-checkbox-label {
       background: rgba(0,0,0,0.4);
       border: 1px solid rgba(201, 152, 61, 0.15);
@@ -1238,6 +1235,7 @@ const dictionary = {
 const projectImages = { p1: 'melabelle.png', p2: 'bijoux.png', p3: 'le-r.png' };
 let currentModalKey = "";
 let currentLang = "ar";
+let currentCastingStep = 1;
 
 function changeLanguage(lang){
   currentLang = lang;
@@ -1332,76 +1330,26 @@ function closeWorkModal() {
 }
 
 function requestThisService() {
-  const projectTitle = dictionary[currentLang][currentModalKey + '_title'];
-  closeWorkModal();
-  const detailsField = document.getElementById('project-details');
-  if(detailsField) {
-    if(currentLang === 'ar') {
-      detailsField.value = `مرحباً جولدن ستار، لقد تصفحت مشروعكم [ ${projectTitle} ] وأرغب في طلب خدمة مماثلة وتطويرها لشركتي.`;
-    } else if(currentLang === 'fr') {
-      detailsField.value = `Bonjour Golden Star, j'ai consulté votre projet [ ${projectTitle} ] et je souhaite demander un service similaire pour mon entreprise.`;
-    } else {
-      detailsField.value = `Hello Golden Star, I reviewed your project [ ${projectTitle} ] and I would like to request a similar service for my brand.`;
-    }
-  }
-  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-}
-
-let currentCastingStep = 0;
-const castingSteps = document.querySelectorAll('.form-step');
-const stepIndicators = document.querySelectorAll('.step-indicator');
-const prevStepBtn = document.getElementById('prev-step-btn');
-const nextStepBtn = document.getElementById('next-step-btn');
-
-function showCastingStep(stepIdx) {
-  castingSteps.forEach((step, index) => {
-    step.classList.toggle('active', index === stepIdx);
-  });
-  stepIndicators.forEach((indicator, index) => {
-    indicator.classList.toggle('active', index <= stepIdx);
-  });
-  
-  prevStepBtn.disabled = (stepIdx === 0);
-  
-  if (stepIdx === castingSteps.length - 1) {
-    nextStepBtn.style.display = 'none';
-  } else {
-    nextStepBtn.style.display = 'block';
-    nextStepBtn.innerText = currentLang === 'ar' ? 'التالي ←' : (currentLang === 'fr' ? 'Suivant →' : 'Next →');
+  if (currentModalKey !== "") {
+    const serviceName = dictionary[currentLang][currentModalKey + '_title'];
+    document.getElementById('project-details').value = `طلب خدمة متعلقة بمشروع: ${serviceName}`;
+    closeWorkModal();
+    window.location.href = "#contact";
   }
 }
 
-function moveCastingStep(direction) {
-  if (direction === 1) {
-    const requiredInputs = castingSteps[currentCastingStep].querySelectorAll('input[required], textarea[required]');
-    let isValid = true;
-    requiredInputs.forEach(input => {
-      if(!input.checkValidity()) {
-        input.reportValidity();
-        isValid = false;
-      }
-    });
-    if(!isValid) return;
-  }
-  
-  currentCastingStep += direction;
-  showCastingStep(currentCastingStep);
-}
-
-function closeSidebarAd(event) {
-  event.stopPropagation();
-  const adBox = document.getElementById('sidebar-ad');
-  adBox.style.opacity = '0';
-  adBox.style.transform = 'scale(0.8) translateY(20px)';
-  setTimeout(() => adBox.remove(), 500);
-}
-
+/* دوال التحكم في الإعلان الجانبي */
 function openExpandedAd(event) {
   document.getElementById('expanded-ad-modal').style.display = 'flex';
 }
 
 function closeExpandedAd() {
   document.getElementById('expanded-ad-modal').style.display = 'none';
+}
+
+function closeSidebarAd(event) {
+  event.stopPropagation();
+  document.getElementById('sidebar-ad').style.display = 'none';
 }
 
 function handleAdBtnClick(event) {
@@ -1411,13 +1359,32 @@ function handleAdBtnClick(event) {
 
 function redirectToAdAction() {
   closeExpandedAd();
-  const target = document.getElementById('casting-section');
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth' });
+  window.location.href = "#cv-upload";
+}
+
+/* دوال معالجة إستمارة الانتساب الفني (Multi-step form) */
+function moveCastingStep(direction) {
+  const steps = document.querySelectorAll('.form-step');
+  const indicators = document.querySelectorAll('.step-indicator');
+  
+  steps[currentCastingStep - 1].classList.remove('active');
+  indicators[currentCastingStep - 1].classList.remove('active');
+  
+  currentCastingStep += direction;
+  
+  steps[currentCastingStep - 1].classList.add('active');
+  indicators[currentCastingStep - 1].classList.add('active');
+  
+  document.getElementById('prev-step-btn').disabled = (currentCastingStep === 1);
+  
+  const nextBtn = document.getElementById('next-step-btn');
+  if (currentCastingStep === steps.length) {
+    nextBtn.style.display = 'none';
+  } else {
+    nextBtn.style.display = 'inline-block';
+    nextBtn.innerText = currentLang === 'ar' ? 'التالي ←' : (currentLang === 'fr' ? 'Suivant →' : 'Next →');
   }
 }
 </script>
-
 </body>
 </html>
-هل يمكنك تغيير اسم صورة الاعلانات الى هدا الاسم Toffer.png
