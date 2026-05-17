@@ -255,6 +255,26 @@
   <div class="max-w-7xl mx-auto px-6">
 
     <div class="text-center mb-16 fade-up">
+      
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+
+        <button onclick="filterPortfolio('all')" id="tab-all" class="portfolio-tab active border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold hover:border-yellow-500 transition">
+          جميع الأعمال
+        </button>
+
+        <button onclick="filterPortfolio('production')" id="tab-production" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold hover:border-yellow-500 transition">
+          الإنتاج السمعي البصري
+        </button>
+
+        <button onclick="filterPortfolio('branding')" id="tab-branding" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold hover:border-yellow-500 transition">
+          البراندينغ
+        </button>
+
+        <button onclick="filterPortfolio('photo')" id="tab-photo" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold hover:border-yellow-500 transition">
+          التصوير الاحترافي
+        </button>
+
+      </div>
       <h2 class="text-4xl md:text-5xl font-black gold mb-4">
         خدماتنا الاحترافية
       </h2>
@@ -320,6 +340,14 @@
 
 <section id="portfolio" class="py-24 bg-black">
 
+  <style>
+    .portfolio-tab.active{
+      background:#c9983d;
+      color:black;
+      border-color:#c9983d;
+    }
+  </style>
+
   <div class="max-w-7xl mx-auto px-6">
 
     <div class="text-center mb-16 fade-up">
@@ -334,7 +362,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <div class="portfolio-card rounded-2xl overflow-hidden fade-up">
+      <div class="portfolio-card portfolio-item production rounded-2xl overflow-hidden fade-up">
         <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200" class="h-72 w-full object-cover">
         <div class="p-6">
           <h3 class="font-black text-xl mb-2">Commercial Production</h3>
@@ -342,7 +370,7 @@
         </div>
       </div>
 
-      <div class="portfolio-card rounded-2xl overflow-hidden fade-up">
+      <div class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up">
         <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200" class="h-72 w-full object-cover">
         <div class="p-6">
           <h3 class="font-black text-xl mb-2">Brand Identity</h3>
@@ -350,7 +378,7 @@
         </div>
       </div>
 
-      <div class="portfolio-card rounded-2xl overflow-hidden fade-up">
+      <div class="portfolio-card portfolio-item photo rounded-2xl overflow-hidden fade-up">
         <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200" class="h-72 w-full object-cover">
         <div class="p-6">
           <h3 class="font-black text-xl mb-2">Professional Photography</h3>
@@ -583,6 +611,30 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-up').forEach(el=>{
   observer.observe(el);
 });
+
+function filterPortfolio(category){
+
+  document.querySelectorAll('.portfolio-tab').forEach(btn=>{
+    btn.classList.remove('active');
+  });
+
+  document.getElementById('tab-' + category).classList.add('active');
+
+  document.querySelectorAll('.portfolio-item').forEach(item=>{
+
+    if(category === 'all'){
+      item.style.display = 'block';
+    }
+    else if(item.classList.contains(category)){
+      item.style.display = 'block';
+    }
+    else{
+      item.style.display = 'none';
+    }
+
+  });
+}
+
 
 </script>
 
