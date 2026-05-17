@@ -69,16 +69,14 @@
     }
 
     .service-card,
-    .portfolio-card,
-    .team-card{
+    .portfolio-card{
       background:#0b0b0b;
       border:1px solid rgba(201,152,61,0.12);
-      transition:0.4s;
+      transition:0.4s ease;
     }
 
     .service-card:hover,
-    .portfolio-card:hover,
-    .team-card:hover{
+    .portfolio-card:hover{
       transform:translateY(-10px) scale(1.02);
       border-color:#c9983d;
       box-shadow:0 20px 50px rgba(201,152,61,0.15);
@@ -133,14 +131,24 @@
     }
 
     .light-theme .service-card,
-    .light-theme .portfolio-card,
-    .light-theme .team-card{
+    .light-theme .portfolio-card{
       background:white;
       color:black;
     }
 
     .light-theme header{
       background:rgba(255,255,255,0.8);
+    }
+
+    .portfolio-tab.active{
+      background:#c9983d !important;
+      color:black !important;
+      border-color:#c9983d !important;
+    }
+
+    /* كروت المعرض مع أنيميشن التصفية */
+    .portfolio-item {
+      transition: opacity 0.4s ease, transform 0.4s ease, scale 0.4s ease;
     }
   </style>
 </head>
@@ -166,12 +174,10 @@
       <a href="#home" class="hover:text-[#c9983d] transition">الرئيسية</a>
       <a href="#services" class="hover:text-[#c9983d] transition">الخدمات</a>
       <a href="#portfolio" class="hover:text-[#c9983d] transition">الأعمال</a>
-      <a href="#team" class="hover:text-[#c9983d] transition">الفريق</a>
       <a href="#contact" class="hover:text-[#c9983d] transition">التواصل</a>
     </nav>
 
     <div class="flex items-center gap-3">
-
       <select id="lang-switcher" onchange="changeLanguage(this.value)" class="bg-black border border-yellow-700/20 text-yellow-500 text-xs rounded-full px-4 py-2 focus:outline-none">
         <option value="ar">العربية</option>
         <option value="en">English</option>
@@ -181,14 +187,12 @@
       <button onclick="toggleTheme()" class="bg-black border border-yellow-700/20 w-10 h-10 rounded-full text-yellow-500">
         ☀️
       </button>
-
     </div>
 
   </div>
 </header>
 
 <section id="home" class="hero flex items-center justify-center text-center">
-
   <video autoplay muted loop playsinline>
     <source src="https://cdn.coverr.co/videos/coverr-filming-with-a-camera-1564849087172?download=1080p" type="video/mp4">
   </video>
@@ -196,144 +200,90 @@
   <div class="hero-overlay"></div>
 
   <div class="relative z-10 px-6 fade-up">
-
     <img src="logo.jpg" class="w-36 h-36 mx-auto rounded-full object-cover border-2 border-yellow-700 glow mb-6">
-
-    <h1 class="text-5xl md:text-7xl font-black gold tracking-wide">
-      GOLDEN STAR
-    </h1>
-
-    <h2 class="text-xl md:text-3xl tracking-[10px] uppercase font-light mt-2 text-white/90">
-      MANAGEMENT
-    </h2>
-
+    <h1 class="text-5xl md:text-7xl font-black gold tracking-wide">GOLDEN STAR</h1>
+    <h2 class="text-xl md:text-3xl tracking-[10px] uppercase font-light mt-2 text-white/90">MANAGEMENT</h2>
     <p class="mt-6 text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
       شركة متخصصة في الإنتاج السمعي البصري، إدارة الأعمال، صناعة الهوية البصرية والتسويق الرقمي الفاخر.
     </p>
 
     <div class="mt-10 flex flex-wrap justify-center gap-4">
-      <a href="#services" class="bg-[#c9983d] text-black px-8 py-3 rounded-full font-black hover:bg-yellow-500 transition">
-        اكتشف خدماتنا
-      </a>
-
-      <a href="#contact" class="border border-yellow-700/30 px-8 py-3 rounded-full font-bold hover:border-yellow-500 hover:text-[#c9983d] transition">
-        تواصل معنا
-      </a>
+      <a href="#services" class="bg-[#c9983d] text-black px-8 py-3 rounded-full font-black hover:bg-yellow-500 transition">اكتشف خدماتنا</a>
+      <a href="#contact" class="border border-yellow-700/30 px-8 py-3 rounded-full font-bold hover:border-yellow-500 hover:text-[#c9983d] transition">تواصل معنا</a>
     </div>
-
   </div>
 </section>
 
-
-
 <section id="services" class="py-24 bg-[#050505]">
-
   <div class="max-w-7xl mx-auto px-6">
-
     <div class="text-center mb-16 fade-up">
-      
-      <div class="flex flex-wrap justify-center gap-3 mb-10">
-
-        <button onclick="filterPortfolio('all')" id="tab-all" class="portfolio-tab active border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold hover:border-yellow-500 transition">
-          جميع الأعمال
-        </button>
-
-        <button onclick="filterPortfolio('production')" id="tab-production" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold hover:border-yellow-500 transition">
-          الإنتاج السمعي البصري
-        </button>
-
-        <button onclick="filterPortfolio('branding')" id="tab-branding" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold hover:border-yellow-500 transition">
-          البراندينغ
-        </button>
-
-        <button onclick="filterPortfolio('photo')" id="tab-photo" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold hover:border-yellow-500 transition">
-          التصوير الاحترافي
-        </button>
-
-      </div>
-      <h2 class="text-4xl md:text-5xl font-black gold mb-4">
-        خدماتنا الاحترافية
-      </h2>
-
+      <h2 class="text-4xl md:text-5xl font-black gold mb-4">خدماتنا الاحترافية</h2>
       <p class="text-white/50 max-w-2xl mx-auto leading-relaxed">
         حلول متكاملة في الإنتاج السمعي البصري، التسويق، إدارة العلامات التجارية وصناعة المحتوى الفاخر.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
       <div class="service-card p-8 rounded-2xl fade-up">
         <div class="text-5xl mb-6">🎬</div>
         <h3 class="text-xl font-black mb-4">الإنتاج السمعي البصري</h3>
-        <p class="text-white/50 leading-relaxed">
-          تصوير سينمائي، إخراج، إعلانات، فيديوهات تجارية، كليبات وأفلام قصيرة بجودة عالمية.
-        </p>
+        <p class="text-white/50 leading-relaxed">تصوير سينمائي، إخراج، إعلانات، فيديوهات تجارية، كليبات وأفلام قصيرة بجودة عالمية.</p>
       </div>
 
       <div class="service-card p-8 rounded-2xl fade-up">
         <div class="text-5xl mb-6">📸</div>
         <h3 class="text-xl font-black mb-4">التصوير الاحترافي</h3>
-        <p class="text-white/50 leading-relaxed">
-          جلسات تصوير احترافية للأفراد، الشركات، المنتجات والمشاهير بأسلوب فاخر.
-        </p>
+        <p class="text-white/50 leading-relaxed">جلسات تصوير احترافية للأفراد، الشركات، المنتجات والمشاهير بأسلوب فاخر.</p>
       </div>
 
       <div class="service-card p-8 rounded-2xl fade-up">
         <div class="text-5xl mb-6">✨</div>
         <h3 class="text-xl font-black mb-4">المونتاج والموشن</h3>
-        <p class="text-white/50 leading-relaxed">
-          مونتاج سينمائي، مؤثرات بصرية، موشن جرافيك وتصحيح ألوان احترافي.
-        </p>
+        <p class="text-white/50 leading-relaxed">مونتاج سينمائي، مؤثرات بصرية، موشن جرافيك وتصحيح ألوان احترافي.</p>
       </div>
 
       <div class="service-card p-8 rounded-2xl fade-up">
         <div class="text-5xl mb-6">👑</div>
         <h3 class="text-xl font-black mb-4">إدارة العلامات التجارية</h3>
-        <p class="text-white/50 leading-relaxed">
-          بناء هوية بصرية متكاملة، استراتيجيات تسويق وإدارة البراندات الاحترافية.
-        </p>
+        <p class="text-white/50 leading-relaxed">بناء هوية بصرية متكاملة، استراتيجيات تسويق وإدارة البراندات الاحترافية.</p>
       </div>
 
       <div class="service-card p-8 rounded-2xl fade-up">
         <div class="text-5xl mb-6">📢</div>
         <h3 class="text-xl font-black mb-4">التسويق الرقمي</h3>
-        <p class="text-white/50 leading-relaxed">
-          حملات إعلانية، إدارة منصات التواصل الاجتماعي واستهداف احترافي للعملاء.
-        </p>
+        <p class="text-white/50 leading-relaxed">حملات إعلانية، إدارة منصات التواصل الاجتماعي واستهداف احترافي للعملاء.</p>
       </div>
 
       <div class="service-card p-8 rounded-2xl fade-up">
         <div class="text-5xl mb-6">🎤</div>
         <h3 class="text-xl font-black mb-4">تنظيم الفعاليات</h3>
-        <p class="text-white/50 leading-relaxed">
-          تنظيم المؤتمرات، الحفلات، العروض التجارية والتغطيات الإعلامية الكبرى.
-        </p>
+        <p class="text-white/50 leading-relaxed">تنظيم المؤتمرات، الحفلات، العروض التجارية والتغطيات الإعلامية الكبرى.</p>
       </div>
-
     </div>
   </div>
 </section>
 
 <section id="portfolio" class="py-24 bg-black">
-
-  <style>
-    .portfolio-tab.active{
-      background:#c9983d;
-      color:black;
-      border-color:#c9983d;
-    }
-  </style>
-
   <div class="max-w-7xl mx-auto px-6">
 
-    <div class="text-center mb-16 fade-up">
-      <h2 class="text-4xl md:text-5xl font-black gold mb-4">
-        أعمالنا
-      </h2>
-
-      <p class="text-white/50">
-        نماذج من مشاريعنا الاحترافية الأخيرة.
-      </p>
+    <div class="text-center mb-10 fade-up">
+      <h2 class="text-4xl md:text-5xl font-black gold mb-4">أعمالنا</h2>
+      <p class="text-white/50 mb-8">نماذج من مشاريعنا الاحترافية الأخيرة مصنفة حسب التخصص.</p>
+      
+      <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+        <button onclick="filterPortfolio('all')" id="tab-all" class="portfolio-tab active border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold text-white hover:border-yellow-500 transition">
+          جميع الأعمال
+        </button>
+        <button onclick="filterPortfolio('production')" id="tab-production" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold text-white hover:border-yellow-500 transition">
+          الإنتاج السمعي البصري
+        </button>
+        <button onclick="filterPortfolio('branding')" id="tab-branding" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold text-white hover:border-yellow-500 transition">
+          البراندينغ
+        </button>
+        <button onclick="filterPortfolio('photo')" id="tab-photo" class="portfolio-tab border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold text-white hover:border-yellow-500 transition">
+          التصوير الاحترافي
+        </button>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -363,210 +313,102 @@
       </div>
 
     </div>
-
-  </div>
-</section>
-
-<section id="team" class="py-24 bg-[#050505]">
-
-  <div class="max-w-7xl mx-auto px-6">
-
-    <div class="text-center mb-16 fade-up">
-      <h2 class="text-4xl md:text-5xl font-black gold mb-4">
-        فريق العمل
-      </h2>
-
-      <p class="text-white/50">
-        خبرات إبداعية وإدارية لصناعة مشاريع استثنائية.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      <div class="team-card rounded-2xl overflow-hidden fade-up">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200" class="h-80 w-full object-cover">
-        <div class="p-6 text-center">
-          <h3 class="font-black text-xl">AIC Bouchama</h3>
-          <p class="gold text-sm mt-2">CEO & Creative Director</p>
-        </div>
-      </div>
-
-      <div class="team-card rounded-2xl overflow-hidden fade-up">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200" class="h-80 w-full object-cover">
-        <div class="p-6 text-center">
-          <h3 class="font-black text-xl">Production Manager</h3>
-          <p class="gold text-sm mt-2">Audiovisual Specialist</p>
-        </div>
-      </div>
-
-      <div class="team-card rounded-2xl overflow-hidden fade-up">
-        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200" class="h-80 w-full object-cover">
-        <div class="p-6 text-center">
-          <h3 class="font-black text-xl">Marketing Director</h3>
-          <p class="gold text-sm mt-2">Digital Strategy Expert</p>
-        </div>
-      </div>
-
-    </div>
-
   </div>
 </section>
 
 <section id="cv-upload" class="py-24 bg-[#050505]">
-
   <div class="max-w-4xl mx-auto px-6">
-
     <div class="text-center mb-12 fade-up">
-      <h2 class="text-4xl md:text-5xl font-black gold mb-4">
-        انضم إلى فريقنا
-      </h2>
-
-      <p class="text-white/50">
-        أرسل سيرتك الذاتية الآن وكن جزءاً من فريق GOLDEN STAR MANAGEMENT.
-      </p>
+      <h2 class="text-4xl md:text-5xl font-black gold mb-4">انضم إلى فريقنا</h2>
+      <p class="text-white/50">أرسل سيرتك الذاتية الآن وكن جزءاً من فريق GOLDEN STAR MANAGEMENT.</p>
     </div>
 
     <form action="https://formspree.io/f/xlgzqvyr" method="POST" enctype="multipart/form-data" class="bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-8 space-y-4 fade-up">
-
       <input type="text" name="fullname" placeholder="الاسم الكامل" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
-
       <input type="email" name="email" placeholder="البريد الإلكتروني" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
-
       <input type="tel" name="phone" placeholder="رقم الهاتف" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
 
       <div class="border-2 border-dashed border-yellow-700/30 rounded-2xl p-8 text-center relative overflow-hidden hover:border-yellow-500 transition">
-
         <input type="file" name="cv" accept=".pdf,.doc,.docx" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-
         <div class="text-5xl mb-4">📄</div>
-
-        <h3 class="font-black text-lg mb-2 gold">
-          رفع السيرة الذاتية
-        </h3>
-
-        <p class="text-white/40 text-sm">
-          PDF / DOC / DOCX
-        </p>
-
+        <h3 class="font-black text-lg mb-2 gold">رفع السيرة الذاتية</h3>
+        <p class="text-white/40 text-sm">PDF / DOC / DOCX</p>
       </div>
 
       <textarea name="message" rows="4" placeholder="أخبرنا عن خبراتك ومهاراتك" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700"></textarea>
-
       <button type="submit" class="w-full bg-gradient-to-r from-[#c9983d] to-yellow-500 text-black py-4 rounded-xl font-black hover:scale-[1.02] transition duration-300 shadow-2xl shadow-yellow-700/20">
         🚀 إرسال السيرة الذاتية
       </button>
-
     </form>
-
   </div>
 </section>
 
 <section id="contact" class="py-24 bg-black">
-
   <div class="max-w-4xl mx-auto px-6">
-
     <div class="text-center mb-12 fade-up">
-      <h2 class="text-4xl md:text-5xl font-black gold mb-4">
-        تواصل معنا
-      </h2>
-
-      <p class="text-white/50">
-        جاهزون لتحويل فكرتك إلى مشروع استثنائي.
-      </p>
+      <h2 class="text-4xl md:text-5xl font-black gold mb-4">تواصل معنا</h2>
+      <p class="text-white/50">جاهزون لتحويل فكرتك إلى مشروع استثنائي.</p>
     </div>
 
     <form class="bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-8 space-y-4 fade-up">
-
       <input type="text" placeholder="الاسم الكامل" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
-
       <input type="email" placeholder="البريد الإلكتروني" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
-
       <input type="tel" placeholder="رقم الهاتف" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
-
       <textarea rows="5" placeholder="تفاصيل المشروع" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700"></textarea>
-
-      <button class="w-full bg-[#c9983d] text-black py-4 rounded-xl font-black hover:bg-yellow-500 transition">
-        إرسال الطلب
-      </button>
-
+      <button class="w-full bg-[#c9983d] text-black py-4 rounded-xl font-black hover:bg-yellow-500 transition">إرسال الطلب</button>
     </form>
-
   </div>
 </section>
 
 <footer class="bg-[#050505] border-t border-white/5 py-10 text-center">
-
   <img src="logo.jpg" class="w-16 h-16 rounded-full mx-auto border border-yellow-700/30 object-cover mb-4">
-
   <h2 class="font-black text-2xl gold mb-2">GOLDEN STAR MANAGEMENT</h2>
-
-  <p class="text-white/40 text-sm mb-6">
-    Production Audiovisuelle & Business Management
-  </p>
+  <p class="text-white/40 text-sm mb-6">Production Audiovisuelle & Business Management</p>
 
   <div class="flex justify-center gap-4 mb-6">
-    <a href="https://wa.me/213796369640" class="bg-green-600/10 text-green-400 px-5 py-2 rounded-full text-sm">
-      WhatsApp
-    </a>
-
-    <a href="https://www.tiktok.com/@goldenstar.management" class="bg-white/5 text-white px-5 py-2 rounded-full text-sm">
-      TikTok
-    </a>
+    <a href="https://wa.me/213796369640" class="bg-green-600/10 text-green-400 px-5 py-2 rounded-full text-sm">WhatsApp</a>
+    <a href="https://www.tiktok.com/@goldenstar.management" class="bg-white/5 text-white px-5 py-2 rounded-full text-sm">TikTok</a>
   </div>
-
-  <p class="text-white/20 text-xs tracking-widest">
-    © 2026 GOLDEN STAR MANAGEMENT — ALL RIGHTS RESERVED
-  </p>
-
+  <p class="text-white/20 text-xs tracking-widest">© 2026 GOLDEN STAR MANAGEMENT — ALL RIGHTS RESERVED</p>
 </footer>
 
 <script>
-
 const translations = {
   ar:{
     home:'الرئيسية',
     services:'الخدمات',
     portfolio:'الأعمال',
-    team:'الفريق',
     contact:'التواصل',
     hero:'شركة متخصصة في الإنتاج السمعي البصري، إدارة الأعمال، صناعة الهوية البصرية والتسويق الرقمي الفاخر.'
   },
-
   en:{
     home:'Home',
     services:'Services',
     portfolio:'Portfolio',
-    team:'Team',
     contact:'Contact',
     hero:'Luxury audiovisual production, branding and business management agency.'
   },
-
   fr:{
     home:'Accueil',
     services:'Services',
     portfolio:'Portfolio',
-    team:'Équipe',
     contact:'Contact',
     hero:'Agence premium de production audiovisuelle et management.'
   }
 };
 
 function changeLanguage(lang){
-
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
   const navLinks = document.querySelectorAll('nav a');
-
   navLinks[0].innerText = translations[lang].home;
   navLinks[1].innerText = translations[lang].services;
   navLinks[2].innerText = translations[lang].portfolio;
-  navLinks[3].innerText = translations[lang].team;
-  navLinks[4].innerText = translations[lang].contact;
+  navLinks[3].innerText = translations[lang].contact;
 
   document.querySelector('.hero p').innerText = translations[lang].hero;
 }
-
 
 window.addEventListener('load',()=>{
   document.getElementById('loader').style.display='none';
@@ -588,30 +430,33 @@ document.querySelectorAll('.fade-up').forEach(el=>{
   observer.observe(el);
 });
 
+// دالة تصفية وعرض الأعمال الديناميكية المعدلة بالكامل
 function filterPortfolio(category){
-
+  // إزالة الكلاس النشط من جميع الأزرار أولاً
   document.querySelectorAll('.portfolio-tab').forEach(btn=>{
     btn.classList.remove('active');
   });
 
+  // إضافة الكلاس النشط للزر المختار حالياً
   document.getElementById('tab-' + category).classList.add('active');
 
+  // فرز الكروت مع تأثير إخفاء/إظهار سينمائي مرن
   document.querySelectorAll('.portfolio-item').forEach(item=>{
-
     if(category === 'all'){
       item.style.display = 'block';
+      setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
     }
     else if(item.classList.contains(category)){
       item.style.display = 'block';
+      setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
     }
     else{
-      item.style.display = 'none';
+      item.style.opacity = '0';
+      item.style.transform = 'scale(0.95)';
+      setTimeout(() => { item.style.display = 'none'; }, 400);
     }
-
   });
 }
-
-
 </script>
 
 </body>
