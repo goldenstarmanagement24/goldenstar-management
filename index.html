@@ -48,17 +48,30 @@
       color:#c9983d;
     }
 
+    /* تحديث قسم الـ Hero ليتناسب مع خلفية الفيديو */
     .hero{
       position:relative;
       height:100vh;
-      background: url('hero.jpg') center center / cover no-repeat;
       overflow:hidden;
+      background:#030303; /* خلفية احتياطية سوداء */
+    }
+
+    /* تنسيق الفيديو داخل الهيرو */
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
     }
 
     .hero-overlay{
       position:absolute;
       inset:0;
-      background:linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(3,3,3,0.98));
+      background:linear-gradient(to bottom, rgba(3,3,3,0.4), rgba(3,3,3,0.98));
+      z-index: 1; /* فوق الفيديو وتحت المحتوى */
     }
 
     .glow{
@@ -298,7 +311,7 @@
     }
 
     .light-theme .hero-overlay {
-      background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(252,252,252,1)) !important;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(252,252,252,1)) !important;
     }
     .light-theme .hero h2,
     .light-theme .hero p {
@@ -339,7 +352,7 @@
 </div>
 
 <div id="expanded-ad-modal" class="fixed inset-0 z-[999999] hidden bg-black/80 backdrop-blur-md items-center justify-center p-4 transition-all duration-300" onclick="closeExpandedAd()">
-  <div id="expanded-ad-content" class="bg-[#0b0b0b] border border-yellow-700/30 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative transition-all duration-300" onclick="event.stopPropagation()">
+  <div id="expanded-ad-content" class="bg-[#0b0b0b] border border-yellow-700/30 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative" onclick="event.stopPropagation()">
     <button onclick="closeExpandedAd()" class="absolute top-4 left-4 bg-black/60 hover:bg-[#c9983d] hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition text-white font-bold z-10">
       ✕
     </button>
@@ -398,6 +411,11 @@
 </header>
 
 <section id="home" class="hero flex items-center justify-center text-center">
+  
+  <video autoplay loop muted playsinline class="hero-video">
+    <source src="20260517_214803_0000.mp4" type="video/mp4">
+  </video>
+  
   <div class="hero-overlay"></div>
 
   <div class="relative z-10 px-6 fade-up">
@@ -712,13 +730,12 @@ const dictionary = {
     s6_title: 'تنظيم الفعاليات', s6_desc: 'تنظيم المؤتمرات، الحفلات، العروض التجارية والتغطيات الإعلامية الكبرى.',
     portfolio_title: 'أعمالنا', portfolio_subtitle: 'نماذج من مشاريعنا الأخيرة. اضغط على أي كرت لمشاهدة وتصفح العمل بالكامل.',
     tab_all: 'جميع الأعمال', tab_branding: 'البراندينغ', view_work: 'عرض العمل 👁️',
-    p1_title: 'مشروع Melabelle', p1_desc: 'مشروع تصميم هوية بصرية فاخرة وإنتاج إعلاني متكامل لبراند Melabelle الاستثنائي.', p1_short: 'هوية بصرية فاخرة وإستراتيجية براند.',
+    p1_title: 'مشروع Melabelle', p1_desc: 'مشروع تصميم هوية بصرية فاخرة وإنتاج إعلاني متكامل لبراند Melabelle الاستثنائي.', p1_short: 'هوية بصرية فاخرة وإإستراتيجية براند.',
     p2_title: 'براندينغ Bijoux', p2_desc: 'صناعة الهوية الرقمية والجمالية لعلامة تجارية متخصصة في المجوهرات والقطع الفاخرة.', p2_short: 'معرض هوية براند مجوهرات راقي.',
     p3_title: 'مشروع Le-R', p3_desc: 'تطوير وتحديث الخطوط البصرية والتسويقية للعلامة التجارية الراقية Le-R.', p3_short: 'جماليات الهوية التجارية الحديثة.',
     team_title: 'الهيكل التنظيمي للشركة', team_desc: 'المخطط الإداري والتنظيمي المعتمد لفريق عمل Golden Star Management',
     modal_close: 'إغلاق', modal_request: 'طلب هذه الخدمة الآن ←',
     
-    // ترجمات قسم الكاستينغ الجديد
     casting_title: "FICHE D'INFORMATIONS",
     casting_subtitle: 'إستمارة الكاستينغ الفني للمانيكان، الممثلين، والمؤثرين - يرجى ملء البيانات الخطوة تلو الأخرى بدقة.',
     step1_header: '1. Informations Personnelles (المعلومات الشخصية)',
@@ -770,7 +787,6 @@ const dictionary = {
     team_title: 'Company Structure', team_desc: 'The official administrative and organizational blueprint for Golden Star Management.',
     modal_close: 'Close', modal_request: 'Request Service Now ←',
     
-    // Casting Section Translation
     casting_title: "FICHE D'INFORMATIONS",
     casting_subtitle: 'Artistic registration form for models, actors, and influencers - Please step-by-step complete data.',
     step1_header: '1. Personal Information',
@@ -821,7 +837,6 @@ const dictionary = {
     team_title: 'Structure de l\'Entreprise', team_desc: 'Le plan administratif et organisationnel officiel de Golden Star Management.',
     modal_close: 'Fermer', modal_request: 'Demander ce Service ←',
     
-    // Casting Section Translation
     casting_title: "FICHE D'INFORMATIONS",
     casting_subtitle: 'Formulaire de casting pour mannequins, acteurs et influenceurs - Veuillez remplir étape par étape.',
     step1_header: '1. Informations Personnelles',
@@ -967,9 +982,6 @@ function requestThisService() {
   document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
 
-/* ======================================================== */
-/* جافا سكريبت التحكم بخطوات نموذج طلب الانتساب الفني (Casting) */
-/* ======================================================== */
 let currentCastingStep = 0;
 const castingSteps = document.querySelectorAll('.form-step');
 const stepIndicators = document.querySelectorAll('.step-indicator');
@@ -995,7 +1007,6 @@ function showCastingStep(stepIdx) {
 }
 
 function moveCastingStep(direction) {
-  // للتحقق من الحقول الإجبارية قبل الانتقال للخطوة التالية
   if (direction === 1) {
     const requiredInputs = castingSteps[currentCastingStep].querySelectorAll('input[required], textarea[required]');
     let isValid = true;
