@@ -51,7 +51,6 @@
     .hero{
       position:relative;
       height:100vh;
-      /* الصورة تعمل كخلفية احتياطية (Fallback) في حال لم يعمل الفيديو */
       background: url('hero.jpg') center center / cover no-repeat;
       overflow:hidden;
     }
@@ -140,6 +139,7 @@
       backdrop-filter: blur(12px);
     }
 
+    /* ستايل خطوات نموذج طلب الانتساب */
     .form-step {
       display: none;
     }
@@ -397,18 +397,10 @@
   </div>
 </header>
 
-<!-- قسم الـ Hero المحدث بخلفية الفيديو المعالجة للأجهزة الذكية -->
 <section id="home" class="hero flex items-center justify-center text-center">
-  <!-- عنصر الفيديو -->
-  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-    <source src="hero-video.mp4" type="video/mp4">
-  </video>
+  <div class="hero-overlay"></div>
 
-  <!-- الماسك / التظليل فوق الفيديو لضمان وضوح النصوص والقراءة الجيدة -->
-  <div class="hero-overlay z-10"></div>
-
-  <!-- المحتوى الأساسي للقسم وتم رفع الـ z-index الخاص به ليكون فوق الفيديو والماسك -->
-  <div class="relative z-20 px-6 fade-up">
+  <div class="relative z-10 px-6 fade-up">
     <img src="logo.jpg" class="w-36 h-36 mx-auto rounded-full object-cover border-2 border-yellow-700 glow mb-6">
     <h1 class="text-5xl md:text-7xl font-black gold tracking-wide">GOLDEN STAR</h1>
     <h2 class="text-xl md:text-3xl tracking-[10px] uppercase font-light mt-2 text-white/90">MANAGEMENT</h2>
@@ -498,27 +490,556 @@
           <p data-i18n="p1_short" class="text-white/50 text-sm">Luxury Identity & Brand Strategy.</p>
         </div>
       </div>
-    </div>
 
+      <div onclick="openWorkModal('p2')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer group">
+        <div class="overflow-hidden relative">
+          <img src="bijoux.png" class="h-72 w-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+            <span data-i18n="view_work" class="bg-[#c9983d] text-black px-5 py-2 rounded-full font-black text-sm">عرض العمل 👁️</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-black text-xl mb-2 gold">Bijoux Branding</h3>
+          <p data-i18n="p2_short" class="text-white/50 text-sm">Premium jewelry identity showcase.</p>
+        </div>
+      </div>
+
+      <div onclick="openWorkModal('p3')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer group">
+        <div class="overflow-hidden relative">
+          <img src="le-r.png" class="h-72 w-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+            <span data-i18n="view_work" class="bg-[#c9983d] text-black px-5 py-2 rounded-full font-black text-sm">عرض العمل 👁️</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-black text-xl mb-2 gold">Le-R Project</h3>
+          <p data-i18n="p3_short" class="text-white/50 text-sm">Modern corporate branding aesthetics.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- إضافة سكربت بسيط لإخفاء الـ Loader كمثال تشغيلي -->
+<section id="team-structure" class="py-16 bg-[#050505] text-center">
+  <div class="max-w-5xl mx-auto px-6 fade-up">
+    <h2 data-i18n="team_title" class="text-3xl font-black gold mb-6">الهيكل التنظيمي للشركة</h2>
+    <div class="bg-[#0b0b0b] border border-yellow-700/20 p-4 rounded-3xl overflow-hidden shadow-2xl">
+      <img src="1000024276.png" alt="الهيكل التنظيمي لشركة Golden Star Management" class="max-w-full h-auto mx-auto rounded-2xl border border-white/5">
+      <p data-i18n="team_desc" class="text-yellow-600 font-bold mt-4 text-sm">المخطط الإداري والتنظيمي المعتمد لفريق عمل Golden Star Management</p>
+    </div>
+  </div>
+</section>
+
+<div id="work-modal" class="fixed inset-0 z-[99999] hidden bg-black/90 backdrop-blur-md items-center justify-center p-4 transition-all duration-300">
+  <div class="bg-[#0b0b0b] border border-yellow-700/30 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative">
+    <button onclick="closeWorkModal()" class="absolute top-4 left-4 bg-black/60 hover:bg-[#c9983d] hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition text-white font-bold z-10">✕</button>
+    <img id="modal-img" src="" class="w-full h-96 object-cover border-b border-yellow-700/10">
+    <div class="p-8">
+      <h3 id="modal-title" class="text-2xl font-black gold mb-3"></h3>
+      <p id="modal-desc" class="text-white/70 leading-relaxed text-sm mb-6"></p>
+      <div class="flex justify-end gap-3">
+        <button onclick="closeWorkModal()" data-i18n="modal_close" class="border border-white/10 hover:border-white/30 px-6 py-3 rounded-xl text-xs font-bold transition">إغلاق النافذة</button>
+        <button onclick="requestThisService()" data-i18n="modal_request" class="bg-[#c9983d] hover:bg-yellow-500 text-black px-6 py-3 rounded-xl text-xs font-black transition">طلب هذه الخدمة الآن ←</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="casting-section" class="py-24 bg-[#050505]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12 fade-up">
+      <h2 data-i18n="casting_title" class="text-4xl md:text-5xl font-black gold mb-4">FICHE D'INFORMATIONS</h2>
+      <p data-i18n="casting_subtitle" class="text-white/50">إستمارة الكاستينغ الفني للمانيكان، الممثلين، والمؤثرين - يرجى ملء البيانات الخطوة تلو الأخرى بدقة.</p>
+    </div>
+
+    <div class="flex justify-between items-center mb-10 max-w-md mx-auto text-xs font-bold select-none">
+      <div class="step-indicator w-8 h-8 rounded-full border border-yellow-700/40 flex items-center justify-center active">1</div>
+      <div class="h-0.5 bg-white/10 flex-1 mx-2"></div>
+      <div class="step-indicator w-8 h-8 rounded-full border border-yellow-700/40 flex items-center justify-center">2</div>
+      <div class="h-0.5 bg-white/10 flex-1 mx-2"></div>
+      <div class="step-indicator w-8 h-8 rounded-full border border-yellow-700/40 flex items-center justify-center">3</div>
+      <div class="h-0.5 bg-white/10 flex-1 mx-2"></div>
+      <div class="step-indicator w-8 h-8 rounded-full border border-yellow-700/40 flex items-center justify-center">4</div>
+    </div>
+
+    <form action="https://formspree.io/f/xlgzqvyr" method="POST" enctype="multipart/form-data" class="bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-8 lg:p-12 space-y-6 shadow-2xl relative">
+      
+      <div class="form-step active" id="step-1">
+        <h3 data-i18n="step1_header" class="text-lg font-bold gold mb-6 pb-2 border-b border-white/5">1. Informations Personnelles (المعلومات الشخصية)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" name="Nom_Prenom" id="c_fullname" placeholder="Nom et prénom / الاسم واللقب" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Nom_Artistique" id="c_artname" placeholder="Nom artistique / الاسم الفني" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
+          <input type="date" name="Date_Naissance" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d] text-white/50">
+          <input type="text" name="Lieu_Naissance" id="c_birthplace" placeholder="Lieu de naissance / مكان الميلاد" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Nationalite" id="c_nationality" placeholder="Nationalité / الجنسية" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Adresse" id="c_address" placeholder="Adresse / العنوان الحالي" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
+          <input type="tel" name="Telephone" id="c_phone" placeholder="Téléphone / رقم الهاتف" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
+          <input type="email" name="Email" id="c_email" placeholder="E-mail / البريد الإلكتروني" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Piece_Identite" id="c_idnumber" placeholder="Numéro de pièce d'identité / رقم وثيقة الهوية" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 md:col-span-2 focus:outline-none focus:border-[#c9983d]">
+        </div>
+      </div>
+
+      <div class="form-step" id="step-2">
+        <h3 data-i18n="step2_header" class="text-lg font-bold gold mb-4 pb-2 border-b border-white/5">2. Profil Physique (القياسات والملف البدني)</h3>
+        <p data-i18n="step2_sub" class="text-xs text-white/40 mb-3">Profession / التخصص الفني المطلوب:</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+          <label class="flex items-center gap-2 bg-black/50 p-3 rounded-xl border border-white/5 cursor-pointer"><input type="checkbox" name="Profession[]" value="Mannequin" class="accent-[#c9983d]"> <span class="text-sm">Mannequin</span></label>
+          <label class="flex items-center gap-2 bg-black/50 p-3 rounded-xl border border-white/5 cursor-pointer"><input type="checkbox" name="Profession[]" value="Acteur" class="accent-[#c9983d]"> <span class="text-sm">Acteur / Actrice</span></label>
+          <label class="flex items-center gap-2 bg-black/50 p-3 rounded-xl border border-white/5 cursor-pointer"><input type="checkbox" name="Profession[]" value="Figurant" class="accent-[#c9983d]"> <span class="text-sm">Figurant(e)</span></label>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+          <input type="text" name="Taille" id="c_height" placeholder="Taille (cm) / الطول" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Poids" id="c_weight" placeholder="Poids (kg) / الوزن" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Yeux" id="c_eyes" placeholder="Yeux / لون العينين" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Cheveux" id="c_hair" placeholder="Cheveux / لون الشعر" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+        </div>
+      </div>
+
+      <div class="form-step" id="step-3">
+        <h3 data-i18n="step3_header" class="text-lg font-bold gold mb-4 pb-2 border-b border-white/5">3. Compétences & Réseaux (المهارات والروابط)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <input type="text" name="Instagram" placeholder="Instagram Profile Link" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="TikTok" placeholder="TikTok Profile Link" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+        </div>
+        <textarea name="Experiences_Precedentes" id="c_experience" rows="4" placeholder="Expériences précédentes / الأعمال السابقة بالتفصيل إن وجدت" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]"></textarea>
+      </div>
+
+      <div class="form-step" id="step-4">
+        <h3 data-i18n="step4_header" class="text-lg font-bold gold mb-6 pb-2 border-b border-white/5">4. Photos Obligatoires (المرفقات والصور الإلزامية)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div class="border border-dashed border-yellow-700/20 p-4 rounded-xl text-center relative hover:border-[#c9983d] transition">
+            <input type="file" name="Photo_Portrait" accept="image/*" required class="absolute inset-0 opacity-0 cursor-pointer">
+            <span class="block text-sm font-bold gold">Portrait (Visage) *</span>
+            <span data-i18n="img_portrait_hint" class="block text-[11px] text-white/40">صورة حديثة واضحة ومقربة للوجه</span>
+          </div>
+          <div class="border border-dashed border-yellow-700/20 p-4 rounded-xl text-center relative hover:border-[#c9983d] transition">
+            <input type="file" name="Photo_Plein_Pied" accept="image/*" required class="absolute inset-0 opacity-0 cursor-pointer">
+            <span class="block text-sm font-bold gold">Plein Pied *</span>
+            <span data-i18n="img_full_hint" class="block text-[11px] text-white/40">صورة كاملة للجسم واقفاً بدقة عالية</span>
+          </div>
+          <div class="border border-dashed border-yellow-700/20 p-4 rounded-xl text-center relative hover:border-[#c9983d] transition">
+            <input type="file" name="Piece_Identite_File" accept="image/*,.pdf" required class="absolute inset-0 opacity-0 cursor-pointer">
+            <span class="block text-sm font-bold">Pièce d'identité *</span>
+            <span data-i18n="img_id_hint" class="block text-[11px] text-white/40">نسخة واضحة من بطاقة التعريف أو جواز السفر</span>
+          </div>
+        </div>
+        <div class="bg-black/60 border border-yellow-700/10 p-4 rounded-xl mb-4 text-xs text-white/60">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" required class="mt-1 checked:bg-[#c9983d] accent-[#c9983d]">
+            <span data-i18n="casting_agreement">Je confirme l'exactitude des informations fournies et j'autorise Golden Star à utiliser mes données dans le cadre des castings. / أقر بصحة هذه البيانات المذكورة للوكالة.</span>
+          </label>
+        </div>
+        <button type="submit" data-i18n="btn_submit_casting" class="w-full bg-gradient-to-r from-[#c9983d] to-yellow-500 text-black py-4 rounded-xl font-black text-center shadow-xl hover:scale-[1.01] transition duration-300">
+          ✓ ENVOYER LA FICHE / إرسال استمارة الانتساب الفنية 🚀
+        </button>
+      </div>
+
+      <div class="flex justify-between items-center pt-4 border-t border-white/5">
+        <button type="button" id="prev-step-btn" onclick="moveCastingStep(-1)" data-i18n="step_prev" class="bg-white/5 border border-white/10 text-white px-6 py-2 rounded-xl text-xs font-bold hover:bg-white/10 transition disabled:opacity-30" disabled>السابق</button>
+        <button type="button" id="next-step-btn" onclick="moveCastingStep(1)" data-i18n="step_next" class="bg-[#c9983d] text-black px-6 py-2 rounded-xl text-xs font-black hover:bg-yellow-500 transition">التالي ←</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="cv-upload" class="py-24 bg-black">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12 fade-up">
+      <h2 data-i18n="cv_title" class="text-4xl md:text-5xl font-black gold mb-4">انضم إلى فريقنا</h2>
+      <p data-i18n="cv_subtitle" class="text-white/50">أرسل سيرتك الذاتية الآن وكن جزءاً من فريق GOLDEN STAR MANAGEMENT.</p>
+    </div>
+
+    <form action="https://formspree.io/f/xlgzqvyr" method="POST" enctype="multipart/form-data" class="bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-8 space-y-4 fade-up">
+      <input type="text" name="fullname" id="input_name" placeholder="الاسم الكامل" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
+      <input type="email" name="email" id="input_email" placeholder="البريد الإلكتروني" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
+      <input type="tel" name="phone" id="input_phone" placeholder="رقم الهاتف" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
+
+      <div class="border-2 border-dashed border-yellow-700/30 rounded-2xl p-8 text-center relative overflow-hidden hover:border-yellow-500 transition">
+        <input type="file" name="cv" accept=".pdf,.doc,.docx" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+        <div class="text-5xl mb-4">📄</div>
+        <h3 data-i18n="cv_upload_box" class="font-black text-lg mb-2 gold">رفع السيرة الذاتية</h3>
+        <p class="text-white/40 text-sm">PDF / DOC / DOCX</p>
+      </div>
+
+      <textarea name="message" id="input_msg" rows="4" placeholder="أخبرنا عن خبراتك ومهاراتك" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700"></textarea>
+      <button type="submit" data-i18n="btn_send_cv" class="w-full bg-gradient-to-r from-[#c9983d] to-yellow-500 text-black py-4 rounded-xl font-black hover:scale-[1.02] transition duration-300 shadow-2xl shadow-yellow-700/20">🚀 إرسال السيرة الذاتية</button>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="py-24 bg-[#050505]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12 fade-up">
+      <h2 data-i18n="contact_title" class="text-4xl md:text-5xl font-black gold mb-4">تواصل معنا</h2>
+      <p data-i18n="contact_subtitle" class="text-white/50">جاهزون لتحويل فكرتك إلى مشروع استثنائي.</p>
+    </div>
+
+    <form class="bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-8 space-y-4 fade-up">
+      <input type="text" id="contact_name" placeholder="الاسم الكامل" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
+      <input type="email" id="contact_email" placeholder="البريد الإلكتروني" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
+      <input type="tel" id="contact_phone" placeholder="رقم الهاتف" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
+      <textarea id="project-details" rows="5" placeholder="تفاصيل المشروع" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700"></textarea>
+
+      <button data-i18n="btn_send_project" class="w-full bg-[#c9983d] text-black py-4 rounded-xl font-black hover:bg-yellow-500 transition">إرسال الطلب</button>
+    </form>
+  </div>
+</section>
+
+<footer class="bg-[#050505] border-t border-white/5 py-10 text-center">
+  <img src="logo.jpg" class="w-16 h-16 rounded-full mx-auto border border-yellow-700/30 object-cover mb-4">
+  <h2 class="font-black text-2xl gold mb-2">GOLDEN STAR MANAGEMENT</h2>
+  <p class="text-white/40 text-sm mb-6">Production Audiovisuelle & Business Management</p>
+
+  <div class="flex justify-center gap-4 mb-6">
+    <a href="https://wa.me/213796369640" class="bg-green-600/10 text-green-400 px-5 py-2 rounded-full text-sm">WhatsApp</a>
+    <a href="https://www.tiktok.com/@goldenstar.management" class="bg-white/5 text-white px-5 py-2 rounded-full text-sm">TikTok</a>
+  </div>
+  <p class="text-white/20 text-xs tracking-widest">© 2026 GOLDEN STAR MANAGEMENT — ALL RIGHTS RESERVED</p>
+</footer>
+
 <script>
-  window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    if(loader) {
-      loader.style.opacity = '0';
-      setTimeout(() => loader.style.display = 'none', 500);
+const dictionary = {
+  ar: {
+    nav_home: 'الرئيسية', nav_services: 'الخدمات', nav_portfolio: 'الأعمال', nav_casting: 'طلب الانتساب الفني', nav_cv: 'انضم إلينا (CV)', nav_contact: 'التواصل',
+    hero_desc: 'شركة متخصصة في الإنتاج السمعي البصري، إدارة الأعمال، صناعة الهوية البصرية والتسويق الرقمي الفاخر.',
+    btn_casting: 'إستمارة الكاستينغ الفني 📄', btn_contact: 'تواصل معنا',
+    services_title: 'خدماتنا الاحترافية', services_subtitle: 'حلول متكاملة في الإنتاج السمعي البصري، التسويق، إدارة العلامات التجارية وصناعة المحتوى الفاخر.',
+    s1_title: 'الإنتاج السمعي البصري', s1_desc: 'تصوير سينمائي، إخراج، إعلانات، فيديوهات تجارية، كليبات وأفلام قصيرة بجودة عالمية.',
+    s2_title: 'التصوير الاحترافي', s2_desc: 'جلسات تصوير احترافية للأفراد، الشركات، المنتجات والمشاهير بأسلوب فاخر.',
+    s3_title: 'المونتاج والموشن', s3_desc: 'مونتاج سينمائي، مؤثرات بصرية، موشن جرافيك وتصحيح ألوان احترافي.',
+    s4_title: 'إدارة العلامات التجارية', s4_desc: 'بناء هوية بصرية متكاملة، استراتيجيات تسويق وإدارة البراندات الاحترافية.',
+    s5_title: 'التسويق الرقمي', s5_desc: 'حملات إعلانية، إدارة منصات التواصل الاجتماعي واستهداف احترافي للعملاء.',
+    s6_title: 'تنظيم الفعاليات', s6_desc: 'تنظيم المؤتمرات، الحفلات، العروض التجارية والتغطيات الإعلامية الكبرى.',
+    portfolio_title: 'أعمالنا', portfolio_subtitle: 'نماذج من مشاريعنا الأخيرة. اضغط على أي كرت لمشاهدة وتصفح العمل بالكامل.',
+    tab_all: 'جميع الأعمال', tab_branding: 'البراندينغ', view_work: 'عرض العمل 👁️',
+    p1_title: 'مشروع Melabelle', p1_desc: 'مشروع تصميم هوية بصرية فاخرة وإنتاج إعلاني متكامل لبراند Melabelle الاستثنائي.', p1_short: 'هوية بصرية فاخرة وإستراتيجية براند.',
+    p2_title: 'براندينغ Bijoux', p2_desc: 'صناعة الهوية الرقمية والجمالية لعلامة تجارية متخصصة في المجوهرات والقطع الفاخرة.', p2_short: 'معرض هوية براند مجوهرات راقي.',
+    p3_title: 'مشروع Le-R', p3_desc: 'تطوير وتحديث الخطوط البصرية والتسويقية للعلامة التجارية الراقية Le-R.', p3_short: 'جماليات الهوية التجارية الحديثة.',
+    team_title: 'الهيكل التنظيمي للشركة', team_desc: 'المخطط الإداري والتنظيمي المعتمد لفريق عمل Golden Star Management',
+    modal_close: 'إغلاق', modal_request: 'طلب هذه الخدمة الآن ←',
+    
+    // ترجمات قسم الكاستينغ الجديد
+    casting_title: "FICHE D'INFORMATIONS",
+    casting_subtitle: 'إستمارة الكاستينغ الفني للمانيكان، الممثلين، والمؤثرين - يرجى ملء البيانات الخطوة تلو الأخرى بدقة.',
+    step1_header: '1. Informations Personnelles (المعلومات الشخصية)',
+    step2_header: '2. Profil Physique (القياسات والملف البدني)',
+    step2_sub: 'Profession / التخصص الفني المطلوب:',
+    step3_header: '3. Compétences & Réseaux (المهارات والروابط)',
+    step4_header: '4. Photos Obligatoires (المرفقات والصور الإلزامية)',
+    img_portrait_hint: 'صورة حديثة واضحة ومقربة للوجه',
+    img_full_hint: 'صورة كاملة للجسم واقفاً بدقة عالية',
+    img_id_hint: 'نسخة واضحة من بطاقة التعريف أو جواز السفر',
+    casting_agreement: "Je confirme l'exactitude des informations fournies et j'autorise Golden Star à utiliser mes données dans le cadre des castings. / أقر بصحة هذه البيانات المذكورة للوكالة.",
+    btn_submit_casting: '✓ ENVOYER LA FICHE / إرسال استمارة الانتساب الفنية 🚀',
+    step_prev: 'السابق', step_next: 'التالي ←',
+
+    cv_title: 'انضم إلى فريقنا', cv_subtitle: 'أرسل سيرتك الذاتية الآن وكن جزءاً من فريق GOLDEN STAR MANAGEMENT.',
+    cv_upload_box: 'رفع السيرة الذاتية', btn_send_cv: '🚀 إرسال السيرة الذاتية',
+    contact_title: 'تواصل معنا', contact_subtitle: 'جاهزون لتحويل فكرتك إلى مشروع استثنائي.',
+    btn_send_project: 'إرسال الطلب',
+    ad_badge: 'عرض / أخبار',
+    ad_title: 'فرصة توظيف: مدير تسويق رقمي',
+    ad_desc: 'انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمحترفين مع خصومات خاصة لخدمات البراندينج لأول 5 شركات هذا الشهر.',
+    ad_btn: 'قدم طلبك الآن ←',
+    ad_click_hint: 'انقر للتكبير 🔍',
+    placeholders: { 
+      input_name: 'الاسم الكامل', input_email: 'البريد الإلكتروني', input_phone: 'رقم الهاتف', input_msg: 'أخبرنا عن خبراتك ومهاراتك', 
+      contact_name: 'الاسم الكامل', contact_email: 'البريد الإلكتروني', contact_phone: 'رقم الهاتف', 'project-details': 'تفاصيل المشروع',
+      c_fullname: 'Nom et prénom / الاسم واللقب', c_artname: 'Nom artistique / الاسم الفني', c_birthplace: 'Lieu de naissance / مكان الميلاد',
+      c_nationality: 'Nationalité / الجنسية', c_address: 'Adresse / العنوان الحالي', c_phone: 'Téléphone / رقم الهاتف', c_email: 'E-mail / البريد الإلكتروني',
+      c_idnumber: "Numéro de pièce d'identité / رقم وثيقة الهوية", c_height: 'Taille (cm) / الطول', c_weight: 'Poids (kg) / الوزن',
+      c_eyes: 'Yeux / لون العينين', c_hair: 'Cheveux / لون الشعر', c_experience: 'Expériences précédentes / الأعمال السابقة بالتفصيل إن وجدت'
+    }
+  },
+  en: {
+    nav_home: 'Home', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Casting Form', nav_cv: 'Join Us (CV)', nav_contact: 'Contact',
+    hero_desc: 'A luxury agency specialized in audiovisual production, branding, business management and premium digital marketing.',
+    btn_casting: 'Artistic Casting Form 📄', btn_contact: 'Contact Us',
+    services_title: 'Our Professional Services', services_subtitle: 'Integrated solutions in audiovisual production, marketing, brand management and premium content creation.',
+    s1_title: 'Audiovisual Production', s1_desc: 'Cinematography, directing, commercials, music videos and short films with international standards.',
+    s2_title: 'Professional Photography', s2_desc: 'High-end photography sessions for individuals, corporations, products and celebrities.',
+    s3_title: 'Editing & Motion Graphics', s3_desc: 'Cinematic editing, visual effects, high-end motion graphics and professional color grading.',
+    s4_title: 'Brand Management', s4_desc: 'Building comprehensive visual identities, innovative marketing strategies and professional branding.',
+    s5_title: 'Digital Marketing', s5_desc: 'Targeted ad campaigns, social media management and high-conversion client acquisition.',
+    s6_title: 'Event Management', s6_desc: 'Organizing grand conferences, elite parties, commercial exhibitions and luxury media coverage.',
+    portfolio_title: 'Our Portfolio', portfolio_subtitle: 'Showcase of our latest premium projects. Click on any card to view the complete case study.',
+    tab_all: 'All Works', tab_branding: 'Branding', view_work: 'View Project 👁️',
+    p1_title: 'Melabelle Project', p1_desc: 'A complete premium digital strategy and visual identity built for Melabelle brand.', p1_short: 'Luxury Identity & Brand Strategy.',
+    p2_title: 'Bijoux Branding', p2_desc: 'High-end digital identity and aesthetics created for an exclusive jewelry brand.', p2_short: 'Premium jewelry identity showcase.',
+    p3_title: 'Le-R Project', p3_desc: 'Developing and modernizing the visual and marketing benchmarks for Le-R brand.', p3_short: 'Modern corporate branding aesthetics.',
+    team_title: 'Company Structure', team_desc: 'The official administrative and organizational blueprint for Golden Star Management.',
+    modal_close: 'Close', modal_request: 'Request Service Now ←',
+    
+    // Casting Section Translation
+    casting_title: "FICHE D'INFORMATIONS",
+    casting_subtitle: 'Artistic registration form for models, actors, and influencers - Please step-by-step complete data.',
+    step1_header: '1. Personal Information',
+    step2_header: '2. Physical Profile & Measurements',
+    step2_sub: 'Profession / Desired Field:',
+    step3_header: '3. Competences & Links',
+    step4_header: '4. Obligatory Attachments & Photos',
+    img_portrait_hint: 'Recent, clear close-up portrait image of the face',
+    img_full_hint: 'Full-body standing image with excellent resolution',
+    img_id_hint: 'Clear copy of National ID card or Passport',
+    casting_agreement: "I confirm the accuracy of the information provided and authorize Golden Star to use my data for casting purposes.",
+    btn_submit_casting: '✓ ENVOYER LA FICHE / Submit Casting Form Now 🚀',
+    step_prev: 'Previous', step_next: 'Next →',
+
+    cv_title: 'Join Our Team', cv_subtitle: 'Submit your resume now and become a vital part of GOLDEN STAR MANAGEMENT.',
+    cv_upload_box: 'Upload Resume / CV', btn_send_cv: '🚀 Submit Application',
+    contact_title: 'Contact Us', contact_subtitle: 'We are ready to transform your vision into an extraordinary reality.',
+    btn_send_project: 'Send Inquiry',
+    ad_badge: 'OFFER / NEWS',
+    ad_title: 'Hiring Now: Digital Marketing Manager',
+    ad_desc: 'Join our elite team today! We are looking for talented experts, plus special branding packages discounts for the first 5 clients this month.',
+    ad_btn: 'Apply Now ←',
+    ad_click_hint: 'Click to zoom 🔍',
+    placeholders: { 
+      input_name: 'Full Name', input_email: 'Email Address', input_phone: 'Phone Number', input_msg: 'Tell us about your experience & skills', 
+      contact_name: 'Full Name', contact_email: 'Email Address', contact_phone: 'Phone Number', 'project-details': 'Project Details & Specifications',
+      c_fullname: 'Full Name', c_artname: 'Artistic Name', c_birthplace: 'Birth Place', c_nationality: 'Nationality',
+      c_address: 'Current Address', c_phone: 'Phone Number', c_email: 'Email Address', c_idnumber: 'ID Document Number',
+      c_height: 'Height (cm)', c_weight: 'Weight (kg)', c_eyes: 'Eyes Color', c_hair: 'Hair Color', c_experience: 'Detailed previous projects & experience'
+    }
+  },
+  fr: {
+    nav_home: 'Accueil', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Fiche d\'inscription', nav_cv: 'Rejoignez-nous (CV)', nav_contact: 'Contact',
+    hero_desc: 'Une agence haut de gamme spécialisée dans la production audiovisuelle, le branding, la gestion d\'entreprise et le marketing digital de luxe.',
+    btn_casting: 'Fiche d\'inscription Artistique 📄', btn_contact: 'Contactez-nous',
+    services_title: 'Nos Services Professionnels', services_subtitle: 'Solutions intégrées en production audiovisuelle, marketing, gestion de marque et création de contenu premium.',
+    s1_title: 'Production Audiovisuelle', s1_desc: 'Cinéma, réalisation, publicités, clips vidéo et courts métrages aux normes internationales.',
+    s2_title: 'Photographie Professionnelle', s2_desc: 'Séances photo haut de gamme pour particuliers, entreprises, produits et célébrités.',
+    s3_title: 'Montage & Motion Design', s3_desc: 'Montage cinématographique, effets visuels, motion graphics premium et étalonnage professionnel.',
+    s4_title: 'Gestion de Marque', s4_desc: 'Construction d\'identités visuelles complètes, stratégies marketing innovantes et branding pro.',
+    s5_title: 'Marketing Digital', s5_desc: 'Campagnes publicitaires ciblées, gestion des réseaux sociaux et acquisition de clients.',
+    s6_title: 'Gestion d\'Événements', s6_desc: 'Organisation de conférences, soirées d\'élite, expositions commerciales et couverture médiatique de luxe.',
+    portfolio_title: 'Notre Portfolio', portfolio_subtitle: 'Découvrez nos derniers projets premium. Cliquez sur une carte pour voir les détails complets.',
+    tab_all: 'Tous les Travaux', tab_branding: 'Branding', view_work: 'Voir le Projet 👁️',
+    p1_title: 'Projet Melabelle', p1_desc: 'Une stratégie digitale complète et une identité visuelle premium conçues pour la marque Melabelle.', p1_short: 'Identité de luxe et stratégie de marque.',
+    p2_title: 'Branding Bijoux', p2_desc: 'Identité numérique haut de gamme et esthétique créées pour une marque de bijoux exclusive.', p2_short: 'Présentation d\'identité de bijoux premium.',
+    p3_title: 'Projet Le-R', p3_desc: 'Développement et modernisation des repères visuels et marketing pour la marque Le-R.', p3_short: 'Esthétique moderne du branding d\'entreprise.',
+    team_title: 'Structure de l\'Entreprise', team_desc: 'Le plan administratif et organisationnel officiel de Golden Star Management.',
+    modal_close: 'Fermer', modal_request: 'Demander ce Service ←',
+    
+    // Casting Section Translation
+    casting_title: "FICHE D'INFORMATIONS",
+    casting_subtitle: 'Formulaire de casting pour mannequins, acteurs et influenceurs - Veuillez remplir étape par étape.',
+    step1_header: '1. Informations Personnelles',
+    step2_header: '2. Profil Physique & Mensurations',
+    step2_sub: 'Profession / Domaine Souhaité:',
+    step3_header: '3. Compétences & Réseaux',
+    step4_header: '4. Pièces Jointes & Photos Obligatoires',
+    img_portrait_hint: 'Photo portrait récente et claire du visage',
+    img_full_hint: 'Photo plein pied corps entier de haute qualité',
+    img_id_hint: 'Copie claire de la pièce d\'identité ou passeport',
+    casting_agreement: "Je confirme l'exactitude des informations fournies et j'autorise Golden Star à utiliser mes données dans le cadre des castings.",
+    btn_submit_casting: '✓ ENVOYER LA FICHE / Soumettre 🚀',
+    step_prev: 'Précédent', step_next: 'Suivant →',
+
+    cv_title: 'Rejoignez Notre Équipe', cv_subtitle: 'Soumettez votre CV dès maintenant et faites partie de GOLDEN STAR MANAGEMENT.',
+    cv_upload_box: 'Télécharger le CV', btn_send_cv: '🚀 Soumettre la Candidature',
+    contact_title: 'Contactez-nous', contact_subtitle: 'Nous sommes prêts à transformer votre vision en une réalité extraordinaire.',
+    btn_send_project: 'Envoyer la Demande',
+    ad_badge: 'OFFRE / INFOS',
+    ad_title: 'Recrutement: Manager Marketing Digital',
+    ad_desc: 'Rejoignez notre équipe d\'élite dès aujourd\'hui! Nous recrutons des pros, avec des réductions exclusives sur le branding pour les 5 premières marques ce mois-ci.',
+    ad_btn: 'Postulez Maintenant ←',
+    ad_click_hint: 'Agrandir 🔍',
+    placeholders: { 
+      input_name: 'Nom Complet', input_email: 'Adresse E-mail', input_phone: 'Numéro de Téléphone', input_msg: 'Parlez-nous de votre expérience et compétences', 
+      contact_name: 'Nom Complet', contact_email: 'Adresse E-mail', contact_phone: 'Numéro de Téléphone', 'project-details': 'Détails et Spécifications du Projet',
+      c_fullname: 'Nom complet', c_artname: 'Nom artistique', c_birthplace: 'Lieu de naissance', c_nationality: 'Nationalité',
+      c_address: 'Adresse actuelle', c_phone: 'Téléphone', c_email: 'Adresse E-mail', c_idnumber: 'Numéro de pièce d\'identité',
+      c_height: 'Taille (cm)', c_weight: 'Poids (kg)', c_eyes: 'Couleur des yeux', c_hair: 'Couleur des cheveux', c_experience: 'Expériences précédentes en détail'
+    }
+  }
+};
+
+const projectImages = { p1: 'melabelle.png', p2: 'bijoux.png', p3: 'le-r.png' };
+let currentModalKey = "";
+let currentLang = "ar";
+
+function changeLanguage(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (dictionary[lang][key]) {
+      element.innerText = dictionary[lang][key];
     }
   });
 
-  // دوال فارغة لمنع حدوث أخطاء بكود الأزرار في المعاينة الفورية
-  function toggleTheme() { document.body.classList.toggle('light-theme'); }
-  function openExpandedAd(e) { e.stopPropagation(); }
-  function closeSidebarAd(e) { e.stopPropagation(); document.getElementById('sidebar-ad').style.display='none'; }
-  function closeExpandedAd() {}
-  function filterPortfolio(cat) {}
+  const placeholders = dictionary[lang].placeholders;
+  for (const id in placeholders) {
+    const inputElement = document.getElementById(id);
+    if (inputElement) {
+      inputElement.setAttribute('placeholder', placeholders[id]);
+    }
+  }
+  
+  if(document.getElementById('work-modal').style.display === 'flex' && currentModalKey !== "") {
+    document.getElementById('modal-title').innerText = dictionary[lang][currentModalKey + '_title'];
+    document.getElementById('modal-desc').innerText = dictionary[lang][currentModalKey + '_desc'];
+  }
+}
+
+window.addEventListener('load',()=>{
+  document.getElementById('loader').style.display='none';
+  changeLanguage('ar');
+});
+
+function toggleTheme(){
+  const body = document.body;
+  body.classList.toggle('light-theme');
+  
+  const themeBtn = document.getElementById('theme-btn');
+  if(body.classList.contains('light-theme')) {
+    themeBtn.innerText = '🌙';
+  } else {
+    themeBtn.innerText = '☀️';
+  }
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+},{threshold:0.2});
+
+document.querySelectorAll('.fade-up').forEach(el=>{
+  observer.observe(el);
+});
+
+function filterPortfolio(category){
+  document.querySelectorAll('.portfolio-tab').forEach(btn=>{
+    btn.classList.remove('active');
+  });
+
+  document.getElementById('tab-' + category).classList.add('active');
+
+  document.querySelectorAll('.portfolio-item').forEach(item=>{
+    if(category === 'all'){
+      item.style.display = 'block';
+      setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
+    }
+    else if(item.classList.contains(category)){
+      item.style.display = 'block';
+      setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
+    }
+    else{
+      item.style.opacity = '0';
+      item.style.transform = 'scale(0.95)';
+      setTimeout(() => { item.style.display = 'none'; }, 400);
+    }
+  });
+}
+
+function openWorkModal(projectKey) {
+  currentModalKey = projectKey;
+  document.getElementById('modal-title').innerText = dictionary[currentLang][projectKey + '_title'];
+  document.getElementById('modal-desc').innerText = dictionary[currentLang][projectKey + '_desc'];
+  document.getElementById('modal-img').src = projectImages[projectKey];
+  document.getElementById('work-modal').style.display = 'flex';
+}
+
+function closeWorkModal() {
+  document.getElementById('work-modal').style.display = 'none';
+  currentModalKey = "";
+}
+
+function requestThisService() {
+  const projectTitle = dictionary[currentLang][currentModalKey + '_title'];
+  closeWorkModal();
+  const detailsField = document.getElementById('project-details');
+  if(detailsField) {
+    if(currentLang === 'ar') {
+      detailsField.value = `مرحباً جولدن ستار، لقد تصفحت مشروعكم [ ${projectTitle} ] وأرغب في طلب خدمة مماثلة وتطويرها لشركتي.`;
+    } else if(currentLang === 'fr') {
+      detailsField.value = `Bonjour Golden Star, j'ai consulté votre projet [ ${projectTitle} ] et je souhaite demander un service similaire pour mon entreprise.`;
+    } else {
+      detailsField.value = `Hello Golden Star, I reviewed your project [ ${projectTitle} ] and I would like to request a similar service for my brand.`;
+    }
+  }
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+}
+
+/* ======================================================== */
+/* جافا سكريبت التحكم بخطوات نموذج طلب الانتساب الفني (Casting) */
+/* ======================================================== */
+let currentCastingStep = 0;
+const castingSteps = document.querySelectorAll('.form-step');
+const stepIndicators = document.querySelectorAll('.step-indicator');
+const prevStepBtn = document.getElementById('prev-step-btn');
+const nextStepBtn = document.getElementById('next-step-btn');
+
+function showCastingStep(stepIdx) {
+  castingSteps.forEach((step, index) => {
+    step.classList.toggle('active', index === stepIdx);
+  });
+  stepIndicators.forEach((indicator, index) => {
+    indicator.classList.toggle('active', index <= stepIdx);
+  });
+  
+  prevStepBtn.disabled = (stepIdx === 0);
+  
+  if (stepIdx === castingSteps.length - 1) {
+    nextStepBtn.style.display = 'none';
+  } else {
+    nextStepBtn.style.display = 'block';
+    nextStepBtn.innerText = currentLang === 'ar' ? 'التالي ←' : (currentLang === 'fr' ? 'Suivant →' : 'Next →');
+  }
+}
+
+function moveCastingStep(direction) {
+  // للتحقق من الحقول الإجبارية قبل الانتقال للخطوة التالية
+  if (direction === 1) {
+    const requiredInputs = castingSteps[currentCastingStep].querySelectorAll('input[required], textarea[required]');
+    let isValid = true;
+    requiredInputs.forEach(input => {
+      if(!input.checkValidity()) {
+        input.reportValidity();
+        isValid = false;
+      }
+    });
+    if(!isValid) return;
+  }
+  
+  currentCastingStep += direction;
+  showCastingStep(currentCastingStep);
+}
+
+function closeSidebarAd(event) {
+  event.stopPropagation();
+  const adBox = document.getElementById('sidebar-ad');
+  adBox.style.opacity = '0';
+  adBox.style.transform = 'scale(0.8) translateY(20px)';
+  setTimeout(() => adBox.remove(), 500);
+}
+
+function openExpandedAd(event) {
+  document.getElementById('expanded-ad-modal').style.display = 'flex';
+}
+
+function closeExpandedAd() {
+  document.getElementById('expanded-ad-modal').style.display = 'none';
+}
+
+function handleAdBtnClick(event) {
+  event.stopPropagation();
+  redirectToAdAction();
+}
+
+function redirectToAdAction() {
+  closeExpandedAd();
+  const target = document.getElementById('casting-section');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+}
 </script>
 
 </body>
