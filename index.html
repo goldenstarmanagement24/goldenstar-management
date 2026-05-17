@@ -218,44 +218,62 @@
     <div class="text-center mb-16 fade-up">
       <h2 class="text-4xl md:text-5xl font-black gold mb-4">خدماتنا الاحترافية</h2>
       <p class="text-white/50 max-w-2xl mx-auto leading-relaxed">
-        حلول متكاملة في الإنتاج السمعي البصري، التسويق، إدارة العلامات التجارية وصناعة المحتوى الفاخر.
+        حلول متكاملة ومباشرة، اضغط على أي خدمة لطلبها فوراً.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="service-card p-8 rounded-2xl fade-up">
+      <div onclick="selectService('الإنتاج السمعي البصري')" class="service-card p-8 rounded-2xl fade-up cursor-pointer hover:border-yellow-500 transition group">
         <div class="text-5xl mb-6">🎬</div>
-        <h3 class="text-xl font-black mb-4">الإنتاج السمعي البصري</h3>
+        <h3 class="text-xl font-black mb-4 flex justify-between items-center">
+          <span>الإنتاج السمعي البصري</span>
+          <span class="text-xs gold opacity-60 group-hover:opacity-100 transition">طلب الخدمة ←</span>
+        </h3>
         <p class="text-white/50 leading-relaxed">تصوير سينمائي، إخراج، إعلانات، فيديوهات تجارية، كليبات وأفلام قصيرة بجودة عالمية.</p>
       </div>
 
-      <div class="service-card p-8 rounded-2xl fade-up">
+      <div onclick="selectService('التصوير الاحترافي')" class="service-card p-8 rounded-2xl fade-up cursor-pointer hover:border-yellow-500 transition group">
         <div class="text-5xl mb-6">📸</div>
-        <h3 class="text-xl font-black mb-4">التصوير الاحترافي</h3>
+        <h3 class="text-xl font-black mb-4 flex justify-between items-center">
+          <span>التصوير الاحترافي</span>
+          <span class="text-xs gold opacity-60 group-hover:opacity-100 transition">طلب الخدمة ←</span>
+        </h3>
         <p class="text-white/50 leading-relaxed">جلسات تصوير احترافية للأفراد، الشركات، المنتجات والمشاهير بأسلوب فاخر.</p>
       </div>
 
-      <div class="service-card p-8 rounded-2xl fade-up">
+      <div onclick="selectService('المونتاج والموشن جرافيك')" class="service-card p-8 rounded-2xl fade-up cursor-pointer hover:border-yellow-500 transition group">
         <div class="text-5xl mb-6">✨</div>
-        <h3 class="text-xl font-black mb-4">المونتاج والموشن</h3>
-        <p class="text-white/50 leading-relaxed">مونتاج سينمائي، مؤثرات بصرية، موشن جرافيك وتصحيح ألوان احترافي.</p>
+        <h3 class="text-xl font-black mb-4 flex justify-between items-center">
+          <span>المونتاج والموشن</span>
+          <span class="text-xs gold opacity-60 group-hover:opacity-100 transition">طلب الخدمة ←</span>
+        </h3>
+        <p class="text-white/50 leading-relaxed">مونتاج سينمائي، مؤثرات بบริการ، موشن جرافيك وتصحيح ألوان احترافي.</p>
       </div>
 
-      <div class="service-card p-8 rounded-2xl fade-up">
+      <div onclick="selectService('إدارة العلامات التجارية والهوية البصرية')" class="service-card p-8 rounded-2xl fade-up cursor-pointer hover:border-yellow-500 transition group">
         <div class="text-5xl mb-6">👑</div>
-        <h3 class="text-xl font-black mb-4">إدارة العلامات التجارية</h3>
+        <h3 class="text-xl font-black mb-4 flex justify-between items-center">
+          <span>إدارة العلامات التجارية</span>
+          <span class="text-xs gold opacity-60 group-hover:opacity-100 transition">طلب الخدمة ←</span>
+        </h3>
         <p class="text-white/50 leading-relaxed">بناء هوية بصرية متكاملة، استراتيجيات تسويق وإدارة البراندات الاحترافية.</p>
       </div>
 
-      <div class="service-card p-8 rounded-2xl fade-up">
+      <div onclick="selectService('التسويق الرقمي')" class="service-card p-8 rounded-2xl fade-up cursor-pointer hover:border-yellow-500 transition group">
         <div class="text-5xl mb-6">📢</div>
-        <h3 class="text-xl font-black mb-4">التسويق الرقمي</h3>
+        <h3 class="text-xl font-black mb-4 flex justify-between items-center">
+          <span>التسويق الرقمي</span>
+          <span class="text-xs gold opacity-60 group-hover:opacity-100 transition">طلب الخدمة ←</span>
+        </h3>
         <p class="text-white/50 leading-relaxed">حملات إعلانية، إدارة منصات التواصل الاجتماعي واستهداف احترافي للعملاء.</p>
       </div>
 
-      <div class="service-card p-8 rounded-2xl fade-up">
+      <div onclick="selectService('تنظيم الفعاليات والتغطيات')" class="service-card p-8 rounded-2xl fade-up cursor-pointer hover:border-yellow-500 transition group">
         <div class="text-5xl mb-6">🎤</div>
-        <h3 class="text-xl font-black mb-4">تنظيم الفعاليات</h3>
+        <h3 class="text-xl font-black mb-4 flex justify-between items-center">
+          <span>تنظيم الفعاليات</span>
+          <span class="text-xs gold opacity-60 group-hover:opacity-100 transition">طلب الخدمة ←</span>
+        </h3>
         <p class="text-white/50 leading-relaxed">تنظيم المؤتمرات، الحفلات، العروض التجارية والتغطيات الإعلامية الكبرى.</p>
       </div>
     </div>
@@ -464,15 +482,12 @@ function filterPortfolio(category){
   });
 }
 
-// دالة الربط الذكي عند الضغط لطلب الخدمة مباشرة
+// دالة التحويل والطلب الموحدة والذكية لجميع الأقسام
 function selectService(serviceName) {
   const detailsField = document.getElementById('project-details');
   if(detailsField) {
-    // تعبئة حقل النص بشكل مخصص وفوري
-    detailsField.value = `مرحباً جولدن ستار، أرغب في الاستفسار عن وطلب خدمة: ${serviceName}. الرجاء التواصل معي لمناقشة التفاصيل.`;
+    detailsField.value = `مرحباً جولدن ستار، أود الاستفسار عن تفاصيل وحجز خدمة: [ ${serviceName} ]. يرجى التواصل معي في أقرب وقت.`;
   }
-  
-  // الانتقال الانسيابي السلس لسكشن التواصل
   document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
 </script>
