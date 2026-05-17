@@ -28,6 +28,11 @@
       scroll-behavior:smooth;
     }
 
+    /* إضافة تأثير الانتقال الناعم لجميع عناصر الموقع عند تغيير الثيم */
+    body, section, header, footer, div, input, textarea, select, h1, h2, h3, h4, p, a, button {
+      transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+    }
+
     body{
       font-family:'Cairo',sans-serif;
       background:#030303;
@@ -65,7 +70,7 @@
     .portfolio-card{
       background:#0b0b0b;
       border:1px solid rgba(201,152,61,0.12);
-      transition:0.4s ease;
+      transition: 0.4s ease-in-out, background-color 0.5s ease, border-color 0.5s ease;
     }
 
     .service-card:hover,
@@ -78,7 +83,7 @@
     .fade-up{
       opacity:0;
       transform:translateY(40px);
-      transition:1s;
+      transition: 1s ease-out;
     }
 
     .fade-up.active{
@@ -118,21 +123,6 @@
       }
     }
 
-    .light-theme{
-      background:#f7f7f7;
-      color:#111;
-    }
-
-    .light-theme .service-card,
-    .light-theme .portfolio-card{
-      background:white;
-      color:black;
-    }
-
-    .light-theme header{
-      background:rgba(255,255,255,0.8);
-    }
-
     .portfolio-tab.active{
       background:#c9983d !important;
       color:black !important;
@@ -143,7 +133,6 @@
       transition: opacity 0.4s ease, transform 0.4s ease, scale 0.4s ease;
     }
 
-    /* أنيميشن مخصصة لنبض الإعلان الجانبي لجذب الانتباه بشكل راقي */
     @keyframes subtlePulse {
       0%, 100% { border-color: rgba(201,152,61,0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
       50% { border-color: rgba(201,152,61,0.6); box-shadow: 0 10px 30px rgba(201,152,61,0.1); }
@@ -151,6 +140,162 @@
     .sticky-ad-box {
       animation: subtlePulse 4s infinite ease-in-out;
       backdrop-filter: blur(12px);
+    }
+
+    /* ======================================================== */
+    /* قواعد وضوابط الثيم الفاتح الكامل (Comprehensive Light Theme) */
+    /* ======================================================== */
+    .light-theme {
+      background: #fcfcfc;
+      color: #1a1a1a;
+    }
+
+    .light-theme #services, 
+    .light-theme #cv-upload,
+    .light-theme footer {
+      background: #f3f4f6 !important; /* رمادي فاتح مريح */
+    }
+
+    .light-theme #portfolio,
+    .light-theme #contact {
+      background: #ffffff !important; /* أبيض ناصع للأقسام المتبادلة */
+    }
+
+    .light-theme header {
+      background: rgba(255, 255, 255, 0.85) !important;
+      border-color: rgba(201, 152, 61, 0.15) !important;
+    }
+
+    .light-theme header nav a {
+      color: #374151 !important;
+    }
+    .light-theme header nav a:hover {
+      color: #c9983d !important;
+    }
+
+    .light-theme header h1 {
+      color: #c9983d !important;
+    }
+    .light-theme header p {
+      color: #6b7280 !important;
+    }
+
+    /* تعديل كروت الخدمات والأعمال في الوضع الفاتح */
+    .light-theme .service-card,
+    .light-theme .portfolio-card {
+      background: #ffffff !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+    
+    .light-theme .service-card h3,
+    .light-theme .portfolio-card h3 {
+      color: #111111 !important;
+    }
+
+    .light-theme .service-card p,
+    .light-theme .portfolio-card p {
+      color: #4b5563 !important;
+    }
+
+    .light-theme .service-card:hover,
+    .light-theme .portfolio-card:hover {
+      border-color: #c9983d !important;
+      box-shadow: 0 20px 40px rgba(201, 152, 61, 0.12) !important;
+    }
+
+    /* نصوص الأقسام الفرعية */
+    .light-theme section p {
+      color: #4b5563 !important;
+    }
+
+    /* تعديل الفورم وحقول الإدخال */
+    .light-theme form {
+      background: #ffffff !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .light-theme form input,
+    .light-theme form textarea {
+      background: #f9fafb !important;
+      border-color: rgba(0, 0, 0, 0.1) !important;
+      color: #111111 !important;
+    }
+
+    .light-theme form input:focus,
+    .light-theme form textarea:focus {
+      border-color: #c9983d !important;
+    }
+
+    .light-theme form input::placeholder,
+    .light-theme form textarea::placeholder {
+      color: #9ca3af !important;
+    }
+
+    /* تعديل أزرار التصفية الفلتر */
+    .light-theme .portfolio-tab {
+      color: #374151 !important;
+      border-color: rgba(0, 0, 0, 0.1) !important;
+    }
+    .light-theme .portfolio-tab:hover {
+      border-color: #c9983d !important;
+      color: #c9983d !important;
+    }
+
+    /* تعديل لوحة الإعلان الجانبية الفلوت */
+    .light-theme #sidebar-ad {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border-color: rgba(201, 152, 61, 0.25) !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+    }
+    .light-theme #sidebar-ad h4 {
+      color: #111111 !important;
+    }
+    .light-theme #sidebar-ad p {
+      color: #374151 !important;
+    }
+    .light-theme #sidebar-ad a {
+      color: #111111 !important;
+      border-color: rgba(0, 0, 0, 0.1) !important;
+    }
+    .light-theme #sidebar-ad a:hover {
+      background: #c9983d !important;
+      color: white !important;
+    }
+
+    /* الهيكل التنظيمي */
+    .light-theme #team-structure h2 {
+      color: #c9983d !important;
+    }
+    .light-theme #team-structure .bg-\[\#0b0b0b\] {
+      background: #ffffff !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* الفوتر */
+    .light-theme footer h2 {
+      color: #c9983d !important;
+    }
+    .light-theme footer p {
+      color: #4b5563 !important;
+    }
+
+    /* أزرار اللغات وحالة الثيم */
+    .light-theme #lang-switcher,
+    .light-theme button[onclick="toggleTheme()"] {
+      background: #ffffff !important;
+      border-color: rgba(0, 0, 0, 0.1) !important;
+      color: #111111 !important;
+    }
+
+    /* تعديل طبقة التعتيم الفاخرة للـ Hero لتكون مريحة بالثيمين */
+    .light-theme .hero-overlay {
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(252,252,252,1)) !important;
+    }
+    .light-theme .hero h2,
+    .light-theme .hero p {
+      color: #1f2937 !important;
     }
   </style>
 </head>
@@ -161,8 +306,8 @@
   <div class="gold text-sm tracking-[6px] uppercase">Golden Star Management</div>
 </div>
 
-<div id="sidebar-ad" class="fixed bottom-6 right-6 lg:bottom-auto lg:top-28 lg:right-6 w-72 z-40 bg-[#0b0b0b]/90 border border-yellow-700/20 rounded-2xl p-4 shadow-2xl sticky-ad-box transition-all duration-500">
-  <button onclick="closeSidebarAd()" class="absolute -top-2 -left-2 bg-black hover:bg-red-600 text-white hover:text-white w-6 h-6 rounded-full flex items-center justify-center text-xs transition border border-white/10 shadow-lg">
+<div id="sidebar-ad" class="fixed bottom-6 right-6 lg:bottom-auto lg:top-28 lg:right-6 w-72 z-40 bg-[#0b0b0b]/90 border border-yellow-700/20 rounded-2xl p-4 shadow-2xl sticky-ad-box">
+  <button onclick="closeSidebarAd()" class="absolute -top-2 -left-2 bg-black hover:bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs transition border border-white/10 shadow-lg">
     ✕
   </button>
 
@@ -209,7 +354,7 @@
         <option value="fr">Français</option>
       </select>
 
-      <button onclick="toggleTheme()" class="bg-black border border-yellow-700/20 w-10 h-10 rounded-full text-yellow-500">
+      <button id="theme-btn" onclick="toggleTheme()" class="bg-black border border-yellow-700/20 w-10 h-10 rounded-full text-yellow-500">
         ☀️
       </button>
     </div>
@@ -298,7 +443,6 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
       <div onclick="openWorkModal('p1')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer group">
         <div class="overflow-hidden relative">
           <img src="melabelle.png" class="h-72 w-full object-cover group-hover:scale-110 transition duration-500">
@@ -337,7 +481,6 @@
           <p data-i18n="p3_short" class="text-white/50 text-sm">Modern corporate branding aesthetics.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -354,23 +497,16 @@
 
 <div id="work-modal" class="fixed inset-0 z-[99999] hidden bg-black/90 backdrop-blur-md items-center justify-center p-4 transition-all duration-300">
   <div class="bg-[#0b0b0b] border border-yellow-700/30 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative">
-    
-    <button onclick="closeWorkModal()" class="absolute top-4 left-4 bg-black/60 hover:bg-[#c9983d] hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition text-white font-bold z-10">
-      ✕
-    </button>
-
+    <button onclick="closeWorkModal()" class="absolute top-4 left-4 bg-black/60 hover:bg-[#c9983d] hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition text-white font-bold z-10">✕</button>
     <img id="modal-img" src="" class="w-full h-96 object-cover border-b border-yellow-700/10">
-
     <div class="p-8">
       <h3 id="modal-title" class="text-2xl font-black gold mb-3"></h3>
       <p id="modal-desc" class="text-white/70 leading-relaxed text-sm mb-6"></p>
-      
       <div class="flex justify-end gap-3">
         <button onclick="closeWorkModal()" data-i18n="modal_close" class="border border-white/10 hover:border-white/30 px-6 py-3 rounded-xl text-xs font-bold transition">إغلاق النافذة</button>
         <button onclick="requestThisService()" data-i18n="modal_request" class="bg-[#c9983d] hover:bg-yellow-500 text-black px-6 py-3 rounded-xl text-xs font-black transition">طلب هذه الخدمة الآن ←</button>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -453,7 +589,6 @@ const dictionary = {
     cv_upload_box: 'رفع السيرة الذاتية', btn_send_cv: '🚀 إرسال السيرة الذاتية',
     contact_title: 'تواصل معنا', contact_subtitle: 'جاهزون لتحويل فكرتك إلى مشروع استثنائي.',
     btn_send_project: 'إرسال الطلب',
-    // ترجمة حقول الإعلان الجانبي بالعربية
     ad_badge: 'عرض / أخبار',
     ad_title: 'فرصة توظيف: مدير تسويق رقمي',
     ad_desc: 'انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمحترفين مع خصومات خاصة لخدمات البراندينج لأول 5 شركات هذا الشهر.',
@@ -482,7 +617,6 @@ const dictionary = {
     cv_upload_box: 'Upload Resume / CV', btn_send_cv: '🚀 Submit Application',
     contact_title: 'Contact Us', contact_subtitle: 'We are ready to transform your vision into an extraordinary reality.',
     btn_send_project: 'Send Inquiry',
-    // ترجمة حقول الإعلان الجانبي بالإنجليزية
     ad_badge: 'OFFER / NEWS',
     ad_title: 'Hiring Now: Digital Marketing Manager',
     ad_desc: 'Join our elite team today! We are looking for talented experts, plus special branding packages discounts for the first 5 clients this month.',
@@ -502,7 +636,7 @@ const dictionary = {
     s6_title: 'Gestion d\'Événements', s6_desc: 'Organisation de conférences, soirées d\'élite, expositions commerciales et couverture médiatique de luxe.',
     portfolio_title: 'Notre Portfolio', portfolio_subtitle: 'Découvrez nos derniers projets premium. Cliquez sur une carte pour voir les détails complets.',
     tab_all: 'Tous les Travaux', tab_branding: 'Branding', view_work: 'Voir le Projet 👁️',
-    p1_title: 'Projet Melabelle', p1_desc: 'Une stratégie digitale complète et une identity visuelle premium conçues pour la marque Melabelle.', p1_short: 'Identité de luxe et stratégie de marque.',
+    p1_title: 'Projet Melabelle', p1_desc: 'Une stratégie digitale complète et une identité visuelle premium conçues pour la marque Melabelle.', p1_short: 'Identité de luxe et stratégie de marque.',
     p2_title: 'Branding Bijoux', p2_desc: 'Identité numérique haut de gamme et esthétique créées pour une marque de bijoux exclusive.', p2_short: 'Présentation d\'identité de bijoux premium.',
     p3_title: 'Projet Le-R', p3_desc: 'Développement et modernisation des repères visuels et marketing pour la marque Le-R.', p3_short: 'Esthétique moderne du branding d\'entreprise.',
     team_title: 'Structure de l\'Entreprise', team_desc: 'Le plan administratif et organisationnel officiel de Golden Star Management.',
@@ -511,7 +645,6 @@ const dictionary = {
     cv_upload_box: 'Télécharger le CV', btn_send_cv: '🚀 Soumettre la Candidature',
     contact_title: 'Contactez-nous', contact_subtitle: 'Nous sommes prêts à transformer votre vision en une réalité extraordinaire.',
     btn_send_project: 'Envoyer la Demande',
-    // ترجمة حقول الإعلان الجانبي بالفرنسية
     ad_badge: 'OFFRE / INFOS',
     ad_title: 'Recrutement: Manager Marketing Digital',
     ad_desc: 'Rejoignez notre équipe d\'élite dès aujourd\'hui! Nous recrutons des pros, avec des réductions exclusives sur le branding pour les 5 premières marques ce mois-ci.',
@@ -555,8 +688,17 @@ window.addEventListener('load',()=>{
   changeLanguage('ar');
 });
 
+// تعديل دالة تبديل الثيم لتغيير الأيقونة بشكل متناسق مع الحفاظ على الألوان الفاتحة الجديدة
 function toggleTheme(){
-  document.body.classList.toggle('light-theme');
+  const body = document.body;
+  body.classList.toggle('light-theme');
+  
+  const themeBtn = document.getElementById('theme-btn');
+  if(body.classList.contains('light-theme')) {
+    themeBtn.innerText = '🌙'; // عند التحول للفاتح يظهر الهلال للعودة للداكن
+  } else {
+    themeBtn.innerText = '☀️'; // عند العودة للداكن تظهر الشمس
+  }
 }
 
 const observer = new IntersectionObserver(entries => {
@@ -627,12 +769,11 @@ function requestThisService() {
   document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
 
-// دوال التحكم بالإعلان الجانبي
 function closeSidebarAd() {
   const adBox = document.getElementById('sidebar-ad');
   adBox.style.opacity = '0';
   adBox.style.transform = 'scale(0.8) translateY(20px)';
-  setTimeout(() => adBox.remove(), 500); // حذف العنصر بعد تراجع الحركة
+  setTimeout(() => adBox.remove(), 500);
 }
 
 function scrollToSection(event, sectionId) {
