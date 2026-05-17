@@ -146,7 +146,6 @@
       border-color:#c9983d !important;
     }
 
-    /* كروت المعرض مع أنيميشن التصفية */
     .portfolio-item {
       transition: opacity 0.4s ease, transform 0.4s ease, scale 0.4s ease;
     }
@@ -268,7 +267,7 @@
 
     <div class="text-center mb-10 fade-up">
       <h2 class="text-4xl md:text-5xl font-black gold mb-4">أعمالنا</h2>
-      <p class="text-white/50 mb-8">نماذج من مشاريعنا الاحترافية الأخيرة مصنفة حسب التخصص.</p>
+      <p class="text-white/50 mb-8">نماذج من مشاريعنا الاحترافية الأخيرة (اضغط على أي عمل لطلبه مباشرة).</p>
       
       <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
         <button onclick="filterPortfolio('all')" id="tab-all" class="portfolio-tab active border border-yellow-700/20 px-6 py-3 rounded-full text-sm font-bold text-white hover:border-yellow-500 transition">
@@ -288,26 +287,35 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <div class="portfolio-card portfolio-item production rounded-2xl overflow-hidden fade-up">
+      <div onclick="selectService('الإنتاج السمعي البصري (Commercial Production)')" class="portfolio-card portfolio-item production rounded-2xl overflow-hidden fade-up cursor-pointer relative group">
         <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200" class="h-72 w-full object-cover">
         <div class="p-6">
-          <h3 class="font-black text-xl mb-2">Commercial Production</h3>
+          <h3 class="font-black text-xl mb-2 flex justify-between items-center">
+            <span>Commercial Production</span>
+            <span class="text-xs gold bg-yellow-700/10 border border-yellow-700/30 px-3 py-1 rounded-full group-hover:bg-[#c9983d] group-hover:text-black transition">طلب الخدمة ←</span>
+          </h3>
           <p class="text-white/50 text-sm">Luxury cinematic advertising production.</p>
         </div>
       </div>
 
-      <div class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up">
+      <div onclick="selectService('بناء الهوية البصرية (Brand Identity)')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer relative group">
         <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200" class="h-72 w-full object-cover">
         <div class="p-6">
-          <h3 class="font-black text-xl mb-2">Brand Identity</h3>
+          <h3 class="font-black text-xl mb-2 flex justify-between items-center">
+            <span>Brand Identity</span>
+            <span class="text-xs gold bg-yellow-700/10 border border-yellow-700/30 px-3 py-1 rounded-full group-hover:bg-[#c9983d] group-hover:text-black transition">طلب الخدمة ←</span>
+          </h3>
           <p class="text-white/50 text-sm">Complete branding & digital strategy.</p>
         </div>
       </div>
 
-      <div class="portfolio-card portfolio-item photo rounded-2xl overflow-hidden fade-up">
+      <div onclick="selectService('التصوير الاحترافي (Professional Photography)')" class="portfolio-card portfolio-item photo rounded-2xl overflow-hidden fade-up cursor-pointer relative group">
         <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200" class="h-72 w-full object-cover">
         <div class="p-6">
-          <h3 class="font-black text-xl mb-2">Professional Photography</h3>
+          <h3 class="font-black text-xl mb-2 flex justify-between items-center">
+            <span>Professional Photography</span>
+            <span class="text-xs gold bg-yellow-700/10 border border-yellow-700/30 px-3 py-1 rounded-full group-hover:bg-[#c9983d] group-hover:text-black transition">طلب الخدمة ←</span>
+          </h3>
           <p class="text-white/50 text-sm">Luxury portrait & product photography.</p>
         </div>
       </div>
@@ -354,7 +362,9 @@
       <input type="text" placeholder="الاسم الكامل" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
       <input type="email" placeholder="البريد الإلكتروني" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
       <input type="tel" placeholder="رقم الهاتف" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
-      <textarea rows="5" placeholder="تفاصيل المشروع" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700"></textarea>
+      
+      <textarea id="project-details" rows="5" placeholder="تفاصيل المشروع" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700"></textarea>
+
       <button class="w-full bg-[#c9983d] text-black py-4 rounded-xl font-black hover:bg-yellow-500 transition">إرسال الطلب</button>
     </form>
   </div>
@@ -430,17 +440,13 @@ document.querySelectorAll('.fade-up').forEach(el=>{
   observer.observe(el);
 });
 
-// دالة تصفية وعرض الأعمال الديناميكية المعدلة بالكامل
 function filterPortfolio(category){
-  // إزالة الكلاس النشط من جميع الأزرار أولاً
   document.querySelectorAll('.portfolio-tab').forEach(btn=>{
     btn.classList.remove('active');
   });
 
-  // إضافة الكلاس النشط للزر المختار حالياً
   document.getElementById('tab-' + category).classList.add('active');
 
-  // فرز الكروت مع تأثير إخفاء/إظهار سينمائي مرن
   document.querySelectorAll('.portfolio-item').forEach(item=>{
     if(category === 'all'){
       item.style.display = 'block';
@@ -456,6 +462,18 @@ function filterPortfolio(category){
       setTimeout(() => { item.style.display = 'none'; }, 400);
     }
   });
+}
+
+// دالة الربط الذكي عند الضغط لطلب الخدمة مباشرة
+function selectService(serviceName) {
+  const detailsField = document.getElementById('project-details');
+  if(detailsField) {
+    // تعبئة حقل النص بشكل مخصص وفوري
+    detailsField.value = `مرحباً جولدن ستار، أرغب في الاستفسار عن وطلب خدمة: ${serviceName}. الرجاء التواصل معي لمناقشة التفاصيل.`;
+  }
+  
+  // الانتقال الانسيابي السلس لسكشن التواصل
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
 </script>
 
