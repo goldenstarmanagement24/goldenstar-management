@@ -284,14 +284,6 @@
     .light-theme #expanded-ad-title { color: #111111 !important; }
     .light-theme #expanded-ad-desc { color: #374151 !important; }
 
-    .light-theme #team-structure h2 {
-      color: #c9983d !important;
-    }
-    .light-theme #team-structure .bg-\[\#0b0b0b\] {
-      background: #ffffff !important;
-      border-color: rgba(0, 0, 0, 0.08) !important;
-    }
-
     .light-theme footer h2 {
       color: #c9983d !important;
     }
@@ -351,7 +343,7 @@
   </div>
 
   <div class="relative rounded-xl overflow-hidden mb-3 bg-black aspect-video">
-    <img src="1000024759.png" alt="Golden Star Announcement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+    <img src="فرص-عمل-انتاج-سمعي-بصري-جولدن-ستار.png" alt="فرص عمل وتوظيف في شركة جولدن ستار" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
       <span data-i18n="ad_click_hint" class="bg-black/70 border border-yellow-600/50 text-[#c9983d] text-[10px] font-bold px-3 py-1.5 rounded-full backdrop-blur-sm">انقر للتكبير 🔍</span>
     </div>
@@ -372,7 +364,7 @@
     </button>
 
     <div class="relative w-full aspect-video bg-black">
-      <img src="1000024759.png" class="w-full h-full object-cover">
+      <img src="فرص-عمل-انتاج-سمعي-بصري-جولدن-ستار.png" class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
     </div>
 
@@ -383,7 +375,7 @@
       
       <div class="flex justify-end gap-3">
         <button onclick="closeExpandedAd()" data-i18n="modal_close" class="border border-white/10 hover:border-white/30 px-6 py-3 rounded-xl text-xs font-bold transition">إغلاق</button>
-        <a href="#cv-upload" onclick="closeExpandedAd()" data-i18n="ad_btn" class="bg-[#c9983d] hover:bg-yellow-500 text-black px-6 py-3 rounded-xl text-xs font-black transition text-center">أرسل سيرتك الذاتية الآن ←</a>
+        <a href="#cv-upload" onclick="closeExpandedAd()" data-i18n="ad_btn" class="bg-[#c9983d] hover:bg-yellow-500 text-black px-6 py-3 rounded-xl text-xs font-black transition text-center flex items-center justify-center">أرسل سيرتك الذاتية الآن ←</a>
       </div>
     </div>
   </div>
@@ -512,8 +504,10 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div onclick="openWorkModal('p1')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer group">
         <div class="overflow-hidden relative">
-          <img src="melabelle.png" class="h-72 w-full object-cover group-hover:scale-110 transition duration-500">
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300"></div>
+          <img src="melabelle.png" class="h-72 w-full object-cover group-hover:scale-110 transition duration-500" alt="Melabelle Project">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+            <span class="border border-white text-white rounded-full px-4 py-2 text-xs font-bold">عرض التفاصيل</span>
+          </div>
         </div>
       </div>
     </div>
@@ -521,10 +515,158 @@
   </div>
 </section>
 
-<section id="cv-upload" class="py-24 bg-[#050505]">
-  </section>
+<section id="casting-section" class="py-24 bg-[#050505]">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-12 fade-up">
+      <h2 data-i18n="casting_title" class="text-4xl font-black gold mb-4">طلب الانتساب الفني (الكاستينغ)</h2>
+      <p data-i18n="casting_subtitle" class="text-white/50 text-sm">إذا كنت ممثلاً، عارضاً، أو صاحب موهبة مرئية، املأ بياناتك للانضمام لقاعدتنا الفنية.</p>
+    </div>
+
+    <form id="casting-form" class="bg-[#0b0b0b] border border-yellow-700/10 p-8 rounded-3xl glow">
+      <div class="flex justify-between mb-8 pb-4 border-b border-white/5 text-xs font-bold">
+        <div id="ind-1" class="step-indicator active w-8 h-8 rounded-full border border-yellow-700/30 flex items-center justify-center">1</div>
+        <div id="ind-2" class="step-indicator w-8 h-8 rounded-full border border-yellow-700/30 flex items-center justify-center">2</div>
+        <div id="ind-3" class="step-indicator w-8 h-8 rounded-full border border-yellow-700/30 flex items-center justify-center">3</div>
+      </div>
+
+      <div id="step-1" class="form-step active space-y-5">
+        <div>
+          <label class="block text-xs font-black gold mb-2">الاسم الكامل</label>
+          <input type="text" placeholder="أدخل اسمك الثلاثي" class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#c9983d]">
+        </div>
+        <div>
+          <label class="block text-xs font-black gold mb-2">العمر</label>
+          <input type="number" placeholder="العمر الحالي" class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#c9983d]">
+        </div>
+        <div class="text-left">
+          <button type="button" onclick="nextStep(2)" class="bg-[#c9983d] text-black text-xs font-black px-6 py-3 rounded-xl hover:bg-yellow-500 transition">التالي ←</button>
+        </div>
+      </div>
+
+      <div id="step-2" class="form-step space-y-5">
+        <div>
+          <label class="block text-xs font-black gold mb-2">الطول (سم)</label>
+          <input type="number" placeholder="مثال: 175" class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#c9983d]">
+        </div>
+        <div>
+          <label class="block text-xs font-black gold mb-2">الخبرات السابقة</label>
+          <textarea placeholder="اذكر أعمالك السابقة إن وجدت..." rows="3" class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#c9983d]"></textarea>
+        </div>
+        <div class="flex justify-between">
+          <button type="button" onclick="nextStep(1)" class="border border-white/10 text-xs px-6 py-3 rounded-xl transition">السابق</button>
+          <button type="button" onclick="nextStep(3)" class="bg-[#c9983d] text-black text-xs font-black px-6 py-3 rounded-xl hover:bg-yellow-500 transition">التالي ←</button>
+        </div>
+      </div>
+
+      <div id="step-3" class="form-step space-y-5">
+        <div>
+          <label class="block text-xs font-black gold mb-2">رابط لصورك الاحترافية أو فيديو تعريفي</label>
+          <input type="url" placeholder="Drive, Dropbox, YouTube..." class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#c9983d]">
+        </div>
+        <div class="flex justify-between">
+          <button type="button" onclick="nextStep(2)" class="border border-white/10 text-xs px-6 py-3 rounded-xl transition">السابق</button>
+          <button type="submit" class="bg-green-600 hover:bg-green-700 text-white text-xs font-black px-6 py-3 rounded-xl transition">إرسال الطلب ✓</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="cv-upload" class="py-24 bg-black">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <div class="fade-up mb-10">
+      <h2 data-i18n="cv_title" class="text-4xl font-black gold mb-4">انضم إلى طاقم العمل الاحترافي</h2>
+      <p data-i18n="cv_subtitle" class="text-white/50 text-sm max-w-xl mx-auto leading-relaxed">نبحث بشكل مستمر عن مخرجين، مصورين، مدراء مشاريع، ومصممي موشن جرافيك. أرسل سيرتك الذاتية وملف أعمالك الآن.</p>
+    </div>
+
+    <form class="bg-[#0b0b0b] border border-yellow-700/10 p-8 rounded-3xl text-right space-y-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-black gold mb-2">الاسم</label>
+          <input type="text" class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#c9983d]">
+        </div>
+        <div>
+          <label class="block text-xs font-black gold mb-2">البريد الإلكتروني</label>
+          <input type="email" class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none text-left focus:border-[#c9983d]">
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-black gold mb-2">التخصص الرئيسي</label>
+        <select class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#c9983d]">
+          <option>إنتاج سمعي بصري (تصوير/مونتاج)</option>
+          <option>إدارة أعمال وتخطيط استراتيجي</option>
+          <option>صناعة هوية بصرية وبراندينج</option>
+          <option>تسويق رقمي وإدارة حسابات</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-xs font-black gold mb-2">رابط معرض الأعمال (Portfolio / CV Link)</label>
+        <input type="url" placeholder="https://..." class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none text-left focus:border-[#c9983d]">
+      </div>
+      <button type="submit" class="w-full bg-[#c9983d] text-black font-black text-xs py-4 rounded-xl hover:bg-yellow-500 transition">إرسال مستندات التقديم</button>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="py-24 bg-[#050505]">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div class="space-y-6 fade-up">
+      <h2 data-i18n="contact_title" class="text-4xl font-black gold">تواصل معنا مباشرة</h2>
+      <p data-i18n="contact_subtitle" class="text-white/50 leading-relaxed">يسعدنا استقبال استفساراتكم حول المشاريع والخدمات الاستراتيجية الفاخرة عبر القنوات الرسمية.</p>
+      
+      <div class="space-y-4 text-sm">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">📍</span>
+          <span>الجزائر العاصمة، الشراقة</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">📞</span>
+          <span class="text-left direction-ltr">0796369640</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">✉️</span>
+          <span>goldenstarmanagement.prod@gmail.com</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="bg-[#0b0b0b] border border-yellow-700/10 p-8 rounded-3xl space-y-4 fade-up">
+      <input type="text" placeholder="الاسم الكامل" class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#c9983d]">
+      <input type="email" placeholder="البريد الإلكتروني" class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none text-left focus:border-[#c9983d]">
+      <textarea placeholder="تفاصيل رسالتك أو مشروعك..." rows="4" class="w-full bg-black border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#c9983d]"></textarea>
+      <button type="submit" class="w-full bg-[#c9983d] text-black font-black text-xs py-4 rounded-xl hover:bg-yellow-500 transition">إرسال الرسالة</button>
+    </form>
+  </div>
+</section>
+
+<footer class="py-8 bg-black border-t border-white/5 text-center text-xs text-white/40">
+  <p>&copy; 2026 Golden Star Management. All Rights Reserved.</p>
+</footer>
 
 <script>
+  // لودر التحميل الأصلي للموقع
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const loader = document.getElementById('loader');
+      if(loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 500);
+      }
+    }, 1200);
+  });
+
+  // التحكم بخطوات استمارة الكاستينغ
+  function nextStep(stepNumber) {
+    document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
+    document.querySelectorAll('.step-indicator').forEach(ind => ind.classList.remove('active'));
+    
+    document.getElementById('step-' + stepNumber).classList.add('active');
+    for(let i=1; i<=stepNumber; i++) {
+      document.getElementById('ind-' + i).classList.add('active');
+    }
+  }
+
+  // نافذة الإعلان والتوظيف الجانبية
   function openExpandedAd(e) {
     document.getElementById('expanded-ad-modal').classList.remove('hidden');
     document.getElementById('expanded-ad-modal').classList.add('flex');
@@ -541,6 +683,41 @@
     e.stopPropagation();
     openExpandedAd();
   }
+
+  // فلترة الأعمال الفنية (Portfolio Filter)
+  function filterPortfolio(category) {
+    document.querySelectorAll('.portfolio-tab').forEach(tab => tab.classList.remove('active'));
+    if(category === 'all') document.getElementById('tab-all').classList.add('active');
+    if(category === 'branding') document.getElementById('tab-branding').classList.add('active');
+
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      if(category === 'all' || item.classList.contains(category)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // التبديل بين الوضع الليلي والنهاري (Theme Switcher)
+  function toggleTheme() {
+    document.body.classList.toggle('light-theme');
+    const themeBtn = document.getElementById('theme-btn');
+    if(document.body.classList.contains('light-theme')) {
+      themeBtn.innerHTML = '🌙';
+    } else {
+      themeBtn.innerHTML = '☀️';
+    }
+  }
+
+  // تفعيل الأنيميشن عند النزول في الصفحة (Scroll Animation)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('active');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
 </body>
