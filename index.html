@@ -198,6 +198,7 @@
       <a href="#services" class="hover:text-[#c9983d] transition">الخدمات</a>
       <a href="#portfolio" class="hover:text-[#c9983d] transition">الأعمال</a>
       <a href="#membership-section" class="hover:text-[#c9983d] transition">طلب الانتساب</a>
+      <a href="#cv-upload" class="hover:text-[#c9983d] transition">التوظيف (CV)</a>
       <a href="#contact" class="hover:text-[#c9983d] transition">التواصل</a>
     </nav>
     <div class="flex items-center gap-3">
@@ -214,6 +215,7 @@
     <h2 class="text-xl md:text-3xl tracking-[10px] uppercase font-light mt-2 text-white/90">MANAGEMENT</h2>
     <div class="mt-10 flex flex-wrap justify-center gap-4">
       <a href="#membership-section" class="bg-[#c9983d] text-black px-8 py-3 rounded-full font-black hover:bg-yellow-500 transition">استمارة طلب الانتساب 📄</a>
+      <a href="#cv-upload" class="border border-white/20 px-8 py-3 rounded-full font-bold hover:border-[#c9983d] transition">إرسال سيرة ذاتية (CV)</a>
     </div>
   </div>
 </section>
@@ -226,7 +228,7 @@
         <span class="text-xs border border-yellow-700/30 text-white/40 px-3 py-1 rounded-full">GOLDEN STAR MANAGEMENT</span>
       </div>
       <h2 class="text-3xl md:text-5xl font-black gold mb-4">FICHE D'INFORMATIONS</h2>
-      <p class="text-white/50 text-sm">إستمارة تسجيل المانيكان، الممثلين، والمؤثرين - يرجى ملء البيانات بدقة كاملة.</p>
+      <p class="text-white/50 text-sm">إستمارة تسجيل المانيكان، الممثلين، والمؤثرين - يرجى ملء البيانات بدقة كاملة للإرسال المباشر للبريد.</p>
     </div>
 
     <div class="flex justify-between items-center mb-10 max-w-xl mx-auto text-xs font-bold">
@@ -249,105 +251,128 @@
           <input type="date" name="Date_Naissance" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d] text-white/50">
           <input type="text" name="Lieu_Naissance" placeholder="Lieu de naissance / مكان الميلاد" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
           <input type="text" name="Nationalite" placeholder="Nationalité / الجنسية" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
-          <input type="text" name="Adresse" placeholder="Adresse / العنوان الحقيقي الحالي" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
-          <input type="tel" name="Telephone" placeholder="Téléphone / رقم الهاتف" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4- text-right focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Adresse" placeholder="Adresse / العنوان الحالي" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
+          <input type="tel" name="Telephone" placeholder="Téléphone / رقم الهاتف" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
           <input type="email" name="Email" placeholder="E-mail / البريد الإلكتروني" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
-          <input type="text" name="Piece_Identite" placeholder="Numéro de pièce d'identité / رقم بطاقة التعريف أو جواز السفر" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 md:col-span-2 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Piece_Identite" placeholder="Numéro de pièce d'identité / رقم وثيقة الهوية" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 md:col-span-2 focus:outline-none focus:border-[#c9983d]">
         </div>
       </div>
 
       <div class="form-step" id="step-2">
-        <h3 class="text-lg font-bold gold mb-4 pb-2 border-b border-white/5">2. Profil Professionnel & Physique (الملف المهني والبدني)</h3>
-        
-        <p class="text-xs text-white/40 mb-3">Profession / التخصص الفني الحالي (يمكنك اختيار أكثر من خيار):</p>
+        <h3 class="text-lg font-bold gold mb-4 pb-2 border-b border-white/5">2. Profil Physique (القياسات والملف البدني)</h3>
+        <p class="text-xs text-white/40 mb-3">Profession / التخصص المطلوب:</p>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
           <label class="flex items-center gap-2 bg-black/50 p-3 rounded-xl border border-white/5 cursor-pointer"><input type="checkbox" name="Profession[]" value="Mannequin" class="accent-[#c9983d]"> <span class="text-sm">Mannequin</span></label>
           <label class="flex items-center gap-2 bg-black/50 p-3 rounded-xl border border-white/5 cursor-pointer"><input type="checkbox" name="Profession[]" value="Acteur" class="accent-[#c9983d]"> <span class="text-sm">Acteur / Actrice</span></label>
           <label class="flex items-center gap-2 bg-black/50 p-3 rounded-xl border border-white/5 cursor-pointer"><input type="checkbox" name="Profession[]" value="Figurant" class="accent-[#c9983d]"> <span class="text-sm">Figurant(e)</span></label>
-          <label class="flex items-center gap-2 bg-black/50 p-3 rounded-xl border border-white/5 cursor-pointer"><input type="checkbox" name="Profession[]" value="Influencer" class="accent-[#c9983d]"> <span class="text-sm">Influenceur(se)</span></label>
-          <label class="flex items-center gap-2 bg-black/50 p-3 rounded-xl border border-white/5 cursor-pointer"><input type="checkbox" name="Profession[]" value="Presentateur" class="accent-[#c9983d]"> <span class="text-sm">Présentateur(trice)</span></label>
         </div>
-
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
           <input type="text" name="Taille" placeholder="Taille (cm) / الطول" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
           <input type="text" name="Poids" placeholder="Poids (kg) / الوزن" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
-          <input type="text" name="Yeux" placeholder="Couleur des yeux / العينين" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Yeux" placeholder="Yeux / لون العينين" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
           <input type="text" name="Cheveux" placeholder="Cheveux / لون الشعر" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="text" name="Annees_Experience" placeholder="Années d'expérience / سنوات الخبرة" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
-          <input type="text" name="Agence_Actuelle" placeholder="Agence représentante (si disponible) / الوكالة الحالية إن وجدت" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
         </div>
       </div>
 
       <div class="form-step" id="step-3">
-        <h3 class="text-lg font-bold gold mb-4 pb-2 border-b border-white/5">3. Compétences & Réseaux Sociaux (المهارات والتواصل)</h3>
-        
-        <p class="text-xs text-white/40 mb-2">Langues parlées / اللغات المتقنة:</p>
-        <div class="flex flex-wrap gap-4 mb-4">
-          <label class="flex items-center gap-2"><input type="checkbox" name="Langues[]" value="Arabe" class="accent-[#c9983d]"> Arabe</label>
-          <label class="flex items-center gap-2"><input type="checkbox" name="Langues[]" value="Français" class="accent-[#c9983d]"> Français</label>
-          <label class="flex items-center gap-2"><input type="checkbox" name="Langues[]" value="Anglais" class="accent-[#c9983d]"> Anglais</label>
-        </div>
-
-        <p class="text-xs text-white/40 mb-2">Rseaux Sociaux / حساباتك (ضع الرابط أو اليوزر نيم):</p>
+        <h3 class="text-lg font-bold gold mb-4 pb-2 border-b border-white/5">3. Compétences & Réseaux (المهارات والروابط)</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <input type="text" name="Instagram" placeholder="Instagram Account" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
-          <input type="text" name="TikTok" placeholder="TikTok Account" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Instagram" placeholder="Instagram Link / Account" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="TikTok" placeholder="TikTok Link / Account" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
         </div>
-
-        <textarea name="Experiences_Precedentes" rows="3" placeholder="Expériences précédentes / أذكر أهم أعمالك السابقة بالتفصيل" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]"></textarea>
+        <textarea name="Experiences_Precedentes" rows="4" placeholder="Expériences précédentes / الأعمال السابقة بالتفصيل إن وجدت" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]"></textarea>
       </div>
 
       <div class="form-step" id="step-4">
-        <h3 class="text-lg font-bold gold mb-6 pb-2 border-b border-white/5">4. Photos & Documents à Fournir (المرفقات والموافقة القانونية)</h3>
-        
+        <h3 class="text-lg font-bold gold mb-6 pb-2 border-b border-white/5">4. Photos Obligatoires (رفع الصور والمرفقات الإلزامية)</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div class="border border-dashed border-yellow-700/20 p-4 rounded-xl text-center relative hover:border-[#c9983d] transition">
             <input type="file" name="Photo_Portrait" accept="image/*" required class="absolute inset-0 opacity-0 cursor-pointer">
             <span class="block text-sm font-bold gold">Portrait (Visage) *</span>
-            <span class="block text-[11px] text-white/40">صورة حديثة مقربة للوجه</span>
+            <span class="block text-[11px] text-white/40">صورة حديثة واضحة ومقربة للوجه</span>
           </div>
           <div class="border border-dashed border-yellow-700/20 p-4 rounded-xl text-center relative hover:border-[#c9983d] transition">
             <input type="file" name="Photo_Plein_Pied" accept="image/*" required class="absolute inset-0 opacity-0 cursor-pointer">
-            <span class="block text-sm font-bold gold">Plein Pied (Face/Profil) *</span>
-            <span class="block text-[11px] text-white/40">صورة كاملة للجسم واقفاً</span>
-          </div>
-          <div class="border border-dashed border-yellow-700/20 p-4 rounded-xl text-center relative hover:border-[#c9983d] transition">
-            <input type="file" name="CV_Artistique" accept=".pdf,.doc,.docx" class="absolute inset-0 opacity-0 cursor-pointer">
-            <span class="block text-sm font-bold">CV Artistique (اختياري)</span>
-            <span class="block text-[11px] text-white/40">الملف السير الذاتية الفنية</span>
+            <span class="block text-sm font-bold gold">Plein Pied *</span>
+            <span class="block text-[11px] text-white/40">صورة كاملة للجسم واقفاً بدقة جيدة</span>
           </div>
           <div class="border border-dashed border-yellow-700/20 p-4 rounded-xl text-center relative hover:border-[#c9983d] transition">
             <input type="file" name="Piece_Identite_File" accept="image/*,.pdf" required class="absolute inset-0 opacity-0 cursor-pointer">
             <span class="block text-sm font-bold">Copie pièce d'identité *</span>
-            <span class="block text-[11px] text-white/40">نسخة من وثيقة الهوية الرسمية</span>
+            <span class="block text-[11px] text-white/40">نسخة واضحة من بطاقة التعريف الوطنية أو جواز السفر</span>
           </div>
         </div>
-
-        <div class="bg-black/80 border border-yellow-700/10 p-4 rounded-xl mb-4 text-xs leading-relaxed text-white/60">
+        <div class="bg-black/60 border border-yellow-700/10 p-4 rounded-xl mb-4 text-xs text-white/60">
           <label class="flex items-start gap-3 cursor-pointer">
             <input type="checkbox" required class="mt-1 accent-[#c9983d]">
-            <span>Je soussigné(e), confirme l'exactitude des informations fournies et accepte le règlement intérieur. J'autorise la société à utiliser mes données dans le cadre de ses activités professionnelles (casting, communication). <br><b>أقر بصحة البيانات المذكورة وأوافق على معالجتها في الكاستينغ الاحترافي.</b></span>
+            <span>Je confirme l'exactitude des informations fournies et j'autorise Golden Star à utiliser mes données dans le cadre des castings. / أقر بصحة هذه البيانات المذكورة للتوظيف.</span>
           </label>
         </div>
-
         <button type="submit" class="w-full bg-gradient-to-r from-[#c9983d] to-yellow-500 text-black py-4 rounded-xl font-black text-center shadow-xl hover:scale-[1.01] transition duration-300">
-          ✓ ENVOYER LA FICHE / إرسال استمارة الانتساب الفنية 🚀
+          ✓ ENVOYER LA FICHE / إرسال استمارة الانتساب الفنية مباشرة 🚀
         </button>
       </div>
 
       <div class="flex justify-between items-center pt-4 border-t border-white/5">
-        <button type="button" id="prev-btn" onclick="moveStep(-1)" class="bg-white/5 border border-white/10 text-white px-6 py-2.5 rounded-xl text-xs font-bold hover:bg-white/10 transition disabled:opacity-30" disabled>السابق</button>
-        <button type="button" id="next-btn" onclick="moveStep(1)" class="bg-[#c9983d] text-black px-6 py-2.5 rounded-xl text-xs font-black hover:bg-yellow-500 transition">التالي</button>
+        <button type="button" id="prev-btn" onclick="moveStep(-1)" class="bg-white/5 border border-white/10 text-white px-6 py-2 rounded-xl text-xs font-bold hover:bg-white/10 transition disabled:opacity-30" disabled>السابق</button>
+        <button type="button" id="next-btn" onclick="moveStep(1)" class="bg-[#c9983d] text-black px-6 py-2 rounded-xl text-xs font-black hover:bg-yellow-500 transition">التالي</button>
       </div>
-
     </form>
   </div>
 </section>
 
+<section id="cv-upload" class="py-24 bg-black border-t border-white/5">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12 fade-up">
+      <h2 class="text-4xl md:text-5xl font-black gold mb-4">انضم إلى فريقنا الإداري</h2>
+      <p class="text-white/50">أرسل سيرتك الذاتية السريعة الآن لطلبات التوظيف والتدريب لـ GOLDEN STAR MANAGEMENT.</p>
+    </div>
+
+    <form action="https://formspree.io/f/xlgzqvyr" method="POST" enctype="multipart/form-data" class="bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-8 space-y-4 fade-up">
+      <input type="text" name="fullname" placeholder="الاسم الكامل" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
+      <input type="tel" name="phone" placeholder="رقم الهاتف" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700">
+
+      <div class="border-2 border-dashed border-yellow-700/30 rounded-2xl p-8 text-center relative overflow-hidden hover:border-yellow-500 transition">
+        <input type="file" name="cv" accept=".pdf,.doc,.docx" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+        <div class="text-5xl mb-4">📄</div>
+        <h3 class="font-black text-lg mb-2 gold">رفع السيرة الذاتية (CV)</h3>
+        <p class="text-white/40 text-sm">PDF / DOC / DOCX</p>
+      </div>
+
+      <textarea name="message" rows="4" placeholder="أخبرنا عن خبراتك الإدارية أو مهاراتك بشكل عام" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-yellow-700"></textarea>
+      <button type="submit" class="w-full bg-gradient-to-r from-[#c9983d] to-yellow-500 text-black py-4 rounded-xl font-black hover:scale-[1.02] transition duration-300">🚀 إرسال السيرة الذاتية السريعة</button>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="py-24 bg-[#050505]">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12 fade-up">
+      <h2 class="text-4xl md:text-5xl font-black gold mb-4">تواصل معنا</h2>
+      <p class="text-white/50">جاهزون لتحويل فكرتك إلى مشروع استثنائي.</p>
+    </div>
+    <form class="bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-8 space-y-4 fade-up">
+      <input type="text" placeholder="الاسم الكامل" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none">
+      <input type="email" placeholder="البريد الإلكتروني" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none">
+      <textarea id="project-details" rows="5" placeholder="تفاصيل وفكرة المشروع المطلوب..." class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none"></textarea>
+      <button class="w-full bg-[#c9983d] text-black py-4 rounded-xl font-black hover:bg-yellow-500 transition">إرسال الطلب</button>
+    </form>
+  </div>
+</section>
+
+<footer class="bg-[#050505] border-t border-white/5 py-10 text-center">
+  <img src="logo.jpg" class="w-16 h-16 rounded-full mx-auto border border-yellow-700/30 object-cover mb-4">
+  <h2 class="font-black text-2xl gold mb-2">GOLDEN STAR MANAGEMENT</h2>
+  <div class="flex justify-center gap-4 mb-6">
+    <a href="https://wa.me/213796369640" class="bg-green-600/10 text-green-400 px-5 py-2 rounded-full text-sm">WhatsApp</a>
+    <a href="https://www.tiktok.com/@goldenstar.management" class="bg-white/5 text-white px-5 py-2 rounded-full text-sm">TikTok</a>
+  </div>
+  <p class="text-white/20 text-xs tracking-widest">© 2026 GOLDEN STAR MANAGEMENT — ALL RIGHTS RESERVED</p>
+</footer>
+
 <script>
-// التحكم بالخطوات (Multi-step Form)
+// جافا سكريبت التحكم بالخطوات للانتساب الفني
 let currentStep = 0;
 const steps = document.querySelectorAll('.form-step');
 const indicators = document.querySelectorAll('.step-indicator');
@@ -358,15 +383,12 @@ function showStep(stepIndex) {
   steps.forEach((step, idx) => {
     step.classList.toggle('active', idx === stepIndex);
   });
-  
   indicators.forEach((indicator, idx) => {
     indicator.classList.toggle('active', idx <= stepIndex);
   });
-
   prevBtn.disabled = stepIndex === 0;
-  
   if (stepIndex === steps.length - 1) {
-    nextBtn.style.display = 'none'; // إخفاء زر التالي في الخطوة الأخيرة وظهور زر الإرسال الأساسي
+    nextBtn.style.display = 'none';
   } else {
     nextBtn.style.display = 'block';
     nextBtn.innerText = 'التالي ←';
@@ -374,7 +396,6 @@ function showStep(stepIndex) {
 }
 
 function moveStep(stepDirection) {
-  // التحقق من الحقول المطلوبة قبل الانتقال للخطوة التالية لضمان عدم ترك خانات فارغة
   if (stepDirection === 1) {
     const activeInputs = steps[currentStep].querySelectorAll('input[required], textarea[required]');
     let allValid = true;
@@ -386,20 +407,17 @@ function moveStep(stepDirection) {
     });
     if(!allValid) return;
   }
-
   currentStep += stepDirection;
   showStep(currentStep);
 }
 
-// باقي السكريبتات الخاصة بك لتشغيل لودر الموقع والتحكم بالإعلانات الجانبية
 window.addEventListener('load',()=>{
   document.getElementById('loader').style.display='none';
 });
 
 function closeSidebarAd(event) {
   event.stopPropagation();
-  const adBox = document.getElementById('sidebar-ad');
-  adBox.remove();
+  document.getElementById('sidebar-ad').remove();
 }
 
 function openExpandedAd(event) {
@@ -420,5 +438,6 @@ function redirectToAdAction() {
   document.getElementById('membership-section').scrollIntoView({ behavior: 'smooth' });
 }
 </script>
+
 </body>
 </html>
