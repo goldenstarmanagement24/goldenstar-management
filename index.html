@@ -28,7 +28,6 @@
       scroll-behavior:smooth;
     }
 
-    /* إضافة تأثير الانتقال الناعم لجميع عناصر الموقع عند تغيير الثيم */
     body, section, header, footer, div, input, textarea, select, h1, h2, h3, h4, p, a, button {
       transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
     }
@@ -143,7 +142,7 @@
     }
 
     /* ======================================================== */
-    /* قواعد وضوابط الثيم الفاتح الكامل (Comprehensive Light Theme) */
+    /* قواعد وضوابط الثيم الفاتح الكامل */
     /* ======================================================== */
     .light-theme {
       background: #fcfcfc;
@@ -153,12 +152,12 @@
     .light-theme #services, 
     .light-theme #cv-upload,
     .light-theme footer {
-      background: #f3f4f6 !important; /* رمادي فاتح مريح */
+      background: #f3f4f6 !important;
     }
 
     .light-theme #portfolio,
     .light-theme #contact {
-      background: #ffffff !important; /* أبيض ناصع للأقسام المتبادلة */
+      background: #ffffff !important;
     }
 
     .light-theme header {
@@ -180,7 +179,6 @@
       color: #6b7280 !important;
     }
 
-    /* تعديل كروت الخدمات والأعمال في الوضع الفاتح */
     .light-theme .service-card,
     .light-theme .portfolio-card {
       background: #ffffff !important;
@@ -204,12 +202,10 @@
       box-shadow: 0 20px 40px rgba(201, 152, 61, 0.12) !important;
     }
 
-    /* نصوص الأقسام الفرعية */
     .light-theme section p {
       color: #4b5563 !important;
     }
 
-    /* تعديل الفورم وحقول الإدخال */
     .light-theme form {
       background: #ffffff !important;
       border-color: rgba(0, 0, 0, 0.08) !important;
@@ -233,7 +229,6 @@
       color: #9ca3af !important;
     }
 
-    /* تعديل أزرار التصفية الفلتر */
     .light-theme .portfolio-tab {
       color: #374151 !important;
       border-color: rgba(0, 0, 0, 0.1) !important;
@@ -243,7 +238,6 @@
       color: #c9983d !important;
     }
 
-    /* تعديل لوحة الإعلان الجانبية الفلوت */
     .light-theme #sidebar-ad {
       background: rgba(255, 255, 255, 0.9) !important;
       border-color: rgba(201, 152, 61, 0.25) !important;
@@ -255,16 +249,19 @@
     .light-theme #sidebar-ad p {
       color: #374151 !important;
     }
-    .light-theme #sidebar-ad a {
+    .light-theme #sidebar-ad .ad-interactive-btn {
       color: #111111 !important;
       border-color: rgba(0, 0, 0, 0.1) !important;
     }
-    .light-theme #sidebar-ad a:hover {
-      background: #c9983d !important;
-      color: white !important;
-    }
 
-    /* الهيكل التنظيمي */
+    /* ستايل المودال الداخلي الخاص بتكبير الإعلان */
+    .light-theme #expanded-ad-content {
+      background: #ffffff !important;
+      border-color: rgba(201, 152, 61, 0.3) !important;
+    }
+    .light-theme #expanded-ad-title { color: #111111 !important; }
+    .light-theme #expanded-ad-desc { color: #374151 !important; }
+
     .light-theme #team-structure h2 {
       color: #c9983d !important;
     }
@@ -273,7 +270,6 @@
       border-color: rgba(0, 0, 0, 0.08) !important;
     }
 
-    /* الفوتر */
     .light-theme footer h2 {
       color: #c9983d !important;
     }
@@ -281,7 +277,6 @@
       color: #4b5563 !important;
     }
 
-    /* أزرار اللغات وحالة الثيم */
     .light-theme #lang-switcher,
     .light-theme button[onclick="toggleTheme()"] {
       background: #ffffff !important;
@@ -289,7 +284,6 @@
       color: #111111 !important;
     }
 
-    /* تعديل طبقة التعتيم الفاخرة للـ Hero لتكون مريحة بالثيمين */
     .light-theme .hero-overlay {
       background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(252,252,252,1)) !important;
     }
@@ -306,27 +300,53 @@
   <div class="gold text-sm tracking-[6px] uppercase">Golden Star Management</div>
 </div>
 
-<div id="sidebar-ad" class="fixed bottom-6 right-6 lg:bottom-auto lg:top-28 lg:right-6 w-72 z-40 bg-[#0b0b0b]/90 border border-yellow-700/20 rounded-2xl p-4 shadow-2xl sticky-ad-box">
-  <button onclick="closeSidebarAd()" class="absolute -top-2 -left-2 bg-black hover:bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs transition border border-white/10 shadow-lg">
+<div id="sidebar-ad" class="fixed bottom-6 right-6 lg:bottom-auto lg:top-28 lg:right-6 w-72 z-40 bg-[#0b0b0b]/90 border border-yellow-700/20 rounded-2xl p-4 shadow-2xl sticky-ad-box cursor-pointer group hover:scale-[1.03] transition duration-300" onclick="openExpandedAd(event)">
+  <button onclick="closeSidebarAd(event)" class="absolute -top-2 -left-2 bg-black hover:bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs transition border border-white/10 shadow-lg z-50">
     ✕
   </button>
 
-  <div class="flex items-center justify-between mb-2 pb-2 border-b border-white/5">
+  <div class="flex items-center justify-between mb-2 pb-2 border-b border-white/5 select-none">
     <span data-i18n="ad_badge" class="bg-[#c9983d] text-black text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">OFFER / NEWS</span>
     <span class="text-white/30 text-[10px] tracking-widest">GOLDEN STAR</span>
   </div>
 
-  <div class="relative rounded-xl overflow-hidden mb-3 bg-black aspect-video group">
+  <div class="relative rounded-xl overflow-hidden mb-3 bg-black aspect-video overflow-hidden">
     <img src="logo.jpg" alt="Golden Star Announcement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+      <span data-i18n="ad_click_hint" class="bg-black/70 border border-yellow-600/50 text-[#c9983d] text-[10px] font-bold px-3 py-1.5 rounded-full backdrop-blur-sm">انقر للتكبير 🔍</span>
+    </div>
   </div>
 
-  <h4 data-i18n="ad_title" class="text-xs font-black gold mb-1">فرصة توظيف: مدير تسويق رقمي</h4>
-  <p data-i18n="ad_desc" class="text-[11px] text-white/60 leading-relaxed mb-3">انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمحترفين مع خصومات خاصة لخدمات البراندينج لأول 5 شركات هذا الشهر.</p>
+  <h4 data-i18n="ad_title" class="text-xs font-black gold mb-1 pointer-events-none">فرصة توظيف: مدير تسويق رقمي</h4>
+  <p data-i18n="ad_desc" class="text-[11px] text-white/60 leading-relaxed mb-3 pointer-events-none line-clamp-2">انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمحترفين مع خصومات خاصة لخدمات البراندينج لأول 5 شركات هذا الشهر.</p>
 
-  <a href="#cv-upload" onclick="scrollToSection(event, 'cv-upload')" data-i18n="ad_btn" class="block text-center bg-white/5 border border-yellow-700/30 hover:border-[#c9983d] hover:bg-[#c9983d] hover:text-black text-white text-[11px] font-bold py-2 rounded-lg transition duration-300">
+  <button onclick="handleAdBtnClick(event)" data-i18n="ad_btn" class="ad-interactive-btn w-full text-center bg-white/5 border border-yellow-700/30 hover:border-[#c9983d] hover:bg-[#c9983d] hover:text-black text-white text-[11px] font-bold py-2 rounded-lg transition duration-300">
     قدم طلبك الآن ←
-  </a>
+  </button>
+</div>
+
+<div id="expanded-ad-modal" class="fixed inset-0 z-[999999] hidden bg-black/80 backdrop-blur-md items-center justify-center p-4 transition-all duration-300" onclick="closeExpandedAd()">
+  <div id="expanded-ad-content" class="bg-[#0b0b0b] border border-yellow-700/30 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative transition-all duration-300" onclick="event.stopPropagation()">
+    <button onclick="closeExpandedAd()" class="absolute top-4 left-4 bg-black/60 hover:bg-[#c9983d] hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition text-white font-bold z-10">
+      ✕
+    </button>
+
+    <div class="relative w-full aspect-video bg-black">
+      <img src="logo.jpg" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+    </div>
+
+    <div class="p-8">
+      <span data-i18n="ad_badge" class="bg-[#c9983d] text-black text-xs font-black px-3 py-1 rounded uppercase tracking-wider inline-block mb-3">OFFER / NEWS</span>
+      <h3 id="expanded-ad-title" data-i18n="ad_title" class="text-2xl font-black gold mb-3">فرصة توظيف: مدير تسويق رقمي</h3>
+      <p id="expanded-ad-desc" data-i18n="ad_desc" class="text-white/70 leading-relaxed text-sm mb-6">انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمحترفين مع خصومات خاصة لخدمات البراندينج لأول 5 شركات هذا الشهر.</p>
+      
+      <div class="flex justify-end gap-3">
+        <button onclick="closeExpandedAd()" data-i18n="modal_close" class="border border-white/10 hover:border-white/30 px-6 py-3 rounded-xl text-xs font-bold transition">إغلاق</button>
+        <button onclick="redirectToAdAction()" data-i18n="ad_btn" class="bg-[#c9983d] hover:bg-yellow-500 text-black px-6 py-3 rounded-xl text-xs font-black transition">قدم طلبك الآن ←</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <header class="fixed top-0 left-0 w-full z-50 bg-black/50 border-b border-yellow-700/10">
@@ -584,7 +604,7 @@ const dictionary = {
     p2_title: 'براندينغ Bijoux', p2_desc: 'صناعة الهوية الرقمية والجمالية لعلامة تجارية متخصصة في المجوهرات والقطع الفاخرة.', p2_short: 'معرض هوية براند مجوهرات راقي.',
     p3_title: 'مشروع Le-R', p3_desc: 'تطوير وتحديث الخطوط البصرية والتسويقية للعلامة التجارية الراقية Le-R.', p3_short: 'جماليات الهوية التجارية الحديثة.',
     team_title: 'الهيكل التنظيمي للشركة', team_desc: 'المخطط الإداري والتنظيمي المعتمد لفريق عمل Golden Star Management',
-    modal_close: 'إغلاق النافذة', modal_request: 'طلب هذه الخدمة الآن ←',
+    modal_close: 'إغلاق', modal_request: 'طلب هذه الخدمة الآن ←',
     cv_title: 'انضم إلى فريقنا', cv_subtitle: 'أرسل سيرتك الذاتية الآن وكن جزءاً من فريق GOLDEN STAR MANAGEMENT.',
     cv_upload_box: 'رفع السيرة الذاتية', btn_send_cv: '🚀 إرسال السيرة الذاتية',
     contact_title: 'تواصل معنا', contact_subtitle: 'جاهزون لتحويل فكرتك إلى مشروع استثنائي.',
@@ -593,6 +613,7 @@ const dictionary = {
     ad_title: 'فرصة توظيف: مدير تسويق رقمي',
     ad_desc: 'انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمحترفين مع خصومات خاصة لخدمات البراندينج لأول 5 شركات هذا الشهر.',
     ad_btn: 'قدم طلبك الآن ←',
+    ad_click_hint: 'انقر للتكبير 🔍',
     placeholders: { input_name: 'الاسم الكامل', input_email: 'البريد الإلكتروني', input_phone: 'رقم الهاتف', input_msg: 'أخبرنا عن خبراتك ومهاراتك', contact_name: 'الاسم الكامل', contact_email: 'البريد الإلكتروني', contact_phone: 'رقم الهاتف', 'project-details': 'تفاصيل المشروع' }
   },
   en: {
@@ -612,7 +633,7 @@ const dictionary = {
     p2_title: 'Bijoux Branding', p2_desc: 'High-end digital identity and aesthetics created for an exclusive jewelry brand.', p2_short: 'Premium jewelry identity showcase.',
     p3_title: 'Le-R Project', p3_desc: 'Developing and modernizing the visual and marketing benchmarks for Le-R brand.', p3_short: 'Modern corporate branding aesthetics.',
     team_title: 'Company Structure', team_desc: 'The official administrative and organizational blueprint for Golden Star Management.',
-    modal_close: 'Close Window', modal_request: 'Request Service Now ←',
+    modal_close: 'Close', modal_request: 'Request Service Now ←',
     cv_title: 'Join Our Team', cv_subtitle: 'Submit your resume now and become a vital part of GOLDEN STAR MANAGEMENT.',
     cv_upload_box: 'Upload Resume / CV', btn_send_cv: '🚀 Submit Application',
     contact_title: 'Contact Us', contact_subtitle: 'We are ready to transform your vision into an extraordinary reality.',
@@ -621,7 +642,8 @@ const dictionary = {
     ad_title: 'Hiring Now: Digital Marketing Manager',
     ad_desc: 'Join our elite team today! We are looking for talented experts, plus special branding packages discounts for the first 5 clients this month.',
     ad_btn: 'Apply Now ←',
-    placeholders: { input_name: 'Full Name', input_email: 'Email Address', input_phone: 'Phone Number', input_msg: 'Tell us about your experience & skills', contact_name: 'Full Name', contact_email: 'Email Address', contact_phone: 'Phone Number', 'project-details': 'Project Details & Specifications' }
+    ad_click_hint: 'Click to zoom 🔍',
+    placeholders: { input_name: 'Full Name', input_email: 'Email Address', input_phone: 'Phone Number', input_msg: 'Tell us about your experience & skills', contact_name: 'Full Name', contact_email: 'Email Address', fontact_phone: 'Phone Number', 'project-details': 'Project Details & Specifications' }
   },
   fr: {
     nav_home: 'Accueil', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_contact: 'Contact',
@@ -640,7 +662,7 @@ const dictionary = {
     p2_title: 'Branding Bijoux', p2_desc: 'Identité numérique haut de gamme et esthétique créées pour une marque de bijoux exclusive.', p2_short: 'Présentation d\'identité de bijoux premium.',
     p3_title: 'Projet Le-R', p3_desc: 'Développement et modernisation des repères visuels et marketing pour la marque Le-R.', p3_short: 'Esthétique moderne du branding d\'entreprise.',
     team_title: 'Structure de l\'Entreprise', team_desc: 'Le plan administratif et organisationnel officiel de Golden Star Management.',
-    modal_close: 'Fermer la Fenêtre', modal_request: 'Demander ce Service ←',
+    modal_close: 'Fermer', modal_request: 'Demander ce Service ←',
     cv_title: 'Rejoignez Notre Équipe', cv_subtitle: 'Soumettez votre CV dès maintenant et faites partie de GOLDEN STAR MANAGEMENT.',
     cv_upload_box: 'Télécharger le CV', btn_send_cv: '🚀 Soumettre la Candidature',
     contact_title: 'Contactez-nous', contact_subtitle: 'Nous sommes prêts à transformer votre vision en une réalité extraordinaire.',
@@ -649,6 +671,7 @@ const dictionary = {
     ad_title: 'Recrutement: Manager Marketing Digital',
     ad_desc: 'Rejoignez notre équipe d\'élite dès aujourd\'hui! Nous recrutons des pros, avec des réductions exclusives sur le branding pour les 5 premières marques ce mois-ci.',
     ad_btn: 'Postulez Maintenant ←',
+    ad_click_hint: 'Agrandir 🔍',
     placeholders: { input_name: 'Nom Complet', input_email: 'Adresse E-mail', input_phone: 'Numéro de Téléphone', input_msg: 'Parlez-nous de votre expérience et compétences', contact_name: 'Nom Complet', contact_email: 'Adresse E-mail', contact_phone: 'Numéro de Téléphone', 'project-details': 'Détails et Spécifications du Projet' }
   }
 };
@@ -688,16 +711,15 @@ window.addEventListener('load',()=>{
   changeLanguage('ar');
 });
 
-// تعديل دالة تبديل الثيم لتغيير الأيقونة بشكل متناسق مع الحفاظ على الألوان الفاتحة الجديدة
 function toggleTheme(){
   const body = document.body;
   body.classList.toggle('light-theme');
   
   const themeBtn = document.getElementById('theme-btn');
   if(body.classList.contains('light-theme')) {
-    themeBtn.innerText = '🌙'; // عند التحول للفاتح يظهر الهلال للعودة للداكن
+    themeBtn.innerText = '🌙';
   } else {
-    themeBtn.innerText = '☀️'; // عند العودة للداكن تظهر الشمس
+    themeBtn.innerText = '☀️';
   }
 }
 
@@ -739,13 +761,10 @@ function filterPortfolio(category){
 
 function openWorkModal(projectKey) {
   currentModalKey = projectKey;
-  
   document.getElementById('modal-title').innerText = dictionary[currentLang][projectKey + '_title'];
   document.getElementById('modal-desc').innerText = dictionary[currentLang][projectKey + '_desc'];
   document.getElementById('modal-img').src = projectImages[projectKey];
-  
-  const modal = document.getElementById('work-modal');
-  modal.style.display = 'flex';
+  document.getElementById('work-modal').style.display = 'flex';
 }
 
 function closeWorkModal() {
@@ -769,11 +788,38 @@ function requestThisService() {
   document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
 
-function closeSidebarAd() {
+/* ======================================================== */
+/* جافا سكريبت متطور للتحكم في تكبير وإغلاق الإعلان الجانبي */
+/* ======================================================== */
+function closeSidebarAd(event) {
+  event.stopPropagation(); // منع انتقال الحدث لفتح نافذة التكبير
   const adBox = document.getElementById('sidebar-ad');
   adBox.style.opacity = '0';
   adBox.style.transform = 'scale(0.8) translateY(20px)';
   setTimeout(() => adBox.remove(), 500);
+}
+
+function openExpandedAd(event) {
+  // فتح مودال تكبير الإعلان الجانبي بمرونة وثبات
+  const modal = document.getElementById('expanded-ad-modal');
+  modal.style.display = 'flex';
+}
+
+function closeExpandedAd() {
+  document.getElementById('expanded-ad-modal').style.display = 'none';
+}
+
+function handleAdBtnClick(event) {
+  event.stopPropagation(); // منع تكبير النافذة والنزول مباشرة للتقديم
+  redirectToAdAction();
+}
+
+function redirectToAdAction() {
+  closeExpandedAd();
+  const target = document.getElementById('cv-upload');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 function scrollToSection(event, sectionId) {
