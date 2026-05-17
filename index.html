@@ -48,17 +48,32 @@
       color:#c9983d;
     }
 
+    /* تعديل الـ Hero ليتناسب مع الفيديو الخلفي */
     .hero{
       position:relative;
       height:100vh;
-      background: url('hero.jpg') center center / cover no-repeat;
       overflow:hidden;
+    }
+
+    /* تنسيق الفيديو ليمتد بالكامل في الخلفية */
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 1;
     }
 
     .hero-overlay{
       position:absolute;
       inset:0;
-      background:linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(3,3,3,0.98));
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(3,3,3,0.95));
+      z-index: 2;
     }
 
     .glow{
@@ -398,6 +413,11 @@
 </header>
 
 <section id="home" class="hero flex items-center justify-center text-center">
+  <video class="hero-video" autoplay loop muted playsinline preload="auto">
+    <source src="20260517_214803_0000.mp4" type="video/mp4">
+    متصفحك لا يدعم تشغيل هذا الفيديو الخلفي.
+  </video>
+  
   <div class="hero-overlay"></div>
 
   <div class="relative z-10 px-6 fade-up">
@@ -995,7 +1015,6 @@ function showCastingStep(stepIdx) {
 }
 
 function moveCastingStep(direction) {
-  // للتحقق من الحقول الإجبارية قبل الانتقال للخطوة التالية
   if (direction === 1) {
     const requiredInputs = castingSteps[currentCastingStep].querySelectorAll('input[required], textarea[required]');
     let isValid = true;
