@@ -701,7 +701,6 @@
     </form>
   </div>
 </section>
-
 <section id="cv-upload" class="py-24 bg-black">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12 fade-up">
@@ -713,6 +712,18 @@
       <input type="text" name="fullname" id="input_name" placeholder="الاسم الكامل" required class="w-full bg-black border bor">
       <input type="email" name="email" id="input_email" placeholder="البريد الإلكتروني" required class="w-full bg-black border bor">
       <input type="tel" name="phone" id="input_phone" placeholder="رقم الهاتف" required class="w-full bg-black border border-">
+
+      <div class="w-full">
+        <select name="job_position" required class="w-full bg-black border border-white/10 text-white/70 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-600 appearance-none">
+          <option value="" disabled selected hidden>اختر القسم أو الوظيفة المناسبة لك...</option>
+          <option value="Administration">إدارة أعمال / تسيير</option>
+          <option value="Marketing">تسويق رقمي وإدارة براند</option>
+          <option value="Content Creation">صناعة محتوى وكتابة سيناريو</option>
+          <option value="Audiovisual Production">إنتاج سمعي بصري والتصوير</option>
+          <option value="Design & Animation">التصميم والمونتاج والأنيميشن</option>
+          <option value="Other">تخصص آخر...</option>
+        </select>
+      </div>
 
       <div class="border-2 border-dashed border-yellow-700/30 rounded-2xl p-8 text-center relative overflow-hidden hover:b">
         <input type="file" name="cv" accept=".pdf,.doc,.docx" required class="absolute inset-0 w-full h-full opacity-0 cur">
