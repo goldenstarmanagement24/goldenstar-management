@@ -14,10 +14,8 @@
   <meta property="og:image" content="logo.jpg" />
   <meta property="og:type" content="website" />
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts (Cairo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -349,13 +347,11 @@
 </head>
 <body>
 
-<!-- شاشة التحميل -->
 <div id="loader">
   <div class="spinner"></div>
   <div class="gold text-sm tracking-[6px] uppercase font-bold">Golden Star Management</div>
 </div>
 
-<!-- الإعلان الجانبي المثبت -->
 <div id="sidebar-ad" class="fixed bottom-6 right-6 lg:bottom-auto lg:top-28 lg:right-6 w-72 z-40 bg-[#0b0b0b]/90 border border-yellow-700/20 rounded-2xl p-4 shadow-2xl sticky-ad-box cursor-pointer group hover:scale-[1.03] transition duration-300" onclick="openExpandedAd(event)">
   <button onclick="closeSidebarAd(event)" class="absolute -top-2 -left-2 bg-black hover:bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs transition border border-white/10 shadow-lg z-50">
     ✕
@@ -381,7 +377,6 @@
   </button>
 </div>
 
-<!-- المودال الموسع للإعلان -->
 <div id="expanded-ad-modal" class="fixed inset-0 z-[99999] hidden bg-black/80 backdrop-blur-md items-center justify-center p-4 transition-all duration-300" onclick="closeExpandedAd()">
   <div id="expanded-ad-content" class="bg-[#0b0b0b] border border-yellow-700/30 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative transition-all duration-300" onclick="event.stopPropagation()">
     <button onclick="closeExpandedAd()" class="absolute top-4 left-4 bg-black/60 hover:bg-[#c9983d] hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition text-white font-bold z-10">
@@ -406,7 +401,6 @@
   </div>
 </div>
 
-<!-- الهيدر / شريط التنقل -->
 <header class="fixed top-0 left-0 w-full z-50 bg-black/50 border-b border-yellow-700/10">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
@@ -442,7 +436,6 @@
   </div>
 </header>
 
-<!-- قسم الهيرو / البداية -->
 <section id="home" class="hero flex items-center justify-center text-center">
   <video class="hero-video" autoplay loop muted playsinline preload="auto">
     <source src="20260517_214803_0000.mp4" type="video/mp4">
@@ -466,7 +459,6 @@
   </div>
 </section>
 
-<!-- قسم الخدمات -->
 <section id="services" class="py-24 bg-[#050505]">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16 fade-up">
@@ -516,7 +508,6 @@
   </div>
 </section>
 
-<!-- قسم معرض الأعمال -->
 <section id="portfolio" class="py-24 bg-black">
   <div class="max-w-7xl mx-auto px-6">
 
@@ -573,7 +564,6 @@
   </div>
 </section>
 
-<!-- قسم الهيكل التنظيمي -->
 <section id="team-structure" class="py-16 bg-[#050505] text-center">
   <div class="max-w-5xl mx-auto px-6 fade-up">
     <h2 data-i18n="team_title" class="text-3xl font-black gold mb-6">الهيكل التنظيمي للشركة</h2>
@@ -584,7 +574,6 @@
   </div>
 </section>
 
-<!-- نافذة المودال لعرض تفاصيل العمل -->
 <div id="work-modal" class="fixed inset-0 z-[99999] hidden bg-black/90 backdrop-blur-md items-center justify-center p-4 transition-all duration-300" onclick="closeWorkModal()">
   <div class="bg-[#0b0b0b] border border-yellow-700/30 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative" onclick="event.stopPropagation()">
     <button onclick="closeWorkModal()" class="absolute top-4 left-4 bg-black/60 hover:bg-[#c9983d] hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition text-white font-bold z-10">✕</button>
@@ -600,7 +589,6 @@
   </div>
 </div>
 
-<!-- قسم الكاستينغ الفني متعدد الخطوات -->
 <section id="casting-section" class="py-24 bg-[#050505]">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12 fade-up">
@@ -608,7 +596,6 @@
       <p data-i18n="casting_subtitle" class="text-white/50">إستمارة الكاستينغ الفني للمانيكان، الممثلين، والمؤثرين - يرجى ملء البيانات الخطوة تلو الأخرى بدقة.</p>
     </div>
 
-    <!-- مؤشرات الخطوات العلوية التفاعلية -->
     <div class="flex justify-between items-center mb-10 max-w-md mx-auto text-xs font-bold select-none">
       <div class="step-indicator w-8 h-8 rounded-full border flex items-center justify-center active">1</div>
       <div class="h-0.5 bg-white/10 flex-1 mx-2"></div>
@@ -621,13 +608,12 @@
 
     <form id="casting-form" action="https://formspree.io/f/xlgzqvyr" method="POST" enctype="multipart/form-data" class="bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-8 lg:p-12 space-y-6 shadow-2xl relative">
       
-      <!-- الخطوة الأولى -->
       <div class="form-step active" id="step-1">
         <h3 data-i18n="step1_header" class="text-lg font-bold gold mb-6 pb-2 border-b border-white/5">1. Informations Personnelles (المعلومات الشخصية)</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input type="text" name="Nom_Prenom" id="c_fullname" placeholder="Nom et prénom / الاسم واللقب" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
           <input type="text" name="Nom_Artistique" id="c_artname" placeholder="Nom artistique / الاسم الفني" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
-          <input type="date" name="Date_Naissance" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d] text-white/50">
+          <input type="date" name="Date_Naissance" id="c_birthdate" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d] text-white/50">
           <input type="text" name="Lieu_Naissance" id="c_birthplace" placeholder="Lieu de naissance / مكان الميلاد" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
           <input type="text" name="Nationalite" id="c_nationality" placeholder="Nationalité / الجنسية" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
           <input type="text" name="Adresse" id="c_address" placeholder="Adresse / العنوان الحالي" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]">
@@ -637,7 +623,6 @@
         </div>
       </div>
 
-      <!-- الخطوة الثانية -->
       <div class="form-step" id="step-2">
         <h3 data-i18n="step2_header" class="text-lg font-bold gold mb-4 pb-2 border-b border-white/5">2. Profil Physique (القياسات والملف البدني)</h3>
         <p data-i18n="step2_sub" class="text-xs text-white/40 mb-3">Profession / التخصص الفني المطلوب:</p>
@@ -654,17 +639,15 @@
         </div>
       </div>
 
-      <!-- الخطوة الثالثة -->
       <div class="form-step" id="step-3">
         <h3 data-i18n="step3_header" class="text-lg font-bold gold mb-4 pb-2 border-b border-white/5">3. Compétences & Réseaux (المهارات والروابط)</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <input type="text" name="Instagram" placeholder="Instagram Profile Link" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
-          <input type="text" name="TikTok" placeholder="TikTok Profile Link" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="Instagram" id="c_instagram" placeholder="Instagram Profile Link" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+          <input type="text" name="TikTok" id="c_tiktok" placeholder="TikTok Profile Link" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
         </div>
         <textarea name="Experiences_Precedentes" id="c_experience" rows="4" placeholder="Expériences précédentes / الأعمال السابقة بالتفصيل إن وجدت" class="w-full bg-black border border-white/10 rounded-xl px-4 py-4 focus:outline-none focus:border-[#c9983d]"></textarea>
       </div>
 
-      <!-- الخطوة الرابعة والاخيرة -->
       <div class="form-step" id="step-4">
         <h3 data-i18n="step4_header" class="text-lg font-bold gold mb-6 pb-2 border-b border-white/5">4. Photos Obligatoires (المرفقات والصور الإلزامية)</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -687,7 +670,7 @@
         <div class="bg-black/60 border border-yellow-700/10 p-4 rounded-xl mb-4 text-xs text-white/60">
           <label class="flex items-start gap-3 cursor-pointer">
             <input type="checkbox" required class="mt-1 checked:bg-[#c9983d] accent-[#c9983d]">
-            <span data-i18n="casting_agreement">Je confirme l'exactitude des informations fournies et j'autorise Golden Star à utiliser mes données dans le cadre des castings. / أقر بصحة هذه البيانات المذكورة للوكالة.</span>
+            <span data-i18n="casting_agreement">Je confirme l'exactitude des informations fournies et j'autorise Golden Star à utiliser mes بياناتي في الكاستينغ.</span>
           </label>
         </div>
         <button type="submit" data-i18n="btn_submit_casting" class="w-full bg-gradient-to-r from-[#c9983d] to-yellow-500 text-black py-4 rounded-xl font-black text-center shadow-xl hover:scale-[1.01] transition duration-300">
@@ -695,7 +678,6 @@
         </button>
       </div>
 
-      <!-- أزرار التحكم بالفورم -->
       <div class="flex justify-between items-center pt-4 border-t border-white/5">
         <button type="button" id="prev-step-btn" onclick="moveCastingStep(-1)" data-i18n="step_prev" class="bg-white/5 border border-white/10 text-white px-6 py-2 rounded-xl text-xs font-bold hover:bg-white/10 transition disabled:opacity-30" disabled>السابق</button>
         <button type="button" id="next-step-btn" onclick="moveCastingStep(1)" data-i18n="step_next" class="bg-[#c9983d] text-black px-6 py-2 rounded-xl text-xs font-black hover:bg-yellow-500 transition">التالي ←</button>
@@ -704,7 +686,6 @@
   </div>
 </section>
 
-<!-- قسم الـ CV متعدد الخطوات المحدث -->
 <section id="cv-upload" class="py-24 bg-[#050505]">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12 fade-up">
@@ -712,8 +693,13 @@
       <p data-i18n="cv_subtitle" class="text-white/50">حدد المجالات والتخصصات التي تود الانضمام إلينا من خلالها كجزء من فريق GOLDEN STAR MANAGEMENT.</p>
     </div>
 
-    <form action="https://formspree.io/f/xlgzqvyr" method="POST" id="cv-options-form" class="space-y-6 bg-[#0a0a0a] border border-white/5 p-6 md:p-8 rounded-2xl">
+    <form action="https://formspree.io/f/xlgzqvyr" method="POST" enctype="multipart/form-data" id="cv-options-form" class="space-y-6 bg-[#0a0a0a] border border-white/5 p-6 md:p-8 rounded-2xl">
       
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+         <input type="text" name="Candidate_Name" placeholder="الاسم الكامل" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+         <input type="email" name="Candidate_Email" placeholder="البريد الإلكتروني" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+      </div>
+
       <div class="space-y-4">
         <label class="block text-xs font-bold text-white/70 uppercase tracking-wider mb-2">اختر التخصصات المناسبة لك (يمكنك تحديد أكثر من مجال) :</label>
         
@@ -760,6 +746,12 @@
         </div>
       </div>
 
+      <div class="border border-dashed border-yellow-700/20 p-4 rounded-xl text-center relative hover:border-[#c9983d] transition bg-black/40">
+         <input type="file" name="CV_Document" accept=".pdf,.doc,.docx" required class="absolute inset-0 opacity-0 cursor-pointer">
+         <span class="block text-sm font-bold gold">Télécharger le CV / ارفع سيرتك الذاتية *</span>
+         <span class="block text-[11px] text-white/40">صيغة المقبول: PDF, DOCX</span>
+      </div>
+
       <button type="submit" id="cv-submit-btn" class="w-full bg-[#c9983d] text-black py-4 rounded-xl font-black hover:bg-yellow-500 transition flex items-center justify-center gap-2">
         <span>🚀 إرسال طلب الانضمام</span>
       </button>
@@ -767,7 +759,6 @@
   </div>
 </section>
 
-<!-- قسم التواصل الشامل وتحديد الخدمات -->
 <section id="contact" class="py-24 bg-[#050505]">
   <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-12 fade-up">
@@ -787,7 +778,6 @@
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
-          <!-- قائمة 1 -->
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">🎬 <span data-i18n="cat_audiovisual">خدمات الإنتاج السمعي البصري</span></h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
@@ -801,7 +791,6 @@
             </div>
           </div>
 
-          <!-- قائمة 2 -->
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">🎥 <span data-i18n="cat_production">إنتاج الأفلام والبرامج</span></h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
@@ -813,7 +802,6 @@
             </div>
           </div>
 
-          <!-- قائمة 3 -->
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">✂️ <span data-i18n="cat_postproduction">المونتاج وما بعد الإنتاج</span></h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
@@ -826,7 +814,6 @@
             </div>
           </div>
 
-          <!-- قائمة 4 -->
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">🎙️ <span data-i18n="cat_audio_photo">الخدمات الصوتية والفوتوغرافيا</span></h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
@@ -842,7 +829,6 @@
             </div>
           </div>
 
-          <!-- قائمة 5 -->
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">🎨 <span data-i18n="cat_design_web">خدمات التصميم وتطوير المواقع</span></h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
@@ -858,7 +844,6 @@
             </div>
           </div>
 
-          <!-- قائمة 6 -->
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">📱 <span data-i18n="cat_marketing">إدارة المحتوى والتسويق الرقمي</span></h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
@@ -872,7 +857,6 @@
             </div>
           </div>
 
-          <!-- قائمة 7 -->
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">📈 <span data-i18n="cat_business">خدمات إدارة الأعمال والاستشارات</span></h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
@@ -884,7 +868,6 @@
             </div>
           </div>
 
-          <!-- قائمة 8 -->
           <div class="space-y-3">
             <h4 class="text-xs font-bold text-white/80 flex items-center gap-2">🤝 <span data-i18n="cat_talents_events">إدارة المواهب والفعاليات</span></h4>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] md:text-xs">
@@ -919,7 +902,6 @@
   </div>
 </section>
 
-<!-- الفوتر / تذييل الصفحة -->
 <footer class="bg-[#050505] border-t border-white/5 py-10 text-center">
   <img src="logo.jpg" class="w-16 h-16 rounded-full mx-auto border border-yellow-700/30 object-cover mb-4">
   <h2 class="font-black text-2xl gold mb-2">GOLDEN STAR MANAGEMENT</h2>
@@ -932,7 +914,6 @@
   <p class="text-white/20 text-xs tracking-widest">© 2026 GOLDEN STAR MANAGEMENT — ALL RIGHTS RESERVED</p>
 </footer>
 
-<!-- السكريبتات الذكية والتفاعلية للموقع -->
 <script>
 // القاموس اللغوي للترجمة الفورية (العربية، الإنجليزية، الفرنسية)
 const dictionary = {
@@ -1053,7 +1034,8 @@ const dictionary = {
       c_fullname: 'Nom et prénom / الاسم واللقب', c_artname: 'Nom artistique / الاسم الفني', c_birthplace: 'Lieu de naissance / مكان الميلاد',
       c_nationality: 'Nationalité / الجنسية', c_address: 'Adresse / العنوان الحالي', c_phone: 'Téléphone / رقم الهاتف', c_email: 'E-mail / البريد الإلكتروني',
       c_idnumber: "Numéro de pièce d'identité / رقم وثيقة الهوية", c_height: 'Taille (cm) / الطول', c_weight: 'Poids (kg) / الوزن',
-      c_eyes: 'Yeux / لون العينين', c_hair: 'Cheveux / لون الشعر', c_experience: 'Expériences précédentes / الأعمال السابقة بالتفصيل إن وجدت'
+      c_eyes: 'Yeux / لون العينين', c_hair: 'Cheveux / لون الشعر', c_experience: 'Expériences précédentes / الأعمال السابقة بالتفصيل إن وجدت',
+      c_instagram: 'Instagram Profile Link', c_tiktok: 'TikTok Profile Link', c_birthdate: ''
     }
   },
   en: {
@@ -1173,7 +1155,8 @@ const dictionary = {
       c_fullname: 'Full Name', c_artname: 'Artistic Name', c_birthplace: 'Place of Birth',
       c_nationality: 'Nationality', c_address: 'Current Address', c_phone: 'Phone Number', c_email: 'Email Address',
       c_idnumber: "ID Document Number", c_height: 'Height (cm)', c_weight: 'Weight (kg)',
-      c_eyes: 'Eyes Color', c_hair: 'Hair Color', c_experience: 'Previous Works Description'
+      c_eyes: 'Eyes Color', c_hair: 'Hair Color', c_experience: 'Previous Works Description',
+      c_instagram: 'Instagram Profile Link', c_tiktok: 'TikTok Profile Link', c_birthdate: ''
     }
   },
   fr: {
@@ -1204,7 +1187,7 @@ const dictionary = {
     img_portrait_hint: 'Photo portrait récente, claire et zoomée sur le visage',
     img_full_hint: 'Photo plein pied debout de haute résolution',
     img_id_hint: 'Copie claire de la carte d’identité ou du passeport',
-    casting_agreement: 'Je confirme l’exactitude des informations fournies et j’autorise Golden Star à utiliser mes données.',
+    casting_agreement: 'Je confirme l\'exactitude des informations fournies et j\'autorise Golden Star à utiliser mes données.',
     btn_submit_casting: '✓ Envoyer la Fiche de Casting 🚀',
     step_prev: 'Précédent', step_next: 'Suivant →',
     cv_title: 'Rejoindre Notre Équipe', cv_subtitle: 'Sélectionnez vos spécialités et rejoignez GOLDEN STAR MANAGEMENT.',
@@ -1293,7 +1276,8 @@ const dictionary = {
       c_fullname: 'Nom complet', c_artname: 'Nom Artistique', c_birthplace: 'Lieu de Naissance',
       c_nationality: 'Nationalité', c_address: 'Adresse Actuelle', c_phone: 'Numéro de Téléphone', c_email: 'Adresse E-mail',
       c_idnumber: "Numéro de Pièce d'Identité", c_height: 'Taille (cm)', c_weight: 'Poids (kg)',
-      c_eyes: 'Couleur des Yeux', c_hair: 'Couleur des Cheveux', c_experience: 'Description des Expériences'
+      c_eyes: 'Couleur des Yeux', c_hair: 'Couleur des Cheveux', c_experience: 'Description des Expériences',
+      c_instagram: 'Instagram Profile Link', c_tiktok: 'TikTok Profile Link', c_birthdate: ''
     }
   }
 };
@@ -1315,7 +1299,7 @@ function changeLanguage(lang) {
     }
   });
 
-  // ترجمة الـ Placeholders في الحقول
+  // ترجمة الـ Placeholders في الحقول بطريقة آمنة
   document.querySelectorAll('input, textarea').forEach(el => {
     const id = el.id || el.name;
     if (dictionary[lang] && dictionary[lang].placeholders && dictionary[lang].placeholders[id]) {
@@ -1336,12 +1320,25 @@ function toggleTheme() {
   }
 }
 
-// التحكم باستمارة الكاستينغ متعددة الخطوات
+// التحكم باستمارة الكاستينغ متعددة الخطوات مع تفعيل ميزة التحقق من المدخلات الحالية
 let currentCastingStep = 1;
 function moveCastingStep(stepDirection) {
   const steps = document.querySelectorAll('.form-step');
   const indicators = document.querySelectorAll('.step-indicator');
   
+  // التحقق من صحة الحقول الإجبارية في الخطوة الحالية قبل الانتقال للأمام فقط
+  if (stepDirection === 1) {
+    const currentStepInputs = steps[currentCastingStep - 1].querySelectorAll('input[required], textarea[required]');
+    let isStepValid = true;
+    currentStepInputs.forEach(input => {
+      if (!input.checkValidity()) {
+        input.reportValidity();
+        isStepValid = false;
+      }
+    });
+    if (!isStepValid) return; // منع الانتقال إذا كانت هناك حقول فارغة
+  }
+
   steps[currentCastingStep - 1].classList.remove('active');
   currentCastingStep += stepDirection;
   steps[currentCastingStep - 1].classList.add('active');
