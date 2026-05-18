@@ -112,7 +112,7 @@
       position:fixed;
       inset:0;
       background:black;
- z-index:999999;
+      z-index:999999;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -296,7 +296,6 @@
     .light-theme #expanded-ad-title { color: #111111 !important; }
     .light-theme #expanded-ad-desc { color: #374151 !important; }
 
-    /* ستايل الثيم الفاتح لخانة الإعلانات الجديدة */
     .light-theme .section-ad-banner {
       background: #ffffff !important;
       border-color: rgba(201, 152, 61, 0.3) !important;
@@ -378,12 +377,12 @@
   <div class="relative rounded-xl overflow-hidden mb-3 bg-black aspect-video">
     <img src="Toffer.png" alt="Golden Star Announcement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-      <span class="bg-black/70 border border-yellow-600/50 text-[#c9983d] text-[10px] font-bold px-3 py-1.5 rounded-full backdrop-blur-sm">انقر للتكبير 🔍</span>
+      <span data-i18n="ad_click_hint" class="bg-black/70 border border-yellow-600/50 text-[#c9983d] text-[10px] font-bold px-3 py-1.5 rounded-full backdrop-blur-sm">انقر للتكبير 🔍</span>
     </div>
   </div>
 
-  <h4 data-i18n="ad_title" class="text-xs font-black gold mb-1 pointer-events-none">فرصة توظيف: مدير تسويق رقمي</h4>
-  <p data-i18n="ad_desc" class="text-[11px] text-white/60 leading-relaxed mb-3 pointer-events-none line-clamp-2">انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمبدعين .</p>
+  <h4 id="sidebar-ad-title" data-i18n="ad_title" class="text-xs font-black gold mb-1 pointer-events-none">فرصة توظيف: مدير تسويق رقمي</h4>
+  <p id="sidebar-ad-desc" data-i18n="ad_desc" class="text-[11px] text-white/60 leading-relaxed mb-3 pointer-events-none line-clamp-2">انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمبدعين .</p>
 
   <button onclick="handleAdBtnClick(event)" data-i18n="ad_btn" class="ad-interactive-btn w-full text-center bg-white/5 border border-yellow-700/30 hover:border-[#c9983d] hover:bg-[#c9983d] hover:text-black text-white text-[11px] font-bold py-2 rounded-lg transition duration-300">
     قدم طلبك الآن ←
@@ -577,7 +576,6 @@
   </div>
 </section>
 
-<!-- [خانة الإعلانات الرئيسية المدمجة في الصفحة مع تفعيل ميزة التكبير والتأثيرات] -->
 <section id="section-advertisement" class="py-12 bg-black">
   <div class="max-w-7xl mx-auto px-6 fade-up">
     <div class="section-ad-banner bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-6 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl relative overflow-hidden group">
@@ -586,11 +584,10 @@
       <div class="absolute -left-20 -bottom-20 w-60 h-60 bg-[#c9983d]/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="flex flex-col md:flex-row items-center gap-6 z-10 w-full lg:w-2/3">
-        <!-- الصورة هنا أصبحت قابلة للنقر والتكبير المباشر -->
         <div onclick="openExpandedAd(event)" class="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden bg-black flex-shrink-0 border border-yellow-700/10 relative cursor-pointer group/img">
           <img src="Toffer.png" alt="Special Offer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/60 opacity-0 group-hover/img:opacity-100 transition duration-300 flex items-center justify-center">
-            <span class="text-[#c9983d] text-[10px] font-bold">تكبير 🔍</span>
+            <span data-i18n="ad_click_hint" class="text-[#c9983d] text-[10px] font-bold">تكبير 🔍</span>
           </div>
         </div>
         <div class="text-center md:text-right">
@@ -796,7 +793,7 @@
       </div>
 
       <button type="submit" id="cv-submit-btn" class="w-full bg-[#c9983d] text-black py-4 rounded-xl font-black hover:bg-yellow-500 transition flex items-center justify-center gap-2">
-        <span>🚀 إرسال طلب الانضمام</span>
+        <span data-i18n="btn_send_cv">🚀 إرسال طلب الانضمام</span>
       </button>
     </form>
   </div>
@@ -1218,8 +1215,8 @@ const dictionary = {
     s4_title: 'Gestion de Marque', s4_desc: 'Création d\'identités visuelles prestigieuses, stratégies de marque innovantes et branding haut de gamme.',
     s5_title: 'Marketing Digital', s5_desc: 'Campagnes publicitaires ciblées, gestion des réseaux sociaux et acquisition de clients à haute conversion.',
     s6_title: 'Gestion d\'Événements', s6_desc: 'Organisation de grandes conférences, soirées d\'élite, salons professionnels et couvertures médiatiques de luxe.',
-    portfolio_title: 'Notre Portfolio', portfolio_subtitle: 'Aperçu de nos récents projets de prestige. Cliquez sur une carte للتصفح.',
-    tab_all: 'Tous', tab_branding: 'Branding', view_work: 'Voir Projet 👁️',
+    portfolio_title: 'Notre Portfolio', portfolio_subtitle: 'Aperçu de nos récents projets de prestige. Cliquez sur une carte pour le découvrir.',
+    tab_all: 'Tous les projets', tab_branding: 'Branding', view_work: 'Voir le projet 👁️',
     p1_title: 'Projet Melabelle', p1_desc: 'Identité visuelle de prestige et stratégie marketing globale pour la marque Melabelle.', p1_short: 'Identité de Luxe & Stratégie de Marque.',
     p2_title: 'Branding Bijoux', p2_desc: 'Création de l\'identité digitale raffinée pour une marque exclusive de haute joaillerie.', p2_short: 'Identité visuelle de haute joaillerie.',
     p3_title: 'Projet Le-R', p3_desc: 'Modernisation complète des standards esthétiques et graphiques pour la marque Le-R.', p3_short: 'Esthétique moderne de branding corporate.',
@@ -1250,90 +1247,175 @@ const dictionary = {
     section_ad_title: 'Offre Exclusive: Pack Identité Visuelle Complète',
     section_ad_desc: 'Bénéficiez de 20% de réduction sur les services de branding et community management pour les 5 premières entreprises ce mois-ci.',
     section_ad_btn: 'Profiter de l\'Offre Maintenant ←',
-    select_services_title: 'Sélectionnez les services requis (Plusieurs choix possibles) :',
-    company_slogan: '« Nous transformons les idées audacieuses en succès réels »',
+    select_services_title: 'Sélectionnez les Services requis (Choix multiples autorisés) :',
+    cat_audiovisual: 'Production Audiovisuelle',
+    srv_vid_shoot: '📹 Tournage Vidéo Professionnel',
+    srv_ads: 'Vidéos Publicitaires Commerciales',
+    srv_clips: 'Clips Vidéos Artistiques',
+    srv_corporate: 'Profils d\'Entreprises & Corporate',
+    srv_events: 'Couverture de Conférences & Événements',
+    srv_weddings: 'Mariages & Événements Privés',
+    srv_sm_content: 'Tournage de Contenu Réseaux Sociaux',
+    cat_production: 'Production de Films & Émissions',
+    srv_tv: 'Production de Programmes TV',
+    srv_docs: 'Production de Documentaires',
+    srv_podcast: 'Production de Podcasts Visuels',
+    srv_reality: 'Production de Télé-réalité',
+    srv_digital_prod: 'Création de Contenu Digital',
+    cat_postproduction: 'Post-Production & Montage',
+    srv_editing: 'Montage Vidéo Professionnel',
+    srv_color: 'Étalonnage des Couleurs',
+    srv_vfx: 'Effets Visuels VFX',
+    srv_motion: 'Motion Graphics',
+    srv_intro_outro: 'Conception d\'Intro / Outro',
+    srv_audio_clean: 'Nettoyage & Amélioration Audio',
+    cat_audio_photo: 'Services Audio & Photographie',
+    srv_vo: 'Enregistrement de Voix Off',
+    srv_dubbing: 'Doublage & Commentaires',
+    srv_audio_eng: 'Ingénierie Audio',
+    srv_music_prod: 'Production Musicale & Pubs Sonores',
+    srv_photo_products: '📸 Photographie de Produits',
+    srv_photo_fashion: 'Photographie de Mode',
+    srv_photo_estate: 'Photographie Immobilière',
+    srv_photo_sessions: 'Sessions Photo Professionnelles',
+    srv_photo_ads: 'Photographie Publicitaire',
+    cat_design_web: 'Design Créatif & Dév Web',
+    srv_logo: '🖌️ Conception de Logos',
+    srv_brand_identity: 'Identité Visuelle Complète de Marque',
+    srv_posters: 'Graphisme d\'Affiches & Pubs',
+    srv_sm_graphics: 'Visuels pour Réseaux Sociaux',
+    srv_brochures: 'Conception de Brochures & Livrets',
+    srv_web_corp: '💻 Sites Web Professionnels Corporate',
+    srv_ecommerce: 'Boutiques en Ligne E-Commerce',
+    srv_landing: 'Création de Landing Pages',
+    srv_web_manage: 'Gestion & Mises à jour de Sites',
+    cat_marketing: 'Gestion de Contenu & Marketing Digital',
+    srv_content_creation: 'Création de Contenu',
+    srv_sm_manage: 'Gestion des Réseaux Sociaux',
+    srv_copywriting: 'Rédaction Publicitaire Marketing',
+    srv_ads_campaigns: 'Campagnes Digitales Payantes',
+    srv_digi_market: 'Stratégie Marketing Digital',
+    srv_branding_build: 'Construction de Stratégie de Marque',
+    srv_pr: 'Relations Publiques & Gestion Médias',
+    cat_business: 'Gestion d\'Entreprise & Conseil',
+    srv_consulting: '🧠 Conseil en Management',
+    srv_proj_dev: 'Développement de Projets',
+    srv_strat_plan: 'Solutions de Planification Stratégique',
+    srv_ops_manage: 'Gestion des Opérations',
+    srv_team_org: 'Organisation des Équipes de Travail',
+    cat_talents_events: 'Talents, Événements & Services Extra',
+    srv_influ_manage: 'Gestion des Influenceurs',
+    srv_artist_manage: 'Gestion des Artistes',
+    srv_contracts: 'Contrats & Partenariats',
+    srv_personal_market: 'Marketing de Personal Branding',
+    srv_event_conf: '📅 Organisation de Conférences',
+    srv_event_exhib: 'Installation d\'Expositions',
+    srv_event_launch: 'Gestion de Soirées de Lancement',
+    srv_event_special: 'Planification d\'Événements Spéciaux',
+    srv_drone: '🚀 Vidéo Drone Cinématique',
+    srv_live_stream: 'Diffusion en Direct Multi-Cam',
+    srv_rental: 'Service de Location de Matériel',
+    srv_studio: 'Accès Studio Photo Professionnel',
+    srv_training: 'Formation Professionnelle Médias & Prod',
+    srv_full_media_mng: 'Gestion Complète de Projets Médias',
+    company_slogan: '“Nous transformons les idées audacieuses en succès réel”',
     placeholders: {
-      contact_name: 'Nom Complet', contact_email: 'Adresse Email', contact_phone: 'Numéro de Téléphone', 'project-details': 'Détails du Projet',
-      c_fullname: 'Nom et Prénom', c_artname: 'Nom d\'Artiste', c_birthplace: 'Lieu de Naissance',
-      c_nationality: 'Nationalité', c_address: 'Adresse Actuelle', c_phone: 'Numéro de Téléphone', c_email: 'Adresse Email',
-      c_idnumber: 'Numéro de Pièce d\'Identité', c_height: 'Taille (cm)', c_weight: 'Poids (kg)',
-      c_eyes: 'Couleur des Yeux', c_hair: 'Couleur des Cheveux', c_experience: 'Description des Expériences Précédentes',
-      c_instagram: 'Lien Profil Instagram', c_tiktok: 'Lien Profil TikTok', c_birthdate: ''
+      contact_name: 'Nom Complet', contact_email: 'Adresse E-mail', contact_phone: 'Numéro de Téléphone', 'project-details': 'Détails du Projet',
+      c_fullname: 'Nom et prénom', c_artname: 'Nom artistique', c_birthplace: 'Lieu de naissance',
+      c_nationality: 'Nationalité', c_address: 'Adresse actuelle', c_phone: 'Numéro de téléphone', c_email: 'Adresse e-mail',
+      c_idnumber: "Numéro de pièce d'identité", c_height: 'Taille (cm)', c_weight: 'Poids (kg)',
+      c_eyes: 'Couleur des yeux', c_hair: 'Couleur des cheveux', c_experience: 'Description des travaux précédents',
+      c_instagram: 'Lien du profil Instagram', c_tiktok: 'Lien du profil TikTok', c_birthdate: ''
     }
   }
 };
 
 let currentLanguage = 'ar';
+let isLightTheme = false;
+let currentCastingStep = 1;
 
+// 1. شاشة التحميل
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    if(loader) {
+      loader.style.opacity = '0';
+      setTimeout(() => loader.style.display = 'none', 500);
+    }
+  }, 1200);
+  setupScrollAnimations();
+});
+
+// 2. نظام اللغات والترجمة
 function changeLanguage(lang) {
+  if (!dictionary[lang]) return;
   currentLanguage = lang;
-  document.documentElement.lang = lang;
-  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-
+  
+  const htmlTag = document.documentElement;
+  htmlTag.lang = lang;
   if(lang === 'ar') {
-    document.getElementById('casting-form').classList.remove('dir-ltr');
-    document.getElementById('cv-options-form').classList.remove('dir-ltr');
-    document.getElementById('contact-form').classList.remove('dir-ltr');
+    htmlTag.dir = 'rtl';
   } else {
-    document.getElementById('casting-form').classList.add('dir-ltr');
-    document.getElementById('cv-options-form').classList.add('dir-ltr');
-    document.getElementById('contact-form').classList.add('dir-ltr');
+    htmlTag.dir = 'ltr';
   }
 
+  // ترجمة النصوص التي تحتوي على data-i18n
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
-    if (dictionary[lang] && dictionary[lang][key]) {
+    if (dictionary[lang][key]) {
       element.innerHTML = dictionary[lang][key];
     }
   });
 
-  if (dictionary[lang] && dictionary[lang].placeholders) {
-    for (const id in dictionary[lang].placeholders) {
-      const input = document.getElementById(id);
-      if (input && dictionary[lang].placeholders[id]) {
-        input.placeholder = dictionary[lang].placeholders[id];
-      }
+  // ترجمة الـ Placeholders في الحقول
+  document.querySelectorAll('input, textarea').forEach(input => {
+    const idOrIdAttr = input.id || input.name;
+    if(dictionary[lang].placeholders && dictionary[lang].placeholders[idOrIdAttr]) {
+      input.placeholder = dictionary[lang].placeholders[idOrIdAttr];
     }
-  }
+  });
 }
 
+// 3. التبديل بين الثيم الفاتح والمظلم
 function toggleTheme() {
+  isLightTheme = !isLightTheme;
   const body = document.body;
   const btn = document.getElementById('theme-btn');
-  body.classList.toggle('light-theme');
   
-  if(body.classList.contains('light-theme')) {
+  if(isLightTheme) {
+    body.classList.add('light-theme');
     btn.innerHTML = '🌙';
   } else {
+    body.classList.remove('light-theme');
     btn.innerHTML = '☀️';
   }
 }
 
-window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-  setTimeout(() => {
-    loader.style.opacity = '0';
-    setTimeout(() => loader.remove(), 500);
-  }, 1200);
-});
+// 4. نظام تحريك العناصر عند السكرول
+function setupScrollAnimations() {
+  const faders = document.querySelectorAll('.fade-up');
+  const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+  
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+  
+  faders.forEach(fader => appearOnScroll.observe(fader));
+}
 
-const fadeElements = document.querySelectorAll('.fade-up');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add('active');
-    }
-  });
-}, { threshold: 0.1 });
-fadeElements.forEach(el => observer.observe(el));
-
+// 5. فلترة مشاريع الـ Portfolio
 function filterPortfolio(category) {
   document.querySelectorAll('.portfolio-tab').forEach(tab => tab.classList.remove('active'));
-  if(category === 'all') document.getElementById('tab-all').classList.add('active');
-  if(category === 'branding') document.getElementById('tab-branding').classList.add('active');
+  const activeTab = document.getElementById(`tab-${category}`);
+  if(activeTab) activeTab.classList.add('active');
 
   document.querySelectorAll('.portfolio-item').forEach(item => {
-    if (category === 'all' || item.classList.contains(category)) {
+    if(category === 'all' || item.classList.contains(category)) {
       item.style.display = 'flex';
       setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
     } else {
@@ -1344,25 +1426,22 @@ function filterPortfolio(category) {
   });
 }
 
-const workData = {
-  p1: { titleKey: 'p1_title', descKey: 'p1_desc', img: 'melabelle.png' },
-  p2: { titleKey: 'p2_title', descKey: 'p2_desc', img: 'bijoux.png' },
-  p3: { titleKey: 'p3_title', descKey: 'p3_desc', img: 'le-r.png' }
+// 6. التحكم بنوافذ الـ Portfolio Modal
+const projectsData = {
+  p1: { img: 'melabelle.png', keyTitle: 'p1_title', keyDesc: 'p1_desc' },
+  p2: { img: 'bijoux.png', keyTitle: 'p2_title', keyDesc: 'p2_desc' },
+  p3: { img: 'le-r.png', keyTitle: 'p3_title', keyDesc: 'p3_desc' }
 };
 
 function openWorkModal(id) {
-  const data = workData[id];
+  const data = projectsData[id];
   if(!data) return;
   
+  document.getElementById('modal-img').src = data.img;
+  document.getElementById('modal-title').innerText = dictionary[currentLanguage][data.keyTitle] || id;
+  document.getElementById('modal-desc').innerText = dictionary[currentLanguage][data.keyDesc] || '';
+  
   const modal = document.getElementById('work-modal');
-  const img = document.getElementById('modal-img');
-  const title = document.getElementById('modal-title');
-  const desc = document.getElementById('modal-desc');
-
-  img.src = data.img;
-  title.innerHTML = dictionary[currentLanguage][data.titleKey] || '';
-  desc.innerHTML = dictionary[currentLanguage][data.descKey] || '';
-
   modal.classList.remove('hidden');
   modal.classList.add('flex');
 }
@@ -1375,20 +1454,17 @@ function closeWorkModal() {
 
 function requestThisService() {
   closeWorkModal();
-  document.getElementById('contact').scrollIntoView();
+  window.location.href = '#contact';
 }
 
+// 7. إعلانات الـ Sidebar والـ Modals التكبيرية
 function closeSidebarAd(event) {
   event.stopPropagation();
   const ad = document.getElementById('sidebar-ad');
-  ad.style.transition = '0.3s ease';
-  ad.style.opacity = '0';
-  ad.style.transform = 'scale(0.8)';
-  setTimeout(() => ad.remove(), 300);
+  if(ad) ad.style.display = 'none';
 }
 
 function openExpandedAd(event) {
-  // تفعيل فتح النافذة المنبثقة للإعلان
   event.stopPropagation();
   const modal = document.getElementById('expanded-ad-modal');
   modal.classList.remove('hidden');
@@ -1408,30 +1484,51 @@ function handleAdBtnClick(event) {
 
 function redirectToAdAction() {
   closeExpandedAd();
-  document.getElementById('cv-upload').scrollIntoView();
+  window.location.href = '#cv-upload';
 }
 
-let currentCastingStep = 1;
-function moveCastingStep(stepDirection) {
-  const steps = document.querySelectorAll('.form-step');
+// 8. نموذج الـ Casting متعدد الخطوات
+function moveCastingStep(direction) {
+  const currentStepElement = document.getElementById(`step-${currentCastingStep}`);
+  
+  // التحقق من الحقول الإجبارية قبل الانتقال للخطوة التالية
+  if (direction === 1) {
+    const inputs = currentStepElement.querySelectorAll('[required]');
+    let allValid = true;
+    inputs.forEach(input => {
+      if(!input.checkValidity()) {
+        input.reportValidity();
+        allValid = false;
+      }
+    });
+    if(!allValid) return;
+  }
+
+  currentStepElement.classList.remove('active');
+  currentCastingStep += direction;
+  
+  if(currentCastingStep < 1) currentCastingStep = 1;
+  if(currentCastingStep > 4) currentCastingStep = 4;
+  
+  document.getElementById(`step-${currentCastingStep}`).classList.add('active');
+  
+  // تحديث المؤشرات العلوية
   const indicators = document.querySelectorAll('.step-indicator');
-  
-  steps[currentCastingStep - 1].classList.remove('active');
-  indicators[currentCastingStep - 1].classList.remove('active');
+  indicators.forEach((ind, index) => {
+    if(index < currentCastingStep) {
+      ind.classList.add('active');
+    } else {
+      ind.classList.remove('active');
+    }
+  });
 
-  currentCastingStep += stepDirection;
-
-  steps[currentCastingStep - 1].classList.add('active');
-  indicators[currentCastingStep - 1].classList.add('active');
-
+  // التحكم في أزرار التالي والسابق
   document.getElementById('prev-step-btn').disabled = (currentCastingStep === 1);
-  
   const nextBtn = document.getElementById('next-step-btn');
-  if (currentCastingStep === 4) {
+  if(currentCastingStep === 4) {
     nextBtn.style.display = 'none';
   } else {
     nextBtn.style.display = 'inline-block';
-    nextBtn.innerHTML = (currentLanguage === 'ar') ? 'التالي ←' : 'Next →';
   }
 }
 </script>
