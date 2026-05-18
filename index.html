@@ -175,11 +175,6 @@
       box-shadow: 0 0 15px rgba(201, 152, 61, 0.4);
     }
 
-    .cv-form-step { display: none; }
-    .cv-form-step.active { display: block; animation: cvStepFade 0.4s ease-in-out; }
-    .cv-step-indicator { width: 35px; height: 35px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); background: #0b0b0b; transition: all 0.3s; }
-    .cv-step-indicator.active { border-color: #c9983d; color: black; background: #c9983d; box-shadow: 0 0 15px rgba(201, 152, 61, 0.4); }
-    @keyframes cvStepFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     .dir-ltr { direction: ltr !important; text-align: left !important; }
 
     /* قواعد وضوابط الثيم الفاتح الكامل */
@@ -710,7 +705,6 @@
 </section>
 
 <!-- قسم الـ CV متعدد الخطوات المحدث -->
-
 <section id="cv-upload" class="py-24 bg-[#050505]">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12 fade-up">
@@ -1059,8 +1053,7 @@ const dictionary = {
       c_fullname: 'Nom et prénom / الاسم واللقب', c_artname: 'Nom artistique / الاسم الفني', c_birthplace: 'Lieu de naissance / مكان الميلاد',
       c_nationality: 'Nationalité / الجنسية', c_address: 'Adresse / العنوان الحالي', c_phone: 'Téléphone / رقم الهاتف', c_email: 'E-mail / البريد الإلكتروني',
       c_idnumber: "Numéro de pièce d'identité / رقم وثيقة الهوية", c_height: 'Taille (cm) / الطول', c_weight: 'Poids (kg) / الوزن',
-      c_eyes: 'Yeux / لون العينين', c_hair: 'Cheveux / لون الشعر', c_experience: 'Expériences précédentes / الأعمال السابقة بالتفصيل إن وجدت',
-      cv_fullname: 'الاسم الكامل', cv_email: 'البريد الإلكتروني', cv_phone: 'رقم الهاتف (واتساب)', cv_city: 'المدينة / الدولة', cv_input_msg: 'تحدث معنا باختصار عن أهم المشاريع التي عملت عليها...'
+      c_eyes: 'Yeux / لون العينين', c_hair: 'Cheveux / لون الشعر', c_experience: 'Expériences précédentes / الأعمال السابقة بالتفصيل إن وجدت'
     }
   },
   en: {
@@ -1094,13 +1087,13 @@ const dictionary = {
     casting_agreement: "I confirm the accuracy of the information provided and authorize Golden Star to use my data for casting purposes.",
     btn_submit_casting: '✓ Submit Casting Form Now 🚀',
     step_prev: 'Previous', step_next: 'Next →',
-    cv_title: 'Join Our Team', cv_subtitle: 'Submit your resume now and become a vital part of GOLDEN STAR MANAGEMENT.',
-    cv_upload_box: 'Upload Resume / CV', btn_send_cv: '🚀 Submit Application',
+    cv_title: 'Join Our Team', cv_subtitle: 'Submit your options now and become a vital part of GOLDEN STAR MANAGEMENT.',
+    btn_send_cv: '🚀 Submit Application',
     contact_title: 'Contact Us', contact_subtitle: 'We are ready to transform your vision into an extraordinary reality.',
     btn_send_project: 'Send Inquiry',
     ad_badge: 'OFFER / NEWS',
     ad_title: 'Hiring Now: Digital Marketing Manager',
-    ad_desc: 'Join our elite team today! We are looking for talented experts, plus special branding packages discounts for the first 5 clients this month.',
+    ad_desc: 'Join our elite team today! We are looking for talented experts.',
     ad_btn: 'Apply Now ←',
     ad_click_hint: 'Click to zoom 🔍',
     select_services_title: "Select Required Services (Multiple choices allowed) :",
@@ -1176,12 +1169,11 @@ const dictionary = {
     srv_full_media_mng: "Full Media Projects Management",
     company_slogan: "“We turn bold ideas into real success”",
     placeholders: {
-      contact_name: 'Full Name', contact_email: 'Email Address', contact_phone: 'Phone Number', 'project-details': 'Project Details & Scope',
-      c_fullname: 'Nom et prénom / Full Name', c_artname: 'Nom artistique / Artistic Name', c_birthplace: 'Lieu de naissance / Place of Birth',
-      c_nationality: 'Nationalité / Nationality', c_address: 'Adresse / Current Address', c_phone: 'Téléphone / Phone Number', c_email: 'E-mail / Email Address',
-      c_idnumber: "Numéro de pièce d'identité / ID Document Number", c_height: 'Taille (cm) / Height', c_weight: 'Poids (kg) / Weight',
-      c_eyes: 'Yeux / Eyes Color', c_hair: 'Cheveux / Hair Color', c_experience: 'Expériences précédentes / Previous Works Description',
-      cv_fullname: 'Full Name', cv_email: 'Email Address', cv_phone: 'Phone Number (WhatsApp)', cv_city: 'City / Country', cv_input_msg: 'Tell us briefly about your core experience...'
+      contact_name: 'Full Name', contact_email: 'Email Address', contact_phone: 'Phone Number', 'project-details': 'Project Details',
+      c_fullname: 'Full Name', c_artname: 'Artistic Name', c_birthplace: 'Place of Birth',
+      c_nationality: 'Nationality', c_address: 'Current Address', c_phone: 'Phone Number', c_email: 'Email Address',
+      c_idnumber: "ID Document Number", c_height: 'Height (cm)', c_weight: 'Weight (kg)',
+      c_eyes: 'Eyes Color', c_hair: 'Hair Color', c_experience: 'Previous Works Description'
     }
   },
   fr: {
@@ -1215,8 +1207,8 @@ const dictionary = {
     casting_agreement: 'Je confirme l’exactitude des informations fournies et j’autorise Golden Star à utiliser mes données.',
     btn_submit_casting: '✓ Envoyer la Fiche de Casting 🚀',
     step_prev: 'Précédent', step_next: 'Suivant →',
-    cv_title: 'Rejoindre Notre Équipe', cv_subtitle: 'Envoyez votre CV maintenant et faites partie de GOLDEN STAR MANAGEMENT.',
-    cv_upload_box: 'Télécharger le CV', btn_send_cv: '🚀 Soumettre la Candidature',
+    cv_title: 'Rejoindre Notre Équipe', cv_subtitle: 'Sélectionnez vos spécialités et rejoignez GOLDEN STAR MANAGEMENT.',
+    btn_send_cv: '🚀 Soumettre la Candidature',
     contact_title: 'Contactez-nous', contact_subtitle: 'Nous sommes prêts à transformer votre vision en une réalité extraordinaire.',
     btn_send_project: 'Envoyer la Demande',
     ad_badge: 'OFFRE / NEWS',
@@ -1279,183 +1271,186 @@ const dictionary = {
     srv_proj_dev: "Développement de Projets",
     srv_strat_plan: "Solutions de Planification Stratégique",
     srv_ops_manage: "Gestion des Opérations",
-    srv_team_org: "Organisation d'Équipe de Travail",
+    srv_team_org: "Organisation des Équipes",
     cat_talents_events: "Gestion des Talents & Événements",
     srv_influ_manage: "Gestion des Influenceurs",
     srv_artist_manage: "Gestion des Artistes",
-    srv_contracts: "Organisation des Contrats",
-    srv_personal_market: "Marketing de Branding Personnel",
+    srv_contracts: "Contrats & Partenariats",
+    srv_personal_market: "Marketing de Marque Personnelle",
     srv_event_conf: "📅 Organisation de Conférences",
-    srv_event_exhib: "Installation d'Expositions",
-    srv_event_launch: "Gestion des Soirées de Lancement",
-    srv_event_special: "Planification d'Événements Spéciaux",
-    srv_drone: "🚀 Vidéo Drone Cinématique",
-    srv_live_stream: "Streaming En Direct Multi-Cam",
-    srv_rental: "Service de Location de Matériel",
-    srv_studio: "Accès Studio Photo Professionnel",
-    srv_training: "Formation Pro Médias & Production",
-    srv_full_media_mng: "Gestion Complète de Projets Médias",
-    company_slogan: "“Nous transformons les idées en succès”",
+    srv_event_exhib: "Organisation de Salons",
+    srv_event_launch: "Soirées de Lancement",
+    srv_event_special: "Gestion d'Événements Spéciaux",
+    srv_drone: "🚀 Drone Cinématique",
+    srv_live_stream: "Streaming Live Multi-Cam",
+    srv_rental: "Location de Matériel",
+    srv_studio: "Studio Photo Professionnel",
+    srv_training: "Formation Média & Production",
+    srv_full_media_mng: "Gestion Complète de Projets Média",
+    company_slogan: "“Nous transformons les idées en succès réels”",
     placeholders: {
       contact_name: 'Nom Complet', contact_email: 'Adresse E-mail', contact_phone: 'Numéro de Téléphone', 'project-details': 'Détails du Projet',
-      c_fullname: 'Nom et prénom / Full Name', c_artname: 'Nom artistique / Artistic Name', c_birthplace: 'Lieu de naissance',
+      c_fullname: 'Nom complet', c_artname: 'Nom Artistique', c_birthplace: 'Lieu de Naissance',
       c_nationality: 'Nationalité', c_address: 'Adresse Actuelle', c_phone: 'Numéro de Téléphone', c_email: 'Adresse E-mail',
       c_idnumber: "Numéro de Pièce d'Identité", c_height: 'Taille (cm)', c_weight: 'Poids (kg)',
-      c_eyes: 'Couleur des Yeux', c_hair: 'Couleur des Cheveux', c_experience: 'Expériences Précédentes',
-      cv_fullname: 'Nom Complet', cv_email: 'Adresse E-mail', cv_phone: 'Téléphone (WhatsApp)', cv_city: 'Ville / Pays', cv_input_msg: 'Parlez-nous brièvement...'
+      c_eyes: 'Couleur des Yeux', c_hair: 'Couleur des Cheveux', c_experience: 'Description des Expériences'
     }
   }
 };
 
-// إخفاء شاشة التحميل بعد تحميل الصفحة بالكامل
-window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-  if(loader) loader.style.display = 'none';
-});
+// إدارة اللغات والاتجاهات
+let currentLang = 'ar';
 
-// تفعيل التأثيرات البصرية عند التمرير (Fade Up)
-const fadeUpElements = document.querySelectorAll('.fade-up');
-const observerOptions = { threshold: 0.1 };
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('active');
-    }
-  });
-}, observerOptions);
-fadeUpElements.forEach(el => observer.observe(el));
+function changeLanguage(lang) {
+  currentLang = lang;
+  const dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.dir = dir;
+  document.documentElement.lang = lang;
 
-// منطق التبديل الفوري للغات والاتجاهات
-function changeLanguage(lng) {
-  document.documentElement.lang = lng;
-  if (lng === 'ar') {
-    document.documentElement.dir = 'rtl';
-    document.body.style.textAlign = 'right';
-  } else {
-    document.documentElement.dir = 'ltr';
-    document.body.style.textAlign = 'left';
-  }
-
-  // ترجمة النصوص التي تحتوي على معرّف d18n
-  document.querySelectorAll('[data-i18n]').forEach(element => {
-    const key = element.getAttribute('data-i18n');
-    if (dictionary[lng] && dictionary[lng][key]) {
-      element.innerHTML = dictionary[lng][key];
+  // ترجمة النصوص التي تحتوي على data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dictionary[lang] && dictionary[lang][key]) {
+      el.innerHTML = dictionary[lang][key];
     }
   });
 
-  // ترجمة placeholders حقول الإدخال والـ Textareas
-  document.querySelectorAll('[id], [name]').forEach(input => {
-    const idOrName = input.id || input.name;
-    if (dictionary[lng] && dictionary[lng].placeholders && dictionary[lng].placeholders[idOrName]) {
-      input.setAttribute('placeholder', dictionary[lng].placeholders[idOrName]);
+  // ترجمة الـ Placeholders في الحقول
+  document.querySelectorAll('input, textarea').forEach(el => {
+    const id = el.id || el.name;
+    if (dictionary[lang] && dictionary[lang].placeholders && dictionary[lang].placeholders[id]) {
+      el.placeholder = dictionary[lang].placeholders[id];
     }
   });
 }
 
-// منطق تفعيل والتحكم بالثيم الفاتح/المظلم (Dark/Light Mode)
+// التحكم بالثيم الفاتح/المظلم
 function toggleTheme() {
   const body = document.body;
-  const themeBtn = document.getElementById('theme-btn');
+  const btn = document.getElementById('theme-btn');
   body.classList.toggle('light-theme');
-  if (body.classList.contains('light-theme')) {
-    themeBtn.innerHTML = '🌙';
+  if(body.classList.contains('light-theme')) {
+    btn.innerHTML = '🌙';
   } else {
-    themeBtn.innerHTML = '☀️';
+    btn.innerHTML = '☀️';
   }
 }
 
-// تصفية معرض الأعمال وفلترته
-function filterPortfolio(category) {
-  document.querySelectorAll('.portfolio-tab').forEach(tab => tab.classList.remove('active'));
-  const activeTab = document.getElementById(`tab-${category}`);
-  if (activeTab) activeTab.classList.add('active');
+// التحكم باستمارة الكاستينغ متعددة الخطوات
+let currentCastingStep = 1;
+function moveCastingStep(stepDirection) {
+  const steps = document.querySelectorAll('.form-step');
+  const indicators = document.querySelectorAll('.step-indicator');
+  
+  steps[currentCastingStep - 1].classList.remove('active');
+  currentCastingStep += stepDirection;
+  steps[currentCastingStep - 1].classList.add('active');
 
-  document.querySelectorAll('.portfolio-item').forEach(item => {
+  // تحديث المؤشرات العلوية
+  indicators.forEach((ind, i) => {
+    if (i < currentCastingStep) {
+      ind.classList.add('active');
+    } else {
+      ind.classList.remove('active');
+    }
+  });
+
+  // التحكم بحالة الأزرار
+  document.getElementById('prev-step-btn').disabled = (currentCastingStep === 1);
+  const nextBtn = document.getElementById('next-step-btn');
+  if (currentCastingStep === 4) {
+    nextBtn.style.display = 'none';
+  } else {
+    nextBtn.style.display = 'block';
+    nextBtn.innerHTML = currentLang === 'ar' ? 'التالي ←' : (currentLang === 'en' ? 'Next →' : 'Suivant →');
+  }
+}
+
+// تصفية معرض الأعمال
+function filterPortfolio(category) {
+  const items = document.querySelectorAll('.portfolio-item');
+  const tabs = document.querySelectorAll('.portfolio-tab');
+  
+  tabs.forEach(tab => tab.classList.remove('active'));
+  document.getElementById(`tab-${category}`).classList.add('active');
+
+  items.forEach(item => {
     if (category === 'all' || item.classList.contains(category)) {
       item.style.display = 'block';
+      setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
     } else {
-      item.style.display = 'none';
+      item.style.opacity = '0';
+      item.style.transform = 'scale(0.8)';
+      setTimeout(() => { item.style.display = 'none'; }, 400);
     }
   });
 }
 
-// تفاصيل بيانات معرض الأعمال داخل المودال التفاعلي
-const worksData = {
-  p1: { title: 'Melabelle Project', img: 'melabelle.png', descKey: 'p1_desc' },
-  p2: { title: 'Bijoux Branding', img: 'bijoux.png', descKey: 'p2_desc' },
-  p3: { title: 'Le-R Project', img: 'le-r.png', descKey: 'p3_desc' }
-};
-
-function openWorkModal(id) {
-  const work = worksData[id];
-  if (!work) return;
-  const lng = document.documentElement.lang || 'ar';
-  document.getElementById('modal-img').src = work.img;
-  document.getElementById('modal-title').innerText = dictionary[lng][work.title] || work.title;
-  document.getElementById('modal-desc').innerText = dictionary[lng][work.descKey] || '';
-  document.getElementById('work-modal').classList.remove('hidden');
-  document.getElementById('work-modal').classList.add('flex');
-}
-
-function closeWorkModal() {
-  document.getElementById('work-modal').classList.add('hidden');
-  document.getElementById('work-modal').classList.remove('flex');
-}
-
-function requestThisService() {
-  closeWorkModal();
-  window.location.href = "#contact";
-}
-
-// التنقل بين خطوات استمارة الكاستينغ الفني (Multi-step Form)
-let currentCastingStep = 1;
-function moveCastingStep(stepDir) {
-  const nextStep = currentCastingStep + stepDir;
-  if (nextStep < 1 || nextStep > 4) return;
-
-  document.getElementById(`step-${currentCastingStep}`).classList.remove('active');
-  document.getElementById(`step-${nextStep}`).classList.add('active');
-
-  document.querySelectorAll('.step-indicator').forEach((indicator, idx) => {
-    if (idx < nextStep) {
-      indicator.classList.add('active');
-    } else {
-      indicator.classList.remove('active');
-    }
-  });
-
-  currentCastingStep = nextStep;
-  document.getElementById('prev-step-btn').disabled = currentCastingStep === 1;
-  document.getElementById('next-step-btn').style.display = currentCastingStep === 4 ? 'none' : 'inline-block';
-}
-
-// وظائف الإعلان الجانبي والمودال الموسع الخاص بالتوظيف وعروض البراندينغ
-function closeSidebarAd(e) {
-  e.stopPropagation();
-  document.getElementById('sidebar-ad').style.display = 'none';
-}
-
+// فتح مودال الإعلان وتكبيره
 function openExpandedAd(e) {
   document.getElementById('expanded-ad-modal').classList.remove('hidden');
   document.getElementById('expanded-ad-modal').classList.add('flex');
 }
-
 function closeExpandedAd() {
   document.getElementById('expanded-ad-modal').classList.add('hidden');
   document.getElementById('expanded-ad-modal').classList.remove('flex');
 }
-
+function closeSidebarAd(e) {
+  e.stopPropagation();
+  document.getElementById('sidebar-ad').style.display = 'none';
+}
 function handleAdBtnClick(e) {
   e.stopPropagation();
-  closeExpandedAd();
-  window.location.href = "#cv-upload";
+  window.location.href = '#cv-upload';
 }
-
 function redirectToAdAction() {
   closeExpandedAd();
-  window.location.href = "#cv-upload";
+  window.location.href = '#cv-upload';
 }
+
+// فتح وإغلاق مودال تفاصيل الأعمال
+const projectsData = {
+  p1: { titleKey: 'p1_title', descKey: 'p1_desc', img: 'melabelle.png' },
+  p2: { titleKey: 'p2_title', descKey: 'p2_desc', img: 'bijoux.png' },
+  p3: { titleKey: 'p3_title', descKey: 'p3_desc', img: 'le-r.png' }
+};
+
+function openWorkModal(projId) {
+  const data = projectsData[projId];
+  if(!data) return;
+  document.getElementById('modal-img').src = data.img;
+  document.getElementById('modal-title').innerHTML = dictionary[currentLang][data.titleKey];
+  document.getElementById('modal-desc').innerHTML = dictionary[currentLang][data.descKey];
+  document.getElementById('work-modal').classList.remove('hidden');
+  document.getElementById('work-modal').classList.add('flex');
+}
+function closeWorkModal() {
+  document.getElementById('work-modal').classList.add('hidden');
+  document.getElementById('work-modal').classList.remove('flex');
+}
+function requestThisService() {
+  closeWorkModal();
+  window.location.href = '#contact';
+}
+
+// تأثيرات التمرير Fade In / Up واللودر
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    loader.style.opacity = '0';
+    setTimeout(() => loader.style.display = 'none', 500);
+  }, 1200);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+});
 </script>
 
 </body>
