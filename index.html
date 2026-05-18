@@ -389,13 +389,24 @@
   </button>
 </div>
 
+<!-- النافذة المنبثقة المخصصة لعرض صورة الإعلان كاملة عند الضغط عليها -->
+<div id="ad-image-modal" class="fixed inset-0 z-[100000] hidden bg-black/95 backdrop-blur-md items-center justify-center p-4 transition-all duration-300" onclick="closeAdImageModal()">
+  <div class="relative max-w-4xl w-full h-full flex items-center justify-center" onclick="event.stopPropagation()">
+    <button onclick="closeAdImageModal()" class="absolute top-4 left-4 bg-black/60 hover:bg-[#c9983d] hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition text-white font-bold z-50">
+      ✕
+    </button>
+    <img id="ad-modal-full-img" src="" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl border border-yellow-700/20">
+  </div>
+</div>
+
 <div id="expanded-ad-modal" class="fixed inset-0 z-[99999] hidden bg-black/80 backdrop-blur-md items-center justify-center p-4 transition-all duration-300" onclick="closeExpandedAd()">
   <div id="expanded-ad-content" class="bg-[#0b0b0b] border border-yellow-700/30 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative transition-all duration-300" onclick="event.stopPropagation()">
     <button onclick="closeExpandedAd()" class="absolute top-4 left-4 bg-black/60 hover:bg-[#c9983d] hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition text-white font-bold z-10">
       ✕
     </button>
 
-    <div class="relative w-full aspect-video bg-black">
+    <!-- تعديل هنا: إضافة حدث الضغط لتكبير الصورة من داخل نافذة العرض التفصيلية أيضاً -->
+    <div class="relative w-full aspect-video bg-black cursor-zoom-in" onclick="viewFullAdImage('Toffer.png')">
       <img src="Toffer.png" class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
     </div>
@@ -584,7 +595,8 @@
       <div class="absolute -left-20 -bottom-20 w-60 h-60 bg-[#c9983d]/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="flex flex-col md:flex-row items-center gap-6 z-10 w-full lg:w-2/3">
-        <div onclick="openExpandedAd(event)" class="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden bg-black flex-shrink-0 border border-yellow-700/10 relative cursor-pointer group/img">
+        <!-- تعديل هنا: إضافة حدث لمنع انتشار الضغط وفتح الصورة كاملة عند النقر على المربع الصغير للإعلان السفلي -->
+        <div onclick="event.stopPropagation(); viewFullAdImage('Toffer.png')" class="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden bg-black flex-shrink-0 border border-yellow-700/10 relative cursor-zoom-in group/img">
           <img src="Toffer.png" alt="Special Offer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-black/60 opacity-0 group-hover/img:opacity-100 transition duration-300 flex items-center justify-center">
             <span data-i18n="ad_click_hint" class="text-[#c9983d] text-[10px] font-bold">تكبير 🔍</span>
@@ -955,6 +967,31 @@
 </footer>
 
 <script>
+// الدوال الجديدة المضافة للتحكم في تكبير صور الإعلانات كاملة وبشكل منفصل
+function viewFullAdImage(imgSrc) {
+  const modal = document.getElementById('ad-image-modal');
+  const modalImg = document.getElementById('ad-modal-full-img');
+  if(modal && modalImg) {
+    modalImg.src = imgSrc;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden'; // منع السكرول أثناء العرض
+  }
+}
+
+function closeAdImageModal() {
+  const modal = document.getElementById('ad-image-modal');
+  if(modal) {
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+    // إرجاع ميزة السكرول بناء على حالة بقية المودالز المفتوحة
+    if(document.getElementById('expanded-ad-modal').classList.contains('hidden') && 
+       document.getElementById('work-modal').classList.contains('hidden')) {
+      document.body.style.overflow = 'auto';
+    }
+  }
+}
+
 const dictionary = {
   ar: {
     nav_home: 'الرئيسية', nav_services: 'الخدمات', nav_portfolio: 'الأعمال', nav_casting: 'طلب الانتساب الفني', nav_cv: 'انضم إلينا', nav_contact: 'التواصل',
@@ -1218,7 +1255,7 @@ const dictionary = {
     portfolio_title: 'Notre Portfolio', portfolio_subtitle: 'Aperçu de nos récents projets de prestige. Cliquez sur une carte pour le découvrir.',
     tab_all: 'Tous les projets', tab_branding: 'Branding', view_work: 'Voir le projet 👁️',
     p1_title: 'Projet Melabelle', p1_desc: 'Identité visuelle de prestige et stratégie marketing globale pour la marque Melabelle.', p1_short: 'Identité de Luxe & Stratégie de Marque.',
-    p2_title: 'Branding Bijoux', p2_desc: 'Création de l\'identité digitale raffinée pour une marque exclusive de haute joaillerie.', p2_short: 'Identité visuelle de haute joaillerie.',
+    p2_title: 'Branding Bijoux', p2_desc: 'Création de l\'identité digitale raffinée pour une marque exclusive de haute joاillerie.', p2_short: 'Identité visuelle de haute joaillerie.',
     p3_title: 'Projet Le-R', p3_desc: 'Modernisation complète des standards esthétiques et graphiques pour la marque Le-R.', p3_short: 'Esthétique moderne de branding corporate.',
     team_title: 'Structure de l\'Agence', team_desc: 'L\'organigramme administratif et opérationnel officiel de Golden Star Management.',
     modal_close: 'Fermer', modal_request: 'Demander ce Service ←',
@@ -1246,62 +1283,131 @@ const dictionary = {
     ad_click_hint: 'Agrandir l\'image 🔍',
     section_ad_title: 'Offre Exclusive',
     section_ad_desc: 'Description offre',
-    section_ad_btn: 'Profiter de l\'offre',
-    select_services_title: 'Sélectionnez les services requis',
-    cat_audiovisual: 'Production Audiovisuelle',
-    srv_vid_shoot: 'Tournage Vidéo Professionnel',
-    company_slogan: 'Slogan',
-    placeholders: {}
+    section_ad_btn: 'Profitez de l\'offre ←',
+    select_services_title: "Sélectionnez les services requis (plusieurs choix possibles) :",
+    cat_audiovisual: "Services de Production Audiovisuelle",
+    srv_vid_shoot: "📹 Tournage Vidéo Professionnel",
+    srv_ads: "Vidéos Publicitaires Commerciales",
+    srv_clips: "Clips Vidéos Artistiques",
+    srv_corporate: "Profils d'Entreprise & Corporate",
+    srv_events: "Couverture de Conférences & Événements",
+    srv_weddings: "Mariages & Occasions Privées",
+    srv_sm_content: "Tournage de Contenu Réseaux Sociaux",
+    cat_production: "Production de Films & Émissions",
+    srv_tv: "Production d'Émissions TV",
+    srv_docs: "Production de Documentaires",
+    srv_podcast: "Production de Podcasts Visuels",
+    srv_reality: "Production de Télé-réalité",
+    srv_digital_prod: "Création de Contenu Digital",
+    cat_postproduction: "Post-Production & Montage",
+    srv_editing: "Montage Vidéo Professionnel",
+    srv_color: "Étalonnage des Couleurs",
+    srv_vfx: "Effets Visuels VFX",
+    srv_motion: "Motion Graphics",
+    srv_intro_outro: "Design Intro / Outro",
+    srv_audio_clean: "Nettoyage & Amélioration Audio",
+    cat_audio_photo: "Services Audio & Photographie",
+    srv_vo: "Enregistrement de Voix Off",
+    srv_dubbing: "Doublage & Commentaires",
+    srv_audio_eng: "Ingénierie Audio",
+    srv_music_prod: "Production Musicale & Pubs Sonores",
+    srv_photo_products: "📸 Photographie de Produits",
+    srv_photo_fashion: "Photographie de Mode",
+    srv_photo_estate: "Photographie Immobilière",
+    srv_photo_sessions: "Sessions de Shooting Professionnelles",
+    srv_photo_ads: "Photographie Publicitaire",
+    cat_design_web: "Design Créatif & Dév Web",
+    srv_logo: "🖌️ Design de Logos",
+    srv_brand_identity: "Identité Visuelle Complète",
+    srv_posters: "Graphisme d'Affiches & Pubs",
+    srv_sm_graphics: "Graphisme pour Réseaux Sociaux",
+    srv_brochures: "Design de Brochures & Livrets",
+    srv_web_corp: "💻 Sites Web Corporate Pros",
+    srv_ecommerce: "Boutiques En Ligne E-Commerce",
+    srv_landing: "Création de Landing Pages",
+    srv_web_manage: "Gestion & Mises à jour de Sites",
+    cat_marketing: "Gestion de Contenu & Marketing Digital",
+    srv_content_creation: "Création de Contenu",
+    srv_sm_manage: "Gestion des Comptes Réseaux Sociaux",
+    srv_copywriting: "Rédaction Publicitaire / Copywriting",
+    srv_ads_campaigns: "Campagnes Digitales Payantes",
+    srv_digi_market: "Stratégie de Marketing Digital",
+    srv_branding_build: "Construction de Stratégie de Marque",
+    srv_pr: "Relations Publiques & Gestion Médias",
+    cat_business: "Services de Gestion d'Affaires",
+    srv_consulting: "🧠 Conseil en Gestion",
+    srv_proj_dev: "Développement de Projets",
+    srv_strat_plan: "Solutions de Planification Stratégique",
+    srv_ops_manage: "Gestion des Opérations",
+    srv_team_org: "Organisation des Équipes",
+    cat_talents_events: "Talents, Événements & Services Extras",
+    srv_influ_manage: "Gestion des Influenceurs",
+    srv_artist_manage: "Gestion des Artistes",
+    srv_contracts: "Contrats & Partenariats",
+    srv_personal_market: "Marketing de Marque Personnelle",
+    srv_event_conf: "📅 Organisation de Conférences",
+    srv_event_exhib: "Installation d'Expositions",
+    srv_event_launch: "Gestion de Soirées de Lancement",
+    srv_event_special: "Planification d'Événements Spéciaux",
+    srv_drone: "🚀 Vidéo Drone Cinématographique",
+    srv_live_stream: "Diffusion En Direct Multi-Cam",
+    srv_rental: "Service de Location de Matériel",
+    srv_studio: "Accès Studio Photo Professionnel",
+    srv_training: "Formation Pro Média & Production",
+    srv_full_media_mng: "Gestion Complète de Projets Médias",
+    company_slogan: "“Nous transformons les idées audacieuses en succès réel”",
+    placeholders: {
+      contact_name: 'Nom Complet', contact_email: 'Adresse Email', contact_phone: 'Numéro de Téléphone', 'project-details': 'Détails du Projet',
+      c_fullname: 'Nom et Prénom', c_artname: 'Nom Artistique', c_birthplace: 'Lieu de Naissance',
+      c_nationality: 'Nationalité', c_address: 'Adresse Actuelle', c_phone: 'Numéro de Téléphone', c_email: 'Adresse Email',
+      c_idnumber: "Numéro de Pièce d'Identité", c_height: 'Taille (cm)', c_weight: 'Poids (kg)',
+      c_eyes: 'Couleur des Yeux', c_hair: 'Couleur des Cheveux', c_experience: 'Description des Expériences Précédentes',
+      c_instagram: 'Lien Profil Instagram', c_tiktok: 'Lien Profil TikTok', c_birthdate: ''
+    }
   }
 };
 
-let currentLanguage = 'ar';
+let currentLang = 'ar';
 
 function changeLanguage(lang) {
-  if(!dictionary[lang]) return;
-  currentLanguage = lang;
+  currentLang = lang;
+  const html = document.documentElement;
+  html.setAttribute('lang', lang);
   
-  const isLtr = (lang === 'en' || lang === 'fr');
-  document.documentElement.dir = isLtr ? 'ltr' : 'rtl';
-  document.documentElement.lang = lang;
+  if (lang === 'ar') {
+    html.setAttribute('dir', 'rtl');
+    document.body.style.fontFamily = "'Cairo', sans-serif";
+  } else {
+    html.setAttribute('dir', 'ltr');
+    document.body.style.fontFamily = 'sans-serif';
+  }
 
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if(dictionary[currentLanguage][key]) {
-      el.innerHTML = dictionary[currentLanguage][key];
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (dictionary[lang] && dictionary[lang][key]) {
+      element.innerHTML = dictionary[lang][key];
     }
   });
 
-  const placeholders = dictionary[currentLanguage].placeholders || {};
-  for (const id in placeholders) {
-    const input = document.getElementById(id);
-    if (input && placeholders[id]) {
-      input.setAttribute('placeholder', placeholders[id]);
+  if (dictionary[lang] && dictionary[lang].placeholders) {
+    for (const id in dictionary[lang].placeholders) {
+      const input = document.getElementById(id);
+      if (input) {
+        input.setAttribute('placeholder', dictionary[lang].placeholders[id]);
+      }
     }
-  }
-
-  const castingForm = document.getElementById('casting-form');
-  const cvForm = document.getElementById('cv-options-form');
-  const contactForm = document.getElementById('contact-form');
-
-  if(isLtr) {
-    castingForm?.classList.add('dir-ltr');
-    cvForm?.classList.add('dir-ltr');
-    contactForm?.classList.add('dir-ltr');
-  } else {
-    castingForm?.classList.remove('dir-ltr');
-    cvForm?.classList.remove('dir-ltr');
-    contactForm?.classList.remove('dir-ltr');
   }
 }
 
 function toggleTheme() {
-  document.body.classList.toggle('light-theme');
+  const body = document.body;
   const btn = document.getElementById('theme-btn');
-  if(document.body.classList.contains('light-theme')) {
-    btn.innerHTML = '🌙';
-  } else {
+  if (body.classList.contains('light-theme')) {
+    body.classList.remove('light-theme');
     btn.innerHTML = '☀️';
+  } else {
+    body.classList.add('light-theme');
+    btn.innerHTML = '🌙';
   }
 }
 
@@ -1310,109 +1416,145 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     loader.style.opacity = '0';
     setTimeout(() => loader.style.display = 'none', 500);
-  }, 1200);
+  }, 1000);
   
-  const entries = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('active');
-    });
-  }, { threshold: 0.1 });
-  
-  entries.forEach(el => observer.observe(el));
+  changeLanguage('ar');
 });
 
-function openExpandedAd(e) {
-  if(e) e.stopPropagation();
-  const modal = document.getElementById('expanded-ad-modal');
-  modal.style.display = 'flex';
-  setTimeout(() => modal.classList.remove('opacity-0'), 10);
+// Intersection Observer للشاشات الصاعدة
+const faders = document.querySelectorAll('.fade-up');
+const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('active');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+
+// دوال الكاستينغ استمارة الخطوات
+let currentCastingStep = 1;
+function moveCastingStep(dir) {
+  const steps = document.querySelectorAll('.form-step');
+  const indicators = document.querySelectorAll('.step-indicator');
+  
+  steps[currentCastingStep - 1].classList.remove('active');
+  indicators[currentCastingStep - 1].classList.remove('active');
+  
+  currentCastingStep += dir;
+  if (currentCastingStep < 1) currentCastingStep = 1;
+  if (currentCastingStep > 4) currentCastingStep = 4;
+  
+  steps[currentCastingStep - 1].classList.add('active');
+  indicators[currentCastingStep - 1].classList.add('active');
+  
+  document.getElementById('prev-step-btn').disabled = (currentCastingStep === 1);
+  if (currentCastingStep === 4) {
+    document.getElementById('next-step-btn').style.display = 'none';
+  } else {
+    document.getElementById('next-step-btn').style.display = 'inline-block';
+  }
 }
 
-function closeExpandedAd() {
-  const modal = document.getElementById('expanded-ad-modal');
-  modal.style.display = 'none';
-}
-
-function closeSidebarAd(e) {
-  if(e) e.stopPropagation();
-  document.getElementById('sidebar-ad').style.display = 'none';
-}
-
-function handleAdBtnClick(e) {
-  if(e) e.stopPropagation();
-  window.location.href = '#cv-upload';
-}
-
-function redirectToAdAction() {
-  closeExpandedAd();
-  window.location.href = '#cv-upload';
-}
-
-function filterPortfolio(category) {
-  document.querySelectorAll('.portfolio-tab').forEach(btn => btn.classList.remove('active'));
-  const activeTab = document.getElementById(`tab-${category}`);
+// البورتفوليو الفرز والأعمال
+function filterPortfolio(cat) {
+  const items = document.querySelectorAll('.portfolio-item');
+  const tabs = document.querySelectorAll('.portfolio-tab');
+  
+  tabs.forEach(t => t.classList.remove('active'));
+  const activeTab = document.getElementById('tab-' + cat);
   if(activeTab) activeTab.classList.add('active');
 
-  document.querySelectorAll('.portfolio-item').forEach(item => {
-    if(category === 'all' || item.classList.contains(category)) {
+  items.forEach(item => {
+    if (cat === 'all' || item.classList.contains(cat)) {
       item.style.display = 'flex';
+      setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
     } else {
-      item.style.display = 'none';
+      item.style.opacity = '0';
+      item.style.transform = 'scale(0.95)';
+      setTimeout(() => { item.style.display = 'none'; }, 400);
     }
   });
 }
 
-const portfolioData = {
-  p1: { title: 'Melabelle Project', desc: 'Luxury Identity & Brand Strategy for Melabelle.' },
-  p2: { title: 'Bijoux Branding', desc: 'Premium jewelry identity showcase.' },
-  p3: { title: 'Le-R Project', desc: 'Modern corporate branding aesthetics.' }
-};
-
 function openWorkModal(id) {
-  const data = portfolioData[id];
-  if(!data) return;
-  
-  document.getElementById('modal-img').src = `${id === 'p1' ? 'melabelle.png' : id === 'p2' ? 'bijoux.png' : 'le-r.png'}`;
-  document.getElementById('modal-title').innerText = dictionary[currentLanguage][`${id}_title`] || data.title;
-  document.getElementById('modal-desc').innerText = dictionary[currentLanguage][`p1_desc`] || data.desc;
-  
   const modal = document.getElementById('work-modal');
-  modal.style.display = 'flex';
+  const img = document.getElementById('modal-img');
+  const title = document.getElementById('modal-title');
+  const desc = document.getElementById('modal-desc');
+
+  if (id === 'p1') {
+    img.src = "melabelle.png";
+    title.innerHTML = dictionary[currentLang].p1_title || "Melabelle Project";
+    desc.innerHTML = dictionary[currentLang].p1_desc || "";
+  } else if (id === 'p2') {
+    img.src = "bijoux.png";
+    title.innerHTML = dictionary[currentLang].p2_title || "Bijoux Branding";
+    desc.innerHTML = dictionary[currentLang].p2_desc || "";
+  } else if (id === 'p3') {
+    img.src = "le-r.png";
+    title.innerHTML = dictionary[currentLang].p3_title || "Le-R Project";
+    desc.innerHTML = dictionary[currentLang].p3_desc || "";
+  }
+
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeWorkModal() {
-  document.getElementById('work-modal').style.display = 'none';
+  const modal = document.getElementById('work-modal');
+  modal.classList.remove('flex');
+  modal.classList.add('hidden');
+  if(document.getElementById('ad-image-modal').classList.contains('hidden')) {
+    document.body.style.overflow = 'auto';
+  }
 }
 
 function requestThisService() {
   closeWorkModal();
-  window.location.href = '#contact';
+  window.location.href = "#contact";
 }
 
-let currentCastingStep = 1;
-function moveCastingStep(dir) {
-  const nextStep = currentCastingStep + dir;
-  if(nextStep < 1 || nextStep > 4) return;
-  
-  document.getElementById(`step-${currentCastingStep}`).classList.remove('active');
-  document.getElementById(`step-${nextStep}`).classList.add('active');
-  
-  const indicators = document.querySelectorAll('.step-indicator');
-  indicators.forEach((ind, idx) => {
-    if(idx < nextStep) ind.classList.add('active');
-    else ind.classList.remove('active');
-  });
+// دوال الإعلانات الجانبية والممتدة الأصلية
+function closeSidebarAd(e) {
+  e.stopPropagation();
+  const ad = document.getElementById('sidebar-ad');
+  if(ad) ad.style.display = 'none';
+}
 
-  currentCastingStep = nextStep;
-  document.getElementById('prev-step-btn').disabled = (currentCastingStep === 1);
-  
-  const nextBtn = document.getElementById('next-step-btn');
-  if(currentCastingStep === 4) {
-    nextBtn.style.display = 'none';
-  } else {
-    nextBtn.style.display = 'block';
+function openExpandedAd(e) {
+  e.stopPropagation();
+  const modal = document.getElementById('expanded-ad-modal');
+  if(modal) {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
   }
+}
+
+function closeExpandedAd() {
+  const modal = document.getElementById('expanded-ad-modal');
+  if(modal) {
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+    if(document.getElementById('ad-image-modal').classList.contains('hidden')) {
+      document.body.style.overflow = 'auto';
+    }
+  }
+}
+
+function handleAdBtnClick(e) {
+  e.stopPropagation();
+  openExpandedAd(e);
+}
+
+function redirectToAdAction() {
+  closeExpandedAd();
+  window.location.href = "#cv-upload";
+  const chk = document.querySelector('input[value="Digital Marketing Manager"]');
+  if(chk) chk.checked = true;
 }
 </script>
 </body>
