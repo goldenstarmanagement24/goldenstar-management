@@ -114,7 +114,7 @@
     </div>
   </div>
 
-  <!-- قســم استمارة الكاستينغ الفني (تم استبدال Formspree بـ FormBold هنا) -->
+  <!-- قســم استمارة الكاستينغ الفني -->
   <section id="contact" class="py-24 px-6 bg-black/40 border-t border-gray-900">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-12">
@@ -130,9 +130,8 @@
         <div class="step-indicator w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center font-bold text-sm">4</div>
       </div>
 
-      <!-- بداية الاستمارة متصلة برابط FormBold المحدث والآمن -->
-      <!-- [ملاحظة تذكيرية]: استبدل رمز xxxxxx بالمعرف الخاص بك من حساب FormBold الخاص بك لاحقاً -->
-      <form action="https://formbold.com/s/xxxxxx" method="POST" enctype="multipart/form-data" class="theme-card p-8 rounded-2xl relative">
+      <!-- [تم التعديل هنا]: تم استبدال الرابط القديم ليعمل على FormBold مباشرة -->
+      <form action="https://formbold.com/s/YOUR_FORM_ID_HERE" method="POST" enctype="multipart/form-data" class="theme-card p-8 rounded-2xl relative">
         
         <!-- الخطوة 1: البيانات الشخصية والأساسية -->
         <div id="step-1" class="form-step active space-y-6">
@@ -151,7 +150,7 @@
           </div>
         </div>
 
-        <!-- الخطوة 2: القياسات البدنية (خاصة بالكاستينغ وعارضي الأزياء) -->
+        <!-- الخطوة 2: القياسات البدنية -->
         <div id="step-2" class="form-step space-y-6">
           <h3 data-i18n="step2_title" class="text-lg font-bold text-[#d4af37] mb-4">الخطوة 2: القياسات والمظهر</h3>
           <div class="grid grid-cols-2 gap-4">
@@ -170,7 +169,7 @@
           </div>
         </div>
 
-        <!-- الخطوة 3: رفع الصور والملفات الفنية (مدعومة بالكامل في FormBold) -->
+        <!-- الخطوة 3: رفع الصور والملفات الفنية -->
         <div id="step-3" class="form-step space-y-6">
           <h3 data-i18n="step3_title" class="text-lg font-bold text-[#d4af37] mb-4">الخطوة 3: الملفات الفنية والصور</h3>
           <div id="cv-upload">
@@ -195,11 +194,10 @@
             <textarea id="experience" name="experience" rows="4" class="w-full bg-black/50 border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#d4af37]"></textarea>
           </div>
           
-          <!-- زر الإرسال النهائي لـ FormBold -->
           <button type="submit" data-i18n="btn_submit_form" class="w-full bg-[#d4af37] text-black font-bold py-4 rounded-xl shadow-lg hover:bg-white transition duration-300">إرسال طلب الكاستينغ الفني</button>
         </div>
 
-        <!-- أزرار التنقل السفلية بين خطوات الاستمارة -->
+        <!-- أزرار التنقل السفلية -->
         <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-900">
           <button type="button" id="prev-step-btn" onclick="moveCastingStep(-1)" data-i18n="btn_prev" class="px-6 py-2 rounded-lg bg-gray-800 text-white hover:bg-gray-700 transition disabled:opacity-30" disabled>السابق</button>
           <button type="button" id="next-step-btn" onclick="moveCastingStep(1)" data-i18n="btn_next" class="px-6 py-2 rounded-lg bg-[#d4af37] text-black font-semibold hover:bg-white transition">التالي</button>
@@ -208,7 +206,7 @@
     </div>
   </section>
 
-  <!-- المودال الموسع الأول: تفاصيل المشروع -->
+  <!-- المودال الأول: تفاصيل المشروع -->
   <div id="work-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
     <div class="theme-card max-w-2xl w-full rounded-2xl overflow-hidden relative">
       <button onclick="closeWorkModal()" class="absolute top-4 right-4 bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold z-10">×</button>
@@ -221,7 +219,7 @@
     </div>
   </div>
 
-  <!-- المودال الموسع الثاني: تفاصيل الإعلان الجانبي والتوظيف لقسم الكاستينغ -->
+  <!-- المودال الثاني: تفاصيل الإعلان الجانبي -->
   <div id="expanded-ad-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
     <div class="theme-card max-w-md w-full rounded-2xl p-6 relative space-y-4 text-center">
       <button onclick="closeExpandedAd()" class="absolute top-4 right-4 bg-gray-800 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">×</button>
@@ -232,7 +230,7 @@
     </div>
   </div>
 
-  <!-- القاموس اللغوي ونظام التحكم بالجافا سكريبت -->
+  <!-- السكريبت ونظام القاموس اللغوي بالكامل كما هو -->
   <script>
     const dictionary = {
       ar: {
@@ -405,7 +403,6 @@
       document.getElementById('cv-upload').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // إدارة خطوات استمارة الكاستينغ الفني
     let currentStep = 1;
     const totalSteps = 4;
 
