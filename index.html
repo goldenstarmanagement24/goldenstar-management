@@ -705,7 +705,7 @@
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12 fade-up">
       <h2 data-i18n="cv_title" class="text-4xl md:text-5xl font-black gold mb-4">انضم إلى فريقنا</h2>
-      <p data-i18n="cv_subtitle" class="text-white/50">قم بملء البيانات خطوة بخطوة للتقديم على وظائف GOLDEN STAR MANAGEMENT.</p>
+      <p data-i18n="cv_subtitle" class="text-white/50">قدم الآن بشكل احترافي للانضمام إلى فريق GOLDEN STAR MANAGEMENT.</p>
     </div>
 
     <div class="flex justify-between items-center mb-10 max-w-md mx-auto text-xs font-bold select-none">
@@ -721,53 +721,91 @@
     <form action="https://formspree.io/f/xlgzqvyr" method="POST" enctype="multipart/form-data" id="cv-steps-form" class="bg-[#0b0b0b] border border-white/10 rounded-3xl p-6 md:p-10 space-y-6 shadow-2xl relative">
       
       <div class="cv-form-step active" id="cv-step-element-1">
-        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">1. المعلومات الشخصية</h3>
+        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">1. البيانات الشخصية</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="text" name="fullname" id="cv_input_name" placeholder="الاسم الكامل" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600">
-          <input type="email" name="email" id="cv_input_email" placeholder="البريد الإلكتروني" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600">
-          <input type="tel" name="phone" id="cv_input_phone" placeholder="رقم الهاتف" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600 col-span-1 md:col-span-2">
+          <input type="text" name="fullname" placeholder="الاسم الكامل" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600">
+          <input type="email" name="email" placeholder="البريد الإلكتروني" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600">
+          <input type="tel" name="phone" placeholder="رقم الهاتف (واتساب)" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600">
+          <input type="text" name="city_country" placeholder="المدينة / الدولة" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600">
         </div>
       </div>
 
       <div class="cv-form-step" id="cv-step-element-2">
-        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">2. التخصص المطلوب</h3>
-        <div class="w-full">
-          <select name="job_position" required class="w-full bg-black border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-600">
-            <option value="" disabled selected hidden>اختر القسم أو الوظيفة المناسبة لك...</option>
-            <option value="Administration">إدارة أعمال / تسيير</option>
-            <option value="Marketing">تسويق رقمي وإدارة براند</option>
-            <option value="Content Creation">صناعة محتوى وكتابة سيناريو</option>
-            <option value="Audiovisual Production">إنتاج سمعي بصري والتصوير</option>
-            <option value="Design & Animation">التصميم والمونتاج والأنيميشن</option>
-            <option value="Other">تخصص آخر...</option>
-          </select>
+        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">2. التخصص والخبرة المهنية</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <div class="col-span-1 md:col-span-2">
+            <label class="text-white/60 text-sm mb-2 block">القسم المطلوب:</label>
+            <select name="job_position" required class="w-full bg-black border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-600">
+              <option value="" disabled selected hidden>اختر المجال...</option>
+              <option value="Administration">إدارة أعمال / تسيير وتنسيق</option>
+              <option value="Marketing & Brand">تسويق رقمي وإدارة براند (Brand Manager)</option>
+              <option value="Content Creation & Script">صناعة محتوى وكتابة سيناريو</option>
+              <option value="Audiovisual & Photo">إنتاج سمعي بصري وتصوير احترافي</option>
+              <option value="Editing & Animation">مونتاج فيديو، تلوين، وأنيميشن</option>
+              <option value="Other">تخصص آخر...</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-white/60 text-sm mb-2 block">سنوات الخبرة:</label>
+            <select name="experience_years" required class="w-full bg-black border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-600">
+              <option value="بدون خبرة (مبتدئ)">أقل من سنة / مبتدئ</option>
+              <option value="1-3 سنوات">من 1 إلى 3 سنوات</option>
+              <option value="3-5 سنوات">من 3 إلى 5 سنوات</option>
+              <option value="+5 سنوات">أكثر من 5 سنوات (محترف)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-white/60 text-sm mb-2 block">مستوى المهارة الحالي:</label>
+            <select name="skill_level" required class="w-full bg-black border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-600">
+              <option value="Junior">مبتدئ واعد (Junior)</option>
+              <option value="Mid-Weight">متوسط الخبرة (Mid-Weight)</option>
+              <option value="Senior">محترف / خبير (Senior)</option>
+            </select>
+          </div>
+
         </div>
       </div>
 
       <div class="cv-form-step" id="cv-step-element-3">
-        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">3. الخبرات والرسالة</h3>
-        <textarea name="message" id="cv_input_msg" rows="5" placeholder="أخبرنا عن خبراتك السابقة، مهاراتك، ولماذا تريد الانضمام إلينا؟" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600"></textarea>
+        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">3. معرض الأعمال والروابط</h3>
+        <div class="space-y-4">
+          <input type="url" name="portfolio_link" placeholder="رابط معرض أعمالك أو نماذج من شغلك (Behance, Drive, YouTube...)" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600 text-right dir-ltr">
+          <input type="url" name="linkedin_instagram" placeholder="رابط حسابك المهني (LinkedIn أو Instagram)" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600 text-right dir-ltr">
+          <textarea name="message" rows="4" placeholder="تحدث معنا باختصار عن أهم المشاريع التي عملت عليها وما الإضافة التي ستقدمها لـ GOLDEN STAR؟" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600"></textarea>
+        </div>
       </div>
 
       <div class="cv-form-step" id="cv-step-element-4">
-        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">4. إرفاق السيرة الذاتية</h3>
+        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">4. المرفقات النهائية</h3>
         <div class="border-2 border-dashed border-yellow-700/30 rounded-2xl p-8 text-center relative overflow-hidden hover:border-yellow-600 transition-colors bg-black/40">
-          <input type="file" name="cv" accept=".pdf,.doc,.docx" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+          <input type="file" name="cv_file" accept=".pdf,.doc,.docx" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
           <div class="text-5xl mb-4">📄</div>
-          <h4 data-i18n="cv_upload_box" class="font-black text-lg mb-2 gold">رفع السيرة الذاتية</h4>
-          <p class="text-white/40 text-sm">قم بسحب ملف الـ CV هنا أو اضغط للاختيار (PDF / DOC / DOCX)</p>
+          <h4 data-i18n="cv_upload_box" class="font-black text-lg mb-2 gold">رفع السيرة الذاتية (CV)</h4>
+          <p class="text-white/40 text-sm">اضغط هنا لاختيار الملف بصيغة (PDF / DOC / DOCX)</p>
         </div>
       </div>
 
       <div class="flex justify-between items-center pt-4 border-t border-white/5">
         <button type="button" id="cv-prev-btn" class="px-6 py-3 rounded-xl border border-white/10 text-white bg-transparent transition-all hover:bg-white/5 disabled:opacity-30 disabled:pointer-events-none" disabled>السابق</button>
         <button type="button" id="cv-next-btn" class="px-6 py-3 rounded-xl bg-gradient-to-r from-[#c9983d] to-yellow-500 text-black font-bold shadow-lg shadow-yellow-600/10 hover:brightness-110 transition-all">التالي</button>
-        <button type="submit" id="cv-submit-btn" class="px-6 py-3 rounded-xl bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold shadow-lg shadow-emerald-600/10 hover:brightness-110 transition-all hidden">إرسال الاستمارة ✓</button>
+        <button type="submit" id="cv-submit-btn" class="px-6 py-3 rounded-xl bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold shadow-lg shadow-emerald-600/10 hover:brightness-110 transition-all hidden">تقديم الطلب الآن ✓</button>
       </div>
 
     </form>
   </div>
 </section>
+
+<style>
+  .cv-form-step { display: none; }
+  .cv-form-step.active { display: block; animation: cvStepFade 0.4s ease-in-out; }
+  .cv-step-indicator { width: 35px; height: 35px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); background: #0b0b0b; transition: all 0.3s; }
+  .cv-step-indicator.active { border-color: #c9983d; color: black; background: #c9983d; box-shadow: 0 0 15px rgba(201, 152, 61, 0.4); }
+  @keyframes cvStepFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .dir-ltr { direction: ltr !important; text-align: left !important; }
+</style>
 
 <style>
   .cv-form-step { display: none; }
@@ -1528,15 +1566,15 @@ function toggleTheme() {
   } else {
     themeBtn.innerText = '☀️';
   }
-}
 // نظام التحكم التفاعلي بخطوات السيرة الذاتية (CV Steps System)
 let currentCvStep = 1;
 
-document.getElementById('cv-next-btn').addEventListener('click', () => {
+// تفعيل زر التالي
+document.getElementById('cv-next-step-btn').addEventListener('click', () => {
   const currentStepEl = document.getElementById(`cv-step-element-${currentCvStep}`);
   const inputs = currentStepEl.querySelectorAll('input[required], select[required], textarea[required]');
   
-  // التحقق من صحة المدخلات قبل الانتقال للخطوة التالية
+  // التحقق من صحة الحقول قبل الانتقال للخطوة التالية
   let valid = true;
   inputs.forEach(input => {
     if (!input.checkValidity()) {
@@ -1547,7 +1585,7 @@ document.getElementById('cv-next-btn').addEventListener('click', () => {
 
   if (!valid) return;
 
-  // إخفاء الخطوة الحالية وإظهار الخطوة التالية
+  // إخفاء الخطوة الحالية وإظهار التالية
   document.getElementById(`cv-step-element-${currentCvStep}`).classList.remove('active');
   currentCvStep++;
   document.getElementById(`cv-step-element-${currentCvStep}`).classList.add('active');
@@ -1555,8 +1593,8 @@ document.getElementById('cv-next-btn').addEventListener('click', () => {
   updateCvNavigation();
 });
 
-document.getElementById('cv-prev-btn').addEventListener('click', () => {
-  // العودة للخطوة السابقة
+// تفعيل زر السابق
+document.getElementById('cv-prev-step-btn').addEventListener('click', () => {
   document.getElementById(`cv-step-element-${currentCvStep}`).classList.remove('active');
   currentCvStep--;
   document.getElementById(`cv-step-element-${currentCvStep}`).classList.add('active');
@@ -1565,19 +1603,19 @@ document.getElementById('cv-prev-btn').addEventListener('click', () => {
 });
 
 function updateCvNavigation() {
-  // تفعيل أو تعطيل زر السابق
-  document.getElementById('cv-prev-btn').disabled = (currentCvStep === 1);
+  // تفعيل أو تعطيل زر السابق بناءً على الخطوة الأولى
+  document.getElementById('cv-prev-step-btn').disabled = (currentCvStep === 1);
   
-  // إبدال زر "التالي" بزر "الإرسال" في الخطوة الأخيرة
+  // التحكم في ظهور زر التالي وزر الإرسال النهائي
   if (currentCvStep === 4) {
-    document.getElementById('cv-next-btn').classList.add('hidden');
+    document.getElementById('cv-next-step-btn').classList.add('hidden');
     document.getElementById('cv-submit-btn').classList.remove('hidden');
   } else {
-    document.getElementById('cv-next-btn').classList.remove('hidden');
+    document.getElementById('cv-next-step-btn').classList.remove('hidden');
     document.getElementById('cv-submit-btn').classList.add('hidden');
   }
 
-  // تحديث ألوان وأرقام المؤشرات العلوية لخطوات الـ CV
+  // تحديث ألوان المؤشرات الرقمية العلوية للـ CV
   const indicators = document.querySelectorAll('.cv-step-indicator');
   indicators.forEach((ind, index) => {
     if (index < currentCvStep) {
@@ -1585,7 +1623,7 @@ function updateCvNavigation() {
     } else {
       ind.classList.remove('active');
     }
-  });
+  })
 }
 
 // نظام تبديل اللغات الفوري وتحديث واجهات الموقع
