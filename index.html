@@ -112,7 +112,7 @@
       position:fixed;
       inset:0;
       background:black;
-      z-index:999999;
+ z-index:999999;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -521,7 +521,6 @@
   </div>
 </section>
 
-<!-- بداية قسم الأعمال المعدل -->
 <section id="portfolio" class="py-24 bg-black">
   <div class="max-w-7xl mx-auto px-6">
 
@@ -536,7 +535,6 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- الكرت الأول -->
       <div onclick="openWorkModal('p1')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer group flex flex-col justify-between">
         <div class="overflow-hidden relative bg-black/40 flex items-center justify-center">
           <img src="melabelle.png" class="max-h-72 w-full object-contain group-hover:scale-105 transition duration-500">
@@ -550,7 +548,6 @@
         </div>
       </div>
 
-      <!-- الكرت الثاني -->
       <div onclick="openWorkModal('p2')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer group flex flex-col justify-between">
         <div class="overflow-hidden relative bg-black/40 flex items-center justify-center">
           <img src="bijoux.png" class="max-h-72 w-full object-contain group-hover:scale-105 transition duration-500">
@@ -564,7 +561,6 @@
         </div>
       </div>
 
-      <!-- الكرت الثالث -->
       <div onclick="openWorkModal('p3')" class="portfolio-card portfolio-item branding rounded-2xl overflow-hidden fade-up cursor-pointer group flex flex-col justify-between">
         <div class="overflow-hidden relative bg-black/40 flex items-center justify-center">
           <img src="le-r.png" class="max-h-72 w-full object-contain group-hover:scale-105 transition duration-500">
@@ -581,19 +577,21 @@
   </div>
 </section>
 
-<!-- [خانة الإعلانات الرئيسية المدمجة في الصفحة] -->
+<!-- [خانة الإعلانات الرئيسية المدمجة في الصفحة مع تفعيل ميزة التكبير والتأثيرات] -->
 <section id="section-advertisement" class="py-12 bg-black">
   <div class="max-w-7xl mx-auto px-6 fade-up">
     <div class="section-ad-banner bg-[#0b0b0b] border border-yellow-700/20 rounded-3xl p-6 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl relative overflow-hidden group">
       
-      <!-- خلفية جمالية خفيفة خلف الإعلان -->
       <div class="absolute -right-20 -top-20 w-60 h-60 bg-[#c9983d]/5 rounded-full blur-3xl pointer-events-none"></div>
       <div class="absolute -left-20 -bottom-20 w-60 h-60 bg-[#c9983d]/5 rounded-full blur-3xl pointer-events-none"></div>
 
-      <!-- تفاصيل وصورة العرض الإعلاني -->
       <div class="flex flex-col md:flex-row items-center gap-6 z-10 w-full lg:w-2/3">
-        <div class="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden bg-black flex-shrink-0 border border-yellow-700/10">
+        <!-- الصورة هنا أصبحت قابلة للنقر والتكبير المباشر -->
+        <div onclick="openExpandedAd(event)" class="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden bg-black flex-shrink-0 border border-yellow-700/10 relative cursor-pointer group/img">
           <img src="Toffer.png" alt="Special Offer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover/img:opacity-100 transition duration-300 flex items-center justify-center">
+            <span class="text-[#c9983d] text-[10px] font-bold">تكبير 🔍</span>
+          </div>
         </div>
         <div class="text-center md:text-right">
           <span data-i18n="ad_badge" class="bg-[#c9983d] text-black text-[10px] font-black px-2.5 py-1 rounded uppercase tracking-wider inline-block mb-3">OFFER / NEWS</span>
@@ -602,7 +600,6 @@
         </div>
       </div>
 
-      <!-- زر اتخاذ الإجراء (CTA) -->
       <div class="z-10 w-full lg:w-auto text-center flex-shrink-0">
         <a href="#contact" data-i18n="section_ad_btn" class="inline-block w-full lg:w-auto bg-[#c9983d] hover:bg-yellow-500 text-black font-black text-sm px-8 py-4 rounded-xl transition duration-300 shadow-lg hover:scale-[1.02]">
           استفد من العرض الآن ←
@@ -613,7 +610,6 @@
   </div>
 </section>
 
-<!-- نافذة عرض العمل المعدلة لحل مشكلة أبعاد الصورة بالكامل -->
 <div id="work-modal" class="fixed inset-0 z-[99999] hidden bg-black/95 backdrop-blur-md items-center justify-center p-2 md:p-4 transition-all duration-300" onclick="closeWorkModal()">
   <div class="bg-[#0b0b0b] border border-yellow-700/30 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative" onclick="event.stopPropagation()">
     <button onclick="closeWorkModal()" class="absolute top-4 left-4 bg-black/60 hover:bg-[#c9983d] hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition text-white font-bold z-10">✕</button>
@@ -630,7 +626,6 @@
     </div>
   </div>
 </div>
-
 
 <section id="team-structure" class="py-16 bg-[#050505] text-center">
   <div class="max-w-5xl mx-auto px-6 fade-up">
@@ -790,7 +785,7 @@
 
           <label class="flex items-center gap-3 p-4 rounded-xl cursor-pointer select-none bg-black border border-white/5 hover:border-[#c9983d]/40 transition group">
             <input type="checkbox" name="Join_Roles[]" value="Video Editor" class="accent-[#c9983d] w-4 h-4 cursor-pointer"> 
-            <span class="text-white/80 group-hover:text-white transition">🎬 המونتاج والتحرير السينمائي (Video Editor)</span>
+            <span class="text-white/80 group-hover:text-white transition">🎬 المونتاج والتحرير السينمائي (Video Editor)</span>
           </label>
 
           <label class="flex items-center gap-3 p-4 rounded-xl cursor-pointer select-none bg-black border border-white/5 hover:border-[#c9983d]/40 transition group">
@@ -963,7 +958,6 @@
 </footer>
 
 <script>
-// القاموس اللغوي للترجمة الفورية (العربية، الإنجليزية، الفرنسية)
 const dictionary = {
   ar: {
     nav_home: 'الرئيسية', nav_services: 'الخدمات', nav_portfolio: 'الأعمال', nav_casting: 'طلب الانتساب الفني', nav_cv: 'انضم إلينا', nav_contact: 'التواصل',
@@ -1213,252 +1207,58 @@ const dictionary = {
       c_instagram: 'Instagram Profile Link', c_tiktok: 'TikTok Profile Link', c_birthdate: ''
     }
   },
-  en: {
-    nav_home: 'Home', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Casting Form', nav_cv: 'Join Us', nav_contact: 'Contact',
-    hero_desc: 'A luxury agency specialized in audiovisual production, branding, business management and premium digital marketing.',
-    btn_casting: 'Artistic Casting Form 📄', btn_contact: 'Contact Us',
-    services_title: 'Our Professional Services', services_subtitle: 'Integrated solutions in audiovisual production, marketing, brand management and premium content creation.',
-    s1_title: 'Audiovisual Production', s1_desc: 'Cinematography, directing, commercials, music videos and short films with international standards.',
-    s2_title: 'Professional Photography', s2_desc: 'High-end photography sessions for individuals, corporations, products and celebrities.',
-    s3_title: 'Editing & Motion Graphics', s3_desc: 'Cinematic editing, visual effects, high-end motion graphics and professional color grading.',
-    s4_title: 'Brand Management', s4_desc: 'Building comprehensive visual identities, innovative marketing strategies and professional branding.',
-    s5_title: 'Digital Marketing', s5_desc: 'Targeted ad campaigns, social media management and high-conversion client acquisition.',
-    s6_title: 'Event Management', s6_desc: 'Organizing grand conferences, elite parties, commercial exhibitions and luxury media coverage.',
-    portfolio_title: 'Our Portfolio', portfolio_subtitle: 'Showcase of our latest premium projects. Click on any card to view the complete case study.',
-    tab_all: 'All Works', tab_branding: 'Branding', view_work: 'View Project 👁️',
-    p1_title: 'Melabelle Project', p1_desc: 'A complete premium digital strategy and visual identity built for Melabelle brand.', p1_short: 'Luxury Identity & Brand Strategy.',
-    p2_title: 'Bijoux Branding', p2_desc: 'High-end digital identity and aesthetics created for an exclusive jewelry brand.', p2_short: 'Premium jewelry identity showcase.',
-    p3_title: 'Le-R Project', p3_desc: 'Developing and modernizing the visual and marketing benchmarks for Le-R brand.', p3_short: 'Modern corporate branding aesthetics.',
-    team_title: 'Company Structure', team_desc: 'The official administrative and organizational blueprint for Golden Star Management.',
-    modal_close: 'Close', modal_request: 'Request Service Now ←',
-    casting_title: "FICHE D'INFORMATIONS",
-    casting_subtitle: 'Artistic registration form for models, actors, and influencers - Please complete step-by-step.',
-    step1_header: '1. Personal Information',
-    step2_header: '2. Physical Profile & Measurements',
-    step2_sub: 'Profession / Desired Field:',
-    step3_header: '3. Competences & Links',
-    step4_header: '4. Obligatory Attachments & Photos',
-    img_portrait_hint: 'Recent, clear close-up portrait image of the face',
-    img_full_hint: 'Full-body standing image with excellent resolution',
-    img_id_hint: 'Clear copy of National ID card or Passport',
-    casting_agreement: "I confirm the accuracy of the information provided and authorize Golden Star to use my data for casting purposes.",
-    btn_submit_casting: '✓ Submit Casting Form Now 🚀',
-    step_prev: 'Previous', step_next: 'Next →',
-    cv_title: 'Join Our Team', cv_subtitle: 'Select your options now and become a vital part of GOLDEN STAR MANAGEMENT.',
-    btn_send_cv: '🚀 Submit Application',
-    contact_title: 'Contact Us', contact_subtitle: 'We are ready to transform your vision into an extraordinary reality.',
-    btn_send_project: 'Send Inquiry',
-    ad_badge: 'OFFER / NEWS',
-    ad_title: 'Hiring Now: Digital Marketing Manager',
-    ad_desc: 'Join our elite team today! We are looking for talented experts.',
-    ad_btn: 'Apply Now ←',
-    ad_click_hint: 'Click to zoom 🔍',
-    section_ad_title: 'Exclusive Offer: Complete Visual Identity Package',
-    section_ad_desc: 'Get a 20% discount when requesting branding and social media management services for the first 5 companies this month. Let us launch your project with style.',
-    section_ad_btn: 'Take Advantage of the Offer Now ←',
-    select_services_title: "Select Required Services (Multiple choices allowed) :",
-    cat_audiovisual: "Audiovisual Production Services",
-    srv_vid_shoot: "📹 Professional Video Shooting",
-    srv_ads: "Commercial Advertising Videos",
-    srv_clips: "Artistic Music Videos",
-    srv_corporate: "Corporate & Company Profiles",
-    srv_events: "Conferences & Events Coverage",
-    srv_weddings: "Weddings & Private Occasions",
-    srv_sm_content: "Social Media Content Shooting",
-    cat_production: "Movies & Shows Production",
-    srv_tv: "TV Programs Production",
-    srv_docs: "Documentaries Production",
-    srv_podcast: "Visual Podcast Production",
-    srv_reality: "Reality Show Production",
-    srv_digital_prod: "Digital Content Creation",
-    cat_postproduction: "Post-Production & Editing",
-    srv_editing: "Professional Video Editing",
-    srv_color: "Color Grading",
-    srv_vfx: "VFX Visual Effects",
-    srv_motion: "Motion Graphics",
-    srv_intro_outro: "Intro / Outro Design",
-    srv_audio_clean: "Audio Clean-up & Enhancement",
-    cat_audio_photo: "Audio Services & Photography",
-    srv_vo: "Voice Over Recording",
-    srv_dubbing: "Dubbing & Commentary",
-    srv_audio_eng: "Audio Engineering",
-    srv_music_prod: "Music Production & Sound Ads",
-    srv_photo_products: "📸 Products Photography",
-    srv_photo_fashion: "Fashion Photography",
-    srv_photo_estate: "Real Estate Photography",
-    srv_photo_sessions: "Professional Photo Sessions",
-    srv_photo_ads: "Advertisements Photography",
-    cat_design_web: "Creative Design & Web Dev",
-    srv_logo: "🖌️ Logos Design",
-    srv_brand_identity: "Full Visual Brand Identity",
-    srv_posters: "Posters & Ads Graphics",
-    srv_sm_graphics: "Social Media Posts Graphics",
-    srv_brochures: "Brochures & Booklets Design",
-    srv_web_corp: "💻 Corporate Pro Websites",
-    srv_ecommerce: "E-Commerce Online Stores",
-    srv_landing: "Landing Pages Creation",
-    srv_web_manage: "Websites Management & Updates",
-    cat_marketing: "Content Management & Digital Marketing",
-    srv_content_creation: "Content Creation",
-    srv_sm_manage: "Social Media Channels Management",
-    srv_copywriting: "Marketing Copywriting",
-    srv_ads_campaigns: "Paid Digital Campaigns",
-    srv_digi_market: "Digital Marketing Strategy",
-    srv_branding_build: "Branding Strategy Construction",
-    srv_pr: "Public Relations & Media Management",
-    cat_business: "Business Management Services",
-    srv_consulting: "🧠 Management Consulting",
-    srv_proj_dev: "Projects Development",
-    srv_strat_plan: "Strategic Planning Solutions",
-    srv_ops_manage: "Operations Management",
-    srv_team_org: "Workforce Team Organization",
-    cat_talents_events: "Talents, Events & Extra Services",
-    srv_influ_manage: "Influencers Management",
-    srv_artist_manage: "Artists Management",
-    srv_contracts: "Contracts & Partnerships",
-    srv_personal_market: "Personal Branding Marketing",
-    srv_event_conf: "📅 Conferences Organization",
-    srv_event_exhib: "Exhibitions Setup",
-    srv_event_launch: "Launching Parties Management",
-    srv_event_special: "Special Events Planning",
-    srv_drone: "🚀 Drone Cinematic Video",
-    srv_live_stream: "Multi-Cam Live Streaming",
-    srv_rental: "Gear Rental Service",
-    srv_studio: "Professional Photo Studio Access",
-    srv_training: "Media & Production Pro Training",
-    srv_full_media_mng: "Full Media Projects Management",
-    company_slogan: "“We turn bold ideas into real success”",
-    placeholders: {
-      contact_name: 'Full Name', contact_email: 'Email Address', contact_phone: 'Phone Number', 'project-details': 'Project Details',
-      c_fullname: 'Full Name', c_artname: 'Artistic Name', c_birthplace: 'Place of Birth',
-      c_nationality: 'Nationality', c_address: 'Current Address', c_phone: 'Phone Number', c_email: 'Email Address',
-      c_idnumber: "ID Document Number", c_height: 'Height (cm)', c_weight: 'Weight (kg)',
-      c_eyes: 'Eyes Color', c_hair: 'Hair Color', c_experience: 'Previous Works Description',
-      c_instagram: 'Instagram Profile Link', c_tiktok: 'TikTok Profile Link', c_birthdate: ''
-    }
-  },
   fr: {
-    nav_home: 'Accueil', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Casting', nav_cv: 'Rejoignez-nous', nav_contact: 'Contact',
-    hero_desc: 'Une agence de luxe spécialisée en production audiovisuelle, branding, business management et marketing digital de prestige.',
-    btn_casting: 'Fiche d’inscription Artistique 📄', btn_contact: 'Contactez-nous',
-    services_title: 'Nos Services Professionnels', services_subtitle: 'Solutions intégrées en production audiovisuelle, marketing, gestion de marque et création de contenu de luxe.',
-    s1_title: 'Production Audiovisuelle', s1_desc: 'Cinéma, réalisation, publicités, clips vidéo et courts métrages aux normes internationales.',
-    s2_title: 'Photographie Professionnelle', s2_desc: 'Séances de shooting haut de gamme pour particuliers, entreprises, produits et célébrités.',
-    s3_title: 'Montage & Effets Visuels', s3_desc: 'Montage cinématographique, effets visuels, motion graphics et étalonnage professionnel.',
-    s4_title: 'Gestion de Marque', s4_desc: 'Création d’identités visuelles complètes, stratégies de marketing innovantes et branding pro.',
-    s5_title: 'Marketing Digital', s5_desc: 'Campagnes publicitaires ciblées, gestion des réseaux sociaux et acquisition de clients.',
-    s6_title: 'Gestion d’Événements', s6_desc: 'Organisation de grandes conférences, soirées d’élite, salons professionnels et couverture médiatique.',
-    portfolio_title: 'Notre Portfolio', portfolio_subtitle: 'Aperçu de nos derniers projets de prestige. Cliquez pour voir l’étude de cas complète.',
-    tab_all: 'Tous les Travaux', tab_branding: 'Branding', view_work: 'Voir le Projet 👁️',
-    p1_title: 'Projet Melabelle', p1_desc: 'Stratégie digitale et identité visuelle premium créées pour la marque d’élite Melabelle.', p1_short: 'Identité de luxe & Stratégie de marque.',
-    p2_title: 'Branding Bijoux', p2_desc: 'Identité numérique et esthétique haut de gamme conçues pour une marque de bijoux exclusive.', p2_short: 'Présentation d’identité de bijoux haut de gamme.',
-    p3_title: 'Projet Le-R', p3_desc: 'Développement et modernisation des standards visuels et marketing pour la marque Le-R.', p3_short: 'Esthétique moderne du branding d’entreprise.',
-    team_title: 'Structure de l’Entreprise', team_desc: 'Le plan administratif et organisationnel officiel de Golden Star Management.',
-    modal_close: 'Fermer', modal_request: 'Demander ce service ←',
+    nav_home: 'Accueil', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Fiche Casting', nav_cv: 'Rejoignez-nous', nav_contact: 'Contact',
+    hero_desc: 'Une agence de prestige spécialisée dans la production audiovisuelle, le branding, la gestion d\'affaires et le marketing digital.',
+    btn_casting: 'Fiche d\'inscription Artistique 📄', btn_contact: 'Contactez-nous',
+    services_title: 'Nos Services Professionnels', services_subtitle: 'Solutions intégrées en production audiovisuelle, marketing d\'élite, identité de marque et création de contenu de luxe.',
+    s1_title: 'Production Audiovisuelle', s1_desc: 'Cinématographie, réalisation, publicités commerciales, clips artistiques et courts-métrages aux normes mondiales.',
+    s2_title: 'Photographie Professionnelle', s2_desc: 'Sessions de shooting haut de gamme pour particuliers, entreprises, produits et célébrités.',
+    s3_title: 'Montage & Motion Graphics', s3_desc: 'Montage cinématographique, effets visuels (VFX), graphisme animé de luxe et étalonnage professionnel.',
+    s4_title: 'Gestion de Marque', s4_desc: 'Création d\'identités visuelles prestigieuses, stratégies de marque innovantes et branding haut de gamme.',
+    s5_title: 'Marketing Digital', s5_desc: 'Campagnes publicitaires ciblées, gestion des réseaux sociaux et acquisition de clients à haute conversion.',
+    s6_title: 'Gestion d\'Événements', s6_desc: 'Organisation de grandes conférences, soirées d\'élite, salons professionnels et couvertures médiatiques de luxe.',
+    portfolio_title: 'Notre Portfolio', portfolio_subtitle: 'Aperçu de nos récents projets de prestige. Cliquez sur une carte للتصفح.',
+    tab_all: 'Tous', tab_branding: 'Branding', view_work: 'Voir Projet 👁️',
+    p1_title: 'Projet Melabelle', p1_desc: 'Identité visuelle de prestige et stratégie marketing globale pour la marque Melabelle.', p1_short: 'Identité de Luxe & Stratégie de Marque.',
+    p2_title: 'Branding Bijoux', p2_desc: 'Création de l\'identité digitale raffinée pour une marque exclusive de haute joaillerie.', p2_short: 'Identité visuelle de haute joaillerie.',
+    p3_title: 'Projet Le-R', p3_desc: 'Modernisation complète des standards esthétiques et graphiques pour la marque Le-R.', p3_short: 'Esthétique moderne de branding corporate.',
+    team_title: 'Structure de l\'Agence', team_desc: 'L\'organigramme administratif et opérationnel officiel de Golden Star Management.',
+    modal_close: 'Fermer', modal_request: 'Demander ce Service ←',
     casting_title: "FICHE D'INFORMATIONS",
-    casting_subtitle: 'Formulaire d’inscription artistique pour mannequins, acteurs et influenceurs - Veuillez remplir étape par étape.',
+    casting_subtitle: 'Formulaire d\'inscription artistique pour mannequins, acteurs et influenceurs - Veuillez remplir étape par étape.',
     step1_header: '1. Informations Personnelles',
     step2_header: '2. Profil Physique & Mensurations',
-    step2_sub: 'Profession / Domaine Souhaité:',
+    step2_sub: 'Profession / Spécialité Souhaitée:',
     step3_header: '3. Compétences & Réseaux',
     step4_header: '4. Pièces Jointes Obligatoires',
-    img_portrait_hint: 'Photo portrait récente, claire et zoomée sur le visage',
-    img_full_hint: 'Photo plein pied debout de haute résolution',
-    img_id_hint: 'Copie claire de la carte d’identité ou du passeport',
-    casting_agreement: 'Je confirme l\'exactitude des informations fournies et j\'autorise Golden Star à utiliser mes données.',
+    img_portrait_hint: 'Photo portrait récente, claire et nette du visage',
+    img_full_hint: 'Photo plein pied corps entier de haute résolution',
+    img_id_hint: 'Copie lisible de la pièce d\'identité ou Passeport',
+    casting_agreement: 'Je confirme l\'exactitude des données et j\'autorise Golden Star à les utiliser pour les besoins du casting.',
     btn_submit_casting: '✓ Envoyer la Fiche de Casting 🚀',
     step_prev: 'Précédent', step_next: 'Suivant →',
-    cv_title: 'Rejoindre Notre Équipe', cv_subtitle: 'Sélectionnez vos spécialités et rejoignez GOLDEN STAR MANAGEMENT.',
-    btn_send_cv: '🚀 Soumettre la Candidature',
-    contact_title: 'Contactez-nous', contact_subtitle: 'Nous sommes prêts à transformer votre vision en une réalité extraordinaire.',
+    cv_title: 'Rejoignez-nous', cv_subtitle: 'Sélectionnez vos compétences et intégrez l\'équipe d\'élite de GOLDEN STAR MANAGEMENT.',
+    btn_send_cv: '🚀 Soumettre ma Candidature',
+    contact_title: 'Contactez-nous', contact_subtitle: 'Prêts à transformer votre vision en un succès extraordinaire.',
     btn_send_project: 'Envoyer la Demande',
     ad_badge: 'OFFRE / NEWS',
-    ad_title: 'Recrutement : Responsable Marketing Digital',
-    ad_desc: 'Rejoignez notre équipe d’élite dès aujourd’hui ! Nous recherchons des experts de talent.',
+    ad_title: 'Recrutement: Manager Marketing Digital',
+    ad_desc: 'Rejoignez notre équipe d\'élite dès aujourd\'hui! Nous recherchons des talents.',
     ad_btn: 'Postuler Maintenant ←',
-    ad_click_hint: 'Cliquez pour zoomer 🔍',
+    ad_click_hint: 'Agrandir l\'image 🔍',
     section_ad_title: 'Offre Exclusive: Pack Identité Visuelle Complète',
-    section_ad_desc: 'Bénéficiez d’une réduction de 20% sur nos services de branding et de gestion des réseaux sociaux pour les 5 premières entreprises ce mois-ci. Lançons votre projet avec élégance.',
-    section_ad_btn: 'Profitez de l’Offre Maintenant ←',
-    select_services_title: "Sélectionnez les services requis (Plusieurs choix possibles) :",
-    cat_audiovisual: "Services de Production Audiovisuelle",
-    srv_vid_shoot: "📹 Tournage Vidéo Professionnel",
-    srv_ads: "Vidéos Publicitaires Commerciales",
-    srv_clips: "Clips Vidéo Artistiques",
-    srv_corporate: "Profils d’Entreprise & Corporate",
-    srv_events: "Couverture de Conférences & Événements",
-    srv_weddings: "Mariages & Événements Privés",
-    srv_sm_content: "Tournage de Contenu pour Réseaux Sociaux",
-    cat_production: "Production de Films & Émissions",
-    srv_tv: "Production d’Émissions TV",
-    srv_docs: "Production de Documentaires",
-    srv_podcast: "Production de Podcasts Visuels",
-    srv_reality: "Production de Télé-réalité",
-    srv_digital_prod: "Création de Contenu Digital",
-    cat_postproduction: "Post-Production & Montage",
-    srv_editing: "Montage Vidéo Professionnel",
-    srv_color: "Étalonnage des Couleurs",
-    srv_vfx: "Effets Visuels VFX",
-    srv_motion: "Motion Graphics",
-    srv_intro_outro: "Design d’Intro / Outro",
-    srv_audio_clean: "Nettoyage & Amélioration Audio",
-    cat_audio_photo: "Services Audio & Photographie",
-    srv_vo: "Enregistrement de Voix Off",
-    srv_dubbing: "Doublage & Commentaires",
-    srv_audio_eng: "Ingénierie Audio",
-    srv_music_prod: "Production Musicale & Pubs Sonores",
-    srv_photo_products: "📸 Photographie de Produits",
-    srv_photo_fashion: "Photographie de Mode",
-    srv_photo_estate: "Photographie Immobilière",
-    srv_photo_sessions: "Séances Photo Professionnelles",
-    srv_photo_ads: "Photographie Publicitaire",
-    cat_design_web: "Design Créatif & Dév Web",
-    srv_logo: "🖌️ Design de Logos",
-    srv_brand_identity: "Identité Visuelle de Marque Complète",
-    srv_posters: "Graphisme d’Affiches & Pubs",
-    srv_sm_graphics: "Graphismes pour Réseaux Sociaux",
-    srv_brochures: "Design de Brochures & Livrets",
-    srv_web_corp: "💻 Sites Web Corporate Pro",
-    srv_ecommerce: "Boutiques En Ligne E-Commerce",
-    srv_landing: "Création de Landing Pages",
-    srv_web_manage: "Gestion & Mises à jour de Sites Web",
-    cat_marketing: "Gestion de Contenu & Marketing Digital",
-    srv_content_creation: "Création de Contenu",
-    srv_sm_manage: "Gestion des Réseaux Sociaux",
-    srv_copywriting: "Conception-Rédaction Marketing",
-    srv_ads_campaigns: "Campagnes Publicitaires Payantes",
-    srv_digi_market: "Stratégie de Marketing Digital",
-    srv_branding_build: "Construction de Stratégie de Marque",
-    srv_pr: "Relations Publiques & Médias",
-    cat_business: "Services de Gestion d’Entreprise",
-    srv_consulting: "🧠 Conseil en Gestion",
-    srv_proj_dev: "Développement de Projets",
-    srv_strat_plan: "Solutions de Planification Stratégique",
-    srv_ops_manage: "Gestion des Opérations",
-    srv_team_org: "Organisation des Équipes de Travail",
-    cat_talents_events: "Gestion des Talents, Événements & Plus",
-    srv_influ_manage: "Gestion des Influenceurs",
-    srv_artist_manage: "Gestion des Artistes",
-    srv_contracts: "Gestion des Contrats & Partenariats",
-    srv_personal_market: "Marketing de Marque Personnelle",
-    srv_event_conf: "📅 Organisation de Conférences",
-    srv_event_exhib: "Organisation d’Expositions",
-    srv_event_launch: "Gestion des Soirées de Lancement",
-    srv_event_special: "Planification d’Événements Spéciaux",
-    srv_drone: "🚀 Prises de Vue Drone Cinématique",
-    srv_live_stream: "Diffusion en Direct Multi-Caméras",
-    srv_rental: "Service de Location de Matériel",
-    srv_studio: "Accès Studio Photo Professionnel",
-    srv_training: "Formation Pro en Média & Production",
-    srv_full_media_mng: "Gestion Complète de Projets Médias",
-    company_slogan: "“Nous transformons les idées audacieuses en succès”",
+    section_ad_desc: 'Bénéficiez de 20% de réduction sur les services de branding et community management pour les 5 premières entreprises ce mois-ci.',
+    section_ad_btn: 'Profiter de l\'Offre Maintenant ←',
+    select_services_title: 'Sélectionnez les services requis (Plusieurs choix possibles) :',
+    company_slogan: '« Nous transformons les idées audacieuses en succès réels »',
     placeholders: {
       contact_name: 'Nom Complet', contact_email: 'Adresse Email', contact_phone: 'Numéro de Téléphone', 'project-details': 'Détails du Projet',
-      c_fullname: 'Nom et Prénom', c_artname: 'Nom Artistique', c_birthplace: 'Lieu de Naissance',
+      c_fullname: 'Nom et Prénom', c_artname: 'Nom d\'Artiste', c_birthplace: 'Lieu de Naissance',
       c_nationality: 'Nationalité', c_address: 'Adresse Actuelle', c_phone: 'Numéro de Téléphone', c_email: 'Adresse Email',
-      c_idnumber: "Numéro de Pièce d’Identité", c_height: 'Taille (cm)', c_weight: 'Poids (kg)',
-      c_eyes: 'Couleur des Yeux', c_hair: 'Couleur des Cheveux', c_experience: 'Description des Travaux Précédents',
-      c_instagram: 'Lien du Profil Instagram', c_tiktok: 'Lien du Profil TikTok', c_birthdate: ''
+      c_idnumber: 'Numéro de Pièce d\'Identité', c_height: 'Taille (cm)', c_weight: 'Poids (kg)',
+      c_eyes: 'Couleur des Yeux', c_hair: 'Couleur des Cheveux', c_experience: 'Description des Expériences Précédentes',
+      c_instagram: 'Lien Profil Instagram', c_tiktok: 'Lien Profil TikTok', c_birthdate: ''
     }
   }
 };
@@ -1468,28 +1268,33 @@ let currentLanguage = 'ar';
 function changeLanguage(lang) {
   currentLanguage = lang;
   document.documentElement.lang = lang;
-  
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
   if(lang === 'ar') {
-    document.documentElement.dir = 'rtl';
+    document.getElementById('casting-form').classList.remove('dir-ltr');
+    document.getElementById('cv-options-form').classList.remove('dir-ltr');
+    document.getElementById('contact-form').classList.remove('dir-ltr');
   } else {
-    document.documentElement.dir = 'ltr';
+    document.getElementById('casting-form').classList.add('dir-ltr');
+    document.getElementById('cv-options-form').classList.add('dir-ltr');
+    document.getElementById('contact-form').classList.add('dir-ltr');
   }
 
-  const elements = document.querySelectorAll('[data-i18n]');
-  elements.forEach(el => {
-    const key = el.getAttribute('data-i18n');
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
     if (dictionary[lang] && dictionary[lang][key]) {
-      el.innerHTML = dictionary[lang][key];
+      element.innerHTML = dictionary[lang][key];
     }
   });
 
-  const inputs = document.querySelectorAll('input, textarea');
-  inputs.forEach(input => {
-    const id = input.id || input.name;
-    if (dictionary[lang] && dictionary[lang].placeholders && dictionary[lang].placeholders[id]) {
-      input.placeholder = dictionary[lang].placeholders[id];
+  if (dictionary[lang] && dictionary[lang].placeholders) {
+    for (const id in dictionary[lang].placeholders) {
+      const input = document.getElementById(id);
+      if (input && dictionary[lang].placeholders[id]) {
+        input.placeholder = dictionary[lang].placeholders[id];
+      }
     }
-  });
+  }
 }
 
 function toggleTheme() {
@@ -1504,70 +1309,60 @@ function toggleTheme() {
   }
 }
 
-// نافذة التحميل التلقائي
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   setTimeout(() => {
     loader.style.opacity = '0';
-    setTimeout(() => { loader.style.display = 'none'; }, 500);
-    initScrollAnimations();
+    setTimeout(() => loader.remove(), 500);
   }, 1200);
 });
 
-// تأثيرات التمرير للأعلى الفاخرة
-function initScrollAnimations() {
-  const targets = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  targets.forEach(t => observer.observe(t));
-}
+const fadeElements = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.1 });
+fadeElements.forEach(el => observer.observe(el));
 
-// فرز الأعمال
 function filterPortfolio(category) {
-  const items = document.querySelectorAll('.portfolio-item');
-  const tabs = document.querySelectorAll('.portfolio-tab');
-  
-  tabs.forEach(tab => tab.classList.remove('active'));
-  const activeTab = document.getElementById(`tab-${category}`);
-  if(activeTab) activeTab.classList.add('active');
+  document.querySelectorAll('.portfolio-tab').forEach(tab => tab.classList.remove('active'));
+  if(category === 'all') document.getElementById('tab-all').classList.add('active');
+  if(category === 'branding') document.getElementById('tab-branding').classList.add('active');
 
-  items.forEach(item => {
-    if(category === 'all' || item.classList.contains(category)) {
-      item.style.display = 'block';
-      setTimeout(() => {
-        item.style.opacity = '1';
-        item.style.transform = 'scale(1)';
-      }, 50);
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    if (category === 'all' || item.classList.contains(category)) {
+      item.style.display = 'flex';
+      setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
     } else {
       item.style.opacity = '0';
       item.style.transform = 'scale(0.95)';
-      setTimeout(() => { item.style.display = 'none'; }, 400);
+      setTimeout(() => item.style.display = 'none', 400);
     }
   });
 }
 
-// تفاصيل الأعمال الفاخرة النافذة المنبثقة
 const workData = {
-  p1: { img: 'melabelle.png', key: 'p1' },
-  p2: { img: 'bijoux.png', key: 'p2' },
-  p3: { img: 'le-r.png', key: 'p3' }
+  p1: { titleKey: 'p1_title', descKey: 'p1_desc', img: 'melabelle.png' },
+  p2: { titleKey: 'p2_title', descKey: 'p2_desc', img: 'bijoux.png' },
+  p3: { titleKey: 'p3_title', descKey: 'p3_desc', img: 'le-r.png' }
 };
 
 function openWorkModal(id) {
   const data = workData[id];
   if(!data) return;
   
-  document.getElementById('modal-img').src = data.img;
-  document.getElementById('modal-title').innerHTML = dictionary[currentLanguage][`${data.key}_title`] || data.key;
-  document.getElementById('modal-desc').innerHTML = dictionary[currentLanguage][`${data.key}_desc`] || '';
-  
   const modal = document.getElementById('work-modal');
+  const img = document.getElementById('modal-img');
+  const title = document.getElementById('modal-title');
+  const desc = document.getElementById('modal-desc');
+
+  img.src = data.img;
+  title.innerHTML = dictionary[currentLanguage][data.titleKey] || '';
+  desc.innerHTML = dictionary[currentLanguage][data.descKey] || '';
+
   modal.classList.remove('hidden');
   modal.classList.add('flex');
 }
@@ -1580,63 +1375,21 @@ function closeWorkModal() {
 
 function requestThisService() {
   closeWorkModal();
-  window.location.href = '#contact';
+  document.getElementById('contact').scrollIntoView();
 }
 
-// التحكم بخطوات استمارة الكاستينغ الفني
-let currentCastingStep = 1;
-function moveCastingStep(direction) {
-  const activeStep = document.getElementById(`step-${currentCastingStep}`);
-  
-  // التحقق من الحقول المطلوبة قبل الانتقال للخطوة التالية
-  if(direction === 1) {
-    const requiredInputs = activeStep.querySelectorAll('[required]');
-    let allValid = true;
-    requiredInputs.forEach(input => {
-      if(!input.checkValidity()) {
-        input.reportValidity();
-        allValid = false;
-      }
-    });
-    if(!allValid) return;
-  }
-
-  currentCastingStep += direction;
-  if(currentCastingStep < 1) currentCastingStep = 1;
-  if(currentCastingStep > 4) currentCastingStep = 4;
-
-  const allSteps = document.querySelectorAll('.form-step');
-  allSteps.forEach(s => s.classList.remove('active'));
-  document.getElementById(`step-${currentCastingStep}`).classList.add('active');
-
-  const indicators = document.querySelectorAll('.step-indicator');
-  indicators.forEach((ind, index) => {
-    if(index < currentCastingStep) {
-      ind.classList.add('active');
-    } else {
-      ind.classList.remove('active');
-    }
-  });
-
-  document.getElementById('prev-step-btn').disabled = (currentCastingStep === 1);
-  const nextBtn = document.getElementById('next-step-btn');
-  if(currentCastingStep === 4) {
-    nextBtn.style.display = 'none';
-  } else {
-    nextBtn.style.display = 'block';
-  }
-}
-
-// التعامل مع الإعلانات الجانبية التفاعلية السريعة
 function closeSidebarAd(event) {
   event.stopPropagation();
   const ad = document.getElementById('sidebar-ad');
+  ad.style.transition = '0.3s ease';
   ad.style.opacity = '0';
   ad.style.transform = 'scale(0.8)';
-  setTimeout(() => { ad.remove(); }, 400);
+  setTimeout(() => ad.remove(), 300);
 }
 
 function openExpandedAd(event) {
+  // تفعيل فتح النافذة المنبثقة للإعلان
+  event.stopPropagation();
   const modal = document.getElementById('expanded-ad-modal');
   modal.classList.remove('hidden');
   modal.classList.add('flex');
@@ -1650,12 +1403,36 @@ function closeExpandedAd() {
 
 function handleAdBtnClick(event) {
   event.stopPropagation();
-  window.location.href = '#cv-upload';
+  redirectToAdAction();
 }
 
 function redirectToAdAction() {
   closeExpandedAd();
-  window.location.href = '#cv-upload';
+  document.getElementById('cv-upload').scrollIntoView();
+}
+
+let currentCastingStep = 1;
+function moveCastingStep(stepDirection) {
+  const steps = document.querySelectorAll('.form-step');
+  const indicators = document.querySelectorAll('.step-indicator');
+  
+  steps[currentCastingStep - 1].classList.remove('active');
+  indicators[currentCastingStep - 1].classList.remove('active');
+
+  currentCastingStep += stepDirection;
+
+  steps[currentCastingStep - 1].classList.add('active');
+  indicators[currentCastingStep - 1].classList.add('active');
+
+  document.getElementById('prev-step-btn').disabled = (currentCastingStep === 1);
+  
+  const nextBtn = document.getElementById('next-step-btn');
+  if (currentCastingStep === 4) {
+    nextBtn.style.display = 'none';
+  } else {
+    nextBtn.style.display = 'inline-block';
+    nextBtn.innerHTML = (currentLanguage === 'ar') ? 'التالي ←' : 'Next →';
+  }
 }
 </script>
 
