@@ -417,7 +417,7 @@
       <a href="#services" class="hover:text-[#c9983d] transition" data-i18n="nav_services">الخدمات</a>
       <a href="#portfolio" class="hover:text-[#c9983d] transition" data-i18n="nav_portfolio">الأعمال</a>
       <a href="#casting-section" class="hover:text-[#c9983d] transition" data-i18n="nav_casting">طلب الانتساب الفني</a>
-      <a href="#cv-upload" class="hover:text-[#c9983d] transition" data-i18n="nav_cv">انضم إلينا (CV)</a>
+      <a href="#cv-upload" class="hover:text-[#c9983d] transition" data-i18n="nav_cv">انضم إلينا</a>
       <a href="#contact" class="hover:text-[#c9983d] transition" data-i18n="nav_contact">التواصل</a>
     </nav>
 
@@ -695,9 +695,10 @@
 
     <form action="https://formspree.io/f/xlgzqvyr" method="POST" enctype="multipart/form-data" id="cv-options-form" class="space-y-6 bg-[#0a0a0a] border border-white/5 p-6 md:p-8 rounded-2xl">
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
          <input type="text" name="Candidate_Name" placeholder="الاسم الكامل" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
          <input type="email" name="Candidate_Email" placeholder="البريد الإلكتروني" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
+         <input type="tel" name="Candidate_Phone" placeholder="رقم الهاتف" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9983d]">
       </div>
 
       <div class="space-y-4">
@@ -744,12 +745,6 @@
             <span class="text-white/80 group-hover:text-white transition">🎨 مصمم موشن جرافيك ومؤثرات بصرية (VFX)</span>
           </label>
         </div>
-      </div>
-
-      <div class="border border-dashed border-yellow-700/20 p-4 rounded-xl text-center relative hover:border-[#c9983d] transition bg-black/40">
-         <input type="file" name="CV_Document" accept=".pdf,.doc,.docx" required class="absolute inset-0 opacity-0 cursor-pointer">
-         <span class="block text-sm font-bold gold">Télécharger le CV / ارفع سيرتك الذاتية *</span>
-         <span class="block text-[11px] text-white/40">صيغة المقبول: PDF, DOCX</span>
       </div>
 
       <button type="submit" id="cv-submit-btn" class="w-full bg-[#c9983d] text-black py-4 rounded-xl font-black hover:bg-yellow-500 transition flex items-center justify-center gap-2">
@@ -918,7 +913,7 @@
 // القاموس اللغوي للترجمة الفورية (العربية، الإنجليزية، الفرنسية)
 const dictionary = {
   ar: {
-    nav_home: 'الرئيسية', nav_services: 'الخدمات', nav_portfolio: 'الأعمال', nav_casting: 'طلب الانتساب الفني', nav_cv: 'انضم إلينا (CV)', nav_contact: 'التواصل',
+    nav_home: 'الرئيسية', nav_services: 'الخدمات', nav_portfolio: 'الأعمال', nav_casting: 'طلب الانتساب الفني', nav_cv: 'انضم إلينا', nav_contact: 'التواصل',
     hero_desc: 'شركة متخصصة في الإنتاج السمعي البصري، إدارة الأعمال، صناعة الهوية البصرية والتسويق الرقمي الفاخر.',
     btn_casting: 'إستمارة الكاستينغ الفني 📄', btn_contact: 'تواصل معنا',
     services_title: 'خدماتنا الاحترافية', services_subtitle: 'حلول متكاملة في الإنتاج السمعي البصري، التسويق، إدارة العلامات التجارية وصناعة المحتوى الفاخر.',
@@ -948,8 +943,8 @@ const dictionary = {
     casting_agreement: "Je confirme l'exactitude des informations fournies et j'autorise Golden Star à utiliser mes بياناتي في الكاستينغ.",
     btn_submit_casting: '✓ ENVOYER LA FICHE / إرسال استمارة الانتساب الفنية 🚀',
     step_prev: 'السابق', step_next: 'التالي ←',
-    cv_title: 'انضم إلى فريقنا', cv_subtitle: 'أرسل سيرتك الذاتية الآن وكن جزءاً من فريق GOLDEN STAR MANAGEMENT.',
-    cv_upload_box: 'رفع السيرة الذاتية', btn_send_cv: '🚀 إرسال السيرة الذاتية',
+    cv_title: 'انضم إلى فريقنا', cv_subtitle: 'حدد المجالات والتخصصات التي تود الانضمام إلينا من خلالها كجزء من فريق GOLDEN STAR MANAGEMENT.',
+    btn_send_cv: '🚀 إرسال طلب الانضمام',
     contact_title: 'تواصل معنا', contact_subtitle: 'جاهزون لتحويل فكرتك إلى مشروع استثنائي.',
     btn_send_project: 'إرسال الطلب',
     ad_badge: 'عرض / أخبار',
@@ -1039,7 +1034,7 @@ const dictionary = {
     }
   },
   en: {
-    nav_home: 'Home', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Casting Form', nav_cv: 'Join Us (CV)', nav_contact: 'Contact',
+    nav_home: 'Home', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Casting Form', nav_cv: 'Join Us', nav_contact: 'Contact',
     hero_desc: 'A luxury agency specialized in audiovisual production, branding, business management and premium digital marketing.',
     btn_casting: 'Artistic Casting Form 📄', btn_contact: 'Contact Us',
     services_title: 'Our Professional Services', services_subtitle: 'Integrated solutions in audiovisual production, marketing, brand management and premium content creation.',
@@ -1069,7 +1064,7 @@ const dictionary = {
     casting_agreement: "I confirm the accuracy of the information provided and authorize Golden Star to use my data for casting purposes.",
     btn_submit_casting: '✓ Submit Casting Form Now 🚀',
     step_prev: 'Previous', step_next: 'Next →',
-    cv_title: 'Join Our Team', cv_subtitle: 'Submit your options now and become a vital part of GOLDEN STAR MANAGEMENT.',
+    cv_title: 'Join Our Team', cv_subtitle: 'Select your options now and become a vital part of GOLDEN STAR MANAGEMENT.',
     btn_send_cv: '🚀 Submit Application',
     contact_title: 'Contact Us', contact_subtitle: 'We are ready to transform your vision into an extraordinary reality.',
     btn_send_project: 'Send Inquiry',
@@ -1160,7 +1155,7 @@ const dictionary = {
     }
   },
   fr: {
-    nav_home: 'Accueil', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Casting', nav_cv: 'Rejoignez-nous (CV)', nav_contact: 'Contact',
+    nav_home: 'Accueil', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Casting', nav_cv: 'Rejoignez-nous', nav_contact: 'Contact',
     hero_desc: 'Une agence de luxe spécialisée en production audiovisuelle, branding, business management et marketing digital de prestige.',
     btn_casting: 'Fiche d’inscription Artistique 📄', btn_contact: 'Contactez-nous',
     services_title: 'Nos Services Professionnels', services_subtitle: 'Solutions intégrées en production audiovisuelle, marketing, gestion de marque et création de contenu de luxe.',
@@ -1275,179 +1270,204 @@ const dictionary = {
       contact_name: 'Nom Complet', contact_email: 'Adresse E-mail', contact_phone: 'Numéro de Téléphone', 'project-details': 'Détails du Projet',
       c_fullname: 'Nom complet', c_artname: 'Nom Artistique', c_birthplace: 'Lieu de Naissance',
       c_nationality: 'Nationalité', c_address: 'Adresse Actuelle', c_phone: 'Numéro de Téléphone', c_email: 'Adresse E-mail',
-      c_idnumber: "Numéro de Pièce d'Identité", c_height: 'Taille (cm)', c_weight: 'Poids (kg)',
-      c_eyes: 'Couleur des Yeux', c_hair: 'Couleur des Cheveux', c_experience: 'Description des Expériences',
-      c_instagram: 'Instagram Profile Link', c_tiktok: 'TikTok Profile Link', c_birthdate: ''
+      c_idnumber: "Numéro de Pièce d'identité", c_height: 'Taille (cm)', c_weight: 'Poids (kg)',
+      c_eyes: 'Couleur des Yeux', c_hair: 'Couleur des Cheveux', c_experience: 'Expériences Précédentes',
+      c_instagram: 'Lien Profil Instagram', c_tiktok: 'Lien Profil TikTok', c_birthdate: ''
     }
   }
 };
 
-// إدارة اللغات والاتجاهات
 let currentLang = 'ar';
 
 function changeLanguage(lang) {
+  if(!dictionary[lang]) return;
   currentLang = lang;
-  const dir = lang === 'ar' ? 'rtl' : 'ltr';
-  document.documentElement.dir = dir;
-  document.documentElement.lang = lang;
+  
+  // تغيير اتجاه النص بناءً على اللغة
+  if(lang === 'ar') {
+    document.documentElement.dir = 'rtl';
+    document.documentElement.lang = 'ar';
+  } else {
+    document.documentElement.dir = 'ltr';
+    document.documentElement.lang = lang;
+  }
 
-  // ترجمة النصوص التي تحتوي على data-i18n
+  // ترجمة النصوص التي تحتوي على دالة data-i18n
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (dictionary[lang] && dictionary[lang][key]) {
+    if(dictionary[lang][key]) {
       el.innerHTML = dictionary[lang][key];
     }
   });
 
-  // ترجمة الـ Placeholders في الحقول بطريقة آمنة
-  document.querySelectorAll('input, textarea').forEach(el => {
-    const id = el.id || el.name;
-    if (dictionary[lang] && dictionary[lang].placeholders && dictionary[lang].placeholders[id]) {
-      el.placeholder = dictionary[lang].placeholders[id];
-    }
-  });
-}
-
-// التحكم بالثيم الفاتح/المظلم
-function toggleTheme() {
-  const body = document.body;
-  const btn = document.getElementById('theme-btn');
-  body.classList.toggle('light-theme');
-  if(body.classList.contains('light-theme')) {
-    btn.innerHTML = '🌙';
-  } else {
-    btn.innerHTML = '☀️';
-  }
-}
-
-// التحكم باستمارة الكاستينغ متعددة الخطوات مع تفعيل ميزة التحقق من المدخلات الحالية
-let currentCastingStep = 1;
-function moveCastingStep(stepDirection) {
-  const steps = document.querySelectorAll('.form-step');
-  const indicators = document.querySelectorAll('.step-indicator');
-  
-  // التحقق من صحة الحقول الإجبارية في الخطوة الحالية قبل الانتقال للأمام فقط
-  if (stepDirection === 1) {
-    const currentStepInputs = steps[currentCastingStep - 1].querySelectorAll('input[required], textarea[required]');
-    let isStepValid = true;
-    currentStepInputs.forEach(input => {
-      if (!input.checkValidity()) {
-        input.reportValidity();
-        isStepValid = false;
-      }
-    });
-    if (!isStepValid) return; // منع الانتقال إذا كانت هناك حقول فارغة
-  }
-
-  steps[currentCastingStep - 1].classList.remove('active');
-  currentCastingStep += stepDirection;
-  steps[currentCastingStep - 1].classList.add('active');
-
-  // تحديث المؤشرات العلوية
-  indicators.forEach((ind, i) => {
-    if (i < currentCastingStep) {
-      ind.classList.add('active');
+  // ترجمة الـ Placeholders في المدخلات التفاعلية
+  document.querySelectorAll('input, textarea').forEach(input => {
+    const id = input.id;
+    if(id && dictionary[lang].placeholders && dictionary[lang].placeholders[id] !== undefined) {
+      input.placeholder = dictionary[lang].placeholders[id];
     } else {
-      ind.classList.remove('active');
+      const placeholderAttr = input.getAttribute('placeholder');
+      if(placeholderAttr) {
+        // إذا كان هناك مدخل عام يمكن البحث عنه في القاموس مباشرة عبر الـ placeholder الأصلي أو الاسم
+        const nameAttr = input.getAttribute('name');
+        if(nameAttr && dictionary[lang].placeholders && dictionary[lang].placeholders[nameAttr]) {
+          input.placeholder = dictionary[lang].placeholders[nameAttr];
+        }
+      }
     }
   });
-
-  // التحكم بحالة الأزرار
-  document.getElementById('prev-step-btn').disabled = (currentCastingStep === 1);
-  const nextBtn = document.getElementById('next-step-btn');
-  if (currentCastingStep === 4) {
-    nextBtn.style.display = 'none';
-  } else {
-    nextBtn.style.display = 'block';
-    nextBtn.innerHTML = currentLang === 'ar' ? 'التالي ←' : (currentLang === 'en' ? 'Next →' : 'Suivant →');
-  }
 }
 
-// تصفية معرض الأعمال
-function filterPortfolio(category) {
-  const items = document.querySelectorAll('.portfolio-item');
-  const tabs = document.querySelectorAll('.portfolio-tab');
-  
-  tabs.forEach(tab => tab.classList.remove('active'));
-  document.getElementById(`tab-${category}`).classList.add('active');
+// إخفاء الـ Loader الترحيبي عند تحميل الصفحة
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  setTimeout(() => {
+    loader.style.opacity = '0';
+    setTimeout(() => loader.style.display = 'none', 500);
+  }, 1000);
+});
 
-  items.forEach(item => {
-    if (category === 'all' || item.classList.contains(category)) {
+// تأثيرات الظهور التدريجي (Fade up Animation)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// فلترة كروت الأعمال (Portfolio Filter)
+function filterPortfolio(category) {
+  document.querySelectorAll('.portfolio-tab').forEach(tab => tab.classList.remove('active'));
+  
+  const activeTab = document.getElementById('tab-' + category);
+  if(activeTab) activeTab.classList.add('active');
+
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    if(category === 'all' || item.classList.contains(category)) {
       item.style.display = 'block';
       setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
     } else {
       item.style.opacity = '0';
       item.style.transform = 'scale(0.8)';
-      setTimeout(() => { item.style.display = 'none'; }, 400);
+      setTimeout(() => item.style.display = 'none', 400);
     }
   });
 }
 
-// فتح مودال الإعلان وتكبيره
-function openExpandedAd(e) {
-  document.getElementById('expanded-ad-modal').classList.remove('hidden');
-  document.getElementById('expanded-ad-modal').classList.add('flex');
-}
-function closeExpandedAd() {
-  document.getElementById('expanded-ad-modal').classList.add('hidden');
-  document.getElementById('expanded-ad-modal').classList.remove('flex');
-}
-function closeSidebarAd(e) {
-  e.stopPropagation();
-  document.getElementById('sidebar-ad').style.display = 'none';
-}
-function handleAdBtnClick(e) {
-  e.stopPropagation();
-  window.location.href = '#cv-upload';
-}
-function redirectToAdAction() {
-  closeExpandedAd();
-  window.location.href = '#cv-upload';
-}
-
-// فتح وإغلاق مودال تفاصيل الأعمال
-const projectsData = {
-  p1: { titleKey: 'p1_title', descKey: 'p1_desc', img: 'melabelle.png' },
-  p2: { titleKey: 'p2_title', descKey: 'p2_desc', img: 'bijoux.png' },
-  p3: { titleKey: 'p3_title', descKey: 'p3_desc', img: 'le-r.png' }
+// التحكم في المودال الخاص بعرض تفاصيل الأعمال بالكامل
+const workData = {
+  p1: { titleAr: "مشروع Melabelle", titleEn: "Melabelle Project", titleFr: "Projet Melabelle", descAr: "مشروع متكامل لتصميم الهوية البصرية الفاخرة وإنتاج المخططات التسويقية لبراند ميلابيل.", descEn: "A comprehensive digital marketing structure and elite brand identity crafted for Melabelle brand.", descFr: "Une identité visuelle d'élite et une stratégie marketing complète développées pour la marque Melabelle.", img: "melabelle.png" },
+  p2: { titleAr: "براندينغ Bijoux", titleEn: "Bijoux Branding", titleFr: "Branding Bijoux", descAr: "صناعة الهوية الجمالية وتصميم النماذج الرقمية المبتكرة لعلامة تجارية متخصصة في المجوهرات الفاخرة.", descEn: "Digital transformation and high-end visual aesthetics for a premium jewelry boutique.", descFr: "Transformation numérique et esthétique haut de gamme pour une boutique de bijoux haut de gamme.", img: "bijoux.png" },
+  p3: { titleAr: "مشروع Le-R", titleEn: "Le-R Project", titleFr: "Projet Le-R", descAr: "تحديث وتطوير الاستراتيجية المرئية والهيكلية التسويقية الكاملة لبراند Le-R العصري.", descEn: "Modern identity build and corporate creative parameters tailored perfectly for Le-R ecosystem.", descFr: "Construction d'une identité moderne et paramètres créatifs parfaitement adaptés à la marque Le-R.", img: "le-r.png" }
 };
 
-function openWorkModal(projId) {
-  const data = projectsData[projId];
+function openWorkModal(id) {
+  const data = workData[id];
   if(!data) return;
-  document.getElementById('modal-img').src = data.img;
-  document.getElementById('modal-title').innerHTML = dictionary[currentLang][data.titleKey];
-  document.getElementById('modal-desc').innerHTML = dictionary[currentLang][data.descKey];
-  document.getElementById('work-modal').classList.remove('hidden');
-  document.getElementById('work-modal').classList.add('flex');
+
+  const modal = document.getElementById('work-modal');
+  const img = document.getElementById('modal-img');
+  const title = document.getElementById('modal-title');
+  const desc = document.getElementById('modal-desc');
+
+  img.src = data.img;
+  if(currentLang === 'en') { title.innerText = data.titleEn; desc.innerText = data.descEn; }
+  else if(currentLang === 'fr') { title.innerText = data.titleFr; desc.innerText = data.descFr; }
+  else { title.innerText = data.titleAr; desc.innerText = data.descAr; }
+
+  modal.style.display = 'flex';
+  setTimeout(() => modal.style.opacity = '1', 50);
 }
+
 function closeWorkModal() {
-  document.getElementById('work-modal').classList.add('hidden');
-  document.getElementById('work-modal').classList.remove('flex');
+  const modal = document.getElementById('work-modal');
+  modal.style.opacity = '0';
+  setTimeout(() => modal.style.display = 'none', 300);
 }
+
 function requestThisService() {
   closeWorkModal();
-  window.location.href = '#contact';
+  window.location.href = "#contact";
 }
 
-// تأثيرات التمرير Fade In / Up واللودر
-window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const loader = document.getElementById('loader');
-    loader.style.opacity = '0';
-    setTimeout(() => loader.style.display = 'none', 500);
-  }, 1200);
+// التحكم في خطوات الكاستينغ الفني (Multi-Step Form)
+let currentStep = 1;
+function moveCastingStep(direction) {
+  const activeStepEl = document.getElementById('step-' + currentStep);
+  
+  // التحقق من المدخلات المطلوبة في الخطوة الحالية قبل الانتقال للأمام
+  if(direction === 1) {
+    const inputs = activeStepEl.querySelectorAll('input[required], select[required], textarea[required]');
+    let valid = true;
+    inputs.forEach(input => { if(!input.checkValidity()) { input.reportValidity(); valid = false; } });
+    if(!valid) return;
+  }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, { threshold: 0.1 });
+  activeStepEl.classList.remove('active');
+  currentStep += direction;
+  document.getElementById('step-' + currentStep).classList.add('active');
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-});
+  // تحديث أشكال المؤشرات العلوية للخطوات
+  const indicators = document.querySelectorAll('.step-indicator');
+  indicators.forEach((ind, index) => {
+    if(index < currentStep) ind.classList.add('active');
+    else ind.classList.remove('active');
+  });
+
+  document.getElementById('prev-step-btn').disabled = (currentStep === 1);
+  if(currentStep === 4) {
+    document.getElementById('next-step-btn').style.display = 'none';
+  } else {
+    document.getElementById('next-step-btn').style.display = 'inline-block';
+  }
+}
+
+// التحكم في ثيم الموقع المتكامل (Light & Dark Theme Toggle)
+function toggleTheme() {
+  const body = document.body;
+  const btn = document.getElementById('theme-btn');
+  
+  if(body.classList.contains('light-theme')) {
+    body.classList.remove('light-theme');
+    btn.innerHTML = '☀️';
+  } else {
+    body.classList.add('light-theme');
+    btn.innerHTML = '🌙';
+  }
+}
+
+// التحكم في الإعلان الجانبي المنبثق
+function closeSidebarAd(event) {
+  event.stopPropagation();
+  const ad = document.getElementById('sidebar-ad');
+  ad.style.opacity = '0';
+  setTimeout(() => ad.remove(), 400);
+}
+
+function openExpandedAd(event) {
+  const modal = document.getElementById('expanded-ad-modal');
+  modal.style.display = 'flex';
+  setTimeout(() => modal.style.opacity = '1', 50);
+}
+
+function closeExpandedAd() {
+  const modal = document.getElementById('expanded-ad-modal');
+  modal.style.opacity = '0';
+  setTimeout(() => modal.style.display = 'none', 300);
+}
+
+function handleAdBtnClick(event) {
+  event.stopPropagation();
+  redirectToAdAction();
+}
+
+function redirectToAdAction() {
+  closeExpandedAd();
+  window.location.href = "#cv-upload";
+}
 </script>
 
 </body>
