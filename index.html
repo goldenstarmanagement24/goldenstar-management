@@ -710,99 +710,65 @@
 </section>
 
 <!-- قسم الـ CV متعدد الخطوات المحدث -->
+
 <section id="cv-upload" class="py-24 bg-[#050505]">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12 fade-up">
       <h2 data-i18n="cv_title" class="text-4xl md:text-5xl font-black gold mb-4">انضم إلى فريقنا</h2>
-      <p data-i18n="cv_subtitle" class="text-white/50">قدم الآن بشكل احترافي للانضمام إلى فريق GOLDEN STAR MANAGEMENT.</p>
+      <p data-i18n="cv_subtitle" class="text-white/50">حدد المجالات والتخصصات التي تود الانضمام إلينا من خلالها كجزء من فريق GOLDEN STAR MANAGEMENT.</p>
     </div>
 
-    <div class="flex justify-between items-center mb-10 max-w-md mx-auto text-xs font-bold select-none">
-      <div class="cv-step-indicator active" data-cv-step="1">1</div>
-      <div class="h-0.5 bg-white/10 flex-1 mx-2"></div>
-      <div class="cv-step-indicator" data-cv-step="2">2</div>
-      <div class="h-0.5 bg-white/10 flex-1 mx-2"></div>
-      <div class="cv-step-indicator" data-cv-step="3">3</div>
-      <div class="h-0.5 bg-white/10 flex-1 mx-2"></div>
-      <div class="cv-step-indicator" data-cv-step="4">4</div>
-    </div>
-
-    <form action="https://formspree.io/f/xlgzqvyr" method="POST" enctype="multipart/form-data" id="cv-steps-form" class="bg-[#0b0b0b] border border-white/10 rounded-3xl p-6 md:p-10 space-y-6 shadow-2xl relative">
+    <form action="https://formspree.io/f/xlgzqvyr" method="POST" id="cv-options-form" class="space-y-6 bg-[#0a0a0a] border border-white/5 p-6 md:p-8 rounded-2xl">
       
-      <div class="cv-form-step active" id="cv-step-element-1">
-        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">1. البيانات الشخصية</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="text" name="fullname" id="cv_fullname" placeholder="الاسم الكامل" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600">
-          <input type="email" name="email" id="cv_email" placeholder="البريد الإلكتروني" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600">
-          <input type="tel" name="phone" id="cv_phone" placeholder="رقم الهاتف (واتساب)" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600">
-          <input type="text" name="city_country" id="cv_city" placeholder="المدينة / الدولة" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600">
-        </div>
-      </div>
-
-      <div class="cv-form-step" id="cv-step-element-2">
-        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">2. التخصص والخبرة المهنية</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="space-y-4">
+        <label class="block text-xs font-bold text-white/70 uppercase tracking-wider mb-2">اختر التخصصات المناسبة لك (يمكنك تحديد أكثر من مجال) :</label>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[11px] md:text-xs">
+          <label class="flex items-center gap-3 p-4 rounded-xl cursor-pointer select-none bg-black border border-white/5 hover:border-[#c9983d]/40 transition group">
+            <input type="checkbox" name="Join_Roles[]" value="Digital Marketing Manager" class="accent-[#c9983d] w-4 h-4 cursor-pointer"> 
+            <span class="text-white/80 group-hover:text-white transition">📱 إدارة التسويق الرقمي (Marketing Manager)</span>
+          </label>
           
-          <div class="col-span-1 md:col-span-2">
-            <label class="text-white/60 text-sm mb-2 block">القسم المطلوب:</label>
-            <select name="job_position" required class="w-full bg-black border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-600">
-              <option value="" disabled selected hidden>اختر المجال...</option>
-              <option value="Administration">إدارة أعمال / تسيير وتنسيق</option>
-              <option value="Marketing & Brand">تسويق رقمي وإدارة براند (Brand Manager)</option>
-              <option value="Content Creation & Script">صناعة محتوى وكتابة سيناريو</option>
-              <option value="Audiovisual & Photo">إنتاج سمعي بصري وتصوير احترافي</option>
-              <option value="Editing & Animation">مونتاج فيديو، تلوين، وأنيميشن</option>
-              <option value="Other">تخصص آخر...</option>
-            </select>
-          </div>
+          <label class="flex items-center gap-3 p-4 rounded-xl cursor-pointer select-none bg-black border border-white/5 hover:border-[#c9983d]/40 transition group">
+            <input type="checkbox" name="Join_Roles[]" value="Content Creator" class="accent-[#c9983d] w-4 h-4 cursor-pointer"> 
+            <span class="text-white/80 group-hover:text-white transition">✍️ صناعة وكتابة المحتوى (Content Creator)</span>
+          </label>
 
-          <div>
-            <label class="text-white/60 text-sm mb-2 block">سنوات الخبرة:</label>
-            <select name="experience_years" required class="w-full bg-black border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-600">
-              <option value="بدون خبرة (مبتدئ)">أقل من سنة / مبتدئ</option>
-              <option value="1-3 سنوات">من 1 إلى 3 سنوات</option>
-              <option value="3-5 سنوات">من 3 إلى 5 سنوات</option>
-              <option value="+5 سنوات">أكثر من 5 سنوات (محترف)</option>
-            </select>
-          </div>
+          <label class="flex items-center gap-3 p-4 rounded-xl cursor-pointer select-none bg-black border border-white/5 hover:border-[#c9983d]/40 transition group">
+            <input type="checkbox" name="Join_Roles[]" value="Community Manager" class="accent-[#c9983d] w-4 h-4 cursor-pointer"> 
+            <span class="text-white/80 group-hover:text-white transition">🤝 إدارة صفحات التواصل (Community Manager)</span>
+          </label>
 
-          <div>
-            <label class="text-white/60 text-sm mb-2 block">مستوى المهارة الحالي:</label>
-            <select name="skill_level" required class="w-full bg-black border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-600">
-              <option value="Junior">مبتدئ واعد (Junior)</option>
-              <option value="Mid-Weight">متوسط الخبرة (Mid-Weight)</option>
-              <option value="Senior">محترف / خبير (Senior)</option>
-            </select>
-          </div>
+          <label class="flex items-center gap-3 p-4 rounded-xl cursor-pointer select-none bg-black border border-white/5 hover:border-[#c9983d]/40 transition group">
+            <input type="checkbox" name="Join_Roles[]" value="Business Consultant" class="accent-[#c9983d] w-4 h-4 cursor-pointer"> 
+            <span class="text-white/80 group-hover:text-white transition">📈 إدارة الأعمال والاستشارات (Business Management)</span>
+          </label>
 
+          <label class="flex items-center gap-3 p-4 rounded-xl cursor-pointer select-none bg-black border border-white/5 hover:border-[#c9983d]/40 transition group">
+            <input type="checkbox" name="Join_Roles[]" value="Cameraman / Director" class="accent-[#c9983d] w-4 h-4 cursor-pointer"> 
+            <span class="text-white/80 group-hover:text-white transition">📹 التصوير السينمائي والإخراج (Cameraman)</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-4 rounded-xl cursor-pointer select-none bg-black border border-white/5 hover:border-[#c9983d]/40 transition group">
+            <input type="checkbox" h-4 name="Join_Roles[]" value="Drone Pilot" class="accent-[#c9983d] w-4 h-4 cursor-pointer"> 
+            <span class="text-white/80 group-hover:text-white transition">🚀 قائد طائرة درون سينمائي (Drone Pilot)</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-4 rounded-xl cursor-pointer select-none bg-black border border-white/5 hover:border-[#c9983d]/40 transition group">
+            <input type="checkbox" name="Join_Roles[]" value="Video Editor" class="accent-[#c9983d] w-4 h-4 cursor-pointer"> 
+            <span class="text-white/80 group-hover:text-white transition">🎬 المونتاج والتحرير السينمائي (Video Editor)</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-4 rounded-xl cursor-pointer select-none bg-black border border-white/5 hover:border-[#c9983d]/40 transition group">
+            <input type="checkbox" name="Join_Roles[]" value="Motion Designer" class="accent-[#c9983d] w-4 h-4 cursor-pointer"> 
+            <span class="text-white/80 group-hover:text-white transition">🎨 مصمم موشن جرافيك ومؤثرات بصرية (VFX)</span>
+          </label>
         </div>
       </div>
 
-      <div class="cv-form-step" id="cv-step-element-3">
-        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">3. معرض الأعمال والروابط</h3>
-        <div class="space-y-4">
-          <input type="url" name="portfolio_link" placeholder="رابط معرض أعمالك أو نماذج من شغلك (Behance, Drive, YouTube...)" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600 text-right dir-ltr">
-          <input type="url" name="linkedin_instagram" placeholder="رابط حسابك المهني (LinkedIn أو Instagram)" class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600 text-right dir-ltr">
-          <textarea name="message" id="cv_input_msg" rows="4" placeholder="تحدث معنا باختصار عن أهم المشاريع التي عملت عليها وما الإضافة التي ستقدمها لـ GOLDEN STAR؟" required class="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-600"></textarea>
-        </div>
-      </div>
-
-      <div class="cv-form-step" id="cv-step-element-4">
-        <h3 class="text-xl font-bold gold border-b border-white/5 pb-2 mb-6">4. المرفقات النهائية</h3>
-        <div class="border-2 border-dashed border-yellow-700/30 rounded-2xl p-8 text-center relative overflow-hidden hover:border-yellow-600 transition-colors bg-black/40">
-          <input type="file" name="cv_file" accept=".pdf,.doc,.docx" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-          <div class="text-5xl mb-4">📄</div>
-          <h4 data-i18n="cv_upload_box" class="font-black text-lg mb-2 gold">رفع السيرة الذاتية (CV)</h4>
-          <p class="text-white/40 text-sm">اضغط هنا لاختيار الملف بصيغة (PDF / DOC / DOCX)</p>
-        </div>
-      </div>
-
-      <div class="flex justify-between items-center pt-4 border-t border-white/5">
-        <button type="button" id="cv-prev-btn" onclick="moveCVStep(-1)" class="px-6 py-3 rounded-xl border border-white/10 text-white bg-transparent transition-all hover:bg-white/5 disabled:opacity-30 disabled:pointer-events-none" disabled>السابق</button>
-        <button type="button" id="cv-next-btn" onclick="moveCVStep(1)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-[#c9983d] to-yellow-500 text-black font-bold shadow-lg shadow-yellow-600/10 hover:brightness-110 transition-all">التالي</button>
-        <button type="submit" id="cv-submit-btn" class="px-6 py-3 rounded-xl bg-gradient-to-r from-green-600 to-emerald-500 text-white font-bold shadow-lg shadow-emerald-600/10 hover:brightness-110 transition-all hidden">تقديم الطلب الآن ✓</button>
-      </div>
-
+      <button type="submit" id="cv-submit-btn" class="w-full bg-[#c9983d] text-black py-4 rounded-xl font-black hover:bg-yellow-500 transition flex items-center justify-center gap-2">
+        <span>🚀 إرسال طلب الانضمام</span>
+      </button>
     </form>
   </div>
 </section>
@@ -1544,46 +1510,23 @@ function moveCastingStep(direction) {
 }
 
 // نظام السيرة الذاتية (CV Form Steps) متعدد الخطوات تفاعلي ومحمي
-let currentCVStep = 1;
-function moveCVStep(direction) {
-  const activeCVStepEl = document.getElementById(`cv-step-element-${currentCVStep}`);
-
-  if (direction === 1) {
-    const inputs = activeCVStepEl.querySelectorAll('input[required], select[required], textarea[required]');
-    let valid = true;
-    inputs.forEach(i => { if (!i.checkValidity()) { i.reportValidity(); valid = false; } });
-    if (!valid) return;
-  }
-
-  activeCVStepEl.classList.remove('active');
-  currentCVStep += direction;
-
-  const nextCVStepEl = document.getElementById(`cv-step-element-${currentCVStep}`);
-  nextCVStepEl.classList.add('active');
-
-  // تحديث أشرطة ومؤشرات التقديم للوظيفة
-  document.querySelectorAll('.cv-step-indicator').forEach((ind) => {
-    const stepVal = parseInt(ind.getAttribute('data-cv-step'));
-    if (stepVal <= currentCVStep) {
-      ind.classList.add('active');
-    } else {
-      ind.classList.remove('active');
-    }
-  });
-
-  document.getElementById('cv-prev-btn').disabled = (currentCVStep === 1);
+// نظام معالجة خيارات الـ CV المباشرة ومنع الإرسال فارغاً
+document.getElementById('cv-options-form').addEventListener('submit', function(e) {
+  const checkedBoxes = document.querySelectorAll('input[name="Join_Roles[]"]:checked');
   
-  const nextBtn = document.getElementById('cv-next-btn');
-  const submitBtn = document.getElementById('cv-submit-btn');
-
-  if (currentCVStep === 4) {
-    nextBtn.classList.add('hidden');
-    submitBtn.classList.remove('hidden');
-  } else {
-    nextBtn.classList.remove('hidden');
-    submitBtn.classList.add('hidden');
+  if (checkedBoxes.length === 0) {
+    e.preventDefault(); // إيقاف الإرسال فوراً
+    alert("يرجى اختيار تخصص واحد على الأقل قبل إرسال الطلب.");
+    return;
   }
-}
+
+  // تغيير شكل الزر لإعطاء طابع احترافي أثناء المعالجة والرفع إلى Formspree
+  const submitBtn = document.getElementById('cv-submit-btn');
+  if (submitBtn) {
+    submitBtn.innerHTML = `<span>⏳ جاري إرسال طلبك...</span>`;
+  }
+});
+
 </script>
 
 </body>
