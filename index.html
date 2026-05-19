@@ -177,7 +177,6 @@
     }
 
     .dir-ltr { direction: ltr !important; text-align: left !important; }
-    .dir-rtl { direction: rtl !important; text-align: right !important; }
 
     .light-theme {
       background: #fcfcfc;
@@ -210,7 +209,7 @@
     }
 
     .light-theme header h1 {
-      color: #b3822d !important; /* تعديل طفيف لزيادة التباين */
+      color: #c9983d !important;
     }
     .light-theme header p {
       color: #6b7280 !important;
@@ -998,7 +997,9 @@
 </footer>
 
 <script>
+// تفعيل الإضاءة والحركات السينمائية التلقائية عند التمرير (Scroll Animations)
 document.addEventListener("DOMContentLoaded", function () {
+  // إخفاء الـ Loader الترحيبي بكفاءة وسلاسة
   setTimeout(() => {
     const loader = document.getElementById('loader');
     if(loader){
@@ -1026,6 +1027,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fadeUpElements.forEach(el => observer.observe(el));
 });
 
+// دوال التحكم في الإعلانات والصور المقربة
 function viewFullAdImage(imgSrc) {
   const modal = document.getElementById('ad-image-modal');
   const modalImg = document.getElementById('ad-modal-full-img');
@@ -1083,6 +1085,7 @@ function redirectToAdAction() {
   window.location.href = "#cv-upload";
 }
 
+// التحكم في أعمال الـ Portfolio والنافذة المنبثقة التابعة لها
 const portfolioData = {
   p1: { title: "Melabelle Project", desc: "مشروع تصميم هوية بصرية فاخرة وإنتاج إعلاني متكامل لبراند Melabelle الاستثنائي.", img: "melabelle.png" },
   p2: { title: "Bijoux Branding", desc: "صناعة الهوية الرقمية والجمالية لعلامة تجارية متخصصة في المجوهرات والقطع الفاخرة.", img: "bijoux.png" },
@@ -1130,6 +1133,7 @@ function filterPortfolio(category) {
   });
 }
 
+// التحكم في خطوات نموذج الانتساب الفني (Multi-step Form)
 let currentStep = 1;
 function moveCastingStep(stepOffset) {
   const nextStep = currentStep + stepOffset;
@@ -1155,7 +1159,7 @@ function moveCastingStep(stepOffset) {
   }
 }
 
-// القاموس المصحح والمكتمل بنسبة 100% لثلاث لغات
+// نظام اللغات والترجمة الشامل والتبديل التلقائي لاتجاه الصفحة RTL/LTR
 const dictionary = {
   ar: {
     nav_home: 'الرئيسية', nav_services: 'الخدمات', nav_portfolio: 'الأعمال', nav_casting: 'طلب الانتساب الفني', nav_cv: 'انضم إلينا', nav_privacy: 'سياسة الخصوصية', nav_contact: 'التواصل',
@@ -1207,178 +1211,409 @@ const dictionary = {
     p_sec4_title: '4. مشاركة البيانات مع أطراف ثالثة',
     p_sec4_desc: 'نلتزم بعدم بيع، أو مشاركة، أو تأجير معلوماتك الشخصية لأي أطراف خارجية، باستثناء الحالات الإلزامية التي يقتضيها القانون أو لغرض التنسيق المباشر للأنشطة الفنية والإنتاجية التي تقدمت لها بموافقتك الكاملة.',
     contact_title: 'تواصل معنا', contact_subtitle: 'جاهزون لتحويل فكرتك إلى مشروع استثنائي.',
-    btn_send_project: 'إرسال الطلب', ad_badge: 'عرض / أخبار',
+    btn_send_project: 'إرسال الطلب',
+    ad_badge: 'عرض / أخبار',
     ad_title: 'فرصة توظيف: مدير تسويق رقمي',
     ad_desc: 'انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمحترفين مع خصومات خاصة لخدمات البراندينج لأول 5 شركات هذا الشهر.',
-    ad_btn: 'قدم طلبك الآن ←', ad_click_hint: 'انقر للتكبير 🔍',
+    ad_btn: 'قدم طلبك الآن ←',
+    ad_click_hint: 'انقر للتكبير 🔍',
     section_ad_title: 'عرض حصري: باقة صناعة الهوية البصرية المتكاملة',
     section_ad_desc: 'احصل على خصم 20% عند طلب خدمات البراندينغ وإدارة حسابات التواصل الاجتماعي لأول 5 شركات هذا الشهر. دعنا نطلق مشروعك بأسلوب فاخر.',
-    section_ad_btn: 'استفد من العرض الآن ←', select_services_title: "اختر الخدمات المطلوبة (يمكنك تحديد أكثر من خدمة) :",
+    section_ad_btn: 'استفد من العرض الآن ←',
+    select_services_title: "اختر الخدمات المطلوبة (يمكنك تحديد أكثر من خدمة) :",
+    cat_audiovisual: "خدمات الإنتاج السمعي البصري",
+    srv_vid_shoot: "📹 تصوير الفيديو الاحترافي",
+    srv_ads: "تصوير الإعلانات التجارية",
+    srv_clips: "تصوير الكليبات الفنية",
+    srv_corporate: "تصوير الشركات والمؤسسات",
+    srv_events: "تصوير الفعاليات والمؤتمرات",
+    srv_weddings: "تصوير الأعراس والمناسبات",
+    srv_sm_content: "تصوير محتوى السوشيال ميديا",
+    cat_production: "إنتاج الأفلام والبرامج",
+    srv_tv: "إنتاج البرامج التلفزيونية",
+    srv_docs: "إنتاج الوثائقيات",
+    srv_podcast: "إنتاج البودكاست المرئي",
+    srv_reality: "إنتاج الرياليتي شو",
+    srv_digital_prod: "إنتاج المحتوى الرقمي",
+    cat_postproduction: "المونتاج وما بعد الإنتاج",
+    srv_editing: "مونتاج احترافي",
+    srv_color: "تصحيح الألوان",
+    srv_vfx: "مؤثرات بصرية VFX",
+    srv_motion: "Motion Graphics",
+    srv_intro_outro: "تصميم Intro / Outro",
+    srv_audio_clean: "تحسين الصوت وتنقيته",
+    cat_audio_photo: "الخدمات الصوتية والفوتوغرافيا",
+    srv_vo: "تسجيل Voice Over",
+    srv_dubbing: "دبلجة وتعليق صوتي",
+    srv_audio_eng: "هندسة صوتية",
+    srv_music_prod: "إنتاج موسيقى وإعلانات صوتية",
+    srv_photo_products: "📸 تصوير منتجات",
+    srv_photo_fashion: "تصوير أزياء",
+    srv_photo_estate: "تصوير عقاري",
+    srv_photo_sessions: "جلسات تصوير احترافية",
+    srv_photo_ads: "تصوير إعلانات",
+    cat_design_web: "خدمات التصميم وتطوير المواقع",
+    srv_logo: "🖌️ تصميم الشعارات",
+    srv_brand_identity: "الهوية البصرية الكاملة",
+    srv_posters: "تصميم البوسترات والإعلانات",
+    srv_sm_graphics: "تصميم السوشيال ميديا",
+    srv_brochures: "تصميم البروشورات والكتيبات",
+    srv_web_corp: "💻 مواقع شركات احترافية",
+    srv_ecommerce: "متاجر إلكترونية",
+    srv_landing: "صفحات Landing Page",
+    srv_web_manage: "إدارة وتحديث المواقع",
+    cat_marketing: "إدارة المحتوى والتسويق الرقمي",
+    srv_content_creation: "صناعة المحتوى",
+    srv_sm_manage: "إدارة صفحات التواصل الاجتماعي",
+    srv_copywriting: "كتابة المحتوى التسويقي",
+    srv_ads_campaigns: "الحملات الإعلانية الرقمية",
+    srv_digi_market: "التسويق الرقمي",
+    srv_branding_build: "بناء العلامة التجارية",
+    srv_pr: "العلاقات العامة والإعلام",
+    cat_business: "خدمات إدارة الأعمال والاستشارات",
+    srv_consulting: "🧠 الاستشارات الإدارية",
+    srv_proj_dev: "تطوير المشاريع",
+    srv_strat_plan: "التخطيط الاستراتيجي",
+    srv_ops_manage: "إدارة العمليات",
+    srv_team_org: "تنظيم فرق العمل",
+    cat_talents_events: "إدارة المواهب والفعاليات والخدمات الإضافية",
+    srv_influ_manage: "إدارة المؤثرين",
+    srv_artist_manage: "إدارة الفنانين",
+    srv_contracts: "تنظيم العقود والشراكات",
+    srv_personal_market: "التسويق الشخصي",
+    srv_event_conf: "📅 تنظيم المؤتمرات",
+    srv_event_exhib: "تنظيم المعارض",
+    srv_event_launch: "تنظيم حفلات الإطلاق",
+    srv_event_special: "إدارة الأحداث الخاصة",
+    srv_drone: "🚀 Drone Cinematic",
+    srv_live_stream: "بث مباشر Multi-Cam",
+    srv_rental: "تأجير معدات تصوير",
+    srv_studio: "استوديو تصوير احترافي",
+    srv_training: "تدريب في الإعلام والإنتاج",
+    srv_full_media_mng: "إدارة مشاريع إعلامية كاملة",
     company_slogan: "“نحول الأفكار إلى محتوى مؤثر ونجاح حقيقي”",
-    placeholders: {
+    placeholders: { 
       contact_name: 'الاسم الكامل', contact_email: 'البريد الإلكتروني', contact_phone: 'رقم الهاتف', 'project-details': 'تفاصيل المشروع',
-      v_fullname: 'الاسم الكامل', v_email: 'البريد الإلكتروني', v_phone: 'رقم الهاتف'
+      c_fullname: 'Nom et prénom / الاسم واللقب', c_artname: 'Nom artistique / الاسم الفني', c_birthplace: 'Lieu de naissance / مكان الميلاد',
+      c_nationality: 'Nationalité / الجنسية', c_address: 'Adresse / العنوان الحالي', c_phone: 'Téléphone / رقم الهاتف', c_email: 'E-mail / البريد الإلكتروني',
+      c_idnumber: "Numéro de pièce d'identité / رقم وثيقة الهوية", c_height: 'Taille (cm) / الطول', c_weight: 'Poids (kg) / الوزن',
+      c_eyes: 'Yeux / لون العينين', c_hair: 'Cheveux / لون الشعر', c_experience: 'Expériences précédentes / الأعمال السابقة بالتفصيل إن وجدت',
+      c_instagram: 'Instagram Profile Link', c_tiktok: 'TikTok Profile Link', v_fullname: 'الاسم الكامل', v_email: 'البريد الإلكتروني', v_phone: 'رقم الهاتف'
     }
   },
   en: {
     nav_home: 'Home', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Casting Form', nav_cv: 'Join Us', nav_privacy: 'Privacy Policy', nav_contact: 'Contact',
-    hero_desc: 'A company specializing in audiovisual production, business management, brand identity creation, and luxury digital marketing.',
+    hero_desc: 'A luxury agency specialized in audiovisual production, branding, business management and premium digital marketing.',
     btn_casting: 'Artistic Casting Form 📄', btn_contact: 'Contact Us',
-    services_title: 'Our Professional Services', services_subtitle: 'Integrated solutions in audiovisual production, marketing, brand management, and premium content creation.',
-    s1_title: 'Audiovisual Production', s1_desc: 'Cinematic shooting, directing, commercials, promotional videos, music clips, and short films with global standards.',
-    s2_title: 'Professional Photography', s2_desc: 'High-end photography sessions for individuals, corporations, products, and celebrities in a luxurious style.',
-    s3_title: 'Editing & Motion Graphics', s3_desc: 'Cinematic editing, visual effects, advanced motion graphics, and high-fidelity color grading.',
-    s4_title: 'Brand Management', s4_desc: 'Building comprehensive brand identities, market position strategies, and corporate management.',
-    s5_title: 'Digital Marketing', s5_desc: 'Targeted advertisement campaigns, social media management, and professional client acquisition.',
-    s6_title: 'Events Organization', s6_desc: 'Organizing major conferences, luxury galas, commercial exhibitions, and grand media coverages.',
-    portfolio_title: 'Our Projects', portfolio_subtitle: 'Samples of our recent masterpieces. Click on any card to view the case study.',
-    tab_all: 'All Works', tab_branding: 'Branding', view_work: 'View Work 👁️',
-    team_title: 'Corporate Hierarchy Structure', team_desc: 'The official administrative and organizational chart of Golden Star Management',
-    modal_close: 'Close', modal_request: 'Request This Service Now ←',
-    casting_title: "INFORMATION SHEET",
-    casting_subtitle: 'Artistic casting registration for models, actors, and influencers. Please fill out step-by-step.',
+    services_title: 'Our Professional Services', services_subtitle: 'Integrated solutions in audiovisual production, marketing, brand management and premium content creation.',
+    s1_title: 'Audiovisual Production', s1_desc: 'Cinematography, directing, commercials, music videos and short films with international standards.',
+    s2_title: 'Professional Photography', s2_desc: 'High-end photography sessions for individuals, corporations, products and celebrities.',
+    s3_title: 'Editing & Motion Graphics', s3_desc: 'Cinematic editing, visual effects, high-end motion graphics and professional color grading.',
+    s4_title: 'Brand Management', s4_desc: 'Building comprehensive visual identities, innovative marketing strategies and professional branding.',
+    s5_title: 'Digital Marketing', s5_desc: 'Targeted ad campaigns, social media management and high-conversion client acquisition.',
+    s6_title: 'Event Management', s6_desc: 'Organizing grand conferences, elite parties, commercial exhibitions and luxury media coverage.',
+    portfolio_title: 'Our Portfolio', portfolio_subtitle: 'Showcase of our latest premium projects. Click on any card to view the complete case study.',
+    tab_all: 'All Works', tab_branding: 'Branding', view_work: 'View Project 👁️',
+    team_title: 'Company Structure', team_desc: 'The official administrative and organizational blueprint for Golden Star Management.',
+    modal_close: 'Close', modal_request: 'Request Service Now ←',
+    casting_title: "FICHE D'INFORMATIONS",
+    casting_subtitle: 'Artistic registration form for models, actors, and influencers - Please complete step-by-step.',
     step1_header: '1. Personal Information',
-    step2_header: '2. Physical Profile',
-    step2_sub: 'Target Profession:',
-    step3_header: '3. Skills & Networks',
-    step4_header: '4. Compulsory Photographs',
-    img_portrait_hint: 'Recent, clear, and close-up face portrait.',
-    img_full_hint: 'Full-body standing shot in high resolution.',
-    img_id_hint: 'Clear copy of ID card or international passport.',
-    casting_agreement: 'I confirm the accuracy of the provided data and authorize Golden Star to evaluate it for casting.',
-    btn_submit_casting: '✓ Submit Casting Profile 🚀',
-    step_prev: 'Previous', step_next: 'Next ←',
-    cv_title: 'Join Our Creative Elite', cv_subtitle: 'Select the departments and professional roles you wish to assume at Golden Star.',
-    cv_select_title: 'Choose matching specializations (Multiple selections allowed):',
+    step2_header: '2. Physical Profile & Measurements',
+    step2_sub: 'Profession / Desired Field:',
+    step3_header: '3. Competences & Links',
+    step4_header: '4. Obligatory Attachments & Photos',
+    img_portrait_hint: 'Recent, clear close-up portrait image of the face',
+    img_full_hint: 'Full-body standing image with excellent resolution',
+    img_id_hint: 'Clear copy of National ID card or Passport',
+    casting_agreement: "I confirm the accuracy of the information provided and authorize Golden Star to use my data for casting.",
+    btn_submit_casting: '✓ ENVOYER LA FICHE / SEND CASTING FORM',
+    step_prev: 'Previous', step_next: 'Next →',
+    cv_title: 'Join Our Team', cv_subtitle: 'Select the creative fields you want to join within the GOLDEN STAR MANAGEMENT team.',
+    cv_select_title: 'Choose the specialties that suit you (You can select more than one):',
     role_marketing_manager: '📱 Digital Marketing Manager',
-    role_content_creator: '✍️ Content Creator & Copywriter',
+    role_content_creator: '✍️ Content Creator',
     role_community_manager: '🤝 Community Manager',
     role_business_management: '📈 Business Management & Consulting',
-    role_cameraman: '📹 Cinematic Cameraman & Director',
+    role_cameraman: '📹 Cinematography & Directing',
     role_drone_pilot: '🚀 Cinematic Drone Pilot',
-    role_video_editor: '🎬 Video Editor & Colorist',
-    role_motion_designer: '🎨 Motion Designer & VFX Artist',
-    btn_send_cv: '🚀 Submit Application',
+    role_video_editor: '🎬 Video Editing',
+    role_motion_designer: '🎨 Motion Graphics & VFX',
+    btn_send_cv: '🚀 Send Application',
     privacy_title: 'Privacy Policy',
-    privacy_subtitle: 'We are committed to securing your data and ensuring complete confidentiality for all applicants.',
-    p_sec1_title: '1. Data Collection', p_sec1_desc: 'We securely collect personal data voluntarily submitted through casting and job recruitment forms.',
-    p_sec2_title: '2. Data Usage', p_sec2_desc: 'Information is exclusively utilized to evaluate career opportunities within Golden Star Management.',
-    p_sec3_title: '3. Data Security', p_sec3_desc: 'Strict military-grade encryption standards are applied to shield your files from unauthorized access.',
-    p_sec4_title: '4. Third-Party Sharing', p_sec4_desc: 'We strictly guarantee never to sell, distribute, or lease your personal credentials to external bodies.',
-    contact_title: 'Contact Us', contact_subtitle: 'Ready to morph your abstract vision into an exceptional reality.',
-    btn_send_project: 'Send Inquiry', ad_badge: 'OFFER / NEWS',
-    ad_title: 'Hiring: Digital Marketing Manager',
-    ad_desc: 'Join our exceptional creative team now! Open vacancies for professionals with special premium discounts.',
-    ad_btn: 'Apply Now ←', ad_click_hint: 'Zoom 🔍',
-    section_ad_title: 'Exclusive Offer: Comprehensive Brand Identity Package',
-    section_ad_desc: 'Enjoy a 20% discount on branding and social management for the first 5 corporate orders this month.',
-    section_ad_btn: 'Claim Offer Now ←', select_services_title: "Select requested services (Multiple choice allowed):",
-    company_slogan: "“We turn ideas into impactful content and true success”",
+    privacy_subtitle: 'We are fully committed to protecting your personal data and ensuring strict confidentiality.',
+    p_sec1_title: '1. Information Collection',
+    p_sec1_desc: 'We collect personal data you voluntarily provide through the casting or team recruitment forms, including name, phone number, and ID copies.',
+    p_sec2_title: '2. Data Usage',
+    p_sec2_desc: 'This data is used exclusively to evaluate submissions and contact you regarding dynamic career opportunities at Golden Star.',
+    p_sec3_title: '3. Security Standards',
+    p_sec3_desc: 'We apply premium encryption methods to protect files against unauthorized access, hacking, or disclosure.',
+    p_sec4_title: '4. Third Party Policy',
+    p_sec4_desc: 'We strictly guarantee never to sell, lease, or share your data with any external commercial parties without your full consent.',
+    contact_title: 'Contact Us', contact_subtitle: 'Ready to turn your sublime idea into a historic project.',
+    btn_send_project: 'Send Inquiry',
+    ad_badge: 'OFFER / NEWS',
+    ad_title: 'Job Opening: Digital Marketing Manager',
+    ad_desc: 'Join our elite team now! Brand strategy offers available for the first 5 businesses this month.',
+    ad_btn: 'Apply Now ←',
+    ad_click_hint: 'Click to Zoom 🔍',
+    section_ad_title: 'Exclusive Offer: Visual Identity Package',
+    section_ad_desc: 'Get a 20% discount on total brand identity development and full social media management this week.',
+    section_ad_btn: 'Claim Your Offer Now ←',
+    select_services_title: "Select required services (Multiple selections allowed):",
+    cat_audiovisual: "Audiovisual Production Services",
+    srv_vid_shoot: "📹 Professional Video Shooting",
+    srv_ads: "Commercial Advertising Production",
+    srv_clips: "Artistic Music Videos",
+    srv_corporate: "Corporate Corporate Content",
+    srv_events: "Events & Conventions Capture",
+    srv_weddings: "Premium Weddings & Galas",
+    srv_sm_content: "Viral Social Media Shoots",
+    cat_production: "TV & Shows Production",
+    srv_tv: "Broadcasting TV Shows",
+    srv_docs: "Elite Documentaries",
+    srv_podcast: "Visual Podcasts Creation",
+    srv_reality: "Reality Show Formats",
+    srv_digital_prod: "Dynamic Digital Content",
+    cat_postproduction: "Post-Production & Editing",
+    srv_editing: "Cinematic Editing",
+    srv_color: "Luxury Color Grading",
+    srv_vfx: "Visual Effects (VFX)",
+    srv_motion: "Motion Graphics Design",
+    srv_intro_outro: "Intro & Outro Engineering",
+    srv_audio_clean: "Sound Enhancement & Cleanup",
+    cat_audio_photo: "Audio Engineering & Photography",
+    srv_vo: "Voice Over Recording",
+    srv_dubbing: "Dubbing & Commentary",
+    srv_audio_eng: "High-End Audio Mix",
+    srv_music_prod: "Audio Commercials & Beats",
+    srv_photo_products: "📸 Premium Products Shoot",
+    srv_photo_fashion: "High-Fashion Editorial",
+    srv_photo_estate: "Luxury Real Estate Media",
+    srv_photo_sessions: "Creative Portraits Sessions",
+    srv_photo_ads: "Advertising Creative Photography",
+    cat_design_web: "Design & High-Tech Web Dev",
+    srv_logo: "🖌️ Conceptual Logo Design",
+    srv_brand_identity: "Complete Brand Ecosystem",
+    srv_posters: "Premium Posters Design",
+    srv_sm_graphics: "Social Media Layouts",
+    srv_brochures: "Editorial Brochures & Lookbooks",
+    srv_web_corp: "💻 Advanced Corporate Websites",
+    srv_ecommerce: "High-Conversion E-commerce Stores",
+    srv_landing: "Optimized Landing Pages",
+    srv_web_manage: "Full Web Administration",
+    cat_marketing: "Content Curation & Marketing",
+    srv_content_creation: "Content Strategy & Creation",
+    srv_sm_manage: "Full Social Channels Management",
+    srv_copywriting: "Persuasive Marketing Copy",
+    srv_ads_campaigns: "Paid Acquisition Campaigns",
+    srv_digi_market: "Digital Marketing Frameworks",
+    srv_branding_build: "Premium Brand Equity",
+    srv_pr: "Public Relations & High Media",
+    cat_business: "Business Management & Consulting",
+    srv_consulting: "🧠 Elite Corporate Advisory",
+    srv_proj_dev: "Enterprise Project Growth",
+    srv_strat_plan: "Macro Strategic Planning",
+    srv_ops_manage: "Agile Operations Architecture",
+    srv_team_org: "High-Performance Team Setup",
+    cat_talents_events: "Talents Frameworks & Elite Events",
+    srv_influ_manage: "Influencer Talent Curation",
+    srv_artist_manage: "Artists Representation",
+    srv_contracts: "Legal Deals & Partnerships",
+    srv_personal_market: "Personal Executive Branding",
+    srv_event_conf: "📅 High-End Conventions Setup",
+    srv_event_exhib: "Commercial Exhibitions",
+    srv_event_launch: "Premium Launch Events",
+    srv_event_special: "Bespoke VIP Events",
+    srv_drone: "🚀 High-Speed Cinematic Drone",
+    srv_live_stream: "Multi-Cam Live Broadcast",
+    srv_rental: "High-End Gear Rental",
+    srv_studio: "Fully Equipped Photo Studio",
+    srv_training: "Media Masterclass Training",
+    srv_full_media_mng: "Full Scale Media Project Management",
+    company_slogan: "“We turn abstract visions into impactful reality”",
     placeholders: {
-      contact_name: 'Full Name', contact_email: 'Email Address', contact_phone: 'Phone Number', 'project-details': 'Project Details',
-      v_fullname: 'Full Name', v_email: 'Email Address', v_phone: 'Phone Number'
+      contact_name: 'Full Name', contact_email: 'Email Address', contact_phone: 'Phone Number', 'project-details': 'Project details and scope...',
+      c_fullname: 'Full Name (Legal)', c_artname: 'Artistic / Screen Name', c_birthplace: 'Place of Birth',
+      c_nationality: 'Current Nationality', c_address: 'Current Residential Address', c_phone: 'Mobile Number', c_email: 'Email Address',
+      c_idnumber: 'ID Card or Passport Number', c_height: 'Height (cm)', c_weight: 'Weight (kg)',
+      c_eyes: 'Eyes Color', c_hair: 'Hair Color', c_experience: 'Briefly describe your past artistic experiences...',
+      c_instagram: 'Instagram Profile Link', c_tiktok: 'TikTok Profile Link', v_fullname: 'Full Name', v_email: 'Email Address', v_phone: 'Phone Number'
     }
   },
   fr: {
-    nav_home: 'Accueil', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Casting', nav_cv: 'Rejoignez-nous', nav_privacy: 'Confidentialité', nav_contact: 'Contact',
-    hero_desc: 'Entreprise spécialisée en production audiovisuelle, gestion des affaires, création d’identité de marque et marketing digital de luxe.',
-    btn_casting: "Fiche d'Inscription Casting 📄", btn_contact: 'Contactez-nous',
-    services_title: 'Nos Services Professionnels', services_subtitle: 'Des solutions intégrées en audiovisuel, marketing, stratégie de marque et création de contenu premium.',
-    s1_title: 'Production Audiovisuelle', s1_desc: 'Tournage cinématographique, réalisation, spots publicitaires, vidéos d’entreprise et clips musicaux.',
-    s2_title: 'Photographie Professionnelle', s2_desc: 'Séances photo haut de gamme pour particuliers, marques, produits et célébrités.',
-    s3_title: 'Montage & Motion Design', s3_desc: 'Montage de films, effets visuels (VFX), motion graphics et étalonnage couleur expert.',
-    s4_title: 'Gestion de Marque', s4_desc: 'Construction d’identités visuelles complètes, stratégie de marque et de positionnement.',
-    s5_title: 'Marketing Digital', s5_desc: 'Campagnes publicitaires ciblées, gestion des réseaux sociaux et acquisition de clients.',
-    s6_title: 'Organisation d’Événements', s6_desc: 'Planification de conférences majeures, galas de luxe, salons commerciaux et couvertures médiatiques.',
-    portfolio_title: 'Nos Réalisations', portfolio_subtitle: 'Échantillons de nos derniers chefs-d’œuvre. Cliquez pour explorer.',
-    tab_all: 'Tous les Travaux', tab_branding: 'Branding', view_work: 'Voir le Projet 👁️',
-    team_title: 'Structure Organisationnelle', team_desc: 'Le schéma administratif et organisationnel officiel de Golden Star Management',
+    nav_home: 'Accueil', nav_services: 'Services', nav_portfolio: 'Portfolio', nav_casting: 'Casting', nav_cv: 'Nous Rejoindre', nav_privacy: 'Confidentialité', nav_contact: 'Contact',
+    hero_desc: 'Une agence haut de gamme spécialisée en production audiovisuelle, branding, gestion d’affaires et marketing digital de luxe.',
+    btn_casting: 'Fiche d\'Inscription Artistique 📄', btn_contact: 'Contactez-nous',
+    services_title: 'Nos Services Professionnels', services_subtitle: 'Des solutions intégrées pour la production audiovisuelle, le marketing de prestige et le brand management.',
+    s1_title: 'Production Audiovisuelle', s1_desc: 'Cinéma, réalisation, spots publicitaires, clips vidéo et courts-métrages aux normes mondiales.',
+    s2_title: 'Photographie Pro', s2_desc: 'Sessions de shooting photo haut de gamme pour particuliers, marques, et célébrités.',
+    s3_title: 'Montage & Motion Graphics', s3_desc: 'Montage cinéma, effets visuels avancés (VFX), motion design et étalonnage professionnel.',
+    s4_title: 'Brand Management', s4_desc: 'Création d’identités visuelles prestigieuses et stratégies innovantes de positionnement de marque.',
+    s5_title: 'Marketing Digital', s5_desc: 'Campagnes publicitaires ultra-ciblées, gestion de réseaux et acquisition de clients.',
+    s6_title: 'Gestion d\'Événements', s6_desc: 'Organisation de grandes conférences, lancements de produits d’élite et relations presse.',
+    portfolio_title: 'Notre Portfolio', portfolio_subtitle: 'Aperçu de nos projets de luxe récents. Cliquez pour explorer l\'étude de cas.',
+    tab_all: 'Tous les Projets', tab_branding: 'Branding', view_work: 'Voir le Projet 👁️',
+    team_title: 'Structure Organisationnelle', team_desc: 'L\'organigramme administratif et de gestion officiel de Golden Star Management.',
     modal_close: 'Fermer', modal_request: 'Demander ce service ←',
     casting_title: "FICHE D'INFORMATIONS",
-    casting_subtitle: 'Formulaire de casting artistique pour mannequins, acteurs et influenceurs. Remplissez étape par étape.',
+    casting_subtitle: 'Formulaire de casting pour mannequins, acteurs et influenceurs. Veuillez remplir étape par étape.',
     step1_header: '1. Informations Personnelles',
-    step2_header: '2. Profil Physique',
-    step2_sub: 'Métier Artistique Souhaité:',
+    step2_header: '2. Profil Physique & Mensurations',
+    step2_sub: 'Profession / Spécialisation demandée:',
     step3_header: '3. Compétences & Réseaux',
-    step4_header: '4. Photos Obligatoires',
-    img_portrait_hint: 'Photo portrait récente, claire et de face.',
-    img_full_hint: 'Photo plein pied en haute résolution.',
-    img_id_hint: 'Copie nette de la pièce d’identité ou du passeport.',
-    casting_agreement: 'Je confirme l’exactitude des données et j’autorise Golden Star à traiter ma fiche de casting.',
-    btn_submit_casting: '✓ Envoyer la Fiche 🚀',
+    step4_header: '4. Pièces Jointes Obligatoires',
+    img_portrait_hint: 'Photo portrait récente, nette et cadrée sur le visage',
+    img_full_hint: 'Photo plein pied debout en haute résolution',
+    img_id_hint: 'Copie lisible de la carte d\'identité ou Passeport',
+    casting_agreement: "Je certifie l'exactitude des informations et j'autorise Golden Star à traiter mes données pour le casting.",
+    btn_submit_casting: '✓ ENVOYER LA FICHE DE CANDIDATURE 🚀',
     step_prev: 'Précédent', step_next: 'Suivant ←',
-    cv_title: 'Rejoindre Notre Équipe', cv_subtitle: 'Sélectionnez les départements et les rôles professionnels que vous souhaitez occuper.',
-    cv_select_title: 'Choisissez vos spécialisations (Plusieurs choix possibles) :',
+    cv_title: 'Rejoindre Notre Équipe', cv_subtitle: 'Sélectionnez vos domaines d’expertise pour intégrer l’équipe créative de GOLDEN STAR.',
+    cv_select_title: 'Choisissez vos spécialités (Plusieurs choix possibles) :',
     role_marketing_manager: '📱 Responsable Marketing Digital',
-    role_content_creator: '✍️ Créateur de Contenu & Rédacteur',
+    role_content_creator: '✍️ Créateur de Contenu / Concepteur-Rédacteur',
     role_community_manager: '🤝 Community Manager',
-    role_business_management: '📈 Management des Affaires & Conseil',
-    role_cameraman: '📹 Cadreur Cinématographique & Réalisateur',
-    role_drone_pilot: '🚀 Pilote de Drone Cinématographique',
-    role_video_editor: '🎬 Monteur Vidéo & Coloriste',
-    role_motion_designer: '🎨 Motion Designer & Artiste VFX',
-    btn_send_cv: '🚀 Envoyer la Demande',
+    role_business_management: '📈 Management d’Affaires & Consulting',
+    role_cameraman: '📹 Cadrage Cinématographique & Réalisation',
+    role_drone_pilot: '🚀 Pilote de Drone Cinéma',
+    role_video_editor: '🎬 Montage Vidéo & Post-Production',
+    role_motion_designer: '🎨 Motion Designer & Effets Visuels (VFX)',
+    btn_send_cv: '🚀 Envoyer Ma Demande',
     privacy_title: 'Politique de Confidentialité',
-    privacy_subtitle: 'Nous nous engageons à sécuriser vos données et à garantir une confidentialité absolue pour chaque candidat.',
-    p_sec1_title: '1. Collecte des Données', p_sec1_desc: 'Nous collectons de manière sécurisée les données personnelles soumises via les formulaires de casting et de recrutement.',
-    p_sec2_title: '2. Utilisation des Données', p_sec2_desc: 'Les données sont exclusivement utilisées pour évaluer les opportunités de carrière chez Golden Star Management.',
-    p_sec3_title: '3. Protection des Données', p_sec3_desc: 'Des protocoles de sécurité stricts sont appliqués pour protéger vos fichiers contre tout accès non autorisé.',
-    p_sec4_title: '4. Partage Tiers', p_sec4_desc: 'Nous garantissons ne jamais vendre ou louer vos informations à des organismes externes.',
-    contact_title: 'Contactez-nous', contact_subtitle: 'Prêts à transformer votre vision en une réalité exceptionnelle.',
-    btn_send_project: 'Envoyer la Demande', ad_badge: 'OFFRE / NEWS',
-    ad_title: 'Recrutement: Digital Marketing Manager',
-    ad_desc: 'Rejoignez notre équipe créative dès maintenant! Postes ouverts pour les professionnels.',
-    ad_btn: 'Postuler Maintenant ←', ad_click_hint: 'Zoom 🔍',
-    section_ad_title: 'Offre Exclusive: Pack d’Identité Visuelle Complète',
-    section_ad_desc: 'Bénéficiez de 20% de réduction sur le branding pour les 5 premières commandes d’entreprises ce mois-ci.',
-    section_ad_btn: 'Profiter de l’Offre ←', select_services_title: "Sélectionnez les services demandés (Plusieurs choix possibles) :",
-    company_slogan: "“Nous transformons les idées en contenu percutant et en véritable succès”",
+    privacy_subtitle: 'Nous nous engageons de manière absolue à protéger la confidentialité de vos données et fichiers.',
+    p_sec1_title: '1. Collecte des Données',
+    p_sec1_desc: 'Nous collectons les données fournies volontairement via les formulaires (nom, coordonnées, photos, pièce d’identité).',
+    p_sec2_title: '2. Utilisation des Données',
+    p_sec2_desc: 'Ces données sont utilisées uniquement pour évaluer vos profils et vous proposer des opportunités concrètes au sein de l’agence.',
+    p_sec3_title: '3. Mesures de Sécurité',
+    p_sec3_desc: 'Nous utilisons des protocoles de chiffrement pour sécuriser l’acheminement de vos données et fichiers sensibles.',
+    p_sec4_title: '4. Partage Tiers',
+    p_sec4_desc: 'Aucune donnée n’est vendue, louée ou cédée à des entités tierces commerciales à votre insu.',
+    contact_title: 'Contactez-nous', contact_subtitle: 'Prêts à transformer vos concepts en un succès d’envergure.',
+    btn_send_project: 'Envoyer la Demande',
+    ad_badge: 'OFFRE / ANNONCE',
+    ad_title: 'Recrutement: Responsable Marketing Digital',
+    ad_desc: 'Rejoignez notre équipe d’élite! Des offres branding exclusives pour les 5 premières entreprises ce mois-ci.',
+    ad_btn: 'Postuler Maintenant ←',
+    ad_click_hint: 'Cliquer pour Agrandir 🔍',
+    section_ad_title: 'Offre Exclusive: Pack Identité Visuelle Premium',
+    section_ad_desc: 'Bénéficiez de 20% de réduction immédiate sur la création complète d’image de marque et gestion des réseaux.',
+    section_ad_btn: 'Profiter de l\'Offre Maintenant ←',
+    select_services_title: "Sélectionnez les services requis (Plusieurs choix possibles) :",
+    cat_audiovisual: "Services de Production Audiovisuelle",
+    srv_vid_shoot: "📹 Tournage Vidéo Professionnel",
+    srv_ads: "Production de Publicités Commerciales",
+    srv_clips: "Clips Vidéo Artistiques",
+    srv_corporate: "Vidéos Institutionnelles & Corporate",
+    srv_events: "Couverture de Conférences & Événements",
+    srv_weddings: "Mariages & Événements Privés Prestige",
+    srv_sm_content: "Création de Contenu Réseaux Sociaux",
+    cat_production: "Production de Programmes TV & Films",
+    srv_tv: "Production d'Émissions Télévisées",
+    srv_docs: "Documentaires de Prestige",
+    srv_podcast: "Production de Podcasts Visuels",
+    srv_reality: "Formats de Téléréalité",
+    srv_digital_prod: "Production de Contenus Digitaux",
+    cat_postproduction: "Post-Production & Montage",
+    srv_editing: "Montage Vidéo Cinématographique",
+    srv_color: "Étalonnage Couleur Haut de Gamme",
+    srv_vfx: "Effets Spéciaux (VFX)",
+    srv_motion: "Design de Motion Graphics",
+    srv_intro_outro: "Création d'Intros & Outros",
+    srv_audio_clean: "Nettoyage & Optimisation Audio",
+    cat_audio_photo: "Ingénierie Audio & Photographie",
+    srv_vo: "Enregistrement de Voix Off",
+    srv_dubbing: "Doublage & Commentaires Audio",
+    srv_audio_eng: "Mixage & Ingénierie Sonore",
+    srv_music_prod: "Production Musicale & Spots Radio",
+    srv_photo_products: "📸 Shooting Photo Produits / Packshot",
+    srv_photo_fashion: "Photographie Éditoriale & Mode",
+    srv_photo_estate: "Immobilier de Luxe & Architecture",
+    srv_photo_sessions: "Sessions Portraits Professionnels",
+    srv_photo_ads: "Photographie Créative Publicitaire",
+    cat_design_web: "Design & Développement Web",
+    srv_logo: "🖌️ Création de Logos Conceptuels",
+    srv_brand_identity: "Identité de Marque Complète",
+    srv_posters: "Conception d'Affiches & Visuals",
+    srv_sm_graphics: "Graphismes pour Réseaux Sociaux",
+    srv_brochures: "Design de Brochures & Catalogues",
+    srv_web_corp: "💻 Sites Web Institutionnels Premium",
+    srv_ecommerce: "Boutiques E-commerce Optimisées",
+    srv_landing: "Création de Landing Pages",
+    srv_web_manage: "Gestion & Maintenance de Sites",
+    cat_marketing: "Stratégie de Contenu & Marketing",
+    srv_content_creation: "Création & Curation de Contenus",
+    srv_sm_manage: "Gestion Intégrale des Réseaux Sociaux",
+    srv_copywriting: "Rédaction Publicitaire / Copywriting",
+    srv_ads_campaigns: "Gestion de Campagnes Ads Payantes",
+    srv_digi_market: "Stratégies Marketing Digital",
+    srv_branding_build: "Développement du Capital Marque",
+    srv_pr: "Relations Publiques & Stratégie Média",
+    cat_business: "Management d'Affaires & Consulting",
+    srv_consulting: "🧠 Conseil en Gestion & Stratégie",
+    srv_proj_dev: "Développement de Projets d'Entreprise",
+    srv_strat_plan: "Planification Stratégique Globale",
+    srv_ops_manage: "Architecture des Opérations Agiles",
+    srv_team_org: "Organisation d'Équipes Haute Performance",
+    cat_talents_events: "Management de Talents & Événements",
+    srv_influ_manage: "Management d'Influenceurs",
+    srv_artist_manage: "Représentation d'Artistes",
+    srv_contracts: "Négociation de Contrats & Partenariats",
+    srv_personal_market: "Branding Personnel de Dirigeants",
+    srv_event_conf: "📅 Organisation de Congrès & Séminaires",
+    srv_event_exhib: "Foires & Expositions Commerciales",
+    srv_event_launch: "Soirées de Lancement de Prestige",
+    srv_event_special: "Gestion d'Événements VIP Sur Mesure",
+    srv_drone: "🚀 Prises de Vue Drone Cinématographique",
+    srv_live_stream: "Diffusion en Direct Multi-Caméras",
+    srv_rental: "Location de Matériel Audiovisuel Pro",
+    srv_studio: "Studio Photo Entièrement Équipé",
+    srv_training: "Masterclass & Formations Médias",
+    srv_full_media_mng: "Gestion de Projets Médias d'Envergure",
+    company_slogan: "“Nous transformons les visions abstraites en succès concrets”",
     placeholders: {
-      contact_name: 'Nom Complet', contact_email: 'Adresse E-mail', contact_phone: 'Numéro de Téléphone', 'project-details': 'Détails du Projet',
-      v_fullname: 'Nom Complet', v_email: 'Adresse E-mail', v_phone: 'Numéro de Téléphone'
+      contact_name: 'Nom Complet', contact_email: 'Adresse E-mail', contact_phone: 'Numéro de Téléphone', 'project-details': 'Détails et envergure du projet...',
+      c_fullname: 'Nom et Prénom (Légal)', c_artname: 'Nom d’Artiste / Pseudonyme', c_birthplace: 'Lieu de Naissance',
+      c_nationality: 'Nationalité Actuelle', c_address: 'Adresse Résidentielle Actuelle', c_phone: 'Numéro de Téléphone', c_email: 'Adresse E-mail',
+      c_idnumber: 'Numéro de Carte d’Identité ou Passeport', c_height: 'Taille (cm)', c_weight: 'Poids (kg)',
+      c_eyes: 'Couleur des Yeux', c_hair: 'Couleur des Cheveux', c_experience: 'Décrivez brièvement vos expériences artistiques passées...',
+      c_instagram: 'Lien du Profil Instagram', c_tiktok: 'Lien du Profil TikTok', v_fullname: 'Nom Complet', v_email: 'Adresse E-mail', v_phone: 'Numéro de Téléphone'
     }
   }
 };
 
-// دالة الترجمة المتكاملة وإصلاح اتجاهات الصفحة التلقائية
 function changeLanguage(lang) {
-  const translations = dictionary[lang];
-  if (!translations) return;
+  const elements = document.querySelectorAll('[data-i18n]');
+  const currentDict = dictionary[lang];
+  if(!currentDict) return;
 
-  // تحديث النصوص العادية التي تحتوي على معرف i18n
-  document.querySelectorAll('[data-i18n]').forEach(element => {
-    const key = element.getAttribute('data-i18n');
-    if (translations[key]) {
-      element.innerHTML = translations[key];
+  // تغيير اتجاه الموقع حسب اللغة لضمان تجربة مستخدم مثالية لغوياً ونقلياً
+  if (lang === 'ar') {
+    document.documentElement.dir = 'rtl';
+    document.documentElement.lang = 'ar';
+  } else {
+    document.documentElement.dir = 'ltr';
+    document.documentElement.lang = lang;
+  }
+
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (currentDict[key]) {
+      el.innerText = currentDict[key];
     }
   });
 
-  // تحديث النصوص البديلة Placeholders في الحقول
-  if (translations.placeholders) {
-    for (const id in translations.placeholders) {
-      const inputElement = document.getElementById(id);
-      if (inputElement) {
-        inputElement.setAttribute('placeholder', translations.placeholders[id]);
-      }
+  // تحديث نصوص الـ Placeholders وعناصر الإدخال التفاعلية
+  for (const id in currentDict.placeholders) {
+    const inputEl = document.getElementById(id);
+    if (inputEl && currentDict.placeholders[id] !== "") {
+      inputEl.setAttribute('placeholder', currentDict.placeholders[id]);
     }
-  }
-
-  // ضبط اتجاه الصفحة تلقائياً وفقاً للغة المختارة
-  const htmlTag = document.documentElement;
-  if (lang === 'ar') {
-    htmlTag.setAttribute('dir', 'rtl');
-    htmlTag.setAttribute('lang', 'ar');
-    document.body.classList.remove('dir-ltr');
-    document.body.classList.add('dir-rtl');
-  } else {
-    htmlTag.setAttribute('dir', 'ltr');
-    htmlTag.setAttribute('lang', lang);
-    document.body.classList.remove('dir-rtl');
-    document.body.classList.add('dir-ltr');
   }
 }
 
-// دالة تحويل المظهر (الوضع الليلي / المضيء)
+// نظام تبديل الثيم الكامل (Dark / Light) بربط سلس ومحمي
 function toggleTheme() {
   const body = document.body;
   const btn = document.getElementById('theme-btn');
@@ -1391,6 +1626,5 @@ function toggleTheme() {
   }
 }
 </script>
-
 </body>
 </html>
