@@ -350,7 +350,8 @@
       border-color: #c9983d;
       background: rgba(201, 152, 61, 0.05);
     }
-    .light-theme .service-checkbox-label {
+    .
+    light-theme .service-checkbox-label {
       background: #f9fafb;
       border-color: rgba(0,0,0,0.08);
     }
@@ -360,19 +361,20 @@
     }
   </style>
 </head>
-<body>
-<button onclick="toggleSidebar()" style="position: fixed; top: 20px; right: 20px; z-index: 9999; background-color: #c9983d; color: black; font-weight: bold; padding: 12px 16px; border: none; border-radius: 9999px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+<button onclick="toggleSidebar()" data-i18n="nav_menu" style="position: absolute; top: 20px; left: 20px; z-index: 9999; background-color: #c9983d; color: black; font-weight: bold; padding: 10px 16px; border: none; border-radius: 9999px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
     ☰ القائمة
 </button>
 
-<div id="mySidebar" style="display: none; position: fixed; top: 0; right: 0; height: 100%; width: 260px; background-color: #111111; z-index: 9998; border-left: 2px solid rgba(201, 152, 61, 0.2); padding-top: 80px; box-shadow: -5px 0 25px rgba(0,0,0,0.5);">
-    <div style="display: flex; flex-direction: column; gap: 15px; padding: 0 25px; text-align: right;">
-        <a href="#home" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">🏠 الرئيسية</a>
-        <a href="#projects" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">📁 مشاريعنا</a>
-        <a href="#marketing" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">📊 التسويق الرقمي</a>
-        <a href="#about" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">✨ من نحن</a>
-        <a href="#contact" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">📞 اتصل بنا</a>
+<div id="mySidebar" style="display: none; position: fixed; top: 0; left: 0; height: 100%; width: 260px; background-color: #111111; z-index: 9998; border-right: 2px solid rgba(201, 152, 61, 0.2); padding-top: 80px; box-shadow: 5px 0 25px rgba(0,0,0,0.5);">
+    <div style="display: flex; flex-direction: column; gap: 15px; padding: 0 25px; text-align: left;">
+        <a href="#home" data-i18n="nav_home" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">🏠 الرئيسية</a>
+        <a href="#projects" data-i18n="nav_projects" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">📁 مشاريعنا</a>
+        <a href="#marketing" data-i18n="nav_marketing" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">📊 التسويق الرقمي</a>
+        <a href="#about" data-i18n="nav_about" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">✨ من نحن</a>
+        <a href="#contact" data-i18n="nav_contact" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">📞 اتصل بنا</a>
     </div>
+</div>
+  
 </div>
 
 <div id="loader">
@@ -1531,26 +1533,6 @@ const dictionary = {
     cat_postproduction: "Post-Production & Montage",
     srv_editing: "Montage Vidéo Cinématographique",
     srv_color: "Étalonnage Couleur Haut de Gamme",
-    srv_vfx: "Effets Spéciaux (VFX)",
-    srv_motion: "Design de Motion Graphics",
-    srv_intro_outro: "Création d'Intros & Outros",
-    srv_audio_clean: "Nettoyage & Optimisation Audio",
-    cat_audio_photo: "Ingénierie Audio & Photographie",
-    srv_vo: "Enregistrement de Voix Off",
-    srv_dubbing: "Doublage & Commentaires Audio",
-    srv_audio_eng: "Mixage & Ingénierie Sonore",
-    srv_music_prod: "Production Musicale & Spots Radio",
-    srv_photo_products: "📸 Shooting Photo Produits / Packshot",
-    srv_photo_fashion: "Photographie Éditoriale & Mode",
-    srv_photo_estate: "Immobilier de Luxe & Architecture",
-    srv_photo_sessions: "Sessions Portraits Professionnels",
-    srv_photo_ads: "Photographie Créative Publicitaire",
-    cat_design_web: "Design & Développement Web",
-    srv_logo: "🖌️ Création de Logos Conceptuels",
-    srv_brand_identity: "Identité de Marque Complète",
-    srv_posters: "Conception d'Affiches & Visuals",
-    srv_sm_graphics: "Graphismes pour Réseaux Sociaux",
-    srv_brochures: "Design de Brochures & Catalogues",
     srv_web_corp: "💻 Sites Web Institutionnels Premium",
     srv_ecommerce: "Boutiques E-commerce Optimisées",
     srv_landing: "Création de Landing Pages",
@@ -1595,42 +1577,82 @@ const dictionary = {
     }
   }
 };
-
 function changeLanguage(lang) {
-  const elements = document.querySelectorAll('[data-i18n]');
-  const currentDict = dictionary[lang];
-  if(!currentDict) return;
-
-  // تغيير اتجاه الموقع حسب اللغة لضمان تجربة مستخدم مثالية لغوياً ونقلياً
-  if (lang === 'ar') {
-    document.documentElement.dir = 'rtl';
-    document.documentElement.lang = 'ar';
-  } else {
-    document.documentElement.dir = 'ltr';
-    document.documentElement.lang = lang;
-  }
-
-  elements.forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (currentDict[key]) {
-      el.innerText = currentDict[key];
+    // حقن تراجم القائمة الجانبية داخل القاموس قبل بدء عملية الترجمة ليتعرف عليها الموقع فوراً
+    if (typeof dictionary !== 'undefined') {
+        if (dictionary.ar) {
+            dictionary.ar.nav_menu = "☰ القائمة";
+            dictionary.ar.nav_home = "🏠 الرئيسية";
+            dictionary.ar.nav_projects = "📁 مشاريعنا";
+            dictionary.ar.nav_marketing = "📊 التسويق الرقمي";
+            dictionary.ar.nav_about = "✨ من نحن";
+            dictionary.ar.nav_contact = "📞 اتصل بنا";
+        }
+        if (dictionary.fr) {
+            dictionary.fr.nav_menu = "☰ Menu";
+            dictionary.fr.nav_home = "🏠 Accueil";
+            dictionary.fr.nav_projects = "📁 Nos Projets";
+            dictionary.fr.nav_marketing = "📊 Marketing Digital";
+            dictionary.fr.nav_about = "✨ Qui sommes-nous";
+            dictionary.fr.nav_contact = "📞 Contactez-nous";
+        }
     }
-  });
+
+    const elements = document.querySelectorAll("[data-i18n]");
+    const currentDict = dictionary[lang];
+    if(!currentDict) return;
+
+    // تغيير اتجاه الموقع حسب اللغة لضمان تجربة مستخدم مثالية لغوياً وتقنياً
+    if (lang === 'ar') {
+        document.documentElement.dir = 'rtl';
+        document.documentElement.lang = 'ar';
+    } else {
+        document.documentElement.dir = 'ltr';
+        document.documentElement.lang = lang;
+    }
+
+    elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (currentDict[key]) {
+            el.innerText = currentDict[key];
+        }
+    });
 
   // تحديث نصوص الـ Placeholders وعناصر الإدخال التفاعلية
   for (const id in currentDict.placeholders) {
     const inputEl = document.getElementById(id);
     if (inputEl && currentDict.placeholders[id] !== "") {
       inputEl.setAttribute('placeholder', currentDict.placeholders[id]);
-    }
-  }
-  function toggleSidebar() {
+function toggleSidebar() {
     const sidebar = document.getElementById("mySidebar");
-    // يقوم بتبديل الفئة لإظهار أو إخفاء القائمة بحركة سلسة
-    sidebar.classList.toggle("translate-x-full");
-  }
+    if (sidebar.style.display === "none" || sidebar.style.display === "") {
+        sidebar.style.display = "block";
+    } else {
+        sidebar.style.display = "none";
+    }
 }
 
+// حقن تراجم القائمة الجانبية تلقائياً في نظام الموقع دون تعديل القاموس العلوي
+if (typeof dictionary !== 'undefined') {
+    if (dictionary.ar) {
+        dictionary.ar.nav_menu = "☰ القائمة";
+        dictionary.ar.nav_home = "🏠 الرئيسية";
+        dictionary.ar.nav_projects = "📁 مشاريعنا";
+        dictionary.ar.nav_marketing = "📊 التسويق الرقمي";
+        dictionary.ar.nav_about = "✨ من نحن";
+        dictionary.ar.nav_contact = "📞 اتصل بنا";
+    }
+    if (dictionary.fr) {
+        dictionary.fr.nav_menu = "☰ Menu";
+        dictionary.fr.nav_home = "🏠 Accueil";
+        dictionary.fr.nav_projects = "📁 Nos Projets";
+        dictionary.fr.nav_marketing = "📊 Marketing Digital";
+        dictionary.fr.nav_about = "✨ Qui sommes-nous";
+        dictionary.fr.nav_contact = "📞 Contactez-nous";
+    }
+}
+}
+ 
 // نظام تبديل الثيم الكامل (Dark / Light) بربط سلس ومحمي
 function toggleTheme() {
   const body = document.body;
