@@ -38,20 +38,6 @@
       background:#030303;
       color:white;
       overflow-x:hidden;
-      <button onclick="toggleSidebar()" class="fixed top-5 right-5 z-50 bg-[#c9983d] text-black font-bold p-3 rounded-full shadow-lg hover:scale-110 transition-transform">
-    ☰
-</button>
-
-<div id="mySidebar" class="fixed top-0 right-0 h-full w-64 bg-[#111111] z-40 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-[#c9983d]/20 pt-20 shadow-2xl">
-    <div class="flex flex-col space-y-4 px-6 text-right">
-        <a href="#home" class="text-white text-lg hover:text-[#c9983d] py-2 border-b border-gray-800 transition-colors">🏠 الرئيسية</a>
-        <a href="#projects" class="text-white text-lg hover:text-[#c9983d] py-2 border-b border-gray-800 transition-colors">📁 مشاريعنا</a>
-        <a href="#marketing" class="text-white text-lg hover:text-[#c9983d] py-2 border-b border-gray-800 transition-colors">📊 التسويق الرقمي</a>
-        <a href="#about" class="text-white text-lg hover:text-[#c9983d] py-2 border-b border-gray-800 transition-colors">✨ من نحن</a>
-        <a href="#contact" class="text-white text-lg hover:text-[#c9983d] py-2 border-b border-gray-800 transition-colors">📞 اتصل بنا</a>
-    </div>
-</div>
-
     }
 
     ::selection{
@@ -375,6 +361,19 @@
   </style>
 </head>
 <body>
+<button onclick="toggleSidebar()" style="position: fixed; top: 20px; right: 20px; z-index: 9999; background-color: #c9983d; color: black; font-weight: bold; padding: 12px 16px; border: none; border-radius: 9999px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+    ☰ القائمة
+</button>
+
+<div id="mySidebar" style="display: none; position: fixed; top: 0; right: 0; height: 100%; width: 260px; background-color: #111111; z-index: 9998; border-left: 2px solid rgba(201, 152, 61, 0.2); padding-top: 80px; box-shadow: -5px 0 25px rgba(0,0,0,0.5);">
+    <div style="display: flex; flex-direction: column; gap: 15px; padding: 0 25px; text-align: right;">
+        <a href="#home" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">🏠 الرئيسية</a>
+        <a href="#projects" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">📁 مشاريعنا</a>
+        <a href="#marketing" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">📊 التسويق الرقمي</a>
+        <a href="#about" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">✨ من نحن</a>
+        <a href="#contact" style="color: white; text-decoration: none; font-size: 18px; padding-bottom: 8px; border-bottom: 1px solid #222;">📞 اتصل بنا</a>
+    </div>
+</div>
 
 <div id="loader">
   <div class="spinner"></div>
