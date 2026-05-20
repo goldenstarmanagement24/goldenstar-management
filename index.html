@@ -38,6 +38,20 @@
       background:#030303;
       color:white;
       overflow-x:hidden;
+      <button onclick="toggleSidebar()" class="fixed top-5 right-5 z-50 bg-[#c9983d] text-black font-bold p-3 rounded-full shadow-lg hover:scale-110 transition-transform">
+    ☰
+</button>
+
+<div id="mySidebar" class="fixed top-0 right-0 h-full w-64 bg-[#111111] z-40 transform translate-x-full transition-transform duration-300 ease-in-out border-l border-[#c9983d]/20 pt-20 shadow-2xl">
+    <div class="flex flex-col space-y-4 px-6 text-right">
+        <a href="#home" class="text-white text-lg hover:text-[#c9983d] py-2 border-b border-gray-800 transition-colors">🏠 الرئيسية</a>
+        <a href="#projects" class="text-white text-lg hover:text-[#c9983d] py-2 border-b border-gray-800 transition-colors">📁 مشاريعنا</a>
+        <a href="#marketing" class="text-white text-lg hover:text-[#c9983d] py-2 border-b border-gray-800 transition-colors">📊 التسويق الرقمي</a>
+        <a href="#about" class="text-white text-lg hover:text-[#c9983d] py-2 border-b border-gray-800 transition-colors">✨ من نحن</a>
+        <a href="#contact" class="text-white text-lg hover:text-[#c9983d] py-2 border-b border-gray-800 transition-colors">📞 اتصل بنا</a>
+    </div>
+</div>
+
     }
 
     ::selection{
@@ -1610,6 +1624,11 @@ function changeLanguage(lang) {
     if (inputEl && currentDict.placeholders[id] !== "") {
       inputEl.setAttribute('placeholder', currentDict.placeholders[id]);
     }
+  }
+  function toggleSidebar() {
+    const sidebar = document.getElementById("mySidebar");
+    // يقوم بتبديل الفئة لإظهار أو إخفاء القائمة بحركة سلسة
+    sidebar.classList.toggle("translate-x-full");
   }
 }
 
