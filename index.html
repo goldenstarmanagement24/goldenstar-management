@@ -110,6 +110,37 @@
       backdrop-filter:blur(16px);
       box-shadow:0 10px 40px rgba(0,0,0,0.5);
     }
+/* تنسيق القائمة الجانبية */
+.sidebar-nav {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: rgba(11, 11, 11, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 20px 10px;
+  border-radius: 0 15px 15px 0;
+  border: 1px solid rgba(201, 152, 61, 0.2);
+  z-index: 9999;
+}
+.sidebar-nav ul { 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+.sidebar-nav ul li { 
+  margin: 15px 0; 
+}
+.sidebar-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+.sidebar-nav ul li a:hover { 
+  color: #c9983d; 
+}
 
     #loader{
       position:fixed;
@@ -361,7 +392,14 @@
   </style>
 </head>
 <body>
-
+<nav class="sidebar-nav">
+  <ul>
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="projects.html">المشاريع</a></li>
+    <li><a href="services.html">الخدمات</a></li>
+    <li><a href="contact.html">اتصل بنا</a></li>
+  </ul>
+</nav>
 <div id="loader">
   <div class="spinner"></div>
   <div class="gold text-sm tracking-[6px] uppercase font-bold">Golden Star Management</div>
