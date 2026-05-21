@@ -1,3 +1,4 @@
+اريد اضافه قائمه انتقال بين الاقسام في اعلى الموقع في هذا الكود HTML 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -110,37 +111,6 @@
       backdrop-filter:blur(16px);
       box-shadow:0 10px 40px rgba(0,0,0,0.5);
     }
-/* تنسيق القائمة الجانبية */
-.sidebar-nav {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  background: rgba(11, 11, 11, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 20px 10px;
-  border-radius: 0 15px 15px 0;
-  border: 1px solid rgba(201, 152, 61, 0.2);
-  z-index: 9999;
-}
-.sidebar-nav ul { 
-  list-style: none; 
-  padding: 0; 
-  margin: 0; 
-}
-.sidebar-nav ul li { 
-  margin: 15px 0; 
-}
-.sidebar-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Cairo', sans-serif;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-.sidebar-nav ul li a:hover { 
-  color: #c9983d; 
-}
 
     #loader{
       position:fixed;
@@ -393,6 +363,36 @@
 </head>
 <body>
 
+<div id="loader">
+  <div class="spinner"></div>
+  <div class="gold text-sm tracking-[6px] uppercase font-bold">Golden Star Management</div>
+</div>
+
+<div id="sidebar-ad" class="fixed bottom-6 right-6 lg:bottom-auto lg:top-28 lg:right-6 w-72 z-40 bg-[#0b0b0b]/90 border border-yellow-700/20 rounded-2xl p-4 shadow-2xl sticky-ad-box cursor-pointer group hover:scale-[1.03] transition duration-300" onclick="openExpandedAd(event)">
+  <button onclick="closeSidebarAd(event)" class="absolute -top-2 -left-2 bg-black hover:bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs transition border border-white/10 shadow-lg z-50">
+    ✕
+  </button>
+
+  <div class="flex items-center justify-between mb-2 pb-2 border-b border-white/5 select-none">
+    <span class="bg-[#c9983d] text-black text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider" data-i18n="ad_badge">OFFER / NEWS</span>
+    <span class="text-white/30 text-[10px] tracking-widest">GOLDEN STAR</span>
+  </div>
+
+  <div class="relative rounded-xl overflow-hidden mb-3 bg-black aspect-video">
+    <img src="Toffer.png" alt="Golden Star Announcement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+      <span class="bg-black/70 border border-yellow-600/50 text-[#c9983d] text-[10px] font-bold px-3 py-1.5 rounded-full backdrop-blur-sm" data-i18n="ad_click_hint">انقر للتكبير 🔍</span>
+    </div>
+  </div>
+
+  <h4 id="sidebar-ad-title" class="text-xs font-black gold mb-1 pointer-events-none" data-i18n="ad_title">فرصة توظيف: مدير تسويق رقمي</h4>
+  <p id="sidebar-ad-desc" class="text-[11px] text-white/60 leading-relaxed mb-3 pointer-events-none line-clamp-2" data-i18n="ad_desc">انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمبدعين .</p>
+
+  <button onclick="handleAdBtnClick(event)" class="ad-interactive-btn w-full text-center bg-white/5 border border-yellow-700/30 hover:border-[#c9983d] hover:bg-[#c9983d] hover:text-black text-white text-[11px] font-bold py-2 rounded-lg transition duration-300" data-i18n="ad_btn">
+    قدم طلبك الآن ←
+  </button>
+</div>
+
 <div id="ad-image-modal" class="fixed inset-0 z-[100000] hidden bg-black/95 backdrop-blur-md items-center justify-center p-4 transition-all duration-300" onclick="closeAdImageModal()">
   <div class="relative max-w-4xl w-full h-full flex items-center justify-center" onclick="event.stopPropagation()">
     <button onclick="closeAdImageModal()" class="absolute top-4 left-4 bg-black/60 hover:bg-[#c9983d] hover:text-black w-10 h-10 rounded-full flex items-center justify-center transition text-white font-bold z-50">
@@ -426,58 +426,41 @@
   </div>
 </div>
 
-<header class="fixed top-0 left-0 w-full z-50 bg-black/90 border-b border-yellow-700/20 backdrop-blur-md">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+<header class="fixed top-0 left-0 w-full z-50 bg-black/50 border-b border-yellow-700/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-    <div class="flex items-center gap-2 sm:gap-3">
-      <img src="logo.jpg" class="w-10 h-10 sm:w-12 h-12 rounded-full object-cover border border-yellow-700/30">
+    <div class="flex items-center gap-3">
+      <img src="logo.jpg" class="w-12 h-12 rounded-full object-cover border border-yellow-700/30">
       <div>
-        <h1 class="font-black text-xs sm:text-sm text-[#c9983d]">GOLDEN STAR</h1>
-        <p class="text-[8px] sm:text-[10px] text-white/50 uppercase tracking-[2px] sm:tracking-[4px]">Management</p>
+        <h1 class="font-black text-sm gold">GOLDEN STAR</h1>
+        <p class="text-[10px] text-white/50 uppercase tracking-[4px]">Management</p>
       </div>
     </div>
 
-    <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-white">
-      <a href="#home" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_home"></a>
-      <a href="#services" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_services"></a>
-      <a href="#portfolio" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_portfolio"></a>
-      <a href="#casting-section" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_casting"></a>
-      <a href="#cv-upload" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_cv"></a>
-      <a href="#privacy-policy" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_privacy"></a>
-      <a href="#contact" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_contact"></a>
+    <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold">
+      <a href="#home" class="hover:text-[#c9983d] transition" data-i18n="nav_home">الرئيسية</a>
+      <a href="#services" class="hover:text-[#c9983d] transition" data-i18n="nav_services">الخدمات</a>
+      <a href="#portfolio" class="hover:text-[#c9983d] transition" data-i18n="nav_portfolio">الأعمال</a>
+      <a href="#casting-section" class="hover:text-[#c9983d] transition" data-i18n="nav_casting">طلب الانتساب الفني</a>
+      <a href="#cv-upload" class="hover:text-[#c9983d] transition" data-i18n="nav_cv">انضم إلينا</a>
+      <a href="#privacy-policy" class="hover:text-[#c9983d] transition" data-i18n="nav_privacy">سياسة الخصوصية</a>
+      <a href="#contact" class="hover:text-[#c9983d] transition" data-i18n="nav_contact">التواصل</a>
     </nav>
 
-    <div class="flex items-center gap-2 sm:gap-3">
-      <select id="lang-switcher" onchange="changeLanguage(this.value)" class="bg-black border border-yellow-700/20 text-yellow-500 text-[11px] sm:text-xs rounded-full px-2 sm:px-4 py-1.5 focus:outline-none">
+    <div class="flex items-center gap-3">
+      <select id="lang-switcher" onchange="changeLanguage(this.value)" class="bg-black border border-yellow-700/20 text-yellow-500 text-xs rounded-full px-4 py-2 focus:outline-none">
         <option value="ar">العربية</option>
         <option value="en">English</option>
         <option value="fr">Français</option>
       </select>
 
-      <button id="theme-btn" onclick="toggleTheme()" class="bg-black border border-yellow-700/20 w-8 h-8 sm:w-10 sm:h-10 rounded-full text-yellow-500 text-sm">
+      <button id="theme-btn" onclick="toggleTheme()" class="bg-black border border-yellow-700/20 w-10 h-10 rounded-full text-yellow-500">
         ☀️
-      </button>
-
-      <button id="menu-toggle-btn" onclick="toggleMobileMenu()" class="lg:hidden flex flex-col justify-center items-center w-9 h-9 border border-yellow-700/20 rounded-full text-yellow-500 bg-black focus:outline-none p-2 z-50">
-        <span id="menu-icon-1" class="w-5 h-0.5 bg-current mb-1 transition duration-300 origin-center"></span>
-        <span id="menu-icon-2" class="w-5 h-0.5 bg-current mb-1 transition duration-300"></span>
-        <span id="menu-icon-3" class="w-5 h-0.5 bg-current transition duration-300 origin-center"></span>
       </button>
     </div>
 
   </div>
-
-  <div id="mobile-menu" class="hidden fixed inset-x-0 top-0 h-screen w-full bg-black/95 backdrop-blur-xl z-40 px-6 pt-24 pb-8 flex flex-col gap-2 text-center text-base font-medium text-white transition-all duration-300 overflow-y-auto">
-    <a href="#home" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_home"></a>
-    <a href="#services" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_services"></a>
-    <a href="#portfolio" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_portfolio"></a>
-    <a href="#casting-section" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_casting"></a>
-    <a href="#cv-upload" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_cv"></a>
-    <a href="#privacy-policy" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_privacy"></a>
-    <a href="#contact" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] transition block" data-i18n="nav_contact"></a>
-  </div>
 </header>
-
 
 <section id="home" class="hero flex items-center justify-center text-center">
   <video class="hero-video" autoplay loop muted playsinline preload="auto">
@@ -1640,32 +1623,9 @@ function toggleTheme() {
   if (body.classList.contains('light-theme')) {
     btn.innerText = '🌙';
   } else {
-        } else {
-        btn.innerText = '☀️';
-    }
-}
-
-// الزق الكود الجديد هنا بالأسفل مباشرة:
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobile-menu');
-  const icon1 = document.getElementById('menu-icon-1');
-  const icon2 = document.getElementById('menu-icon-2');
-  const icon3 = document.getElementById('menu-icon-3');
-  
-  menu.classList.toggle('hidden');
-  
-  const currentLang = document.getElementById('lang-switcher').value;
-  if (typeof changeLanguage === 'function') {
-    changeLanguage(currentLang);
+    btn.innerText = '☀️';
   }
-  
-  icon1.classList.toggle('rotate-45');
-  icon1.classList.toggle('translate-y-1.5');
-  icon2.classList.toggle('opacity-0');
-  icon3.classList.toggle('-rotate-45');
-  icon3.classList.toggle('-translate-y-1.5');
 }
-
 </script>
 </body>
 </html>
