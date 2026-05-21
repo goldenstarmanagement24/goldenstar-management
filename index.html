@@ -392,33 +392,6 @@
   </style>
 </head>
 <body>
-<nav class="sidebar-nav fixed top-0 left-0 h-full w-64 bg-white z-50 shadow-lg">
-  <ul>
-     
-<div id="sidebar-ad" class="fixed bottom-6 right-6 lg:bottom-auto lg:top-28 lg:right-6 w-72 z-40 bg-[#0b0b0b]/90 border border-yellow-700/20 rounded-2xl p-4 shadow-2xl sticky-ad-box cursor-pointer group hover:scale-[1.03] transition duration-300" onclick="openExpandedAd(event)">
-  <button onclick="closeSidebarAd(event)" class="absolute -top-2 -left-2 bg-black hover:bg-red-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs transition border border-white/10 shadow-lg z-50">
-    ✕
-  </button>
-
-  <div class="flex items-center justify-between mb-2 pb-2 border-b border-white/5 select-none">
-    <span class="bg-[#c9983d] text-black text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider" data-i18n="ad_badge">OFFER / NEWS</span>
-    <span class="text-white/30 text-[10px] tracking-widest">GOLDEN STAR</span>
-  </div>
-
-  <div class="relative rounded-xl overflow-hidden mb-3 bg-black aspect-video">
-    <img src="Toffer.png" alt="Golden Star Announcement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-      <span class="bg-black/70 border border-yellow-600/50 text-[#c9983d] text-[10px] font-bold px-3 py-1.5 rounded-full backdrop-blur-sm" data-i18n="ad_click_hint">انقر للتكبير 🔍</span>
-    </div>
-  </div>
-
-  <h4 id="sidebar-ad-title" class="text-xs font-black gold mb-1 pointer-events-none" data-i18n="ad_title">فرصة توظيف: مدير تسويق رقمي</h4>
-  <p id="sidebar-ad-desc" class="text-[11px] text-white/60 leading-relaxed mb-3 pointer-events-none line-clamp-2" data-i18n="ad_desc">انضم إلى فريقنا المتميز الآن! نفتح باب التوظيف للمبدعين .</p>
-
-  <button onclick="handleAdBtnClick(event)" class="ad-interactive-btn w-full text-center bg-white/5 border border-yellow-700/30 hover:border-[#c9983d] hover:bg-[#c9983d] hover:text-black text-white text-[11px] font-bold py-2 rounded-lg transition duration-300" data-i18n="ad_btn">
-    قدم طلبك الآن ←
-  </button>
-</div>
 
 <div id="ad-image-modal" class="fixed inset-0 z-[100000] hidden bg-black/95 backdrop-blur-md items-center justify-center p-4 transition-all duration-300" onclick="closeAdImageModal()">
   <div class="relative max-w-4xl w-full h-full flex items-center justify-center" onclick="event.stopPropagation()">
