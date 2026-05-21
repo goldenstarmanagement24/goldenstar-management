@@ -426,10 +426,10 @@
   </div>
 </div>
 
-<header class="fixed top-0 left-0 w-full z-50 bg-black/85 border-b border-yellow-700/20 backdrop-blur-md">
+<header class="fixed top-0 left-0 w-full z-50 bg-black/90 border-b border-yellow-700/20 backdrop-blur-md">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
 
-    <div class="flex items-center gap-2 sm:gap-3 z-50">
+    <div class="flex items-center gap-2 sm:gap-3">
       <img src="logo.jpg" class="w-10 h-10 sm:w-12 h-12 rounded-full object-cover border border-yellow-700/30">
       <div>
         <h1 class="font-black text-xs sm:text-sm text-[#c9983d]">GOLDEN STAR</h1>
@@ -447,7 +447,7 @@
       <a href="#contact" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_contact"></a>
     </nav>
 
-    <div class="flex items-center gap-2 sm:gap-3 z-50">
+    <div class="flex items-center gap-2 sm:gap-3">
       <select id="lang-switcher" onchange="changeLanguage(this.value)" class="bg-black border border-yellow-700/20 text-yellow-500 text-[11px] sm:text-xs rounded-full px-2 sm:px-4 py-1.5 focus:outline-none">
         <option value="ar">العربية</option>
         <option value="en">English</option>
@@ -458,25 +458,26 @@
         ☀️
       </button>
 
-      <button id="menu-toggle-btn" onclick="toggleMobileMenu()" class="lg:hidden flex flex-col justify-center items-center w-8 h-8 sm:w-10 sm:h-10 border border-yellow-700/20 rounded-full text-yellow-500 bg-black focus:outline-none p-2">
-        <span id="menu-icon-1" class="w-4 sm:w-5 h-0.5 bg-current mb-1 transition duration-300 origin-center"></span>
-        <span id="menu-icon-2" class="w-4 sm:w-5 h-0.5 bg-current mb-1 transition duration-300"></span>
-        <span id="menu-icon-3" class="w-4 sm:w-5 h-0.5 bg-current transition duration-300 origin-center"></span>
+      <button id="menu-toggle-btn" onclick="toggleMobileMenu()" class="lg:hidden flex flex-col justify-center items-center w-9 h-9 border border-yellow-700/20 rounded-full text-yellow-500 bg-black focus:outline-none p-2 z-50">
+        <span id="menu-icon-1" class="w-5 h-0.5 bg-current mb-1 transition duration-300 origin-center"></span>
+        <span id="menu-icon-2" class="w-5 h-0.5 bg-current mb-1 transition duration-300"></span>
+        <span id="menu-icon-3" class="w-5 h-0.5 bg-current transition duration-300 origin-center"></span>
       </button>
     </div>
 
   </div>
 
-  <div id="mobile-menu" class="hidden fixed inset-0 top-[60px] sm:top-[70px] w-full bg-black/95 backdrop-blur-lg border-t border-yellow-700/20 px-6 py-6 flex flex-col gap-4 text-center text-base font-semibold text-white transition-all duration-300 overflow-y-auto">
-    <a href="#home" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_home"></a>
-    <a href="#services" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_services"></a>
-    <a href="#portfolio" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_portfolio"></a>
-    <a href="#casting-section" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_casting"></a>
-    <a href="#cv-upload" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_cv"></a>
-    <a href="#privacy-policy" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_privacy"></a>
-    <a href="#contact" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] transition" data-i18n="nav_contact"></a>
+  <div id="mobile-menu" class="hidden fixed inset-x-0 top-0 h-screen w-full bg-black/95 backdrop-blur-xl z-40 px-6 pt-24 pb-8 flex flex-col gap-2 text-center text-base font-medium text-white transition-all duration-300 overflow-y-auto">
+    <a href="#home" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_home"></a>
+    <a href="#services" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_services"></a>
+    <a href="#portfolio" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_portfolio"></a>
+    <a href="#casting-section" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_casting"></a>
+    <a href="#cv-upload" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_cv"></a>
+    <a href="#privacy-policy" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] border-b border-white/5 transition block" data-i18n="nav_privacy"></a>
+    <a href="#contact" onclick="toggleMobileMenu()" class="py-3.5 hover:text-[#c9983d] transition block" data-i18n="nav_contact"></a>
   </div>
 </header>
+
 
 <section id="home" class="hero flex items-center justify-center text-center">
   <video class="hero-video" autoplay loop muted playsinline preload="auto">
@@ -1639,10 +1640,13 @@ function toggleTheme() {
   if (body.classList.contains('light-theme')) {
     btn.innerText = '🌙';
   } else {
-    btn.innerText = '☀️';
-  }
+        } else {
+        btn.innerText = '☀️';
+    }
 }
-  function toggleMobileMenu() {
+
+// الزق الكود الجديد هنا بالأسفل مباشرة:
+function toggleMobileMenu() {
   const menu = document.getElementById('mobile-menu');
   const icon1 = document.getElementById('menu-icon-1');
   const icon2 = document.getElementById('menu-icon-2');
@@ -1650,18 +1654,18 @@ function toggleTheme() {
   
   menu.classList.toggle('hidden');
   
-  // تحديث نصوص القائمة المنسدلة باللغة الحالية عند فتحها
   const currentLang = document.getElementById('lang-switcher').value;
   if (typeof changeLanguage === 'function') {
     changeLanguage(currentLang);
   }
   
   icon1.classList.toggle('rotate-45');
-  icon1.classList.toggle('translate-y-2');
+  icon1.classList.toggle('translate-y-1.5');
   icon2.classList.toggle('opacity-0');
   icon3.classList.toggle('-rotate-45');
-  icon3.classList.toggle('-translate-y-1');
+  icon3.classList.toggle('-translate-y-1.5');
 }
+
 </script>
 </body>
 </html>
