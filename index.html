@@ -438,13 +438,13 @@
     </div>
 
     <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-white">
-      <a href="#home" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_home">الرئيسية</a>
-      <a href="#services" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_services">الخدمات</a>
-      <a href="#portfolio" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_portfolio">الأعمال</a>
-      <a href="#casting-section" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_casting">طلب الانتساب الفني</a>
-      <a href="#cv-upload" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_cv">انضم إلينا</a>
-      <a href="#privacy-policy" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_privacy">سياسة الخصوصية</a>
-      <a href="#contact" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_contact">التواصل</a>
+      <a href="#home" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_home"></a>
+      <a href="#services" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_services"></a>
+      <a href="#portfolio" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_portfolio"></a>
+      <a href="#casting-section" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_casting"></a>
+      <a href="#cv-upload" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_cv"></a>
+      <a href="#privacy-policy" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_privacy"></a>
+      <a href="#contact" class="hover:text-[#c9983d] transition duration-300" data-i18n="nav_contact"></a>
     </nav>
 
     <div class="flex items-center gap-2 sm:gap-3 z-50">
@@ -467,14 +467,14 @@
 
   </div>
 
-  <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 top-[60px] sm:top-[70px] w-full bg-black/95 backdrop-blur-lg border-t border-yellow-700/20 px-6 py-6 flex flex-col gap-4 text-center text-base font-semibold text-white transition-all duration-300 overflow-y-auto">
-    <a href="#home" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_home">الرئيسية</a>
-    <a href="#services" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_services">الخدمات</a>
-    <a href="#portfolio" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_portfolio">الأعمال</a>
-    <a href="#casting-section" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_casting">طلب الانتساب الفني</a>
-    <a href="#cv-upload" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_cv">انضم إلينا</a>
-    <a href="#privacy-policy" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_privacy">سياسة الخصوصية</a>
-    <a href="#contact" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] transition" data-i18n="nav_contact">التواصل</a>
+  <div id="mobile-menu" class="hidden fixed inset-0 top-[60px] sm:top-[70px] w-full bg-black/95 backdrop-blur-lg border-t border-yellow-700/20 px-6 py-6 flex flex-col gap-4 text-center text-base font-semibold text-white transition-all duration-300 overflow-y-auto">
+    <a href="#home" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_home"></a>
+    <a href="#services" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_services"></a>
+    <a href="#portfolio" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_portfolio"></a>
+    <a href="#casting-section" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_casting"></a>
+    <a href="#cv-upload" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_cv"></a>
+    <a href="#privacy-policy" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] border-b border-white/5 transition" data-i18n="nav_privacy"></a>
+    <a href="#contact" onclick="toggleMobileMenu()" class="py-3 hover:text-[#c9983d] transition" data-i18n="nav_contact"></a>
   </div>
 </header>
 
@@ -1650,12 +1650,18 @@ function toggleTheme() {
   
   menu.classList.toggle('hidden');
   
+  // تحديث نصوص القائمة المنسدلة باللغة الحالية عند فتحها
+  const currentLang = document.getElementById('lang-switcher').value;
+  if (typeof changeLanguage === 'function') {
+    changeLanguage(currentLang);
+  }
+  
   icon1.classList.toggle('rotate-45');
   icon1.classList.toggle('translate-y-2');
   icon2.classList.toggle('opacity-0');
   icon3.classList.toggle('-rotate-45');
   icon3.classList.toggle('-translate-y-1');
-  }
+}
 </script>
 </body>
 </html>
